@@ -11,11 +11,11 @@
    height="32"
    viewBox="0 0 32 32"
    version="1.1"
-   id="svg48"
+   id="svg66"
    sodipodi:docname="shade-inactive.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
-     id="metadata54">
+     id="metadata72">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -27,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs52" />
+     id="defs70" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -39,43 +39,53 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
-     id="namedview50"
+     id="namedview68"
      showgrid="false"
      inkscape:zoom="7.375"
-     inkscape:cx="2.2372881"
-     inkscape:cy="13.423728"
+     inkscape:cx="-15.79661"
+     inkscape:cy="14.711864"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg48" />
+     inkscape:current-layer="svg66"
+     inkscape:document-rotation="0" />
   <rect
      width="32"
      height="32"
-     fill="#E0E0E0"
-     id="rect38"
-     style="fill:#232323;fill-opacity:1" />
+     fill="#D6D6D6"
+     id="rect56"
+     style="fill:#313131;fill-opacity:1" />
   <rect
      width="32"
      height="1"
      fill="#FFFFFF"
      fill-opacity="0.4"
-     id="rect40"
-     style="fill:#000000;fill-opacity:1" />
+     id="rect58"
+     style="fill:#1d1d16;fill-opacity:1" />
   <g
+     style="fill:#ffffff;fill-opacity:1;opacity:0.5"
      fill="#000000"
-     opacity="0.6"
-     id="g46"
-     style="fill:#7b7b7b;fill-opacity:1;opacity:1">
+     opacity="0.38"
+     id="g64">
     <circle
+       style="fill:#ffffff;fill-opacity:1"
        cx="16"
        cy="16"
        r="12"
        opacity="0"
-       id="circle42"
-       style="fill:#7b7b7b;fill-opacity:1" />
+       id="circle60" />
     <path
+       style="fill:#ffffff;fill-opacity:1"
        d="m10 18 1.41 1.41 4.59-4.59 4.59 4.59 1.41-1.41-6-6z"
-       id="path44"
-       style="fill:#7b7b7b;fill-opacity:1" />
+       id="path62" />
   </g>
+  <rect
+     style="fill:#1d1d16;fill-opacity:1"
+     id="rect112"
+     fill-opacity="0.4"
+     fill="#FFFFFF"
+     height="1"
+     width="32"
+     x="-2.3841858e-07"
+     y="31" />
 </svg>
