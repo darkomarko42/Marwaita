@@ -48,7 +48,7 @@ style "murrine-default"
   	#GtkScrolledWindow::scrollbar-spacing	= 1 # This sets the spacing between scrollbars.
 
 #	GtkToolbar     :: shadow-type		= GTK_SHADOW_NONE
-     #   GtkMenuBar     :: shadow-type          = GTK_SHADOW_NONE
+        GtkMenuBar     :: shadow-type          = GTK_SHADOW_NONE
 
 	GtkWidget      :: link-color           = @selected_bg_color
 	GtkWidget      :: visited-link-color   = shade (0.2, @selected_bg_color)
