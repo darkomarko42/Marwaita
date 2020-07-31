@@ -3282,7 +3282,7 @@ menu.chromium{border: 1px solid @borders;}
 
 .budgie-menu .categories button.flat{padding: 8px 0;}
 
-.budgie-menu .categories button.flat:checked{background-color: shade(@selected_bg_color,0.9); color: @selected_fg_color;}
+.budgie-menu .categories button.flat:checked{box-shadow: inset 4px 0 @selected_bg_color;}
 
 .budgie-popover separator{ margin: 6px 0;}
 
