@@ -280,9 +280,12 @@ button  {
   margin: 2px;
 }
 
+button{color: @fg_color;}
+
+.titlebar button.text-button:not(.suggested-action):not(.destructive-action),.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button),headerbar button.titlebutton, .titlebar button.titlebutton,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button){color: @textColorPrimary;}
+
  button ,.titlebar button.text-button:not(.suggested-action):not(.destructive-action),.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button) {
   border: 1px solid;
-  color: @fg_color;
   background-color: @button;
   background-image: linear-gradient(to top, @invertbg, transparent);
   border-color:  @borders_t;
@@ -935,8 +938,8 @@ decoration:backdrop {
 }
 
 .csd.popup decoration {
-  border-radius: 0px;
-  box-shadow: 0 6px 12px @shadow, 0 0 0 1px @borders_t;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px @shadow, 0 0 0 1px @shadow;
 }
 
 tooltip.csd decoration {
@@ -969,17 +972,14 @@ headerbar button.titlebutton:hover, .titlebar button.titlebutton:hover{}
 
 headerbar button.titlebutton:active, .titlebar button.titlebutton:active,
 headerbar button.titlebutton:checked, .titlebar button.titlebutton:checked,
-.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):active,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked{background-color: alpha(@fg_color,0.15);}
+.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):active,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked{background-color: alpha(currentcolor,0.15);}
 
-headerbar button.titlebutton:disabled, .titlebar button.titlebutton:disabled,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled{color: @insensitive_fg_color;}
-
-
+headerbar button.titlebutton:disabled, .titlebar button.titlebutton:disabled,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop{  color: alpha(@textColorPrimary,0.5);  }
 
 headerbar,
 .titlebar:not(headerbar) {
   padding: 2px;
-  color: @fg_color;
-  transition: 200ms ease-out;
+  color: @textColorPrimary;
   background-color: @colorPrimary;
   background-image: none;
   border-bottom: 1px solid shade(@colorPrimary,0.8);
@@ -988,12 +988,10 @@ headerbar,
 
 headerbar:backdrop,
 .titlebar:backdrop:not(headerbar) {
-  transition: 200ms ease-out;
+  background-color: @bg_color;
   background-image: none;
-  color: @insensitive_fg_color;
+  color: alpha(@textColorPrimary,0.5);
 }
-
-.titlebar button:not(.suggested-action):not(.destructive-action):backdrop{ color: @insensitive_fg_color;}
 
 .titlebar .right{margin-right: 2px;}
 .titlebar .left{margin-left: 2px;}
@@ -1256,25 +1254,26 @@ menubar > menuitem:disabled,
   border-color: transparent;
 }
 
+.background.popup { background-color: transparent;  border-radius: 3px;}
+
 menu,
 .menu {
   padding: 4px 0;
   background-color: @m_color;
-  border-radius: 0px;
 }
 
 .csd menu, .csd
 .menu {
   padding: 4px 0;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 menu separator,
 .csd menu separator,
 .menu separator,.csd
 .menu separator {
-  margin: 4px 0;
-  border-top: 1px solid @borders;
+  margin: 4px 8px;
+  border-top: 1px solid @shadow;
 }
 
 menu menuitem,
@@ -1355,7 +1354,7 @@ popover.background {
   padding: 0px;
   border-radius: 3px;
   background-color: @m_color;
-  border: 1px solid @borders;
+  border: 1px solid @borders_t;
   color: @fg_color;
   box-shadow: 0 1px 2px alpha(@shadow,0.5);
 }
@@ -1368,7 +1367,7 @@ popover.background {
 
 popover separator,
 popover.background separator {
-border-color: @borders;
+border-color: @borders_t;
 }
 
 popover > list,
@@ -3165,7 +3164,7 @@ XfdesktopIconView.view {
 
 .linked.horizontal.format-bar{ 	background-image: image(@colorPrimary);}
 
-popover button.menuitem{ background-color: transparent; box-shadow: none; border: none; margin: 0 ; border-radius: 0; padding: 6px 15px;}
+popover button.menuitem{ background-color: transparent; background-image: none; box-shadow: none; border: none; margin: 0 ; border-radius: 0; padding: 6px 15px;}
 popover button.menuitem:hover{background-color: alpha(@fg_color,0.1);}
 popover button.menuitem:active,popover button.menuitem:checked{background-color: transparent;}
 
@@ -3752,13 +3751,14 @@ filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
 }
 
 
-@define-color m_color @bg_color;
+@define-color m_color @base_color;
 @define-color button @base_color;
 @define-color notibg @base_color;
 @define-color wbg shade(@bg_color,0.85);
 @define-color invertbg alpha(black,0.1);
 
 @define-color colorPrimary shade(@bg_color,0.9);
+@define-color textColorPrimary @fg_color;
 @define-color sidebar_color shade(@bg_color,0.95);
 
 @define-color theme_fg_color @fg_color;
@@ -3784,6 +3784,7 @@ filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
 @define-color theme_unfocused_base_color @base_color;
 
 @define-color borders shade(@bg_color,0.7);
+@define-color border_color @borders;
 @define-color unfocused_borders @borders;
 @define-color borders_t alpha(black,0.3);
 
@@ -3806,8 +3807,8 @@ filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
 
 @define-color tab_base_color @base_color;
 @define-color metacity_theme @colorPrimary;
-@define-color wm_title @fg_color;
-@define-color wm_unfocused_title @insensitive_fg_color;
+@define-color wm_title @textColorPrimary;
+@define-color wm_unfocused_title alpha(@textColorPrimary,0.5);
 @define-color m_button	alpha(@fg_color,0.1);
 @define-color m_button_active	alpha(@fg_color,0.2);
 @define-color m_border	shade(@bg_color,0.7);

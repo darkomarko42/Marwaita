@@ -203,7 +203,7 @@ style "murrine-menu" = "murrine-wider"
   xthickness = 0
   ythickness = 2
 
-	bg[NORMAL] = @bg_color
+	bg[NORMAL] = @base_color
 
 
 	engine "murrine" {
@@ -218,9 +218,9 @@ style "murrine-menu-item"
   xthickness = 0
   ythickness = 4
 
-	bg[PRELIGHT] = shade(0.9, @bg_color)
+	bg[PRELIGHT] = shade(0.9, @base_color)
 	fg[PRELIGHT] = @fg_color
-	bg[SELECTED] = shade(0.9, @bg_color)
+	bg[SELECTED] = shade(0.9, @base_color)
 	fg[SELECTED] = @fg_color
 
 	text[NORMAL]	= @fg_color
@@ -247,7 +247,7 @@ style "murrine-menubar-item" = "murrine-menu-item"
 # Based on default clearlooks
 style "murrine-separator-menu-item"
 {
-	GtkSeparatorMenuItem::horizontal-padding = 0
+	GtkSeparatorMenuItem::horizontal-padding = 8
 	# We are setting the desired height by using wide-separators
 	# There is no other way to get the odd height ...
 	GtkWidget::wide-separators = 1
