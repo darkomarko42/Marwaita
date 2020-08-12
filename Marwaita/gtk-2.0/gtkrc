@@ -150,7 +150,7 @@ style "murrine-separator"{
 
 style "murrine-button" = "murrine-wider"{
 
-	bg[ACTIVE]                  = shade(0.8,@bg_color)
+	bg[ACTIVE]                  = shade(0.8,@base_color)
 	bg[NORMAL]                  = @base_color
 	bg[PRELIGHT]				= @base_color
 	bg[SELECTED]				= @selected_fg_color
@@ -159,7 +159,7 @@ style "murrine-button" = "murrine-wider"{
 	engine "murrine" {
 			gradient_shades     = {1.0, 1.0, 1.0, 0.9} 
 		contrast                = 1.0
-		lightborder_shade	= 100.0
+		lightborder_shade	= 1.0
 		lightborderstyle		= 2
 		roundness			= 3
 	}

@@ -194,7 +194,7 @@ spinbutton:not(.vertical):focus,entry:focus {
 
 spinbutton:not(.vertical):disabled,entry:disabled {
   color: @insensitive_fg_color;
-  background-color: transparent;
+  background-color: @bg_color;
   background-image: none;
 }
 
@@ -292,7 +292,7 @@ button{color: @fg_color;}
   box-shadow:  0 1px alpha(@shadow,0.5);
  }
  
-button:hover {
+ button:hover ,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):hover,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):hover {
 
 }
 
@@ -329,7 +329,9 @@ button separator {
 
 /* FLAT BUTTONS */
 
-button.flat, button.sidebar-button  {
+headerbar button.titlebutton, .titlebar button.titlebutton{margin: 2px 0;}
+
+button.flat, button.sidebar-button ,headerbar button.titlebutton, .titlebar button.titlebutton,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button)  {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -337,9 +339,15 @@ button.flat, button.sidebar-button  {
   transition: none;
 }
 
-button.flat:active, button.sidebar-button:active,button.flat:checked, button.sidebar-button:checked  {
-  background-color: alpha(currentcolor, 0.1);
+button.flat:hover, button.sidebar-button:hover ,headerbar button.titlebutton:hover, .titlebar button.titlebutton:hover,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):hover { }
+
+button.flat:active, button.sidebar-button:active,button.flat:checked, button.sidebar-button:checked,headerbar button.titlebutton:active, .titlebar button.titlebutton:active,
+headerbar button.titlebutton:checked, .titlebar button.titlebutton:checked,
+.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):active,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked  {
+  background-color: alpha(currentcolor, 0.2);
 }
+
+headerbar button.titlebutton:disabled, .titlebar button.titlebutton:disabled,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop{  color: alpha(@textColorPrimary,0.5);  }
 
 button:active:not(:disabled) label:disabled, button:checked:not(:disabled) label:disabled {
   color: inherit;
@@ -413,6 +421,12 @@ button.destructive-action:disabled {
 }
 
 /* LINKED BUTTONS */
+
+ .button-left,
+ .button-center,
+ .button-right{ margin: 2px 0;}
+
+.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button).button-left,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button).button-center,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button).button-right{ border: 1px solid @borders_t;}
 
 .contacts-postal-entry {margin:0;}
 .contacts-postal-entry:focus:not(:last-child) { box-shadow: 0 1px @selected_bg_color}
@@ -818,6 +832,9 @@ spinbutton.horizontal button {
   background-image: none;
   border: none;
 }
+
+spinbutton.horizontal button:hover { }
+
 spinbutton.horizontal button:active {
   background-color: alpha(@theme_fg_color,0.2);
   border: none;
@@ -963,18 +980,6 @@ messagedialog.csd decoration {
 /**************
  * HEADERBARS *
  **************/
- 
-headerbar button.titlebutton, .titlebar button.titlebutton {margin: 0 ; background-color: transparent; background-image: none; border: none; box-shadow: none;} 
-
-.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button){ background-color: transparent; border: none; box-shadow: none; background-image: none;}
-
-headerbar button.titlebutton:hover, .titlebar button.titlebutton:hover{}
-
-headerbar button.titlebutton:active, .titlebar button.titlebutton:active,
-headerbar button.titlebutton:checked, .titlebar button.titlebutton:checked,
-.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):active,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked{background-color: alpha(currentcolor,0.15);}
-
-headerbar button.titlebutton:disabled, .titlebar button.titlebutton:disabled,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):backdrop,.titlebar button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):backdrop{  color: alpha(@textColorPrimary,0.5);  }
 
 headerbar,
 .titlebar:not(headerbar) {
@@ -990,13 +995,14 @@ headerbar:backdrop,
 .titlebar:backdrop:not(headerbar) {
   background-color: @bg_color;
   background-image: none;
+  border-color: @borders;
   color: alpha(@textColorPrimary,0.5);
 }
 
 .titlebar .right{margin-right: 2px;}
 .titlebar .left{margin-left: 2px;}
 
-.titlebar.default-decoration { padding: 4px;} 
+.titlebar.default-decoration { padding: 2px 4px;} 
 
 headerbar .title,
 .titlebar:not(headerbar) .title {
@@ -1064,7 +1070,7 @@ messagedialog,
  
  dialog decoration{ }
  
- headerbar.flat{box-shadow: none; background-color: @bg_color; border: none; background-image: none;}
+dialog .titlebar, headerbar.flat{box-shadow: none; background-color: @bg_color; border: none; background-image: none;}
  
  dialog .titlebar.default-decoration,messagedialog .titlebar, 
 messagedialog .titlebar.default-decoration {box-shadow: none; background-color: @bg_color; border: none; background-image: none;}
@@ -1095,7 +1101,7 @@ filechooser .dialog-action-box {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid @borders;
+  border-top: 1px solid @borders;
   background-color: @bg_color;
 }
 
@@ -1132,12 +1138,8 @@ treeview.view:selected, treeview.view:selected:focus {
   border-top-color: @borders;
 }
 
-treeview.view:disabled {
+treeview.view:disabled:selected ,treeview.view:disabled {
   color: @insensitive_fg_color;
-}
-
-treeview.view:disabled:selected {
-  color: alpha(@suggested_color,0.5);
 }
 
 treeview.view.separator {
@@ -1192,6 +1194,7 @@ treeview.view header button {
   font-weight: bold;
   background-color: transparent;
   border-style: none solid solid none;
+  border-color: @borders;
   border-radius: 0;
   box-shadow: none;
   background-image: none;
@@ -1214,6 +1217,8 @@ treeview.view header.button.dnd:active {
   border-radius: 0;
   border-style: none;
 }
+
+dialog filechooser treeview.view header button{ border-style: solid solid solid none;}
 
 /*********
  * Menus *
@@ -1515,6 +1520,8 @@ notebook tab label {
     color: @insensitive_fg_color;
     padding: 4px 6px;
 }
+
+notebook tab:hover label{}
 
 notebook tab:checked label,
 notebook .active-page,
@@ -2302,7 +2309,8 @@ infobar.info > label, infobar.info, infobar.info button{color: shade(@success_co
    infobar.error > label, infobar.error, infobar.error button {color: shade(@error_color,0.7);}
    infobar label:disabled{color: @insensitive_fg_color;}
 
-infobar button{background-color: alpha(currentcolor,0.1);}
+infobar button{background-color: transparent;}
+infobar button:hover{}
 infobar button:checked,infobar button:active{background-color: alpha(currentcolor,0.2); }
 infobar button:disabled{background-color: transparent; }
 
@@ -2343,7 +2351,9 @@ tooltip * {
  * SELECTIONS *
  **************/
  
-row:selected,.view.places-treeview.view:selected,treeview.view:selected, treeview.view:selected:focus ,.geary-folder-frame .view.sidebar treeview.view:selected{background-color: alpha(@fg_color,0.1); color: @fg_color;}
+row.activatable:hover, treeview.view:hover {}
+ 
+row.activatable:selected,.view.places-treeview.view:selected,treeview.view:selected, treeview.view:selected:focus ,.geary-folder-frame .view.sidebar treeview.view:selected{background-color: alpha(@fg_color,0.15); color: @fg_color;}
 
 .view selection, .view:selected,  label selection, spinbutton:not(.vertical) selection, entry selection, modelbutton.flat:selected,.menuitem.button.flat:selected, popover.background.menu button:checked,popover.background button.model:checked, calendar:selected, .nautilus-window flowboxchild:selected .icon-item-background, box.vertical > widget > widget:selected,  calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
   background-color: @theme_selected_bg_color;
@@ -3176,7 +3186,7 @@ popover .circular image{  color: @colorAccent;}
 
 .gala-notification{
     background-image: image(@notibg);
-  box-shadow: 0 1px 2px @shadow, 0 0 0 1px @borders_t;
+  box-shadow: 0 1px 2px @shadow;
     border: 1px solid @borders_t;
 }
 
@@ -3289,6 +3299,9 @@ menu.chromium{border: 1px solid @borders;}
 
 .budgie-menu .sidebar{background-color:@sidebar_color; border: none;}
 
+.budgie-popover row.activatable {background-color: transparent;}
+.budgie-popover row:selected {background-color: alpha(@fg_color,0.1);}
+
 /* BUDGIE PANEL */
 .budgie-panel label, .budgie-panel image{color: black;}
 
@@ -3333,6 +3346,11 @@ box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset -1px 0 @borders;
 border-radius: 3px 0 0 3px;
 box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset 1px 0 @borders;
 }
+
+.budgie-panel button.launcher.flat,.budgie-panel button.budgie-menu-launcher{background-color: transparent; border: none; border-radius: 0;   transition: none;}
+.budgie-panel button.launcher.flat:hover,.budgie-panel button.budgie-menu-launcher:hover,
+.budgie-panel button.launcher.flat:active,.budgie-panel button.budgie-menu-launcher:active,
+.budgie-panel button.launcher.flat:checked,.budgie-panel button.budgie-menu-launcher:checked{}
 
 /* RAVEN */
 
@@ -3750,6 +3768,7 @@ filechooser placessidebar.sidebar row.sidebar-row label.sidebar-label,
   padding-left: 21px;
 }
 
+dialog filechooser .sidebar{ box-shadow: inset 0 1px @borders;}
 
 @define-color m_color @base_color;
 @define-color button @base_color;
