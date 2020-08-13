@@ -6,3 +6,8 @@ Light theme:
 
 Dark theme:
 ![marwaita-dark](https://cdn.pling.com/img/d/7/f/3/8c7031702b7d4620f91351d0861d3b728e7063619be4c46a3fe473b691bee80e5f9a.png)
+
+## Requirements
+- GTK+ >= 3.20
+- GTK2 Murrine engine. Check your distribution for package name (`gtk2-engines-murrine` for Debian, Ubuntu and elementary).
+- GTK2 Clearlooks engine. <!-- Unsure about this -->
