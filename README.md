@@ -11,3 +11,11 @@ Dark theme:
 - GTK+ >= 3.20
 - GTK2 Murrine engine. Check your distribution for package name (`gtk2-engines-murrine` for Debian, Ubuntu and elementary).
 - GTK2 Clearlooks engine. <!-- Unsure about this -->
+
+## Installing
+Clone this repo:
+```bash
+git clone https://github.com/darkomarko42/Marwaita.git
+```
+
+and copy into your `~/.themes` folder or `/usr/share/themes` if system-wide theming is preferred.
