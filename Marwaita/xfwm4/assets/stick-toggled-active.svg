@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="stick-toggled-active.svg"
    id="svg156"
    version="1.1"
@@ -31,14 +31,14 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="svg156"
      inkscape:window-maximized="1"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-x="0"
      inkscape:cy="14.711864"
-     inkscape:cx="-9.4237288"
+     inkscape:cx="-48.338983"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview158"
-     inkscape:window-height="1015"
+     inkscape:window-height="1023"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -75,13 +75,4 @@
        id="path152"
        d="m16 10a6 6 0 0 0 -6 6 6 6 0 0 0 6 6 6 6 0 0 0 6 -6 6 6 0 0 0 -6 -6zm0 2a4 4 0 0 1 4 4 4 4 0 0 1 -4 4 4 4 0 0 1 -4 -4 4 4 0 0 1 4 -4zm0 2a2 2 0 0 0 -2 2 2 2 0 0 0 2 2 2 2 0 0 0 2 -2 2 2 0 0 0 -2 -2z" />
   </g>
-  <rect
-     y="31"
-     x="9.5367432e-07"
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect148-5"
-     style="fill:#969696;fill-opacity:1" />
 </svg>

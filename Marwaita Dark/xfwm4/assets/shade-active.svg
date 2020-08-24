@@ -13,7 +13,7 @@
    version="1.1"
    id="svg66"
    sodipodi:docname="shade-active.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata72">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,14 +38,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1023"
      id="namedview68"
      showgrid="false"
      inkscape:zoom="7.375"
-     inkscape:cx="-15.79661"
+     inkscape:cx="-54.711864"
      inkscape:cy="14.711864"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg66"
      inkscape:document-rotation="0" />
@@ -79,13 +79,4 @@
        d="m10 18 1.41 1.41 4.59-4.59 4.59 4.59 1.41-1.41-6-6z"
        id="path62" />
   </g>
-  <rect
-     style="fill:#1d1d16;fill-opacity:1"
-     id="rect112"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     height="1"
-     width="32"
-     x="-2.3841858e-07"
-     y="31" />
 </svg>

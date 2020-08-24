@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="title-inactive.svg"
    id="svg6"
    version="1.1"
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -32,14 +32,14 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="svg6"
      inkscape:window-maximized="1"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-x="0"
      inkscape:cy="16"
-     inkscape:cx="-0.86002372"
+     inkscape:cx="-11.754448"
      inkscape:zoom="26.34375"
      showgrid="false"
      id="namedview8"
-     inkscape:window-height="1007"
+     inkscape:window-height="1023"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -62,13 +62,4 @@
      id="rect4"
      height="1"
      width="2" />
-  <rect
-     y="30.999998"
-     x="0"
-     width="2"
-     height="1"
-     id="rect4-7"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     style="fill:#969696;fill-opacity:1" />
 </svg>
