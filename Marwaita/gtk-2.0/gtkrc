@@ -1,7 +1,7 @@
 
 # GTK originally based on Ubuntu Human code
 
-gtk_color_scheme = "fg_color:#444\nbg_color:#e6e6e6\nbase_color:#fff\ntext_color:#444\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
+gtk_color_scheme = "fg_color:#222\nbg_color:#e6e6e6\nbase_color:#fff\ntext_color:#222\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
 
 # Comment the following line for large buttons
 gtk-icon-sizes = "gtk-button=16,16"
@@ -60,7 +60,7 @@ style "murrine-default"
 	fg[PRELIGHT]      = @fg_color
 	fg[SELECTED]      = @selected_fg_color
 	fg[ACTIVE]        = @fg_color
-	fg[INSENSITIVE]   = shade (0.5, @bg_color)
+	fg[INSENSITIVE]   = shade (0.7, @bg_color)
 
 	bg[NORMAL]        = @bg_color
 	bg[PRELIGHT]      = shade (1.065, @bg_color)
@@ -78,7 +78,7 @@ style "murrine-default"
 	text[PRELIGHT]    = @text_color
 	text[ACTIVE]      = @selected_fg_color
 	text[SELECTED]    = @selected_fg_color
-	text[INSENSITIVE] = shade (0.5, @bg_color)
+	text[INSENSITIVE] = shade (0.7, @bg_color)
 
 	engine "murrine" 
 	{
@@ -152,12 +152,11 @@ style "murrine-button" = "murrine-wider"{
 
 	bg[ACTIVE]                  = shade(0.8,@base_color)
 	bg[NORMAL]                  = @base_color
-	bg[PRELIGHT]				= @base_color
+	bg[PRELIGHT]				= shade(0.9,@base_color)
 	bg[SELECTED]				= @selected_fg_color
 	bg[INSENSITIVE]				= @bg_color
 	
 	engine "murrine" {
-			gradient_shades     = {1.0, 1.0, 1.0, 0.9} 
 		contrast                = 1.0
 		lightborder_shade	= 1.0
 		lightborderstyle		= 2
@@ -649,7 +648,7 @@ style "murrine-combobox-text-color-workaround"
 	text[PRELIGHT]    = @fg_color
 	text[ACTIVE]      = @fg_color
 	text[SELECTED]    = @fg_color
-	text[INSENSITIVE] = shade (0.5, @bg_color)
+	text[INSENSITIVE] = shade (0.7, @bg_color)
 }
 widget_class "*.<GtkComboBox>.<GtkCellView>"		style "murrine-combobox-text-color-workaround"
 
@@ -659,7 +658,7 @@ style "murrine-menuitem-text-is-fg-color-workaround"
 	text[PRELIGHT]      = @fg_color
 	text[ACTIVE]        = @fg_color
 	text[SELECTED]      = @fg_color
-	text[INSENSITIVE]   = shade (0.5, @bg_color)
+	text[INSENSITIVE]   = shade (0.7, @bg_color)
 }
 
 widget "*.gtk-combobox-popup-menu.*"   			style "murrine-menuitem-text-is-fg-color-workaround"
@@ -674,7 +673,7 @@ style "murrine-fg-is-text-color-workaround"
 	fg[PRELIGHT]    = @text_color
 	fg[ACTIVE]      = @fg_color
 	fg[SELECTED]    = @fg_color
-	fg[INSENSITIVE] = shade (0.5, @bg_color)
+	fg[INSENSITIVE] = shade (0.7, @bg_color)
 }
 
 widget_class "*<GtkListItem>*" 				style "murrine-fg-is-text-color-workaround"
