@@ -3386,6 +3386,11 @@ box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset 1px 0 @borders;
 .budgie-panel button.launcher.flat:active,.budgie-panel button.budgie-menu-launcher:active{background-color: alpha(currentcolor,0.3);}
 .budgie-panel button.launcher.flat:checked,.budgie-panel button.budgie-menu-launcher:checked{background-color: alpha(currentcolor,0.2);}
 
+.budgie-panel button:not(.launcher):not(.flat){background-color: @titlebar_button; color: @panel_fg;}
+.budgie-panel button:not(.launcher):not(.flat):hover{background-image: image(alpha(currentcolor,0.1));}
+.budgie-panel button:not(.launcher):not(.flat):active{background-image: image(alpha(currentcolor,0.3));}
+.budgie-panel button:not(.launcher):not(.flat):checked{background-image: image(alpha(currentcolor,0.2));}
+
 /* RAVEN */
 
 .raven-background  stackswitcher.linked { padding: 12px;}
