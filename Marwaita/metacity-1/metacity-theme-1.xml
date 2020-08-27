@@ -13,7 +13,7 @@
 <constant name="C_border_focused" value="gtk:custom(m_border,gtk:bg[NORMAL])" />
 <constant name="C_border_unfocused" value="gtk:custom(m_border,gtk:bg[NORMAL])" />
 <constant name="C_titlebar_focused_hilight" value="gtk:custom(metacity_theme,gtk:bg[NORMAL])" />
-<constant name="C_titlebar_unfocused" value="gtk:custom(bg_color,gtk:bg[NORMAL])" />
+<constant name="C_titlebar_unfocused" value="gtk:custom(colorPrimaryBackdrop,gtk:bg[NORMAL])" />
 <constant name="C_title_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])" />
 <constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,gtk:fg[NORMAL])" />
 

@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1"
-   height="1"
-   viewBox="0 0 1 1"
-   version="1.1"
-   id="svg4"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="border-active.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   id="svg4"
+   version="1.1"
+   viewBox="0 0 1 1"
+   height="1"
+   width="1">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -29,30 +29,31 @@
   <defs
      id="defs8" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1007"
-     id="namedview6"
-     showgrid="false"
-     inkscape:zoom="118"
-     inkscape:cx="-0.35169487"
-     inkscape:cy="0.77118645"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="0.77118645"
+     inkscape:cx="-0.55084741"
+     inkscape:zoom="118"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1007"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
   <rect
-     style="opacity:1;fill:#969696;fill-opacity:1;stroke:none;stroke-width:0.1338568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect4514"
-     width="1"
-     height="1"
+     y="0"
      x="0"
-     y="0" />
+     height="1"
+     width="1"
+     id="rect4514"
+     style="opacity:1;fill:#1d1d1d;fill-opacity:1;stroke:none;stroke-width:0.1338568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>

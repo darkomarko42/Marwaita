@@ -1,7 +1,7 @@
 
 # GTK originally based on Ubuntu Human code
 
-gtk_color_scheme = "fg_color:#fff\nbg_color:#3d3d3d\nbase_color:#444\ntext_color:#fff\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
+gtk_color_scheme = "fg_color:#fff\nbg_color:#3d3d3d\nbase_color:#565656\ntext_color:#fff\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
 
 # Comment the following line for large buttons
 gtk-icon-sizes = "gtk-button=16,16"
@@ -149,10 +149,10 @@ style "murrine-separator"{
 
 style "murrine-button" = "murrine-wider"{
 
-	bg[ACTIVE]                  = shade(1.4,@base_color)
-	bg[NORMAL]                  = shade(1.2,@base_color)
-	bg[PRELIGHT]				= shade(1.3,@base_color)
-	bg[SELECTED]				= shade(1.2,@base_color)
+	bg[ACTIVE]                  = shade(1.3,@base_color)
+	bg[NORMAL]                  = @base_color
+	bg[PRELIGHT]				= shade(1.2,@base_color)
+	bg[SELECTED]				= @base_color
 	bg[INSENSITIVE]				= @bg_color
 	
 	engine "murrine" {
@@ -170,8 +170,6 @@ style "murrine-notebook"
 
   xthickness	= 5
   ythickness	= 2
-  
-  	engine "clearlooks" { radius   = 1.0 }
 
 }
 
