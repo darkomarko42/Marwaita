@@ -303,8 +303,7 @@ button ,.titlebar button.text-button:not(.suggested-action):not(.destructive-act
 button,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action),
 button:hover,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):hover,
 button:active, button:checked,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):active,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked
-  {background-color: @button; color: @fg_color; }
-
+ {color: @fg_color; background-color: @button;}
 
 /* States of buttons */
 button:hover ,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):hover,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):hover,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):hover {
@@ -327,7 +326,10 @@ button:disabled,dialog .titlebar button.text-button:not(.suggested-action):not(.
 
 button:disabled label , button:disabled image, .titlebar button:backdrop label, .titlebar button:backdrop image,.titlebar:backdrop label, .titlebar:backdrop image, label:disabled,
 .titlebar.default-decoration button.titlebutton:backdrop,button:disabled:active label, button:disabled:active, button:disabled:checked label, button:disabled:checked,
-button:disabled {color: alpha(currentcolor,0.5);}
+button:disabled ,notebook arrow:disabled,headerbar:backdrop,
+.titlebar:backdrop:not(headerbar){color: mix(@colorPrimary,@textColorPrimary,0.5);}
+
+button.suggested-action:backdrop label,button.suggested-action:backdrop image,button.destructive-action:backdrop label,button.destructive-action:backdrop image{ color: alpha(currentcolor,0.5);}
 
 button:disabled:active, button:disabled:checked {
   background-color: alpha(shade(@button,0.8), 0.5);
@@ -957,7 +959,6 @@ decoration {
 
 decoration:backdrop {
   box-shadow: 0 6px 12px alpha(@deco,0.2), 0 0 0 1px @borders_t;
-  transition: 200ms ease-out;
 }
 
 .ssd decoration.maximized {
@@ -997,13 +998,13 @@ headerbar,
   background-color: @colorPrimary;
   background-image: none;
   border-bottom: 1px solid shade(@colorPrimary,0.8);
+  box-shadow: inset 0 1px @highlight;
 }
 
 headerbar:backdrop,
 .titlebar:backdrop:not(headerbar) {
   background-color: @colorPrimaryBackdrop;
   background-image: none;
-  color: alpha(@textColorPrimary,0.5);
 }
 
 .titlebar .right{margin-right: 2px;}
@@ -1075,12 +1076,13 @@ window.csd > .titlebar:not(headerbar):backdrop {
 messagedialog,
 .prompt {-gtk-icon-style: regular;}
  
- dialog decoration{ }
+ dialog decoration{ border-radius: 3px; }
+ dialog{border-radius: 0 0 3px 3px;}
  
-dialog .titlebar, headerbar.flat{box-shadow: none; background-color: @bg_color; color: @fg_color; border: none; background-image: none;}
+dialog .titlebar, headerbar.flat{  box-shadow: inset 0 1px @highlight; background-color: @bg_color; color: @fg_color; border: none; background-image: none;}
  
  dialog .titlebar.default-decoration,messagedialog .titlebar, 
-messagedialog .titlebar.default-decoration {box-shadow: none; background-color: @bg_color; border: none; background-image: none;}
+messagedialog .titlebar.default-decoration { background-color: @bg_color; border: none; background-image: none;}
 
 messagedialog .titlebar {
   min-height: 20px;
@@ -1089,12 +1091,16 @@ messagedialog .titlebar {
   background-image: none;
   border-top-left-radius:3px;
   border-top-right-radius: 3px;
+  box-shadow: inset 0 1px @highlight , inset 1px 0 @highlight, inset -1px 0 @highlight;
 }
+
+messagedialog .titlebar:backdrop {  background-color: @bg_color;}
 
 .dialog-action-box{ margin: 8px;}
 
 messagedialog.background {
   background-color: @bg_color;
+  box-shadow: inset 0 -1px @highlight , inset 1px 0 @highlight, inset -1px 0 @highlight;
 }
 
 messagedialog.csd.background {
@@ -1421,9 +1427,9 @@ cursor-handle.bottom {
 /*************
  * Notebooks *
  *************/
- 
+
 notebook {
-    background-color: @tab_base_color;
+    background-color: @base_color;
     border: none;
 }
 
@@ -1431,14 +1437,14 @@ notebook.frame {
     border: none;
     box-shadow: inset 0 0 0 1px @borders;
     border-radius: 0px;
-    background-color: @tab_base_color;
+    background-color: @base_color;
 }
 
 notebook header {
-    background-color: @sidebar_color;
+    background-color: @bg_color;
     background-image: image(transparent);
     border-radius: 0;
-    border:1px solid @borders;
+    border: none;
 }
 notebook > header.top {
   padding-bottom: 0;
@@ -1460,10 +1466,6 @@ notebook header button {
     min-width: 20px;
 }
 
-.header separator.vertical {
-    border-right-color: @borders;
-}
-
 notebook tab {
     background-image: none;
     background-color: transparent;
@@ -1474,15 +1476,15 @@ notebook tab {
     padding: 4px;
 }
 
-notebook tab:first-child {
-    border-width: 0 1px;
-    border-image: none;
-}
+notebook > header.top > tabs > tab:first-child,
+notebook > header.bottom > tabs > tab:first-child{ margin-left:6px;}
+notebook > header.left > tabs > tab:first-child,
+notebook > header.right > tabs > tab:first-child{ margin-top: 6px;}
 
-notebook tab:hover { background-image: image(alpha(@fg_color,0.1));}
+notebook tab:hover{background-color: alpha(currentcolor,0.15);}
 
 notebook tab:checked {
-    background-image: none;
+    background-image: image(@tab_base_color);
     border-color: transparent;
     border-image: none;
     border-radius: 0;
@@ -1492,16 +1494,16 @@ notebook tab:checked {
 }
 
 notebook > header.top > tabs > tab:checked {
-box-shadow: inset 0 -2px @selected_bg_color;
+box-shadow: 0 1px @tab_base_color,inset 0 3px @selected_bg_color, 1px 0 @borders, -1px 0 @borders, inset 0 1px @borders;
 }
 notebook > header.bottom > tabs > tab:checked {  
-box-shadow: inset 0 2px @selected_bg_color;
+box-shadow: 0 -1px @tab_base_color,inset 0 -3px @selected_bg_color, -1px 0 @borders, 1px 0 @borders, 0 1px @borders, inset 0 -1px @borders;
 }
 notebook > header.left > tabs > tab:checked {  
-box-shadow: inset -2px 0 @selected_bg_color;
+box-shadow: 1px 0 @tab_base_color,inset 3px 0 @selected_bg_color, 0 1px @borders, 0 -1px @borders, -1px 0 @borders, inset 1px 0 @borders;
  }
 notebook > header.right > tabs > tab:checked {
-box-shadow: inset 2px 0 @selected_bg_color;
+box-shadow: -1px 0 @tab_base_color,inset -3px 0 @selected_bg_color, 0 1px @borders, 0 -1px @borders, 1px 0 @borders, inset -1px 0 @borders ;
 }
 
 notebook tab > image {
@@ -1509,7 +1511,7 @@ notebook tab > image {
 }
 
 notebook viewport {
-    background-color: @tab_base_color;
+    background-color: @bg_color;
     border-width: 0;
 }
 
@@ -1530,17 +1532,14 @@ notebook tab > entry {
 
 notebook tab label {
     color: @insensitive_fg_color;
-    padding: 4px 6px;
-    font-weight: bold;
+    padding: 3px 6px;
 }
 
-notebook tab:hover label{}
 notebook tab:checked label,
 notebook .active-page,
 notebook tab .active-page label {
     color: @text_color;
 }
-
 
 /**************
  * Scrollbars *
@@ -1644,7 +1643,7 @@ switch slider {
   min-width: 12px;
   border-radius:9999px;
   -gtk-outline-radius:9999px;
-  background-color: @button;
+  background-color: @selected_fg_color;
   background-clip: padding-box;
   border: 1px solid;
   border-color: @borders_t;
@@ -1666,7 +1665,8 @@ switch:disabled slider {
 
 .view.content-view.check:not(list):checked, iconview.content-view.check:not(list):checked, .content-view:not(list) check:checked{
 -gtk-icon-source: -gtk-icontheme('object-select-symbolic');
-color: @selected_bg_color;
+color: @selected_fg_color;
+background-color: @selected_bg_color;
 }
 
 check,radio{margin-right: 4px;}
@@ -1684,13 +1684,13 @@ radiobutton.text-button label:not(:only-child) {
 check{border-radius: 3px;}
 radio{border-radius: 9999px;}
 
-check, treeview.view check:selected , treeview.view radio:selected,
+check,treeview.view check:selected , treeview.view radio:selected, 
 radio {
-  background-clip: padding-box;
+  background-clip: border-box;
   min-height: 14px;
   min-width: 14px;
   border: 1px solid;
-  border-color: @borders;
+  border-color: @borders_t;
   box-shadow:  0 1px alpha(@shadow,0.5);
   background-color: @button;
   -gtk-icon-shadow: none;
@@ -1699,13 +1699,12 @@ radio {
 
 check:active,radio:active{ background-image: image(alpha(@fg_color,0.15));}
 
-check:checked, check:indeterminate,
-radio:checked,treeview.view check:checked:selected , treeview.view radio:checked:selected,
+check:checked, check:indeterminate,treeview.view check:checked:selected , treeview.view radio:checked:selected,
+radio:checked,
 radio:indeterminate {
-  background-clip: padding-box;
-  background-color: @button;
+  background-color: @selected_bg_color;
   box-shadow: none;
-  color: @selected_bg_color;
+  color: @selected_fg_color;
 }
 
 check:checked:disabled, check:indeterminate:disabled,
@@ -1798,7 +1797,7 @@ scale fill:disabled {
 }
 
 scale slider {
-  background-color: @button;
+  background-color: @selected_fg_color;
   background-image: none;
   border: 1px solid;
   border-color:  @borders_t ;
@@ -2316,10 +2315,10 @@ infobar.error {
   background-color: alpha(@error_color,0.3);
 }
 
-infobar.info > label, infobar.info, infobar.info button{color: shade(@success_color,0.7);}
- infobar.question > label, infobar.question, infobar.question button{color: shade(@selected_bg_color,0.7);}
-  infobar.warning > label, infobar.warning, infobar.warning button{color: shade(@warning_color,0.7);}
-   infobar.error > label, infobar.error, infobar.error button {color: shade(@error_color,0.7);}
+infobar.info > label, infobar.info, infobar.info button{color: mix(@success_color,@fg_color,0.5);}
+ infobar.question > label, infobar.question, infobar.question button{color: mix(@selected_bg_color,@fg_color,0.5);}
+  infobar.warning > label, infobar.warning, infobar.warning button{color: mix(@warning_color,@fg_color,0.5);}
+   infobar.error > label, infobar.error, infobar.error button {color: mix(@error_color,@fg_color,0.5);}
    infobar label:disabled{color: @insensitive_fg_color;}
 
 infobar button,
@@ -2369,9 +2368,12 @@ treeview.view:selected, treeview.view:selected:focus{  background-color: @base_c
 
 row.activatable:selected,.view.places-treeview.view:selected ,.geary-folder-frame .view.sidebar treeview.view:selected{ background-color: transparent;}
 
-row.activatable:hover, treeview.view:hover {background-image: image(alpha(@fg_color,0.1));}
+row.activatable:hover, treeview.view:hover {background-image: image(alpha(@selected_bg_color,0.2));}
 
-row.activatable:selected,.view.places-treeview.view:selected,treeview.view:selected, treeview.view:selected:focus ,.geary-folder-frame .view.sidebar treeview.view:selected,
+row.activatable:selected,.view.places-treeview.view:selected,treeview.view:selected, treeview.view:selected:focus ,.geary-folder-frame .view.sidebar treeview.view:selected{
+background-image: image(alpha(@selected_bg_color,0.3));
+color: inherit;
+}
 
 .view selection, .view:selected,  label selection, spinbutton:not(.vertical) selection, entry selection, modelbutton.flat:selected,.menuitem.button.flat:selected, popover.background.menu button:checked,popover.background button.model:checked, calendar:selected, .nautilus-window flowboxchild:selected .icon-item-background, box.vertical > widget > widget:selected,  calendar.raven-calendar:selected, XfdesktopIconView.view:active, .nemo-window .nemo-window-pane widget.entry:selected {
   background-color: @theme_selected_bg_color;
@@ -3104,7 +3106,6 @@ na-tray-applet {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-
 #mate-menu {
   border: 1px solid @borders_t;
 }
@@ -3133,6 +3134,8 @@ na-tray-applet {
   margin: 0 4px 8px;
   padding: 4px;
 }
+
+.brisk-menu list.content-view.view row.activatable > button.flat {background-color: transparent;}
 
 /********
  * XFCE *
@@ -3261,6 +3264,8 @@ button.chromium{border: 1px solid shade(@bg_color,0.8);}
 
 .titlebar.chromium {padding: 0 4px;}
 
+.titlebar button.chromium:backdrop{color: alpha(currentcolor,0.5);}
+
 window.background.chromium spinner {
   color: @theme_selected_bg_color;
 }
@@ -3314,7 +3319,7 @@ menu.chromium{border: 1px solid @borders;}
 
 .budgie-menu .categories button.flat{padding: 8px 0;}
 
-.budgie-menu .categories button.flat:checked{ background-color: @selected_bg_color; color: @selected_fg_color;}
+.budgie-menu .categories button.flat:checked{ background-color: alpha(@fg_color,0.2); box-shadow: inset 4px 0 currentcolor;}
 
 .budgie-popover separator{ margin: 6px 0;}
 
@@ -3347,7 +3352,7 @@ menu.chromium{border: 1px solid @borders;}
 	border-radius: 3px;
 	background-image: none;
 	box-shadow: 0 1px 2px @shadow, 0 0 0 1px @borders_t;
-	background-color: shade(@panel_bg,2.0);
+	background-color: mix(@panel_bg,@panel_fg,0.2);
 	}
 
 .budgie-panel button.flat{background-color: transparent; padding: 0; margin: 0;}
@@ -3356,19 +3361,19 @@ button.flat.launcher image{-gtk-icon-shadow: 0 1px 2px alpha(black,0.5);}
 
 .bottom .dock-mode{
 border-radius: 3px 3px 0 0;
-box-shadow: inset 0 1px @borders, inset 1px 0 @borders, inset -1px 0 @borders;
+box-shadow: inset 0 1px mix(@panel_bg,@panel_fg,0.2), inset 1px 0 mix(@panel_bg,@panel_fg,0.2), inset -1px 0 mix(@panel_bg,@panel_fg,0.2);
 }
 .top .dock-mode{
 border-radius: 0 0 3px 3px;
-box-shadow: inset 0 -1px @borders, inset 1px 0 @borders, inset -1px 0 @borders;
+box-shadow: inset 0 -1px mix(@panel_bg,@panel_fg,0.2), inset 1px 0 mix(@panel_bg,@panel_fg,0.2), inset -1px 0 mix(@panel_bg,@panel_fg,0.2);
 }
 .left .dock-mode{
 border-radius: 0 3px 3px 0;
-box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset -1px 0 @borders;
+box-shadow: inset 0 -1px mix(@panel_bg,@panel_fg,0.2), inset 0 1px mix(@panel_bg,@panel_fg,0.2), inset -1px 0 mix(@panel_bg,@panel_fg,0.2);
 }
 .right .dock-mode{
 border-radius: 3px 0 0 3px;
-box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset 1px 0 @borders;
+box-shadow: inset 0 -1px mix(@panel_bg,@panel_fg,0.2), inset 0 1px mix(@panel_bg,@panel_fg,0.2), inset 1px 0 mix(@panel_bg,@panel_fg,0.2);
 }
 
 .budgie-panel button.launcher.flat,.budgie-panel button.budgie-menu-launcher{background-color: transparent; border: none; border-radius: 0; color: @panel_fg; transition: none;}
@@ -3385,23 +3390,19 @@ box-shadow: inset 0 -1px @borders, inset 0 1px @borders, inset 1px 0 @borders;
 
 .raven-background  stackswitcher.linked { padding: 12px;}
 
-.raven .raven-header.top  stackswitcher.linked {
-	background-color: @wbg;
-	border-radius: 9999px;
-	padding: 4px 6px;
-	margin: -8px 0;
-	}
+.raven .raven-header.top  stackswitcher.linked {margin: -8px ;	}
+
 .raven .raven-header.top  stackswitcher.linked > button {
 	border-image: none;
-	background-color: transparent;
+	background-color: alpha(@fg_color,0.2);
 	background-image: none;
 	border: none;
 	box-shadow: none;
 	font-weight: bold;
-	padding: 6px;
+	padding: 6px 12px;
 }
 
-.raven .raven-header.top  stackswitcher.linked > button:checked {  background-color: @base_color;	border-radius: 9999px;}
+.raven .raven-header.top  stackswitcher.linked > button:checked {  background-color: alpha(@fg_color,0.5); color: @selected_fg_color; }
 
 .raven{background-color: @bg_color;  padding: 8px; }
 
@@ -3853,11 +3854,11 @@ UnityPanelWidget, .unity-panel {
 @define-color notibg @base_color;
 @define-color wbg shade(@bg_color,0.85);
 @define-color invertbg alpha(black,0.1);
-@define-color panel_bg shade(@colorPrimary,0.8);
+@define-color panel_bg white;
 @define-color panel_fg @fg_color;
 
 @define-color colorPrimary shade(@bg_color,0.9);
-@define-color colorPrimaryBackdrop @bg_color;
+@define-color colorPrimaryBackdrop shade(@colorPrimary,1.11);
 @define-color textColorPrimary @fg_color;
 @define-color sidebar_color shade(@bg_color,0.95);
 
@@ -3889,7 +3890,7 @@ UnityPanelWidget, .unity-panel {
 @define-color borders_t alpha(black,0.3);
 
 @define-color content_view_bg @base_color;
-@define-color highlight alpha(@selected_fg_color,0.2);
+@define-color highlight alpha(@selected_fg_color,0.15);
 @define-color shadow alpha(black,0.2);
 @define-color deco alpha(black,0.4);
 

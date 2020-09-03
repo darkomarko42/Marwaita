@@ -153,7 +153,7 @@ style "murrine-button" = "murrine-wider"{
 	bg[ACTIVE]                  = shade(0.8,@base_color)
 	bg[NORMAL]                  = @base_color
 	bg[PRELIGHT]				= shade(0.9,@base_color)
-	bg[SELECTED]				= @selected_fg_color
+	bg[SELECTED]				= @selected_bg_color
 	bg[INSENSITIVE]				= @bg_color
 	
 	engine "murrine" {
@@ -171,6 +171,8 @@ style "murrine-notebook"
 
   xthickness	= 5
   ythickness	= 2
+  
+  engine "clearlooks" {}
 
 }
 
@@ -326,8 +328,8 @@ style "murrine-scale"
 	GtkScale       ::slider-length = 14
 	GtkScale		    ::trough-side-details			    = 1
 
-	bg[NORMAL]	= @base_color
-	bg[PRELIGHT]	= @base_color
+	bg[NORMAL]	= @selected_fg_color
+	bg[PRELIGHT]	= @selected_bg_color
 	bg[ACTIVE]	= shade(0.9,@bg_color)
 	bg[SELECTED]	= @selected_bg_color
 
@@ -335,7 +337,6 @@ style "murrine-scale"
 
 	engine "murrine" 
 	{
-		gradient_shades     = {1.0, 1.0, 1.0, 0.9} 
 		contrast                = 1.2
 		lightborder_shade	= 1.0
 		lightborderstyle		= 1
@@ -387,9 +388,9 @@ style "murrine-nautilus-location"
 
 style "murrine-radiocheck" 
 {
-	text[NORMAL]   = @selected_bg_color            # Text in window
-	text[PRELIGHT] = @selected_bg_color            # Text on Mouseover
-	text[ACTIVE]   = @selected_bg_color             # Text on click
+	text[NORMAL]   = @selected_fg_color            # Text in window
+	text[PRELIGHT] = @selected_fg_color            # Text on Mouseover
+	text[ACTIVE]   = @selected_fg_color             # Text on click
 
 	bg[SELECTED] = @base_color
 
