@@ -100,9 +100,6 @@ label selection {
   background-color: @selected_bg_color;
 }
 
-label:disabled {
-  color: @insensitive_fg_color; }
-
 .dim-label, label.separator, popover label.separator,
 popover.background label.separator, headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
@@ -318,22 +315,23 @@ button:active, button:checked,dialog .titlebar button.text-button:not(.suggested
   box-shadow: none;
 }
 
+/* Disabled and backdrop buttons */
+
 button:disabled,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):disabled,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled { box-shadow: none; background-image: none;}
 
 button:disabled,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):disabled{background-color: @bg_color;}
 
 .titlebar button.text-button:not(.suggested-action):not(.destructive-action):disabled,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):disabled{background-color: @colorPrimaryBackdrop ;}
 
-button:disabled label , button:disabled image, .titlebar button:backdrop label, .titlebar button:backdrop image,.titlebar:backdrop label, .titlebar:backdrop image, label:disabled,
-.titlebar.default-decoration button.titlebutton:backdrop,button:disabled:active label, button:disabled:active, button:disabled:checked label, button:disabled:checked,
-button:disabled ,notebook arrow:disabled,headerbar:backdrop,
-.titlebar:backdrop:not(headerbar){color: mix(@colorPrimary,@textColorPrimary,0.5);}
+button:disabled:active, button:disabled:checked {  background-color: alpha(shade(@button,0.8), 0.5);}
 
-button.suggested-action:backdrop label,button.suggested-action:backdrop image,button.destructive-action:backdrop label,button.destructive-action:backdrop image{ color: alpha(currentcolor,0.5);}
+.titlebar:backdrop label, .titlebar:backdrop image {opacity: 0.5;}
 
-button:disabled:active, button:disabled:checked {
-  background-color: alpha(shade(@button,1.2), 0.5);
-}
+.titlebar.default-decoration button.titlebutton:backdrop,.titlebar.default-decoration:backdrop,.titlebar button.chromium:backdrop{color:alpha(@textColorPrimary,0.5);}
+
+button:disabled ,label:disabled,image:disabled{ color: alpha(@fg_color,0.5);}
+
+.titlebar button:disabled , .titlebar label:disabled, .titlebar image:disabled,.titlebar button.suggested-action:disabled,.titlebar button.destructive-action:disabled{ color: alpha(currentcolor,0.5);}
 
 button separator {}
 
@@ -1511,7 +1509,7 @@ notebook tab > image {
 }
 
 notebook viewport {
-    background-color: @bg_color;
+    background-color: @tab_base_color;
     border-width: 0;
 }
 
@@ -1620,7 +1618,7 @@ switch {
   font-size: 0;
 }
 
-switch image, switch image:backdrop,.titlebar switch image,.titlebar switch image:backdrop  {
+switch image, switch image:backdrop,.titlebar switch image,.titlebar switch image:backdrop, switch:disabled image  {
 color:transparent;
 }
 
@@ -1652,7 +1650,7 @@ switch slider {
 }
 
 switch:disabled slider {
-  background-color: alpha(@button,0.5);
+  background-color: alpha(@selected_fg_color,0.5);
   background-image: none;
   box-shadow: none;
 }

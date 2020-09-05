@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="46"
+   height="22"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="toggle-on-dark.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="21.73913"
+     inkscape:cx="23"
+     inkscape:cy="16.52"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <defs
+     id="defs8">
+    <linearGradient
+       id="a">
+      <stop
+         offset="0"
+         stop-color="#39393a"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#2f2f30"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#a"
+       id="b"
+       x1="53"
+       y1="294.429"
+       x2="53"
+       y2="309.804"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-19,-291.18)" />
+  </defs>
+  <rect
+     id="rect10"
+     fill="#15539e"
+     ry="10.597581"
+     rx="10.820546"
+     y="0"
+     x="0"
+     height="22"
+     width="46"
+     style="fill:#0f6ee3;fill-opacity:1;stroke:none;stroke-width:1.13218;marker:none" />
+  <rect
+     id="rect12"
+     fill="url(#b)"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.722416;marker:none"
+     width="14"
+     height="14"
+     x="28"
+     y="4"
+     rx="6.9228587"
+     ry="6.9996653" />
+</svg>
