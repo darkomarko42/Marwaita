@@ -323,7 +323,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active { backg
 
 .message-media-control:active { background-color: rgba(0,0,0, 0.2); color: rgba(0,0,0, 0.8); }
 
-.message-media-control:insensitive { color: black; }
+.message-media-control:insensitive { color: rgba(0,0,0, 0.4); }
 
 .message-media-control:first-child:ltr { border-radius: 3px 0 0 3px; }
 
