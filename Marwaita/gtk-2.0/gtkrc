@@ -329,7 +329,7 @@ style "murrine-scale"
 	GtkScale		    ::trough-side-details			    = 1
 
 	bg[NORMAL]	= @selected_fg_color
-	bg[PRELIGHT]	= @selected_bg_color
+	bg[PRELIGHT]	= @selected_fg_color
 	bg[ACTIVE]	= shade(0.9,@bg_color)
 	bg[SELECTED]	= @selected_bg_color
 
