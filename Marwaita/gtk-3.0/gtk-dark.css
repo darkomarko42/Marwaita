@@ -312,7 +312,7 @@ button:hover ,.titlebar button.text-button:not(.suggested-action):not(.destructi
   background-image: image(alpha(currentcolor,0.1));
 }
 
-button:checked,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked{
+button:checked,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked,button:checked:active,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked:active,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked:active,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked:active{
   background-image: image(alpha(currentcolor,0.3));
   box-shadow: none;
 }
@@ -324,8 +324,6 @@ button:active, dialog .titlebar button.text-button:not(.suggested-action):not(.d
   background-image: image(alpha(currentcolor,0.2));
   box-shadow: none;
 }
-
-button:checked:active,dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked:active,.titlebar button.text-button:not(.suggested-action):not(.destructive-action):checked:active,.titlebar .linked button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.text-button):checked:active{background-image: none;}
 
 /* Disabled and backdrop buttons */
 
