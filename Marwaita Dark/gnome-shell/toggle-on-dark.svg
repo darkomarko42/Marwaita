@@ -8,12 +8,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="46"
-   height="22"
-   version="1.1"
-   id="svg16"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="toggle-on-dark.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   id="svg16"
+   version="1.1"
+   height="22"
+   width="46">
   <metadata
      id="metadata20">
     <rdf:RDF>
@@ -26,67 +26,67 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:document-rotation="0"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1019"
-     id="namedview18"
-     showgrid="false"
-     inkscape:zoom="21.73913"
-     inkscape:cx="23"
-     inkscape:cy="16.52"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:current-layer="svg16"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg16" />
+     inkscape:window-y="27"
+     inkscape:window-x="53"
+     inkscape:cy="16.52"
+     inkscape:cx="21.85"
+     inkscape:zoom="21.73913"
+     showgrid="false"
+     id="namedview18"
+     inkscape:window-height="1019"
+     inkscape:window-width="1867"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0" />
   <defs
      id="defs8">
     <linearGradient
        id="a">
       <stop
-         offset="0"
+         id="stop2"
          stop-color="#39393a"
-         id="stop2" />
+         offset="0" />
       <stop
-         offset="1"
+         id="stop4"
          stop-color="#2f2f30"
-         id="stop4" />
+         offset="1" />
     </linearGradient>
     <linearGradient
-       xlink:href="#a"
-       id="b"
-       x1="53"
-       y1="294.429"
-       x2="53"
-       y2="309.804"
+       gradientTransform="translate(-19,-291.18)"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-19,-291.18)" />
+       y2="309.804"
+       x2="53"
+       y1="294.429"
+       x1="53"
+       id="b"
+       xlink:href="#a" />
   </defs>
   <rect
-     id="rect10"
-     fill="#15539e"
-     ry="10.597581"
-     rx="10.820546"
-     y="0"
-     x="0"
-     height="22"
+     style="fill:#0080ff;fill-opacity:1;stroke:none;stroke-width:1.13218;marker:none"
      width="46"
-     style="fill:#0f6ee3;fill-opacity:1;stroke:none;stroke-width:1.13218;marker:none" />
+     height="22"
+     x="0"
+     y="0"
+     rx="10.820546"
+     ry="10.597581"
+     fill="#15539e"
+     id="rect10" />
   <rect
-     id="rect12"
-     fill="url(#b)"
-     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.722416;marker:none"
-     width="14"
-     height="14"
-     x="28"
-     y="4"
+     ry="6.9996653"
      rx="6.9228587"
-     ry="6.9996653" />
+     y="4"
+     x="28"
+     height="14"
+     width="14"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.722416;marker:none"
+     fill="url(#b)"
+     id="rect12" />
 </svg>

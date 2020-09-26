@@ -1,7 +1,7 @@
 
 # GTK originally based on Ubuntu Human code
 
-gtk_color_scheme = "fg_color:#fff\nbg_color:#3d3d3d\nbase_color:#565656\ntext_color:#fff\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
+gtk_color_scheme = "fg_color:#fff\nbg_color:#555\nbase_color:#6e6e6e\ntext_color:#fff\nselected_bg_color:#0080ff\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
 
 # Comment the following line for large buttons
 gtk-icon-sizes = "gtk-button=16,16"
@@ -47,8 +47,8 @@ style "murrine-default"
 
   	#GtkScrolledWindow::scrollbar-spacing	= 1 # This sets the spacing between scrollbars.
 
-	#GtkToolbar     :: shadow-type		= GTK_SHADOW_NONE
-       GtkMenuBar     :: shadow-type          = GTK_SHADOW_NONE
+#	GtkToolbar     :: shadow-type		= GTK_SHADOW_NONE
+        GtkMenuBar     :: shadow-type          = GTK_SHADOW_NONE
 
 	GtkWidget      :: link-color           = @selected_bg_color
 	GtkWidget      :: visited-link-color   = shade (0.2, @selected_bg_color)
@@ -86,7 +86,7 @@ style "murrine-default"
 		animation           = TRUE  # FALSE = disabled, TRUE = enabled
 		focusstyle              = 1
 		colorize_scrollbar  = TRUE # FALSE = disabled, TRUE = enabled
-		contrast            = 1.5   # 0.8 for less contrast, more than 1.0 for more contrast on borders
+		contrast            = 1.0   # 0.8 for less contrast, more than 1.0 for more contrast on borders
 		glazestyle          = 0     # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades     = {1.0, 1.0, 1.0, 1.0} # default: {1.1,1.0,1.0,1.1}
 		highlight_shade     = 1.0  # set highlight amount for buttons or widgets
@@ -106,7 +106,7 @@ style "murrine-default"
 		sliderstyle         = 0     # 0 = nothing added, 1 = handles
 		stepperstyle        = 0     # 0 = standard, 1 = integrated stepper handles, 2 = unknown
 #		style		    = MURRINE # engine style options: CANDIDO, CLEARLOOKS, MIST, MURRINE, NODOKA
-		toolbarstyle	    = 0     # 0 = flat, 1 = glassy, 2 = gradient
+		toolbarstyle	    = 1     # 0 = flat, 1 = glassy, 2 = gradient
 		progressbarstyle        = 0
 	}
 }
@@ -125,25 +125,26 @@ style "murrine-wider"
 
 style "murrine-entry" = "murrine-wider"{
 
-	bg[SELECTED]	  =  mix(0.3, @tooltip_bg_color, @selected_fg_color)
+	bg[SELECTED]	  =   @selected_bg_color
 	bg[NORMAL]	  =  mix(0.3, @tooltip_bg_color, @selected_fg_color)
 	
 	fg[NORMAL]	=	@fg_color
 	fg[SELECTED]	=	@fg_color
 	
 	engine "murrine" {
-		contrast                = 1.6
+		contrast                = 0.0
 		reliefstyle	     = 0
 		roundness			= 0
-		focusstyle              = 0
+		focusstyle              = 1
 		shadow_shades           = { 0.0, 0.0 }
+		border_shades           = {0.3, 0.3}
 	}
 }
 
 style "murrine-separator"{
 
 	engine "murrine" {
-		contrast                = 1.7
+		contrast                = 1.0
 	}
 }
 
@@ -156,10 +157,12 @@ style "murrine-button" = "murrine-wider"{
 	bg[INSENSITIVE]				= @bg_color
 	
 	engine "murrine" {
-		contrast                = 1.8
+		contrast                = 1.0
 		lightborder_shade	= 1.0
 		lightborderstyle		= 2
 		roundness			= 3
+		gradient_shades     = {1.0, 1.0, 1.0, 0.95} 
+		border_shades           = {0.7, 0.7}
 	}
 }
 
@@ -189,7 +192,7 @@ style "murrine-menubar"
 	bg[NORMAL] = @bg_color
 
 engine "murrine" {
-		contrast                = 0.0
+		contrast                = 1.0
 		lightborder_shade = 1.0
 	}
 
@@ -201,7 +204,7 @@ style "murrine-menu" = "murrine-wider"
   xthickness = 0
   ythickness = 2
 
-	bg[NORMAL] = shade(1.2,@base_color)
+	bg[NORMAL] = @base_color
 
 
 	engine "murrine" {
@@ -216,9 +219,9 @@ style "murrine-menu-item"
   xthickness = 0
   ythickness = 4
 
-	bg[PRELIGHT] = shade(1.4, @base_color)
+	bg[PRELIGHT] = shade(1.2, @base_color)
 	fg[PRELIGHT] = @fg_color
-	bg[SELECTED] = shade(1.4, @base_color)
+	bg[SELECTED] = shade(1.2, @base_color)
 	fg[SELECTED] = @fg_color
 
 	text[NORMAL]	= @fg_color
@@ -245,7 +248,7 @@ style "murrine-menubar-item" = "murrine-menu-item"
 # Based on default clearlooks
 style "murrine-separator-menu-item"
 {
-	GtkSeparatorMenuItem::horizontal-padding = 8
+	GtkSeparatorMenuItem::horizontal-padding = 0
 	# We are setting the desired height by using wide-separators
 	# There is no other way to get the odd height ...
 	GtkWidget::wide-separators = 1
@@ -255,7 +258,7 @@ style "murrine-separator-menu-item"
 	ythickness = 1
 	bg[NORMAL]	=  @bg_color
 	
-	 engine "murrine" { contrast = 1.5 }
+	 engine "murrine" { contrast = 1.0 }
 }
 
 style "murrine-treeview"
@@ -264,8 +267,7 @@ style "murrine-treeview"
 
 style "murrine-treeview-header" = "murrine-default"
 {
-	bg[NORMAL] = shade(0.9,@bg_color)
-	bg[ACTIVE] = shade(0.6,@bg_color)
+
 }
 
 style "murrine-frame-title"
@@ -293,7 +295,7 @@ style "murrine-progressbar"
 		fg[PRELIGHT] = @selected_fg_color
 		
 	engine "murrine" {
-		contrast                = 1.5
+		contrast                = 2.0
 		lightborder_shade	= 1.0
 		lightborderstyle		= 1
 		roundness			= 0
@@ -329,7 +331,7 @@ style "murrine-scale"
 
 	bg[NORMAL]	= @selected_fg_color
 	bg[PRELIGHT]	= @selected_fg_color
-	bg[ACTIVE]	= shade(0.9,@bg_color)
+	bg[ACTIVE]	= shade(1.2,@bg_color)
 	bg[SELECTED]	= @selected_bg_color
 
 
@@ -340,8 +342,7 @@ style "murrine-scale"
 		lightborder_shade	= 1.0
 		lightborderstyle		= 1
 		roundness			= 9999
-		border_shades           = { 0.6, 0.6 }
-
+		border_shades			= { 0.2, 0.2}
 	}
 }
 
@@ -356,14 +357,14 @@ style "murrine-vscale"
 
 style "murrine-scrollbar"
 {
-	bg[SELECTED]				= shade(2.0,@base_color)
+	bg[SELECTED]				= shade (1.5, @bg_color)
 	
 	engine "murrine" {
 		roundness			= 0
 		gradient_shades			= {1.0,1.0,1.0,1.0}
 		highlight_shade			= 1.0
 		glow_shade			= 1.0
-		reliefstyle			= 0
+		reliefstyle			= 1
 		gradient_colors			= FALSE
     	lightborder_shade		= 1.0
 		lightborderstyle		= 1
@@ -531,7 +532,7 @@ style "murrine-toolbar" {
 
 	bg[NORMAL] = @bg_color
 		engine "murrine" {
-		contrast			= 1.3
+		contrast			= 1.0
 		highlight_shade     = 1.0
 		}
 }
@@ -672,7 +673,7 @@ style "murrine-fg-is-text-color-workaround"
 	fg[PRELIGHT]    = @text_color
 	fg[ACTIVE]      = @fg_color
 	fg[SELECTED]    = @fg_color
-	fg[INSENSITIVE] = shade (0.5, @bg_color)
+	fg[INSENSITIVE] = shade (0.5, @fg_color)
 }
 
 widget_class "*<GtkListItem>*" 				style "murrine-fg-is-text-color-workaround"

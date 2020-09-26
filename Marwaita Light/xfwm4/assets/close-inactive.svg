@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="close-inactive.svg"
-   id="svg12"
-   version="1.1"
-   viewBox="0 0 32 32"
+   width="32"
    height="32"
-   width="32">
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="close-inactive.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -29,59 +29,52 @@
   <defs
      id="defs16" />
   <sodipodi:namedview
-     inkscape:document-rotation="0"
-     inkscape:current-layer="svg12"
-     inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:cy="17.830508"
-     inkscape:cx="-9.8305093"
-     inkscape:zoom="7.375"
-     showgrid="false"
-     id="namedview14"
-     inkscape:window-height="1007"
-     inkscape:window-width="1920"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="7.375"
+     inkscape:cx="-12.677967"
+     inkscape:cy="17.830508"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12"
+     inkscape:document-rotation="0" />
   <rect
-     style="fill:#e6e6e6;fill-opacity:1"
-     id="rect2"
-     fill="#E0E0E0"
+     width="32"
      height="32"
-     width="32" />
-  <rect
-     style="fill:#969696;fill-opacity:1"
-     id="rect4"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     height="1"
-     width="32" />
-  <g
-     style="opacity:0.38"
-     id="g10"
-     opacity="0.6"
-     fill="#000000">
-    <circle
-       id="circle6"
-       opacity="0"
-       r="12"
-       cy="16"
-       cx="16" />
-    <path
-       id="path8"
-       d="M21 12.41L19.59 11 16 14.59 12.41 11 11 12.41 14.59 16 11 19.59 12.41 21 16 17.41 19.59 21 21 19.59 17.41 16z" />
-  </g>
+     fill="#E0E0E0"
+     id="rect2"
+     style="fill:#eeeeee;fill-opacity:1" />
   <rect
      width="32"
      height="1"
-     id="rect4-3"
-     x="0"
-     y="1"
-     style="opacity:0.2;fill:#ffffff;fill-opacity:1;stroke-width:4" />
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect4"
+     style="fill:#969696;fill-opacity:1" />
+  <g
+     fill="#000000"
+     opacity="0.6"
+     id="g10"
+     style="opacity:0.5">
+    <circle
+       cx="16"
+       cy="16"
+       r="12"
+       opacity="0"
+       id="circle6" />
+    <path
+       d="M21 12.41L19.59 11 16 14.59 12.41 11 11 12.41 14.59 16 11 19.59 12.41 21 16 17.41 19.59 21 21 19.59 17.41 16z"
+       id="path8" />
+  </g>
 </svg>

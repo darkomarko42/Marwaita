@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="menu-inactive.svg"
-   id="svg30"
-   version="1.1"
-   viewBox="0 0 32 32"
+   width="32"
    height="32"
-   width="32">
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg30"
+   sodipodi:docname="menu-inactive.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata36">
     <rdf:RDF>
@@ -28,60 +28,54 @@
   <defs
      id="defs34" />
   <sodipodi:namedview
-     inkscape:document-rotation="0"
-     inkscape:current-layer="svg30"
-     inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:cy="14.711864"
-     inkscape:cx="-57.830508"
-     inkscape:zoom="7.375"
-     showgrid="false"
-     id="namedview32"
-     inkscape:window-height="1007"
-     inkscape:window-width="1920"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     id="namedview32"
+     showgrid="false"
+     inkscape:zoom="7.375"
+     inkscape:cx="-22.261838"
+     inkscape:cy="12.60971"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg30"
+     inkscape:document-rotation="0" />
   <rect
-     style="fill:#e6e6e6;fill-opacity:1"
-     id="rect20"
-     fill="#D6D6D6"
+     width="32"
      height="32"
-     width="32" />
-  <rect
-     style="fill:#969696;fill-opacity:1"
-     id="rect22"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     height="1"
-     width="32" />
-  <g
-     id="g28"
-     opacity="0.38"
-     fill="#000000">
-    <circle
-       id="circle24"
-       opacity="0"
-       r="12"
-       cy="16"
-       cx="16" />
-    <circle
-       id="circle26"
-       r="2"
-       cy="16"
-       cx="16" />
-  </g>
+     fill="#D6D6D6"
+     id="rect20"
+     style="fill:#eeeeee;fill-opacity:1" />
   <rect
      width="32"
      height="1"
-     id="rect4-3"
-     x="0"
-     y="1"
-     style="opacity:0.2;fill:#ffffff;fill-opacity:1;stroke-width:4" />
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect22"
+     style="fill:#969696;fill-opacity:1" />
+  <g
+     style="opacity:0.5"
+     fill="#000000"
+     opacity="0.38"
+     id="g28">
+    <circle
+       cx="16"
+       cy="16"
+       r="12"
+       opacity="0"
+       id="circle24" />
+    <circle
+       cx="16"
+       cy="16"
+       r="2"
+       id="circle26" />
+  </g>
 </svg>
