@@ -13,7 +13,7 @@
    version="1.1"
    id="svg102"
    sodipodi:docname="shade-toggled-inactive.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata108">
     <rdf:RDF>
@@ -37,11 +37,11 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1000"
      id="namedview104"
      showgrid="false"
      inkscape:zoom="7.375"
-     inkscape:cx="-5.4410044"
+     inkscape:cx="-15.610496"
      inkscape:cy="14.295286"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -53,7 +53,7 @@
      height="32"
      fill="#D6D6D6"
      id="rect92"
-     style="fill:#eeeeee;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1" />
   <rect
      width="32"
      height="1"
@@ -76,4 +76,13 @@
        d="m22 14-1.41-1.41-4.59 4.59-4.59-4.59-1.41 1.41l6 6z"
        id="path98" />
   </g>
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166"
+     style="fill:#969696;fill-opacity:1"
+     x="0"
+     y="31" />
 </svg>

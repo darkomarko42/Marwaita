@@ -13,7 +13,7 @@
    version="1.1"
    id="svg6"
    sodipodi:docname="top-left-active.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -38,12 +38,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1000"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="18.627844"
-     inkscape:cx="-1.998308"
-     inkscape:cy="10.787434"
+     inkscape:zoom="46.669048"
+     inkscape:cx="-6.4099856"
+     inkscape:cy="4.2700927"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -53,7 +53,7 @@
      width="2"
      height="32"
      id="rect2"
-     style="fill:#4c4c4c;fill-opacity:1"
+     style="fill:#454545;fill-opacity:1"
      fill="#E0E0E0" />
   <rect
      width="2"
@@ -61,12 +61,19 @@
      id="rect4"
      x="0"
      y="0"
-     style="fill:#1d1d1d;fill-opacity:1;stroke-width:1" />
+     style="fill:#000000;fill-opacity:1;stroke-width:1" />
   <rect
      width="1"
      height="32"
      id="rect4-8"
      x="0"
      y="0"
-     style="fill:#1d1d1d;fill-opacity:1;stroke-width:4" />
+     style="fill:#000000;fill-opacity:1;stroke-width:4" />
+  <rect
+     width="2"
+     height="1"
+     id="rect4-5"
+     x="1.1920929e-07"
+     y="31"
+     style="fill:#000000;fill-opacity:1;stroke-width:1" />
 </svg>

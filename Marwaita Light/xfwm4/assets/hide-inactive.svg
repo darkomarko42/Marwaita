@@ -13,7 +13,7 @@
    version="1.1"
    id="svg12"
    sodipodi:docname="hide-inactive.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -38,11 +38,11 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
+     inkscape:window-height="1000"
      id="namedview14"
      showgrid="false"
      inkscape:zoom="7.375"
-     inkscape:cx="-5.3303598"
+     inkscape:cx="-15.499852"
      inkscape:cy="34.386966"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -54,7 +54,7 @@
      height="32"
      fill="#E0E0E0"
      id="rect2"
-     style="fill:#eeeeee;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1" />
   <rect
      width="32"
      height="1"
@@ -77,4 +77,13 @@
        d="m12 18h8v2h-8z"
        id="path8" />
   </g>
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166"
+     style="fill:#969696;fill-opacity:1"
+     x="0"
+     y="31" />
 </svg>

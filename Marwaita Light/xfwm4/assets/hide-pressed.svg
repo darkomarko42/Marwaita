@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="hide-pressed.svg"
    id="svg12"
    version="1.1"
@@ -35,7 +35,7 @@
      inkscape:window-y="0"
      inkscape:window-x="0"
      inkscape:cy="24.522915"
-     inkscape:cx="7.4425065"
+     inkscape:cx="-5.5744426"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
@@ -50,7 +50,7 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#d6d6d6;fill-opacity:1"
+     style="fill:#d7d7d7;fill-opacity:1"
      id="rect2"
      fill="#E0E0E0"
      height="32"
@@ -87,4 +87,13 @@
        id="path8"
        d="m12 18h8v2h-8z" />
   </g>
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166"
+     style="fill:#969696;fill-opacity:1"
+     x="-1.9073486e-06"
+     y="31" />
 </svg>

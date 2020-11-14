@@ -13,7 +13,7 @@
    version="1.1"
    id="svg6"
    sodipodi:docname="title-active.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -41,8 +41,8 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="26.34375"
-     inkscape:cx="-12.380783"
-     inkscape:cy="16"
+     inkscape:cx="-16.024912"
+     inkscape:cy="28.147094"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -52,7 +52,7 @@
      width="2"
      height="32"
      id="rect2"
-     style="fill:#d6d6d6;fill-opacity:1"
+     style="fill:#d7d7d7;fill-opacity:1"
      fill="#E0E0E0" />
   <rect
      width="2"
@@ -61,4 +61,11 @@
      fill-opacity="0.4"
      fill="#FFFFFF"
      style="fill:#969696;fill-opacity:1" />
+  <rect
+     width="2"
+     height="1"
+     id="rect4-5"
+     x="0"
+     y="31"
+     style="fill:#969696;fill-opacity:1;stroke-width:1" />
 </svg>

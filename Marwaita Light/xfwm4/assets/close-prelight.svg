@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="close-prelight.svg"
    id="svg12"
    version="1.1"
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,7 +35,7 @@
      inkscape:window-y="0"
      inkscape:window-x="0"
      inkscape:cy="14.305084"
-     inkscape:cx="-15.593222"
+     inkscape:cx="-28.610173"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
@@ -50,7 +50,7 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#d6d6d6;fill-opacity:1"
+     style="fill:#d7d7d7;fill-opacity:1"
      id="rect2"
      fill="#E0E0E0"
      height="32"
@@ -87,4 +87,13 @@
        id="path8"
        d="M21 12.41L19.59 11 16 14.59 12.41 11 11 12.41 14.59 16 11 19.59 12.41 21 16 17.41 19.59 21 21 19.59 17.41 16z" />
   </g>
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166"
+     style="fill:#969696;fill-opacity:1"
+     x="0"
+     y="31" />
 </svg>
