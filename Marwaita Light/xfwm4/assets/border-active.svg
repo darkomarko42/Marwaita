@@ -13,7 +13,7 @@
    version="1.1"
    id="svg4"
    sodipodi:docname="border-active.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -41,15 +41,16 @@
      inkscape:window-height="1007"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="118"
-     inkscape:cx="-0.35169487"
-     inkscape:cy="0.77118645"
+     inkscape:zoom="41.7193"
+     inkscape:cx="-6.3888784"
+     inkscape:cy="7.742214"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
+     inkscape:current-layer="svg4"
+     inkscape:document-rotation="0" />
   <rect
-     style="opacity:1;fill:#969696;fill-opacity:1;stroke:none;stroke-width:0.1338568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="opacity:1;fill:#b2b2b2;fill-opacity:1;stroke:none;stroke-width:0.133857;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect4514"
      width="1"
      height="1"

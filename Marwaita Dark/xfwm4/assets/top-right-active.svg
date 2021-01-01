@@ -38,12 +38,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1000"
+     inkscape:window-height="1007"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="18.627844"
-     inkscape:cx="-26.865271"
-     inkscape:cy="19.443711"
+     inkscape:zoom="74.511376"
+     inkscape:cx="-4.1026543"
+     inkscape:cy="30.367837"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -53,27 +53,19 @@
      width="2"
      height="32"
      id="rect2"
-     style="fill:#454545;fill-opacity:1"
+     style="fill:#373737;fill-opacity:1"
      fill="#E0E0E0" />
-  <rect
-     width="2"
-     height="1"
-     id="rect4"
-     x="0"
-     y="0"
-     style="fill:#000000;fill-opacity:1;stroke-width:1" />
+  <path
+     id="rect4-6"
+     style="fill:#000000;fill-opacity:1;stroke-width:1;opacity:0.5"
+     d="m 0,2e-7 v 1 H 1 V 32 H 2 V 1.0000002 2e-7 H 1 Z" />
   <rect
      width="1"
-     height="32"
-     id="rect4-8"
-     x="1"
-     y="0"
-     style="fill:#000000;fill-opacity:1;stroke-width:4" />
-  <rect
-     width="2"
      height="1"
-     id="rect4-6"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166-3"
+     style="opacity:0.5;fill:#000000;fill-opacity:1;stroke-width:0.176777"
      x="0"
-     y="31"
-     style="fill:#000000;fill-opacity:1;stroke-width:1" />
+     y="31" />
 </svg>

@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -34,8 +34,8 @@
      inkscape:window-maximized="1"
      inkscape:window-y="0"
      inkscape:window-x="0"
-     inkscape:cy="30.912369"
-     inkscape:cx="-10.564984"
+     inkscape:cy="24.522915"
+     inkscape:cx="-25.099868"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
@@ -50,17 +50,10 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#d7d7d7;fill-opacity:1"
+     style="fill:#d6d6d6;fill-opacity:1"
      id="rect2"
      fill="#E0E0E0"
      height="32"
-     width="32" />
-  <rect
-     style="fill:#969696;fill-opacity:1"
-     id="rect4"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     height="1"
      width="32" />
   <g
      style="opacity:1"
@@ -83,7 +76,26 @@
      fill="#FFFFFF"
      fill-opacity="0.4"
      id="rect166"
-     style="fill:#969696;fill-opacity:1"
+     style="opacity:0.2;fill:#000000;fill-opacity:1"
+     x="0"
+     y="0" />
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166-3"
+     style="opacity:0.2;fill:#000000;fill-opacity:1"
      x="0"
      y="31" />
+  <rect
+     ry="4.7084298"
+     rx="4.7084298"
+     y="4"
+     x="4"
+     width="24"
+     height="24"
+     fill="#E0E0E0"
+     id="rect2-6-1"
+     style="opacity:0.1;fill:#000000;fill-opacity:1;stroke-width:0.75" />
 </svg>

@@ -35,11 +35,11 @@
      inkscape:window-y="0"
      inkscape:window-x="0"
      inkscape:cy="26.242978"
-     inkscape:cx="-11.20208"
+     inkscape:cx="-27.337674"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
-     inkscape:window-height="1000"
+     inkscape:window-height="1007"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -50,27 +50,20 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#454545;fill-opacity:1"
+     style="fill:#373737;fill-opacity:1"
      id="rect2"
      fill="#E0E0E0"
      height="32"
      width="32" />
   <rect
-     style="fill:#000000;fill-opacity:1"
-     id="rect4"
-     fill-opacity="0.4"
-     fill="#FFFFFF"
-     height="1"
-     width="32" />
-  <rect
-     ry="3.4518175"
-     rx="3.4518175"
+     ry="4.7084298"
+     rx="4.7084298"
      y="4"
      x="4"
      width="24"
      height="24"
      fill="#E0E0E0"
-     id="rect2-6"
+     id="rect2-6-1"
      style="opacity:0.2;fill:#ffffff;fill-opacity:1;stroke-width:0.75" />
   <g
      style="opacity:1;fill:#ffffff;fill-opacity:1"
@@ -95,7 +88,16 @@
      fill="#FFFFFF"
      fill-opacity="0.4"
      id="rect166"
-     style="fill:#000000;fill-opacity:1"
+     style="opacity:0.5;fill:#000000;fill-opacity:1"
      x="0"
-     y="31.000002" />
+     y="0" />
+  <rect
+     width="32"
+     height="1"
+     fill="#FFFFFF"
+     fill-opacity="0.4"
+     id="rect166-3"
+     style="opacity:0.5;fill:#000000;fill-opacity:1"
+     x="0"
+     y="31" />
 </svg>

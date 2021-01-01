@@ -18,11 +18,11 @@
 <constant name="C_title_unfocused" value="gtk:custom(wm_unfocused_title,gtk:fg[NORMAL])" />
 
 <constant name="C_icons_fg_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])" />
-<constant name="C_icons_bg_focused_prelight" value="gtk:custom(m_button,gtk:bg[NORMAL])" />
+<constant name="C_icons_bg_focused_prelight" value="gtk:custom(m_button_hover,gtk:bg[NORMAL])" />
 <constant name="C_icons_bg_focused_pressed" value="gtk:custom(m_button_active,gtk:bg[NORMAL])" />
 
 <constant name="C_icons_fg_c_focused" value="gtk:custom(wm_title,gtk:fg[NORMAL])" />
-<constant name="C_icons_bg_c_focused_prelight" value="gtk:custom(m_button,gtk:bg[NORMAL])" />
+<constant name="C_icons_bg_c_focused_prelight" value="gtk:custom(m_button_hover,gtk:bg[NORMAL])" />
 <constant name="C_icons_bg_c_focused_pressed" value="gtk:custom(m_button_active,gtk:bg[NORMAL])" />
 
 <constant name="C_icons_fg_unfocused" value="gtk:custom(wm_unfocused_title,gtk:fg[NORMAL])" />
@@ -116,7 +116,7 @@
 <draw_ops name="draw_titlebar1">
   <rectangle color="C_titlebar_focused_hilight" x="0" y="0" width="width" height="height" filled="true"/>
 <!-- left border-->	<line color="C_border_focused" x1="0" y1="0" x2="0" y2="height"/>
-<!-- bottom border-->  <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/>
+<!-- bottom border--> <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/>
 <!-- top border-->	<line color="C_border_focused" x1="0" y1="0" x2="width" y2="0"/>
 <!-- right border-->	<line color="C_border_focused" x1="width-1" y1="0" x2="width-1" y2="height"/>
 	

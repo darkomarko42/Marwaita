@@ -7,15 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2"
-   height="32"
-   viewBox="0 0 2 32"
+   width="14"
+   height="14"
+   viewBox="0 0 14 14"
    version="1.1"
-   id="svg6"
-   sodipodi:docname="top-right-inactive.svg"
+   id="svg4"
+   sodipodi:docname="radio-mixed-symbolic.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
-     id="metadata12">
+     id="metadata10">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -27,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs10" />
+     id="defs8" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,34 +38,21 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1007"
-     id="namedview8"
+     inkscape:window-height="1001"
+     id="namedview6"
      showgrid="false"
-     inkscape:zoom="18.296388"
-     inkscape:cx="0.79135278"
-     inkscape:cy="15.004195"
+     inkscape:zoom="29.5"
+     inkscape:cx="1.8727888"
+     inkscape:cy="7.6900591"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6"
+     inkscape:current-layer="svg4"
      inkscape:document-rotation="0" />
-  <rect
-     width="2"
-     height="32"
-     id="rect2"
-     style="fill:#424242;fill-opacity:1"
-     fill="#E0E0E0" />
   <path
-     id="rect4-6"
-     style="fill:#000000;fill-opacity:1;stroke-width:1;opacity:0.5"
-     d="m 0,2e-7 v 1 H 1 V 32 H 2 V 1.0000002 2e-7 H 1 Z" />
-  <rect
-     width="1"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166-3"
-     style="opacity:0.5;fill:#000000;fill-opacity:1;stroke-width:0.176777"
-     x="0"
-     y="31" />
+     d="m 3,6 v 2 h 8 V 6 Z"
+     id="path2"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc"
+     style="stroke-width:1" />
 </svg>
