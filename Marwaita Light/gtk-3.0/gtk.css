@@ -2500,7 +2500,7 @@ na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 	color: @panel_fg;
 }
 
-.xfce4-panel.panel button:not(.flat) {background-color: @alt_button; color: @panel_fg; box-shadow: none; margin: 2px;}
+.xfce4-panel.panel button:not(.flat) {background-color: shade(@panel_bg,1.5); color: @panel_fg; box-shadow: none; margin: 2px;}
 
 /* default state */
 XfdesktopIconView.view {
@@ -2593,7 +2593,7 @@ border-radius:	8.0px 0 0	8.0px;
 box-shadow: inset 0 -1px mix(@panel_bg,@panel_fg,0.3), inset 0 1px mix(@panel_bg,@panel_fg,0.3), inset 1px 0 mix(@panel_bg,@panel_fg,0.3);
 }
 
-.budgie-panel button:not(.launcher):not(.flat){background-color: @alt_button; color: @panel_fg; margin: 2px;}
+.budgie-panel button:not(.launcher):not(.flat){background-color: shade(@panel_bg,1.5); color: @panel_fg; margin: 2px;}
 
 .budgie-panel button.launcher.flat,.budgie-panel button.budgie-menu-launcher{background: none; border: none; border-radius: 0; color: @panel_fg; transition: none;}
 
