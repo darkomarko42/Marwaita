@@ -327,8 +327,8 @@ style "murrine-scale"
 	GtkScale       ::slider-length = 14
 	GtkScale		    ::trough-side-details			    = 1
 
-	bg[NORMAL]	= @selected_fg_color
-	bg[PRELIGHT]	= @selected_fg_color
+	bg[NORMAL]	= @base_color
+	bg[PRELIGHT]	= @base_color
 	bg[ACTIVE]	= mix(0.1,@fg_color, @bg_color)
 	bg[SELECTED]	= @selected_bg_color
 
