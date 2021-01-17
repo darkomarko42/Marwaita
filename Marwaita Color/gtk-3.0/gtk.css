@@ -317,7 +317,13 @@ window#gnome-system-monitor.background.csd > box.vertical > stack,
 .budgie-run-dialog list,
 window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
-window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
+filechooser .view:focus,
+window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:focus,
+.background.csd > grid.horizontal > paned.horizontal > scrolledwindow treeview.view:focus,
+.background.csd > grid.horizontal > paned.horizontal > box.vertical > scrolledwindow treeview.view:focus,
+.org-gnome-gedit treeview:focus,
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:focus:not(:hover):not(:selected):not(.progressbar):not(.trough)
 {background-color: @base_color;}
 
 /* sidebars color background */
