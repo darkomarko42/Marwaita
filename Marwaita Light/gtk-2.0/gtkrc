@@ -1,7 +1,7 @@
 
 # GTK originally based on Ubuntu Human code
 
-gtk_color_scheme = "fg_color:#222\nbg_color:#eee\nbase_color:#fff\ntext_color:#222\nselected_bg_color:#0086ff\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
+gtk_color_scheme = "fg_color:#222\nbg_color:#eee\nbase_color:#fff\ntext_color:#222\nselected_bg_color:#0f6ee3\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
 
 # Comment the following line for large buttons
 gtk-icon-sizes = "gtk-button=16,16"
@@ -63,19 +63,19 @@ style "murrine-default"
 	fg[INSENSITIVE]   = mix (0.5,@bg_color, @fg_color)
 
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (1.065, @bg_color)
+	bg[PRELIGHT]      = @bg_color
 	bg[SELECTED]	  = @selected_bg_color
-	bg[ACTIVE]        = shade(0.935, @bg_color)
+	bg[ACTIVE]        = @bg_color
 	bg[INSENSITIVE]   = @bg_color
 
 	base[NORMAL]      = @base_color
-	base[PRELIGHT]    = shade (0.93, @bg_color)
+	base[PRELIGHT]    = @selected_bg_color
 	base[SELECTED]    = @selected_bg_color
 	base[ACTIVE]      = @selected_bg_color
 	base[INSENSITIVE] = @bg_color
 
 	text[NORMAL]      = @text_color
-	text[PRELIGHT]    = @text_color
+	text[PRELIGHT]    = @selected_fg_color
 	text[ACTIVE]      = @selected_fg_color
 	text[SELECTED]    = @selected_fg_color
 	text[INSENSITIVE] = mix (0.5,@bg_color, @fg_color)
@@ -106,7 +106,7 @@ style "murrine-default"
 		sliderstyle         = 0     # 0 = nothing added, 1 = handles
 		stepperstyle        = 0     # 0 = standard, 1 = integrated stepper handles, 2 = unknown
 #		style		    = MURRINE # engine style options: CANDIDO, CLEARLOOKS, MIST, MURRINE, NODOKA
-		toolbarstyle	    = 1     # 0 = flat, 1 = glassy, 2 = gradient
+		toolbarstyle	    = 0     # 0 = flat, 1 = glassy, 2 = gradient
 		progressbarstyle        = 0
 	}
 }
@@ -137,7 +137,6 @@ style "murrine-entry" = "murrine-wider"{
 		roundness			= 0
 		focusstyle              = 1
 		shadow_shades           = { 0.0, 0.0 }
-		border_shades           = {1.1, 1.1}
 	}
 }
 
@@ -150,9 +149,9 @@ style "murrine-separator"{
 
 style "murrine-button" = "murrine-wider"{
 
-	bg[ACTIVE]                  = mix(0.1,@fg_color, @bg_color)
+	bg[ACTIVE]                  = mix(0.2,@fg_color, @base_color)
 	bg[NORMAL]                  = @base_color
-	bg[PRELIGHT]				= @base_color
+	bg[PRELIGHT]				= mix(0.1,@fg_color, @base_color)
 	bg[SELECTED]				= @selected_bg_color
 	bg[INSENSITIVE]				= @bg_color
 	
@@ -161,7 +160,6 @@ style "murrine-button" = "murrine-wider"{
 		lightborder_shade	= 1.0
 		lightborderstyle		= 2
 		roundness			= 4
-		gradient_shades     = {1.0, 1.0, 1.0, 0.95}
 	}
 }
 
@@ -202,7 +200,7 @@ style "murrine-menu" = "murrine-wider"
   xthickness = 0
   ythickness = 2
 
-	bg[NORMAL] = @base_color
+	bg[NORMAL] = @bg_color
 
 
 	engine "murrine" {
@@ -217,9 +215,9 @@ style "murrine-menu-item"
   xthickness = 0
   ythickness = 4
 
-	bg[PRELIGHT] = mix(0.1,@fg_color, @base_color)
+	bg[PRELIGHT] = mix(0.1,@fg_color, @bg_color)
 	fg[PRELIGHT] = @fg_color
-	bg[SELECTED] = mix(0.1,@fg_color, @base_color)
+	bg[SELECTED] = mix(0.1,@fg_color, @bg_color)
 	fg[SELECTED] = @fg_color
 
 	text[NORMAL]	= @fg_color
@@ -311,15 +309,10 @@ style "murrine-comboboxentry"
 }
 
 style "murrine-spinbutton"
-{
+{	
 	bg[NORMAL]	= @bg_color
-	bg[SELECTED]	= @bg_color
-	
-	engine "murrine"{
-		border_shades			= { 0.8, 0.8}
-	}
-
-}
+	fg[SELECTED]	= @selected_fg_color
+	engine "murrine"{ border_shades			= { 0.8, 0.8}	} }
 
 style "murrine-scale"
 {
@@ -336,7 +329,7 @@ style "murrine-scale"
 
 	engine "murrine" 
 	{
-		contrast                = 1.2
+		contrast                = 1.0
 		lightborder_shade	= 1.0
 		lightborderstyle		= 1
 		roundness			= 9999
@@ -530,7 +523,7 @@ style "murrine-toolbar" {
 
 	bg[NORMAL] = @bg_color
 		engine "murrine" {
-		contrast			= 1.0
+		contrast			= 0.0
 		highlight_shade     = 1.0
 		}
 }
