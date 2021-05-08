@@ -172,7 +172,6 @@ style "murrine-notebook"
 
   xthickness	= 5
   ythickness	= 2
-  engine "clearlooks" {}
 
 }
 
