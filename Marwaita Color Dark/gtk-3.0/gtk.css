@@ -12,7 +12,7 @@
 @define-color textColorPrimary white;
 @define-color sidebar_color mix(@theme_bg_color,black,0.1);
 
-@define-color colorPrimaryBackdrop mix(@colorPrimary,@theme_base_color,0.35);
+@define-color colorPrimaryBackdrop mix(@colorPrimary,black,0.1);
 @define-color textColorPrimaryShadow @text_shadow_color;
 
 @define-color theme_fg_color white;
@@ -50,7 +50,7 @@
 
 @define-color transparent_border alpha(black,0.5);
 
-@define-color selected_bg_color shade(#0F6EE3,1.2);
+@define-color selected_bg_color #0F6EE3;
 @define-color selected_fg_color white;
 @define-color theme_selected_bg_color @selected_bg_color;
 @define-color theme_selected_fg_color @selected_fg_color;
@@ -386,6 +386,11 @@ button.suggested-action,
 button.destructive-action
 {background-clip: padding-box;}
 
+/* this make regular style button the same size */
+.titlebar button box,
+toolbar button.flat box
+{  margin: -4px;}
+
 * {
 	background-origin: border-box;
 	background-clip: padding-box;
@@ -413,8 +418,6 @@ textview text,
 stack .frame list,
 viewport box list,
 list.content,
-treeview.view:selected,
-treeview.view:selected:focus,
 .background.csd > grid.horizontal > paned.horizontal > scrolledwindow,
 .nautilus-window notebook,
 window#gnome-system-monitor.background.csd > box.vertical > stack,
@@ -423,9 +426,6 @@ window#gnome-system-monitor.background.csd > box.vertical > stack,
 window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
-.background.csd > grid.horizontal > paned.horizontal > scrolledwindow treeview.view:focus,
-.background.csd > grid.horizontal > paned.horizontal > box.vertical > scrolledwindow treeview.view:focus,
-window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:focus:not(:hover):not(:selected):not(.progressbar):not(.trough),
 .unfolded stack scrolledwindow .frame list,
 .org-gnome-gedit popover grid .frame list
 {background-color: @theme_base_color;}
@@ -438,8 +438,6 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view,
 .caja-side-pane,
 .caja-side-pane .view,
-.sidebar treeview.view:selected,
-.sidebar treeview.view:selected:focus,
 window.background.csd > overlay > hdyleaflet > stack > frame > grid.vertical,
 window.background.csd > overlay > leaflet > stack > frame > grid.vertical,
 window.background.csd > leaflet > box.vertical > scrolledwindow.view,
@@ -459,12 +457,11 @@ stack.content-bg notebook .frame,
 stack.content-bg notebook,
 stack.content-bg notebook,
 stack.content-bg notebook viewport,
-window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view,
-.background.csd > grid.horizontal > paned.horizontal > scrolledwindow treeview.view,
-.background.csd > grid.horizontal > paned.horizontal > box.vertical > scrolledwindow treeview.view,
+window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(:selected),
+.background.csd > grid.horizontal > paned.horizontal > box.vertical > scrolledwindow treeview.view:not(:selected),
 .title,
 .frame .gedit-document-panel,
-.org-gnome-gedit treeview,
+.org-gnome-gedit treeview:not(:selected),
 window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:selected):not(.progressbar):not(.trough),
 window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list,
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list,
@@ -556,7 +553,7 @@ window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view,
 .unfolded scrolledwindow .frame list,
 window.background.csd > box.vertical > paned.horizontal > scrolledwindow,
-.background.csd paned .source-list,
+.background.csd paned .source-list:not(:selected),
 .sidebar .inline-toolbar
 { border-bottom-left-radius: 6.0px;}
 
@@ -731,23 +728,14 @@ XfdesktopIconView.view filechooser stack.view scrolledwindow treeview.view .cont
 	border-radius: 0;
 }
 
-.h1 {
-	font-size: 24px;
-}
+.h1 {font-size: 24px;}
 
-.h2 {
-	font-size: 18px;
-}
+.h2 {font-size: 18px;}
 
-.h3 {
-	font-size: 11px;
-}
+.h3 {font-size: 11px;}
 
 .h4,
-.category-label {
-	color: @insensitive_fg_color;
-	font-weight: 600;
-}
+.category-label {font-weight: 600;}
 
 .h4 {
 	padding-bottom: 6px;
@@ -768,10 +756,37 @@ treeview.view.expander:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symb
 
 treeview.view.expander:checked { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");}
 
-/**************
- * Selections *
- **************/
-widget:selected,
+/**********************
+ * Sidebars and Lists *
+ **********************/
+
+.sidebar row.activatable:selected,
+leaflet .vertical .view .frame list row.activatable:selected,
+.tweak-categories row.activatable:selected
+{}
+
+placessidebar row{padding: 8px;}
+
+row label {padding: 0 12px;}
+
+stacksidebar row {padding: 8px;}
+
+stacksidebar row > label {padding-left: 4px;	padding-right: 4px;}
+
+placessidebar row > revealer {	padding: 0 4px;}
+
+assistant .sidebar label { padding: 6px 12px;}
+
+assistant notebook ,evview.content-view{}
+
+row.activatable:hover{}
+
+/* Selections */
+.view:selected,
+treeview.view:selected,
+treeview.view:selected:focus,
+row.activatable:selected,
+row.activatable:hover:selected,
 .view selection,
 iconview:selected,
 iconview text:selected,
@@ -786,8 +801,9 @@ treeview.view:selected:focus.chromium,
 XfdesktopIconView.view:active,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
-#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection
-{background-color: @selected_bg_color; color: @selected_fg_color; background-image: none;}
+#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection,
+assistant .sidebar label.highlight
+{color: @selected_fg_color; background-color: @selected_bg_color;}
 
 /**************
  * Separators *
@@ -931,6 +947,8 @@ treeview.view.separator {color: @borders;}
 
 paned.vertical separator, paned.horizontal separator{box-shadow: none;}
 
+toolbar separator{margin: 0 4px;}
+
 /************
  * Calendar *
  ************/
@@ -975,60 +993,6 @@ event.color-dark label,event.color-dark:backdrop label ,event.color-dark image,e
 event.color-light label ,event.color-light:backdrop label, event.color-light image ,event.color-light:backdrop image{ color: black;}
 
 list .suggestion label { color: @theme_fg_color;}
-
-/**********************
- * Sidebars and Lists *
- **********************/
-
-.sidebar row.activatable:selected,
-leaflet .vertical .view .frame list row.activatable:selected,
-.tweak-categories row.activatable:selected
-{box-shadow: inset 4px 0 @selected_bg_color;}
-
-row.activatable:selected,
-row.activatable:hover:selected,
-dialog filechooser list row.activatable:selected,
-dialog filechooser list row.activatable:hover:selected,
-
-popover list row.activatable:selected,
-dialog list row.activatable:selected,
-.vertical frame list row.activatable:selected,
-popover list row.activatable:hover:selected,
-dialog list row.activatable:hover:selected,
-.vertical frame list row.activatable:hover:selected,
-
-treeview.view:selected,
-treeview.view:selected:focus,
-treeview.view:hover:selected,
-treeview.view:hover:selected:focus,
-treeview.view.progressbar:selected:focus,
-treeview.view.progressbar:selected
-{color: @theme_fg_color;}
-
-row.activatable:hover,treeview.view:hover{}
-
-row.activatable:selected,
-row.activatable:hover:selected,
-treeview.view:selected,
-treeview.view:selected:focus,
-treeview.view:hover:selected,
-treeview.view:hover:selected:focus{ background-image: image(alpha(@selected_bg_color,0.2));}
-
-placessidebar row{padding: 8px;}
-
-row label {padding: 0 12px;}
-
-stacksidebar row {padding: 8px;}
-
-stacksidebar row > label {padding-left: 4px;	padding-right: 4px;}
-
-placessidebar row > revealer {	padding: 0 4px;}
-
-assistant .sidebar label { padding: 6px 12px;}
-
-assistant .sidebar label.highlight {background-color: @selected_bg_color;	color: @selected_fg_color;}
-
-assistant notebook ,evview.content-view{}
 
 /*************
  * Notebooks *
@@ -1174,19 +1138,16 @@ spinbutton:not(.vertical),entry {
 spinbutton:not(.vertical):focus,
 entry:focus,
 .gedit-search-slider entry:focus {
-	background-clip: border-box;
 	border-color: @selected_bg_color;
 	box-shadow: inset 0 0 0 1px @selected_bg_color;
 }
+
+entry image {color: currentcolor;}
 
 entry.warning {
 	color: @warning_color;
 	border-color: @warning_color;
 	box-shadow: inset 0 0 0 1px @warning_color;
-}
-
-entry.warning image {
-	color: @warning_color;
 }
 
 entry.warning selection, entry.warning selection:focus {
@@ -1200,11 +1161,10 @@ entry.error,.gedit-search-slider entry.error {
 	box-shadow: inset 0 0 0 1px @error_color;
 }
 
-entry.error image {
-	color: @error_color;
-}
-
-entry.error selection, entry.error selection:focus {
+entry.error selection,
+entry.error selection:focus,
+entry.search-missing selection,
+entry.search-missing selection:focus {
 	background-color: @error_color;
 	color: white;
 }
@@ -1212,15 +1172,6 @@ entry.error selection, entry.error selection:focus {
 entry.search-missing {
 	color: @error_color;
 	border-color: @error_color;
-}
-
-entry.search-missing image {
-	color: @error_color;
-}
-
-entry.search-missing selection, entry.search-missing selection:focus {
-	background-color: @error_color;
-	color: white;
 }
 
 entry:drop(active):focus, entry:drop(active) {
@@ -1241,10 +1192,6 @@ entry progress {
 
 entry.search {border-radius: 9999px;}
 
-entry image {
-	color: @theme_fg_color;
-}
-
 entry image.left {
 	padding-left: 0;
 	padding-right: 5px;
@@ -1256,6 +1203,8 @@ entry image.right {
 }
 
 infobar entry{font-weight: normal;}
+
+.titlebar entry{color: inherit;}
 
 /***********
  * Buttons *
@@ -1289,7 +1238,8 @@ button,
 button,
 .inline-toolbar button.flat,
 dialog .titlebar .linked button:not(.suggested-action):not(.destructive-action),
-dialog .titlebar button:not(.suggested-action):not(.destructive-action).text-button
+dialog .titlebar button:not(.suggested-action):not(.destructive-action).text-button,
+dialog .titlebar entry
 {background-color: @button_color;}
 
 /* this is for alternative button */
@@ -1299,7 +1249,11 @@ dialog .titlebar button:not(.suggested-action):not(.destructive-action).text-but
 .drop-shadow button:not(.flat),
 .budgie-panel button:not(.launcher):not(.flat),
 .xfce4-panel.panel button:not(.flat),
-.fullscreen headerbar button
+.fullscreen headerbar button,
+.titlebar entry,
+.drop-shadow,
+.raven-notifications-view  list box.vertical row,
+.raven .raven-background
 {background-color: @alt_button_color;}
 
 button:hover,
@@ -1460,7 +1414,7 @@ viewswitcher button
 button.destructive-action,button.suggested-action{font-weight: bold;}
 
 button.suggested-action{background-color: @selected_bg_color; color: @selected_fg_color; }
-button.destructive-action{background-color: alpha(@error_color,0.3); color: mix(@error_color,@theme_fg_color,0.5);}
+button.destructive-action{background-color: alpha(@error_color,0.3); color: mix(@error_color,currentcolor,0.5);}
 
 button.suggested-action:disabled{background-color: alpha(@selected_bg_color,0.5);}
 button.destructive-action:disabled{background-color: alpha(@error_color,0.15);}
@@ -1852,10 +1806,10 @@ iconview.content-view.check:not(list):checked,
 check,radio{margin-right: 4px;}
 
 checkbutton.text-button,
-radiobutton.text-button {	padding: 2px;}
+radiobutton.text-button {padding: 2px;}
 
 checkbutton.text-button label:not(:only-child),
-radiobutton.text-button label:not(:only-child) {	margin: 0 4px;}
+radiobutton.text-button label:not(:only-child) {margin: 0 4px;}
 
 check,
 .view.content-view.check:not(list),
@@ -1868,11 +1822,7 @@ check,
 radio,
 .view.content-view.check:not(list),
 iconview.content-view.check:not(list),
-.content-view:not(list) check,
-treeview.view check:selected,
-treeview.view radio:selected,
-row.activatable:selected check,
-row.activatable:selected radio{
+.content-view:not(list) check{
 	transition: all 270ms cubic-bezier(0, 0, 0.2, 1);
 	background-clip: padding-box;
 	padding: 0px;
@@ -1894,11 +1844,7 @@ radio:checked,
 radio:indeterminate,
 .view.content-view.check:not(list):checked,
 iconview.content-view.check:not(list):checked,
-.content-view:not(list) check:checked,
-treeview.view check:checked:selected,
-treeview.view radio:checked:selected,
-row.activatable:selected check:checked,
-row.activatable:selected radio:checked{
+.content-view:not(list) check:checked{
 	background-color: @selected_bg_color;
 	color: @selected_fg_color;
 }
@@ -1908,11 +1854,7 @@ check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled,
 check:disabled,
-radio:disabled,
-treeview.view check:disabled:checked:selected,
-treeview.view radio:disabled:checked:selected,
-treeview.view check:disabled:selected,
-treeview.view radio:disabled:selected{
+radio:disabled{
 	color: @insensitive_fg_color;
 	background-color: @insensitive_bg_color;
 	-gtk-icon-shadow: none;
@@ -1920,6 +1862,22 @@ treeview.view radio:disabled:selected{
 	background-image: none;
 	border-color: @borders;
 }
+
+/* treeview Check and Radio */
+
+treeview.view check:selected,
+treeview.view radio:selected,
+row.activatable:selected check,
+row.activatable:selected radio,
+treeview.view check:checked:selected,
+treeview.view radio:checked:selected,
+row.activatable:selected check:checked,
+row.activatable:selected radio:checked,
+treeview.view check:disabled:checked:selected,
+treeview.view radio:disabled:checked:selected,
+treeview.view check:disabled:selected,
+treeview.view radio:disabled:selected
+{background-color: transparent; border-color: currentcolor; }
 
 /* Menu Check and Radio */
 
@@ -2002,7 +1960,7 @@ switch slider {
 	border: none;
 	min-height: 12px;
 	min-width: 12px;
-	color: @theme_base_color;
+	color: @selected_fg_color;
 	box-shadow: 0 0 0 1px @transparent_border;
 }
 
@@ -2119,7 +2077,7 @@ scale slider {
 
 scale slider:hover,
 scale.marks-after slider,
-scale.marks-before slider {background-color: @theme_base_color; border-color: @transparent_border;}
+scale.marks-before slider {background-color: @selected_fg_color; border-color: @transparent_border;}
 
 scale.horizontal slider,
 scale.vertical slider{}
@@ -2316,9 +2274,10 @@ modelbutton.flat:hover,
 .budgie-popover .sidebar .frame row.activatable:hover,
 .budgie-popover .sidebar .frame row.activatable:selected
 {
-	background-color: alpha(@theme_fg_color,0.1);
+	background-color: @selected_bg_color;
 	background-image: none;
 	box-shadow:  none;
+	color: @selected_fg_color;
 }
 
 menubar > menuitem:disabled,
@@ -2342,7 +2301,7 @@ menu,
 menu separator,
 .csd menu separator,
 .menu separator,.csd
-.menu separator {	margin: 4px 8px; background-color: @transparent_border;}
+.menu separator {	margin: 4px 0; background-color: @transparent_border;}
 
 menu menuitem,
 .menu menuitem {
@@ -2730,10 +2689,7 @@ button.featured-button-left.osd,button.featured-button-right.osd{
 	}
 
 /* Terminal */
-terminal-window.background.csd {  border-radius: 0 0 0 0;}
-
-terminal-window notebook button.flat.toggle.popup {  min-height: 28px;  min-width: 28px;  margin: -2px;}
-
+terminal-window.background.csd,
 terminal-window.background.csd.maximized {  border-radius: 0 0 0 0;}
 
 window.background.csd > box.vertical > box.horizontal > frame > border {  border-width: 0 1px 0 0;}
@@ -2810,7 +2766,7 @@ XfdesktopIconView.view:active , XfdesktopIconView.view .label:active{background:
  * Budgie *
  **********/
 
-.budgie-settings-window buttonbox.inline-toolbar { border-bottom: 1px solid @borders; background-color: @sidebar_color; padding: 6px;}
+.budgie-settings-window buttonbox.inline-toolbar { border-width: 0 0 1px 0; background-color: @sidebar_color; padding: 6px;}
 
 .budgie-container {background-color: transparent;}
 
@@ -2848,10 +2804,9 @@ XfdesktopIconView.view:active , XfdesktopIconView.view .label:active{background:
 .budgie-panel .alert {color: @error_color;}
 
 .budgie-panel image{padding: 0 8px;}
-.budgie-panel .end-region image{padding:0;}
+.budgie-panel .end-region image,
+.budgie-panel button.budgie-menu-launcher image{padding:0;}
 .budgie-panel label{padding: 0 4px;font-weight: bold;}
-.budgie-panel button.budgie-menu-launcher {padding: 0; margin: 0; }
-.budgie-panel button.budgie-menu-launcher image {padding: 0 15px 0 18px; margin: -10px; }
 
 .budgie-panel .end-region{
 	margin: 4px;
@@ -2952,7 +2907,7 @@ button.flat.launcher image{-gtk-icon-shadow: 0 1px 2px @shadow;}
 .drop-shadow,
 .raven-notifications-view  list box.vertical row,
 .raven .raven-background
-{ background-color: @alt_button_color; color: @panel_fg;}
+{ color: @panel_fg;}
 
 .raven .raven-header.top stackswitcher.linked button,
 .raven .raven-header.top stackswitcher.linked button:checked{ font-weight: bold;}
@@ -3055,11 +3010,6 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 /************
  * Pantheon *
  ************/
-
-/* this fix the big buttons on pantheon apps */
-.titlebar button box,
-.titlebar box.horizontal.linked.raised
-{  margin: -4px;}
 
 radiobutton.color-button radio{ border: 1px solid @transparent_border;}
 

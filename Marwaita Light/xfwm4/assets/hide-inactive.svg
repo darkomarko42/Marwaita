@@ -38,11 +38,11 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1029"
+     inkscape:window-height="1000"
      id="namedview14"
      showgrid="false"
      inkscape:zoom="7.375"
-     inkscape:cx="-24.584599"
+     inkscape:cx="-28.245616"
      inkscape:cy="34.386966"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -54,7 +54,7 @@
      height="32"
      fill="#E0E0E0"
      id="rect2"
-     style="fill:#ebebeb;fill-opacity:1" />
+     style="fill:#c1c1c1;fill-opacity:1" />
   <path
      d="m 12,18 h 8 v 2 h -8 z"
      id="path8"
