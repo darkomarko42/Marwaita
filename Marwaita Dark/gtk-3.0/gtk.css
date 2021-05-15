@@ -283,7 +283,7 @@ messagedialog,
 .prompt {-gtk-icon-style: regular;}
 
 dialog buttonbox,
-messagedialog .dialog-action-box{ padding: 8px;}
+.dialog-action-area{ padding: 8px;}
  
 dialog .titlebar,
 headerbar.flat,
@@ -473,7 +473,8 @@ window.background.csd > leaflet > stack.background,
 window.background.csd > hdyleaflet > stack.background,
 window.background.csd > box.horizontal > stack.background,
 .dynamic-notebook .view,
-popover.emoji-picker .view
+popover.emoji-picker .view,
+popover .frame .view
 {background-color: transparent;}
 
 /* Rounded Corners */
@@ -2425,6 +2426,7 @@ popover.background,
 }
 
 .budgie-popover{ border: none; box-shadow: none; background: none; color: transparent;} /* this remove the tail on budgie popover */
+.budgie-popover .container .container{ background: none; border: none; box-shadow: none;}/* this fix the double popover */
 
 popover,
 .budgie-popover .container,
@@ -2614,6 +2616,8 @@ tooltip * {	background-color: transparent;	color: white;}
 
 .nautilus-window .titlebar .path-bar-box button.text-button image,.nautilus-window .titlebar .path-bar-box button.text-button label{ color: @textColorPrimary;}
 .nautilus-window .titlebar .path-bar-box button.text-button:backdrop image,.nautilus-window .titlebar .path-bar-box button.text-button:backdrop label{ color: alpha(@textColorPrimary,0.5);}
+
+.nautilus-window button box{ margin: 0;}
 
 /* Builder */
 
@@ -3027,9 +3031,10 @@ radiobutton.color-button radio{ border: 1px solid @transparent_border;}
 
 .horizontal.search-bar{border-bottom: 1px solid @borders;}
 
-popover .circular.accent{color: @selected_bg_color;}
-popover .circular.accent:focus,popover .circular:not(.accent):focus{background-color: @selected_bg_color; color: @selected_fg_color;}
-popover .circular image{  color: @colorAccent;}
+popover .circular:not(button).accent{color: @selected_bg_color;}
+popover .circular:not(button).accent:focus,
+popover .circular:not(button):not(.accent):focus{background-color: @selected_bg_color; color: @selected_fg_color;}
+popover .circular:not(button) image{  color: @colorAccent;}
 
 /* this fix playmymusic separation titlebar buttons */
 .background.csd .mode_button_split.toggle { margin-left: -4px;}
