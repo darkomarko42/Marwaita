@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2"
-   height="32"
-   viewBox="0 0 2 32"
+   width="4"
+   height="4"
+   viewBox="0 0 4 4"
    version="1.1"
    id="svg6"
-   sodipodi:docname="top-right-active.svg"
+   sodipodi:docname="border-bottom-right.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata12">
@@ -38,34 +38,47 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1000"
+     inkscape:window-height="1003"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="37.255688"
-     inkscape:cx="-2.5061383"
-     inkscape:cy="16.788175"
+     inkscape:zoom="103.5"
+     inkscape:cx="0.25224179"
+     inkscape:cy="0.96905448"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      inkscape:document-rotation="0" />
   <rect
-     width="2"
-     height="32"
-     id="rect2"
-     style="fill:#0d63cd;fill-opacity:1"
-     fill="#E0E0E0" />
-  <path
-     id="rect4-6"
-     style="fill:#000000;fill-opacity:1;stroke-width:1;opacity:0.3"
-     d="m 0,2e-7 v 1 H 1 V 32 H 2 V 1.0000002 2e-7 H 1 Z" />
+     style="fill:#0c58b6;fill-opacity:1;stroke-width:3.18092"
+     id="rect829"
+     width="4"
+     height="4"
+     x="-4"
+     y="0"
+     transform="scale(-1,1)" />
   <rect
+     style="opacity:0.3;fill:#000000;fill-opacity:1;stroke-width:0.79523"
+     id="rect829-3"
      width="1"
      height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166-3"
-     style="opacity:0.3;fill:#000000;fill-opacity:1;stroke-width:0.176777"
-     x="0"
-     y="31" />
+     x="-1"
+     y="0"
+     transform="scale(-1,1)" />
+  <rect
+     style="opacity:0.3;fill:#000000;fill-opacity:1;stroke-width:1.37738"
+     id="rect829-3-6"
+     width="1"
+     height="3"
+     x="-4"
+     y="0"
+     transform="scale(-1,1)" />
+  <rect
+     style="opacity:0.3;fill:#000000;fill-opacity:1;stroke-width:1.59047"
+     id="rect829-3-6-5"
+     width="1"
+     height="4"
+     x="3"
+     y="0"
+     transform="matrix(0,1,1,0,0,0)" />
 </svg>

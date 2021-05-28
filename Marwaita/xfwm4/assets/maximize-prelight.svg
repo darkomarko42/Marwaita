@@ -11,9 +11,9 @@
    sodipodi:docname="maximize-prelight.svg"
    id="svg12"
    version="1.1"
-   viewBox="0 0 32 32"
-   height="32"
-   width="32">
+   viewBox="0 0 34 34"
+   height="34"
+   width="34">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -34,12 +34,12 @@
      inkscape:window-maximized="1"
      inkscape:window-y="0"
      inkscape:window-x="0"
-     inkscape:cy="26.242978"
-     inkscape:cx="-23.405471"
+     inkscape:cy="28.068011"
+     inkscape:cx="6.3944951"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
-     inkscape:window-height="1029"
+     inkscape:window-height="1003"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -50,41 +50,25 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#d7d7d7;fill-opacity:1"
+     style="fill:#d7d7d7;fill-opacity:1;stroke-width:1.12501"
      id="rect2"
      fill="#E0E0E0"
-     height="32"
-     width="32" />
+     height="36"
+     width="36"
+     x="-1"
+     y="-1" />
   <path
-     id="path8"
-     d="m 12,12 v 8 h 8 v -8 z m 2,2 h 4 v 4 h -4 z"
+     id="path8-3"
+     d="m 13,13 v 8 h 8 v -8 z m 2,2 h 4 v 4 h -4 z"
      style="fill:#000000" />
   <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="0" />
-  <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166-3"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="31" />
-  <rect
-     ry="4.7084298"
-     rx="4.7084298"
-     y="4"
-     x="4"
-     width="24"
-     height="24"
+     style="opacity:0.1;fill:#000000;fill-opacity:1;stroke-width:0.875007"
+     id="rect2-3"
      fill="#E0E0E0"
-     id="rect2-6-1"
-     style="opacity:0.1;fill:#000000;fill-opacity:1;stroke-width:0.75" />
+     height="28"
+     width="28"
+     x="3"
+     y="3"
+     rx="4.8363552"
+     ry="4.8363552" />
 </svg>

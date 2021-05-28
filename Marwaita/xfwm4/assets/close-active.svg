@@ -11,9 +11,9 @@
    sodipodi:docname="close-active.svg"
    id="svg12"
    version="1.1"
-   viewBox="0 0 32 32"
-   height="32"
-   width="32">
+   viewBox="0 0 34 34"
+   height="34"
+   width="34">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,11 +35,11 @@
      inkscape:window-y="0"
      inkscape:window-x="0"
      inkscape:cy="28.068011"
-     inkscape:cx="24.69958"
+     inkscape:cx="2.7334782"
      inkscape:zoom="7.375"
      showgrid="false"
      id="namedview14"
-     inkscape:window-height="1012"
+     inkscape:window-height="1003"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -50,31 +50,15 @@
      bordercolor="#666666"
      pagecolor="#ffffff" />
   <rect
-     style="fill:#d7d7d7;fill-opacity:1"
+     style="fill:#d7d7d7;fill-opacity:1;stroke-width:1.12501"
      id="rect2"
      fill="#E0E0E0"
-     height="32"
-     width="32" />
+     height="36"
+     width="36"
+     x="-1"
+     y="-1" />
   <path
      id="path8"
-     d="M 21,12.41 19.59,11 16,14.59 12.41,11 11,12.41 14.59,16 11,19.59 12.41,21 16,17.41 19.59,21 21,19.59 17.41,16 Z"
+     d="M 22,13.41 20.59,12 17,15.59 13.41,12 12,13.41 15.59,17 12,20.59 13.41,22 17,18.41 20.59,22 22,20.59 18.41,17 Z"
      style="fill:#000000" />
-  <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="0" />
-  <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166-3"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="31" />
 </svg>

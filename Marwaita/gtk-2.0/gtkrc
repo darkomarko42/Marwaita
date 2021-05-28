@@ -93,7 +93,7 @@ style "button"
 	engine "murrine" {roundness = 3}
 
 	bg[NORMAL] = @base_color
-	bg[PRELIGHT] = mix(0.1, @fg_color,@base_color)
+	bg[PRELIGHT] = @base_color
 	bg[ACTIVE] = mix(0.2, @fg_color,@base_color)
 }
 
@@ -122,8 +122,8 @@ style "scale"
 	
 	engine "murrine" {roundness = 9999}
 	
-	bg[NORMAL] = @base_color
-	bg[PRELIGHT] = @base_color
+	bg[NORMAL] = @selected_fg_color
+	bg[PRELIGHT] = @selected_fg_color
 }
 
 style "menubar" 
@@ -136,6 +136,8 @@ style "menu"
 	xthickness = 1
 	ythickness = 4
 
+	bg[NORMAL]	= @base_color
+
 }
 
 style "menuitem" 
@@ -145,11 +147,11 @@ style "menuitem"
 
 	engine "murrine" { contrast = 0.0}
 
-	bg[SELECTED] = @selected_bg_color
+	bg[SELECTED] = mix(0.1,@fg_color,@base_color)
 	
 	text[NORMAL]	= @fg_color
-	text[PRELIGHT] = @selected_fg_color
-	fg[PRELIGHT] = @selected_fg_color
+	text[PRELIGHT] = @fg_color
+	fg[PRELIGHT] = @fg_color
 }
 
 style "menu-separator"

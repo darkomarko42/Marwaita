@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="32"
-   viewBox="0 0 32 32"
-   version="1.1"
-   id="svg12"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
    sodipodi:docname="hide-inactive.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+   id="svg12"
+   version="1.1"
+   viewBox="0 0 34 34"
+   height="34"
+   width="34">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -22,59 +22,43 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs16" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1000"
-     id="namedview14"
-     showgrid="false"
-     inkscape:zoom="7.375"
-     inkscape:cx="-28.245616"
-     inkscape:cy="34.386966"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:document-rotation="0"
      inkscape:current-layer="svg12"
-     inkscape:document-rotation="0" />
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="28.068011"
+     inkscape:cx="2.7334782"
+     inkscape:zoom="7.375"
+     showgrid="false"
+     id="namedview14"
+     inkscape:window-height="1003"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
   <rect
-     width="32"
-     height="32"
-     fill="#E0E0E0"
+     style="fill:#c1c1c1;fill-opacity:1;stroke-width:1.12501"
      id="rect2"
-     style="fill:#c1c1c1;fill-opacity:1" />
+     fill="#E0E0E0"
+     height="36"
+     width="36"
+     x="-1"
+     y="-1" />
   <path
-     d="m 12,18 h 8 v 2 h -8 z"
      id="path8"
+     d="m 13,19 h 8 v 2 h -8 z"
      style="opacity:0.5;fill:#000000" />
-  <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="0" />
-  <rect
-     width="32"
-     height="1"
-     fill="#FFFFFF"
-     fill-opacity="0.4"
-     id="rect166-9"
-     style="opacity:0.2;fill:#000000;fill-opacity:1"
-     x="0"
-     y="31" />
 </svg>
