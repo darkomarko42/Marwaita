@@ -4,7 +4,7 @@
 # /usr/share/xfwm4/defaults
 
 active_text_color=#000
-inactive_text_color=#757575
+inactive_text_color=#6b6b6b
 title_shadow_active=false
 title_shadow_inactive=false
 full_width_title=true

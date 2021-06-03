@@ -10,19 +10,30 @@
 @define-color transparent_border alpha(black,0.2);
 @define-color highlight alpha(white,0.5);
 
+@define-color shadow alpha(black,0.3);
+@define-color text_shadow_color alpha(@panel_bg,0.5);
+@define-color button_shadow alpha(@shadow,0.2);
+@define-color menu_shadow alpha(@shadow,0.5);
+
 @define-color gtk_selected_bg_color #0F6EE3;
 @define-color gtk_selected_fg_color white;
+
+@define-color warning_color #F2A024;
+@define-color error_color #E64545;
+@define-color success_color #36B34B;
 
 @define-color button_color @gtk_base_color;
 @define-color alt_button_color mix(@colorPrimary,white,0.2);
 @define-color widget_color alpha(@gtk_fg_color,0.1);
+
 @define-color panel_bg shade(@colorPrimary,0.95);
 @define-color panel_fg @textColorPrimary;
 
-@define-color colorPrimary mix(@gtk_selected_bg_color,black,0.2);
-@define-color textColorPrimary white;
+@define-color colorPrimary mix(@selected_bg_color,black,0.2);
+@define-color colorPrimaryBackdrop @colorPrimary;
 @define-color sidebar_color mix(@gtk_bg_color,black,0.05);
-@define-color colorPrimaryBackdrop mix(@colorPrimary,black,0.1);
+
+@define-color textColorPrimary white;
 @define-color textColorPrimaryShadow @text_shadow_color;
 
 @define-color theme_fg_color @gtk_fg_color;
@@ -47,11 +58,6 @@
 @define-color insensitive_base_color @gtk_base_color;
 @define-color unfocused_insensitive_color @insensitive_fg_color;
 
-@define-color text_shadow_color alpha(@panel_bg,0.5);
-@define-color button_shadow alpha(@shadow,0.25);
-@define-color menu_shadow alpha(@shadow,0.5);
-@define-color shadow alpha(black,0.3);
-
 @define-color borders @gtk_borders;
 @define-color unfocused_borders @gtk_borders;
 @define-color border_color @gtk_borders;
@@ -62,10 +68,6 @@
 @define-color theme_selected_fg_color @gtk_selected_fg_color;
 @define-color theme_unfocused_selected_bg_color @gtk_selected_bg_color;
 @define-color theme_unfocused_selected_fg_color @gtk_selected_fg_color;
-
-@define-color warning_color #F2A024;
-@define-color error_color #E64545;
-@define-color success_color #36B34B;
 
 @define-color placeholder_text_color #A8A8A8;
 @define-color link_color @gtk_selected_bg_color;
@@ -159,29 +161,17 @@
 
 /* switch this at dark theme */
 
+button.suggested-action{background-clip: border-box;}
+
+check,
+radio,
 switch,
-.view check:checked,
-.view check:indeterminate,
-.view radio:checked,
-.view radio:indeterminate,
-check:checked,
-check:indeterminate,
-radio:checked,
-radio:indeterminate,
-.view.content-view.check:not(list):checked,
-iconview.content-view.check:not(list):checked,
-.content-view:not(list) check:checked,
-treeview.view check:checked:selected,
-treeview.view radio:checked:selected,
-row.activatable:selected check:checked,
-row.activatable:selected radio:checked,
 progressbar progress,
 progressbar trough,
 levelbar block,
+levelbar trough,
 scale trough,
-scale highlight,
-button.suggested-action
-{background-clip: border-box;}
+scale highlight{box-shadow: inset 0 0 0 1px @transparent_border;}
 
 /* active this on colorfull titlebars */
 
@@ -301,7 +291,8 @@ scrolledwindow.view list,
 .sidebar list,
 .budgie-settings-window list.sidebar,
 .source-list,
-.sidebar .view
+.sidebar .view,
+assistant .sidebar
 {background-color: @sidebar_color;}
 
 /* fix widgets background */
@@ -403,7 +394,8 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view,
 .unfolded scrolledwindow .frame list,
 window.background.csd > box.vertical > paned.horizontal > scrolledwindow,
 .background.csd paned .source-list:not(:selected),
-.sidebar .inline-toolbar
+.sidebar .inline-toolbar,
+assistant .sidebar
 { border-bottom-left-radius: 5.0px;}
 
 window.background.csd > box.vertical > box.horizontal > stack > widget > notebook.frame > stack,
@@ -456,11 +448,17 @@ messagedialog decoration,
  * Windows Decorations *
  ***********************/
 
-decoration{ box-shadow: 0 1px 4px @shadow,0 0 0 1px @transparent_border; margin: 6px;}
+decoration{ box-shadow: 0 4px 8px @shadow,0 0 0 1px @transparent_border; margin: 6px;}
 
-decoration:backdrop{ box-shadow: 0 1px 4px alpha(@shadow,0.5),0 0 0 1px @transparent_border;}
+decoration:backdrop{ box-shadow: 0 4px 8px alpha(@shadow,0.5),0 0 0 1px @transparent_border;}
 
-.csd.popup decoration {box-shadow: 0 1px 2px @menu_shadow; 	border-radius: 5.0px; }
+dialog decoration,
+messagedialog decoration{ box-shadow: 0 2px 4px @shadow,0 0 0 1px @transparent_border;}
+
+dialog decoration:backdrop,
+messagedialog decoration:backdrop{ box-shadow: 0 2px 4px alpha(@shadow,0.5),0 0 0 1px @transparent_border;}
+
+.csd.popup decoration {box-shadow: 0 1px 2px @menu_shadow; border-radius: 5.0px; }
 
 .ssd decoration{box-shadow: 0 0 0 1px @transparent_border;}
 
@@ -479,6 +477,7 @@ headerbar,
 	border-bottom: 1px solid @transparent_border;
 	box-shadow: none;
 }
+
 headerbar:backdrop,
 .titlebar:not(headerbar):backdrop {background-color: @colorPrimaryBackdrop;}
 
@@ -552,7 +551,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 /* this is for ssd titlebars */
-.ssd .default-decoration ,.default-decoration.titlebar:not(headerbar),.csd .default-decoration.titlebar:not(headerbar){}
+.ssd .default-decoration ,.default-decoration.titlebar:not(headerbar),.csd .default-decoration.titlebar:not(headerbar){border-bottom: none;}
  
 /* this fix headerbar widgets */
 
@@ -638,7 +637,7 @@ dialog filechooser stack actionbar{ border-top: 1px solid @gtk_borders;}
 dialog filechooser paned separator{ background: none; min-width: 0;}
 dialog filechooser paned separator.horizontal{ background: @gtk_borders; }
 
-filechooser #pathbarbox {	border: none; background-color: transparent;}
+filechooser #pathbarbox { border: none; background-color: transparent;}
 
 dialog filechooser placessidebar row{padding: 4px;}
 
@@ -748,7 +747,7 @@ stacksidebar row {padding: 8px;}
 
 stacksidebar row > label {padding-left: 4px;	padding-right: 4px;}
 
-placessidebar row > revealer {	padding: 0 4px;}
+placessidebar row > revealer { padding: 0 4px;}
 
 assistant .sidebar label { padding: 6px 12px;}
 
@@ -772,8 +771,9 @@ XfdesktopIconView.view:active,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection,
 assistant .sidebar label.highlight
-{color: @gtk_selected_fg_color; background-color: @gtk_selected_bg_color;}
-
+,
+menubar > menuitem:hover,
+.menubar > menuitem:hover,
 treeview.view:selected:hover,
 row.activatable:selected:hover,
 treeview.view:selected,
@@ -791,10 +791,77 @@ modelbutton.flat:hover,
 .budgie-menu .categories button.flat:checked,
 .budgie-popover row.activatable:selected,
 .budgie-popover .sidebar .frame row.activatable:hover,
-.budgie-popover .sidebar .frame row.activatable:selected
-{color: @gtk_fg_color; background-image: image(alpha(@gtk_fg_color,0.1)); }
+.budgie-popover .sidebar .frame row.activatable:selected,
+row.activatable:selected switch slider,
+treeview.view switch slider:selected,
+menuitem:hover switch slider,
+.menuitem:hover switch slider
+{color: @gtk_selected_fg_color; background-color: @gtk_selected_bg_color;}
 
 row.activatable:hover,treeview.view:hover{}
+
+/* Inverted selections */
+
+row.activatable:selected switch,
+row.activatable:selected scale highlight,
+row.activatable:selected check,
+row.activatable:selected radio,
+row.activatable:selected progressbar progress,
+menuitem:hover switch,
+menuitem:hover progressbar progress,
+menuitem check:hover,
+menuitem radio:hover,
+menuitem:hover scale highlight,
+.menuitem:hover switch,
+.menuitem:hover progressbar progress,
+.menuitem:hover check,
+.menuitem:hover radio,
+.menuitem:hover scale highlight,
+popover check:hover,
+popover radio:hover,
+treeview.view switch:selected,
+treeview.view scale highlight:selected,
+treeview.view check:selected,
+treeview.view radio:selected{background-color: @gtk_selected_fg_color; color: @gtk_selected_bg_color; box-shadow: none;}
+
+row.activatable:selected scale trough,
+row.activatable:selected progressbar trough,
+menuitem:hover scale trough,
+menuitem:hover progressbar trough,
+.menuitem:hover scale trough,
+.menuitem:hover progressbar trough{background-color: transparent; box-shadow: inset 0 0 0 1px @selected_fg_color;}
+
+row.activatable:selected check:disabled,
+row.activatable:selected radio:disabled,
+treeview.view check:disabled:selected,
+treeview.view radio:disabled:selected{background-color: alpha(@gtk_selected_fg_color,0.5);}
+
+treeview.view:selected:disabled{ color: alpha(@gtk_selected_fg_color,0.5);}
+
+row.activatable:selected switch slider,
+menuitem:hover switch slider,
+.menuitem:hover switch slider,
+row.activatable:selected switch,
+row.activatable:selected scale highlight,
+row.activatable:selected check,
+row.activatable:selected radio,
+row.activatable:selected progressbar progress,
+menuitem:hover switch,
+menuitem:hover progressbar progress,
+menuitem check:hover,
+menuitem radio:hover,
+menuitem:hover scale highlight,
+.menuitem:hover switch,
+.menuitem:hover progressbar progress,
+.menuitem:hover check,
+.menuitem:hover radio,
+.menuitem:hover scale highlight,
+popover check:hover,
+popover radio:hover,
+treeview.view switch:selected,
+treeview.view scale highlight:selected,
+treeview.view check:selected,
+treeview.view radio:selected{box-shadow: none;}
 
 /**************
  * Separators *
@@ -809,8 +876,13 @@ frame > border,
 	border: 1px solid @gtk_borders;
 }
 
-frame.flat > border,.documents-scrolledwin.frame,.documents-scrolledwin.frame frame.content-view > border, frame > border.flat,
-.frame.flat ,.geary-accounts-editor-pane .frame,.standard-view {	border-style: none;}
+frame.flat > border,
+.documents-scrolledwin.frame,
+.documents-scrolledwin.frame frame.content-view > border,
+frame > border.flat,
+.frame.flat,
+.geary-accounts-editor-pane .frame,
+.standard-view { border-style: none;}
 
 separator{background-color: @gtk_borders; min-width: 1px; min-height: 1px; }
 
@@ -918,7 +990,7 @@ paned .sidebar.right,
 paned .sidebar.left:dir(rtl),
 paned .sidebar:dir(rtl),
 paned .sidebar:dir(ltr),
-paned .sidebar {	border-style: none;}
+paned .sidebar { border-style: none;}
 
 treeview.view.separator {color: @gtk_borders;}
 
@@ -1030,7 +1102,7 @@ notebook > header.right > tabs > tab:checked{box-shadow: inset 2px 0 @gtk_select
 notebook tab label { padding: 3px 6px;}
 
 notebook .active-page,
-notebook tab .active-page label {	color: inherit; font-weight: bold;}
+notebook tab .active-page label { color: inherit; font-weight: bold;}
 
 /************
  * Infobars *
@@ -1069,7 +1141,7 @@ toolbar {
 	border-color: @gtk_borders;
 	border-radius: 0;
 	box-shadow: none;
-	border-width: 0px 0 1px 0;
+	border-width: 1px 0 1px 0;
 }
 
 .primary-toolbar{ }
@@ -1080,7 +1152,7 @@ actionbar {
 	background-color: @sidebar_color;
 }
 
-dialog actionbar{	border-radius: 0 0 5.0px 5.0px;}
+dialog actionbar{ border-radius: 0 0 5.0px 5.0px;}
 
 .inline-toolbar{
 	padding: 4px;
@@ -1199,7 +1271,8 @@ infobar entry{font-weight: normal;}
  * Buttons *
  ***********/
 
-list button:not(.suggested-action):not(.destructive-action){color: @gtk_fg_color;}
+list button:not(.suggested-action):not(.destructive-action),
+#pulseaudio-button menu .linked button{color: @gtk_fg_color;}
 
 /* the size of this widgets */
 combobox arrow,
@@ -1326,7 +1399,19 @@ dialog .titlebar button:not(.suggested-action):not(.destructive-action).text-but
 .titlebar .linked button:not(.suggested-action):not(.destructive-action):backdrop,
 .titlebar button:not(.suggested-action):not(.destructive-action).text-button:backdrop,
 .fullscreen headerbar button:backdrop
-{background-color: transparent;}
+{background-color: transparent; box-shadow: none;}
+
+/* this fix backdrop ssd text titlebar */
+.titlebar.default-decoration:backdrop,
+.titlebar.default-decoration button.titlebutton:backdrop,
+.titlebar .titlebutton.chromium:backdrop,
+.titlebar .titlebutton:backdrop label,
+.titlebar .titlebutton:backdrop image,
+.titlebar:backdrop label,
+.titlebar:backdrop image,
+menubar:backdrop,
+.menubar:backdrop
+{color: mix(@textColorPrimary, @colorPrimaryBackdrop, 0.7);}
 
 /* Disabled State */
 button:disabled,
@@ -1352,7 +1437,6 @@ spinbutton.horizontal button:disabled,
 treeview.view:disabled,
 entry:disabled,
 combobox button:disabled,
-treeview.view:selected:disabled,
 .titlebar button.suggested-action:not(:disabled):backdrop label,
 .titlebar button.destructive-action:not(:disabled):backdrop label,
 .titlebar button.suggested-action:not(:disabled):backdrop image,
@@ -1361,20 +1445,9 @@ treeview.view:selected:disabled,
 .titlebar button.destructive-action:disabled label,
 .titlebar button.suggested-action:disabled image,
 .titlebar button.destructive-action:disabled image,
-.titlebar:backdrop label,
-.titlebar:backdrop image,
 .titlebar label:disabled,
-.titlebar image:disabled,
-.titlebar button.titlebutton,
-.titlebar .titlebutton:backdrop label,
-.titlebar .titlebutton:backdrop image
+.titlebar image:disabled
 { color: alpha(currentcolor,0.5);}
-
-/* this fix backdrop ssd text titlebar */
-.titlebar.default-decoration:backdrop,
-.titlebar.default-decoration button.titlebutton:backdrop,
-.titlebar .titlebutton.chromium:backdrop
-{color: mix(@textColorPrimary, @colorPrimaryBackdrop, 0.7);}
 
 /* Flat Button */
 
@@ -1774,9 +1847,9 @@ menu .keycap{
 	font-size: smaller;
 	}
 
-stackswitcher button.text-button {	min-width: 90px;}
+stackswitcher button.text-button { min-width: 90px;}
 
-stackswitcher button.circular, stackswitcher button.nautilus-circular-button.image-button {	min-width: 0;}
+stackswitcher button.circular, stackswitcher button.nautilus-circular-button.image-button { min-width: 0;}
 
 button.circular{ border-radius: 9999px; -gtk-outline-radius: 9999px;}
 
@@ -1790,11 +1863,11 @@ button:link > label:disabled, button:visited > label:disabled, button:disabled:l
 
 /* Check and Radio */
 
-check,radio {	-gtk-icon-source: none;}
-check:checked {	-gtk-icon-source: -gtk-recolor(url("assets/checkbox-symbolic.svg"));}
-check:indeterminate {	-gtk-icon-source: -gtk-recolor(url("assets/checkbox-mixed-symbolic.svg"));}
-radio:checked {	-gtk-icon-source: -gtk-recolor(url("assets/radio-symbolic.svg"));}
-radio:indeterminate {	-gtk-icon-source: -gtk-recolor(url("assets/radio-mixed-symbolic.svg"));}
+check,radio { -gtk-icon-source: none;}
+check:checked { -gtk-icon-source: -gtk-recolor(url("assets/checkbox-symbolic.svg"));}
+check:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/checkbox-mixed-symbolic.svg"));}
+radio:checked { -gtk-icon-source: -gtk-recolor(url("assets/radio-symbolic.svg"));}
+radio:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/radio-mixed-symbolic.svg"));}
 
 /* Sizes of check and radio */
 check,
@@ -1839,12 +1912,8 @@ radio,
 iconview.content-view.check:not(list),
 .content-view:not(list) check{
 	transition: all 270ms cubic-bezier(0, 0, 0.2, 1);
-	background-clip: padding-box;
 	padding: 0px;
-	border: 1px solid @transparent_border;
 	background-color: @gtk_base_color;
-	background-image: none;
-	-gtk-icon-shadow: none;
 }
 
 check:hover,radio:hover,scale slider:hover,
@@ -1880,32 +1949,31 @@ radio:checked:disabled,
 radio:indeterminate:disabled,
 check:disabled,
 radio:disabled{
-	color: @insensitive_fg_color;
+	color: alpha(currentcolor,0.5);
 	background-color: @insensitive_bg_color;
 	-gtk-icon-shadow: none;
-	box-shadow: none;
-	background-image: none;
-	border-color: @gtk_borders;
 }
 
 /* Menu Check and Radio */
 
-menu menuitem check, menu menuitem
-radio {
-	transition: none;
+menu menuitem check,
+menu menuitem radio {
 	margin: 0;
 	padding: 0;
 }
 
 menu menuitem check:dir(ltr), menu menuitem
-radio:dir(ltr) {
-	margin-right: 8px;
-}
+radio:dir(ltr) { margin-right: 8px; }
 
 menu menuitem check:dir(rtl), menu menuitem
-radio:dir(rtl) {
-	margin-left: 8px;
-}
+radio:dir(rtl) { margin-left: 8px;}
+
+menuitem check,
+menuitem radio,
+.menuitem check,
+.menuitem radio,
+popover check,
+popover radio{transition: none; animation: none;}
 
 /*************
  * Switchers *
@@ -1914,9 +1982,9 @@ radio:dir(rtl) {
 switch {
 	transition: all 270ms cubic-bezier(0, 0, 0.2, 1);
 	font-size: 0;
-	border: 1px solid @transparent_border;
 	border-radius: 9999px;
 	background-color: @widget_color;
+	padding: 2px;
 }
 
 switch image,
@@ -1928,15 +1996,11 @@ switch:disabled image,
 
 switch slider {
 	margin: 4px;
-	background-clip: padding-box;
 	transition: none;
 	border-radius: 9999px;
-	background-color: currentcolor;
-	background-image: none;
-	border: none;
+	background-color: @gtk_selected_fg_color;
 	min-height: 12px;
 	min-width: 12px;
-	color: @gtk_selected_fg_color;
 	box-shadow: 0 0 0 1px @transparent_border;
 }
 
@@ -1952,18 +2016,14 @@ switch:checked:disabled{ background-color: mix(@gtk_bg_color,@gtk_selected_bg_co
  ****************/
 
 progressbar progress {
-	border: 1px solid @transparent_border;
 	background-color: @gtk_selected_bg_color;
 	border-radius: 5.0px;
 	color: @gtk_selected_fg_color;
-	margin: -1px;
 }
 
 progressbar trough {
-	border: 1px solid @transparent_border;
 	border-radius: 5.0px;
 	background-color: @widget_color;
-	background-image: none;
 }
 
 treeview.view.progressbar {box-shadow: inset 0 0 0 9999px alpha(currentcolor,0.4); }
@@ -1978,7 +2038,6 @@ levelbar block {
 	min-width: 32px;
 	min-height: 6px;
 	border-radius: 9999px;
-	border: 1px solid @transparent_border;
 }
 
 levelbar.vertical block {
@@ -1987,10 +2046,7 @@ levelbar.vertical block {
 }
 
 levelbar trough {
-	background-clip: border-box;
 	border-radius: 9999px;
-	background-image: none;
-	border: 1px solid @transparent_border;
 	padding: 2px;
 	background-color: @widget_color;
 }
@@ -2020,10 +2076,8 @@ levelbar block.empty {background-color: transparent;}
 scale { padding: 8px;}
 
 scale trough {
-	border: 1px solid @transparent_border;
 	border-radius: 5.0px;
 	background-color: @widget_color;
-	background-image: none;
 }
 
 scale trough:disabled {}
@@ -2031,29 +2085,25 @@ scale trough:disabled {}
 scale highlight {
 	border-radius: 5.0px;
 	background-color: @gtk_selected_bg_color;
-	margin: -1px;
-	border: 1px solid @transparent_border;
 }
 
-scale highlight:disabled {	background-color: alpha(@gtk_selected_bg_color, 0.5);}
+scale highlight:disabled { background-color: alpha(@gtk_selected_bg_color, 0.5);}
 
-scale fill:disabled {	background-color: transparent;}
+scale fill:disabled { background-color: transparent;}
 
 scale slider {
 	transition: all 270ms cubic-bezier(0, 0, 0.2, 1);
 	background-clip: padding-box;
 	background-color: transparent;
-	background-image: none;
 	box-shadow:  none;
-	border: 1px solid transparent;
 	border-radius: 9999px;
-	margin: -6px;
+	margin: -5px;
 	padding: 8px;
 }
 
-scale slider:hover,
+scale:hover slider,
 scale.marks-after slider,
-scale.marks-before slider {background-color: @gtk_selected_fg_color; border-color: @transparent_border;}
+scale.marks-before slider {background-color: @gtk_selected_fg_color; box-shadow: 0 0 0 1px @transparent_border;}
 
 scale.horizontal slider,
 scale.vertical slider{}
@@ -2206,7 +2256,7 @@ menu,
 popover,
 popover.background,
 .budgie-popover
-{	background-color: @gtk_base_color;}
+{ background-color: @gtk_base_color;}
  
 .context-menu { font: initial; }
  
@@ -2214,10 +2264,9 @@ menubar,
 .menubar {
 	-GtkWidget-window-dragging: true;
 	padding: 0px;
+	background-color: @colorPrimary;
+	color: @textColorPrimary;
 }
-
-menubar:backdrop,
-.menubar:backdrop {}
 
 menubar > menuitem,
 .menubar > menuitem {
@@ -2225,11 +2274,6 @@ menubar > menuitem,
 	border: solid transparent;
 	border-width: 0;
 	border-radius: 0;
-}
-
-menubar > menuitem:hover,
-.menubar > menuitem:hover{
-	background-color: alpha(currentcolor,0.1);
 }
 
 /*this is for Pantheon*/
@@ -2252,12 +2296,12 @@ menu,
 }
 
 .csd menu, .csd
-.menu {	padding: 4px 1px; }
+.menu { padding: 4px 1px; }
 
 menu separator,
 .csd menu separator,
 .menu separator,.csd
-.menu separator {	margin: 4px 0; background-color: @transparent_border;}
+.menu separator { margin: 4px 0; background-color: @transparent_border;}
 
 menu menuitem,
 .menu menuitem {
@@ -2353,12 +2397,12 @@ menuitem.button.flat:checked,
 modelbutton.flat:checked {}
 
 menuitem.button.flat:disabled,
-modelbutton.flat:disabled {	color: @insensitive_fg_color;}
+modelbutton.flat:disabled { color: @insensitive_fg_color;}
 
 menuitem.button.flat check:last-child,
 menuitem.button.flat radio:last-child,
 modelbutton.flat check:last-child,
-modelbutton.flat radio:last-child {	margin-left: 8px;}
+modelbutton.flat radio:last-child { margin-left: 8px;}
 
 menuitem.button.flat check:first-child,
 menuitem.button.flat radio:first-child,
@@ -2401,8 +2445,8 @@ cursor-handle {
 	border-style: none;
 }
 
-cursor-handle.top {	-gtk-icon-source: -gtk-icontheme("selection-start-symbolic");}
-cursor-handle.bottom {	-gtk-icon-source: -gtk-icontheme("selection-end-symbolic");}
+cursor-handle.top { -gtk-icon-source: -gtk-icontheme("selection-start-symbolic");}
+cursor-handle.bottom { -gtk-icon-source: -gtk-icontheme("selection-end-symbolic");}
 
 popover.combo list > row { padding: 0px 12px 0px 12px; min-height: 35px; }
 
@@ -2412,7 +2456,7 @@ popover.combo list > row { padding: 0px 12px 0px 12px; min-height: 35px; }
  
 popover.emoji-picker entry{margin: 8px;}
  
-popover.emoji-picker {	padding: 0;}
+popover.emoji-picker { padding: 0;}
 
 popover.emoji-picker scrolledwindow {border-bottom: 1px solid @gtk_borders;}
 
@@ -2425,8 +2469,8 @@ button.emoji-section {
 	border: none;
 }
 
-button.emoji-section:first-child {	border-radius: 0 0 0 5.0px;}
-button.emoji-section:last-child {	border-radius: 0 0 5.0px 0;}
+button.emoji-section:first-child { border-radius: 0 0 0 5.0px;}
+button.emoji-section:last-child { border-radius: 0 0 5.0px 0;}
 
 .emoji {
 	min-width: 3em;
@@ -2449,7 +2493,7 @@ button.emoji-section:last-child {	border-radius: 0 0 5.0px 0;}
 	background-clip: padding-box;
 }
 
-.app-notification border {	border: none;}
+.app-notification border { border: none;}
 
 .app-notification,.gedit-search-slider{ box-shadow: 0 1px 2px @menu_shadow; border-radius: 0 0 5.0px 5.0px;}
 
@@ -2498,7 +2542,7 @@ toolbar.osd button:not(.flat):disabled
 
 /* Tooltips */
 
-tooltip {	box-shadow: none;}
+tooltip { box-shadow: none;}
 
 tooltip.background {
 	background-color: alpha(black,0.8);
@@ -2507,15 +2551,15 @@ tooltip.background {
 
 tooltip.background.csd:first-child, tooltip.background.csd:last-child{border-radius: 5.0px;}
 
-tooltip.background label {	padding: 0px;}
+tooltip.background label { padding: 0px;}
 
-tooltip.background.csd decoration { padding: 0; box-shadow: none; }
+tooltip.background.csd decoration { padding: 0; box-shadow: 0 0 0 1px alpha(white,0.2); }
 
-tooltip * {	background-color: transparent;	color: white;}
+tooltip * { background-color: transparent;	color: white;}
 
 /* Drag and Drop */
 *:drop(active):focus,
-*:drop(active) {	box-shadow: inset 0 0 0 1px @warning_color;}
+*:drop(active) { box-shadow: inset 0 0 0 1px @warning_color;}
 
 /************
  * Desktops *
@@ -2590,7 +2634,7 @@ omnibar *{padding: 0 4px;}
 .gedit-search-slider entry { color: currentcolor;}
 
 /* Tweaks */
-.tweak-categories {	background-image: image(@sidebar_color);}
+.tweak-categories { background-image: image(@sidebar_color);}
 stack viewport .tweak list	{ border: 1px solid @gtk_borders; border-radius: 0px;}
 .tweak-group-startup	{ border: 1px solid @gtk_borders; border-radius: 0px;}
 
@@ -2599,10 +2643,10 @@ stack viewport .tweak list	{ border: 1px solid @gtk_borders; border-radius: 0px;
 .geary-folder-frame{ background-color: @sidebar_color;}
 
 /* Photos */
-overlay grid.horizontal > revealer > scrolledwindow.frame:dir(ltr) {	border-style: none none none solid; background-color: @sidebar_color;}
+overlay grid.horizontal > revealer > scrolledwindow.frame:dir(ltr) { border-style: none none none solid; background-color: @sidebar_color;}
 
 /* System Monitor */
-window#gnome-system-monitor.background.csd > box.vertical > stack {	background-color: @gtk_base_color;}
+window#gnome-system-monitor.background.csd > box.vertical > stack { background-color: @gtk_base_color;}
 
 /* Software */
 button.featured-button-left.osd,button.featured-button-right.osd{
@@ -2632,23 +2676,23 @@ treeview.view .songs-list-old:selected,treeview.view .songs-list-old:hover:selec
 .mate-panel-menu-bar menubar,
 .mate-panel-menu-bar button,
 #PanelApplet-window-menu-applet-button
-{	background-color: transparent; color: @panel_fg; box-shadow: none;}
+{ background-color: transparent; color: @panel_fg; box-shadow: none;}
  
-.mate-panel-menu-bar {	background-color: alpha(@panel_bg,0.8);	font-weight: 500;}
+.mate-panel-menu-bar { background-color: alpha(@panel_bg,0.8);	font-weight: 500;}
 
 .mate-panel-menu-bar:not(.popup) { color: @panel_fg;}
 
-PanelToplevel.horizontal > grid > button {	min-width: 24px;}
+PanelToplevel.horizontal > grid > button { min-width: 24px;}
 
-PanelToplevel.vertical > grid > button {	min-height: 24px;}
+PanelToplevel.vertical > grid > button { min-height: 24px;}
 
 PanelSeparator {color: @gtk_borders;}
 
 na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 
-.mate-panel-menu-bar.horizontal menubar > menuitem {	padding: 0 8px;}
+.mate-panel-menu-bar.horizontal menubar > menuitem { padding: 0 8px;}
 
-.mate-panel-menu-bar.vertical menubar > menuitem {	padding: 8px 0;}
+.mate-panel-menu-bar.vertical menubar > menuitem { padding: 8px 0;}
 
 .caja-side-pane notebook{ background-color: transparent;}
 
@@ -2681,7 +2725,7 @@ XfdesktopIconView.view {
 	color: white;
 	border-radius:	5.0px; } 
 	
-XfdesktopIconView.view .label {	background: transparent; text-shadow: 1px 1px black;}
+XfdesktopIconView.view .label { background: transparent; text-shadow: 1px 1px black;}
 
 /* active (selected) state */
 XfdesktopIconView.view:active , XfdesktopIconView.view .label:active{background: @gtk_selected_bg_color;}
@@ -2836,7 +2880,7 @@ button.flat.launcher image{-gtk-icon-shadow: 0 1px 2px @shadow;}
 
 frame.raven-frame > border {border: none;}
 
-.raven .raven-background{	border-radius: 5.0px;}
+.raven .raven-background{ border-radius: 5.0px;}
 widget.raven-background{ border: 1px solid @transparent_border;}
 
 .raven button.flat{}
@@ -2885,10 +2929,10 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 
 /* Budgie Dialogs */
 
-.budgie-notification-window, .budgie-osd-window, .budgie-switcher-window {	background-color: transparent;}
+.budgie-notification-window, .budgie-osd-window, .budgie-switcher-window { background-color: transparent;}
 
 .budgie-notification .notification-title, .budgie-switcher .notification-title,.budgie-osd .budgie-osd-text,.budgie-session-dialog label:not(:last-child),
-.budgie-session-dialog .dialog-title {	font-size: 120%;}
+.budgie-session-dialog .dialog-title { font-size: 120%;}
 
 .budgie-session-dialog, .budgie-polkit-dialog, .budgie-run-dialog {
 	border-radius:	5.0px;
@@ -2897,9 +2941,9 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 
 .budgie-session-dialog, .budgie-polkit-dialog{-gtk-icon-style: regular;}
 
-.budgie-polkit-dialog .message {	color: @insensitive_fg_color;}
+.budgie-polkit-dialog .message { color: @insensitive_fg_color;}
 
-.budgie-polkit-dialog .failure {	color: @error_color;}
+.budgie-polkit-dialog .failure { color: @error_color;}
 
 .budgie-run-dialog entry.search {
 	font-size: 120%;

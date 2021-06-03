@@ -23,7 +23,7 @@ style "default"
 	GtkWidget::visited-link-color = shade(0.8,@selected_bg_color)
 	  
 	GtkToolbar     :: shadow-type		= GTK_SHADOW_NONE
-	GtkMenuBar     :: shadow-type        = GTK_SHADOW_NONE
+#	GtkMenuBar     :: shadow-type        = GTK_SHADOW_NONE
 	  
 	GtkToolbar     ::internal-padding     = 4
 	  
@@ -128,7 +128,12 @@ style "scale"
 
 style "menubar" 
 {
+	bg[NORMAL] = mix(0.1,"black",@bg_color)
+}
 
+style "menubaritem" 
+{
+	fg[NORMAL] = @fg_color
 }
 
 style "menu" 
@@ -147,11 +152,11 @@ style "menuitem"
 
 	engine "murrine" { contrast = 0.0}
 
-	bg[SELECTED] = mix(0.1,@fg_color,@base_color)
+	bg[SELECTED] = @selected_bg_color
 	
 	text[NORMAL]	= @fg_color
-	text[PRELIGHT] = @fg_color
-	fg[PRELIGHT] = @fg_color
+	text[PRELIGHT] = @selected_fg_color
+	fg[PRELIGHT] = @selected_fg_color
 }
 
 style "menu-separator"
@@ -221,6 +226,7 @@ class "GtkHSeparator" style "separator"
 class "GtkSeparatorToolItem" style "separator"
 
 class "GtkMenuBar" style "menubar"
+widget_class "*MenuBar.*" style "menubaritem"
 class "GtkMenu" style "menu"
 widget_class "*<GtkMenuItem>*" style "menuitem"
 widget_class "*<GtkSeparatorMenuItem>*" style "menu-separator"
