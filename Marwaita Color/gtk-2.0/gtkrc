@@ -93,7 +93,7 @@ style "button"
 	engine "murrine" {roundness = 3}
 
 	bg[NORMAL] = @base_color
-	bg[PRELIGHT] = @base_color
+	bg[PRELIGHT] = mix(0.1, @fg_color,@base_color)
 	bg[ACTIVE] = mix(0.2, @fg_color,@base_color)
 }
 
@@ -185,6 +185,7 @@ style "toolbar"
 
 style "scrollbar" 
 {
+	engine "murrine" { roundness = 0 }
 	bg[SELECTED] = mix(0.5,@fg_color, @base_color)
 }
 
