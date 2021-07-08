@@ -115,7 +115,7 @@
 <draw_ops name="draw_titlebar1">
   <rectangle color="C_titlebar_focused_hilight" x="0" y="0" width="width" height="height" filled="true"/>
 <!-- left border-->	<line color="C_border_focused" x1="0" y1="0" x2="0" y2="height"/>
-<!-- bottom border--> <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/> 
+<!-- bottom border <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/> -->
 <!-- top border-->	<line color="C_border_focused" x1="0" y1="0" x2="width" y2="0"/>
 <!-- right border-->	<line color="C_border_focused" x1="width-1" y1="0" x2="width-1" y2="height"/>
 	
@@ -139,7 +139,7 @@
 <draw_ops name="draw_titlebar0">
   <rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true"/>
 <!-- left border-->	<line color="C_border_focused" x1="0" y1="0" x2="0" y2="height"/>
-<!-- bottom border-->  <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/>
+<!-- bottom border <line color="C_border_focused" x1="0" y1="height-1" x2="width" y2="height-1"/> -->
 <!-- top border-->	<line color="C_border_focused" x1="0" y1="0" x2="width" y2="0"/>
 <!-- right border-->	<line color="C_border_focused" x1="width-1" y1="0" x2="width-1" y2="height"/>
 	

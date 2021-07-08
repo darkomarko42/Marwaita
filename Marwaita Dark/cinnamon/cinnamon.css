@@ -1,0 +1,339 @@
+*{color: white; icon-size: 16px; selection-background-color: rgba(255,255,255, 0.15); selected-color: white;}
+
+/* Size of elements */
+
+#notification { spacing-rows: 10px; spacing-columns: 10px; margin-from-right-edge-of-screen: 20px; width: 34em; }
+
+.applet-box{padding: 0 10px;}
+.applet-box.vertical{padding: 10px 0;}
+
+StScrollBar StButton,
+.sound-player StButton{padding: 4px;}
+
+.menu-category-button,
+.menu-category-button-selected,
+.menu-application-button,
+.menu-application-button-selected,
+.menu-category-button-greyed,
+#Tooltip {padding: 6px;}
+
+StEntry,
+.menu-favorites-box,
+.menu-favorites-button,
+.menu-applications-inner-box,
+.menu-applications-outer-box,
+.modal-dialog,
+#notification,
+StButton.notification-applet-padding,
+.switcher-list,
+.window-caption,
+#LookingGlassDialog,
+.calendar,
+.calendar StButton,
+.calendar-week-number,
+.datemenu-date-label,
+.info-osd,
+.osd-window {padding: 8px;}
+
+.popup-menu-item{padding: 8px 12px;}
+
+.menu-application-button-label:ltr,
+.menu-application-button-label:rtl,
+.menu-category-button-label:ltr,
+.menu-category-button-label:rtl{ padding: 0 6px;}
+
+.menu-search-box:ltr,
+.menu-categories-box{ padding-left: 16px;}
+.menu-categories-box{ padding-top: 8px;}
+
+.notification-button,
+.modal-dialog StButton {margin: 0 4px; padding: 6px 64px;}
+
+.run-dialog-entry{ width: 20em;}
+.run-dialog{padding: 0px 16px; padding-top: 8px;}
+
+.popup-separator-menu-item { -margin-horizontal: 1.5em;	height: 1px;}
+
+.switcher-list .thumbnail { width: 260px;}
+
+.workspace-thumbnails {spacing: 14px;}
+
+.workspace-close-button {-cinnamon-close-overlap: 32px; }
+
+.sound-player StBoxLayout,
+.popup-menu-item {  spacing: 1em;}
+
+.popup-menu-content { padding: 4px 0;}
+
+.modal-dialog-button-box { spacing: 21px; padding-top: 21px;}
+
+.keyboard-layout,
+.keyboard-row { spacing: 10px;}
+
+.osd-window .level {height: 8px;}
+
+/* Background of Elements */
+
+StButton.notification-applet-padding,
+StButton.notification-applet-padding:hover,
+StButton.notification-applet-padding:active,
+StButton.notification-applet-padding:checked,
+.switcher-list StButton,
+.grouped-window-list-thumbnail-menu StButton,
+.calendar StButton{background-color: transparent; border: none;}
+
+#panel{background-color: rgba(0,0,0, 0.7);}
+
+.menu,
+.popup-combo-menu,
+.modal-dialog,
+#notification,
+.switcher-list,
+#Tooltip,
+.window-caption,
+.expo-background,
+#LookingGlassDialog,
+#keyboard,
+.info-osd,
+.sound-player-overlay,
+.osd-window{background-color: #222;}
+
+.menu-selected-app-box { border-top: 1px solid rgba(255,255,255, 0.1); padding: 8px; text-align: right;}
+
+StButton,
+.menu-favorites-box,
+.applet-box:hover,
+.popup-menu-item:active,
+.popup-separator-menu-item,
+.popup-sub-menu,
+StEntry,
+.menu-favorites-button:hover,
+.menu-category-button-selected,
+.menu-application-button-selected,
+.grouped-window-list-item-box:hover,
+.grouped-window-list-item-box:active:hover,
+.menu #notification,
+.workspace-graph .workspace,
+.osd-window .level,
+.panelLeft:dnd,
+.panelCenter:dnd,
+.panelRight:dnd{ background-color: rgba(255,255,255, 0.1);}
+
+StButton:hover,
+.grouped-window-list-item-box:focus,
+.grouped-window-list-item-box:active:focus,
+.grouped-window-list-badge,
+.workspace-graph .workspace:active,
+.panel-dummy:entered,
+.osd-window .level-bar{ background-color: rgba(255,255,255, 0.2);}
+
+StButton:active,StButton:checked{ background-color: rgba(255,255,255, 0.3);}
+
+.grouped-window-list-item-box:active{ background-color: rgba(255,255,255, 0.01);}
+
+.panel-bottom .grouped-window-list-item-box:active{ box-shadow: inset 0 -2px white;}
+.panel-top .grouped-window-list-item-box:active{ box-shadow: inset 0 2px white;}
+.panel-right .grouped-window-list-item-box:active{ box-shadow: inset -2px 0 white;}
+.panel-left .grouped-window-list-item-box:active{ box-shadow: inset 2px 0 white;}
+
+.progress{background-color: green;}
+
+.panel-dummy{ background-color: rgba(255,255,255, 0.5);}
+
+.sound-player-overlay { padding: 12px;}
+
+/* Style of elements */
+
+.menu,
+.popup-combo-menu,
+.modal-dialog,
+#notification,
+StButton,
+.menu-favorites-box,
+StEntry,
+.grouped-window-list-badge,
+.switcher-list,
+#Tooltip,
+.window-caption,
+#LookingGlassDialog,
+.info-osd,
+.osd-window{border: 1px solid rgba(255,255,255, 0.1);}
+
+.osd-window .level,
+.osd-window .level-bar,
+.menu,
+.popup-combo-menu,
+.modal-dialog,
+#notification,
+.menu-favorites-button,
+StButton,
+.menu-favorites-box,
+.grouped-window-list-badge,
+.switcher-list,
+#Tooltip,
+.menu-category-button-selected,
+.menu-application-button-selected,
+.window-caption,
+#LookingGlassDialog,
+.info-osd,
+.osd-window{border-radius: 5px;}
+
+StScrollBar StButton{border-radius: 0;}
+
+.menu-application-button:highlighted { font-weight: bold;}
+
+.calendar-day-heading{color: rgba(255,255,255, 0.5); padding-top: 16px;}
+
+.popup-subtitle-menu-item,
+.calendar-other-month-day,
+.calendar-week-number,
+.datemenu-date-label,
+.menu-category-button-greyed *,
+.menu-selected-app-box  *,
+.run-dialog-label,
+.popup-menu-item:insensitive *,
+.popup-inactive-menu-item *{color: rgba(255,255,255, 0.35);}
+
+.menu-category-button-greyed StIcon {opacity: 0.5;}
+
+.workspace-graph .workspace .windows {
+	-active-window-background: rgba(140, 140, 140, 1.0);
+	-active-window-border: rgba(0, 0, 0, 0.7);
+	-inactive-window-background: rgba(140, 140, 140, 1.0);
+	-inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.workspace-graph .workspace:active .windows {
+	-active-window-background: rgba(255, 255, 255, 1.0);
+	-active-window-border: rgba(0, 0, 0, 0.9);
+	-inactive-window-background: rgba(140, 140, 140, 1.0);
+	-inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.popup-slider-menu-item {
+    height: 1em;
+    -slider-height: 6px;
+    -slider-background-color: rgba(255,255,255, 0.2);
+    -slider-active-background-color: white;
+    -slider-border-width: 1px;
+    -slider-handle-radius: 0em;
+}
+
+.window-list-item-box {
+    color: rgba(255,255,255,1.0);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.05);
+    background-gradient-end: rgba(255,255,255,0.2);
+    box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+    transition-duration: 100;
+    spacing: 0.5em;
+}
+
+.window-list-item-box.top,
+.window-list-item-box.bottom {
+    padding: 0 0.5em;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus,
+.window-list-item-box:running {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(226,226,226,0.5);
+    background-gradient-end: rgba(122,122,122,0.5);
+    box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+}
+.window-list-item-box:hover {
+    box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,1.0);
+}
+.window-list-item-demands-attention {
+    background-gradient-start: rgba(255,52,52,0.5);
+    background-gradient-end: rgba(255,144,144,0.5);
+}
+
+.window-list-item-box .progress {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.6);
+    background-gradient-end: rgba(255,255,255,0.3);
+    box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+}
+
+
+/* Images */
+
+.workspace-close-button,
+.window-close { background-image: url("close-window.svg"); height: 32px; width: 32px;}
+
+.workspace-add-button {
+	background-image: url("add-workspace.svg");
+	height: 200px;
+	width: 48px;
+	transition-duration: 300;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl{background-image: url("calendar-arrow-left.svg");}
+.calendar-change-month-back:rtl,
+.calendar-change-month-forward {background-image: url("calendar-arrow-right.svg");}
+
+.ripple-box {
+	width: 104px;
+	height: 104px;
+	background-image: url("corner-ripple.svg");
+}
+.ripple-box:rtl {
+	background-image: url("corner-ripple.svg");
+}
+
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+}
+
+.toggle-switch { width: 16px;  height: 16px;}
+
+.check-box StBin,
+.check-box:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("checkbox-off.svg");
+}
+
+.check-box:checked StBin,
+.check-box:focus:checked StBin{
+    background-image: url("checkbox.svg");
+}
+
+.check-box StLabel {  font-weight: normal; }
+
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    height: 18px;
+    padding-top: 2px;
+}
+
+.radiobutton StBin,
+.radiobutton:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("radiobutton-off.svg");
+    border-radius: 9999px;
+}
+
+.radiobutton:checked StBin,
+.radiobutton:focus:checked StBin { background-image: url("radiobutton.svg"); }
+
+.radiobutton StLabel {
+    padding-top: 4px;
+    box-shadow: none;
+}
+
+.toggle-switch-us,
+.toggle-switch-intl {
+    width: 32px;
+    height: 16px;
+    background-image: url("switch-off.svg");
+}
+
+.toggle-switch-us:checked,
+.toggle-switch-intl:checked{ background-image: url("switch-on.svg"); }
+

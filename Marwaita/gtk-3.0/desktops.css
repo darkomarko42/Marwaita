@@ -1,0 +1,474 @@
+/************
+ * Desktops *
+ ************/
+
+/*********
+ * Gnome *
+ *********/
+
+/* Nautilus */
+
+.nautilus-window placessidebar viewport,.nautilus-window notebook{ border: none;}
+
+.nautilus-window .titlebar .path-bar-box{ border: 1px solid @gtk_transparent_borders; border-radius: 5.0px; background-color: alpha(@gtk_alt_button_color,0.5); background-clip: padding-box;}
+.nautilus-window .titlebar .path-bar-box button.text-button{margin: 0; border-top: none; border-bottom: none; }
+
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):last-child{ border-radius: 0;}
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):first-child{ border-left: none;}
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):only-child{ border-radius: 5.0px 0 0 5.0px;}
+
+.nautilus-window .titlebar .path-bar-box button.text-button image,.nautilus-window .titlebar .path-bar-box button.text-button label{ color: @gtk_titlebar_fg_color;}
+.nautilus-window .titlebar .path-bar-box button.text-button:backdrop image,.nautilus-window .titlebar .path-bar-box button.text-button:backdrop label{ color: alpha(@gtk_titlebar_fg_color,0.5);}
+
+.nautilus-window button box{ margin: 0;}
+
+.nautilus-window .sidebar .frame list{  margin: -2px 0;}
+
+/* Builder */
+
+entry.preferences-search {margin: 0;}
+
+dzlmenubuttonsection:first-child separator {border: none;}
+
+.dzldockbinedge,dzlpreferencesview stacksidebar list { }
+
+omnibar *{padding: 0 4px;}
+
+.dzlmenubuttonitem{ min-height: 24px;}
+
+/* Boxes */
+
+.content-bg{border-radius:	0 0 5.0px 5.0px;}
+.content-bg notebook{ border: none;}
+
+.welcome-tutorial  button {   background-color: alpha(currentcolor,0.2);}
+
+/* Calculator */
+
+.frame .history-view,frame .sourceview text{ border-radius: 0;}
+
+.info-view { border-radius: 0 0 5.0px 5.0px;}
+
+/* Gedit */
+
+ statusbar button{margin: 0;}
+
+.gedit-side-panel-paned statusbar { border-top: 1px solid @gtk_borders;}
+
+.gedit-search-entry-occurrences-tag {
+	color: @gtk_fg_color;
+	border: none;
+	margin: 2px;
+	padding: 2px;
+	background: none;
+}
+
+.gedit-search-slider entry
+{
+	background-color: alpha(currentcolor,0.2);
+	border-color: transparent;
+}
+
+.gedit-search-slider  entry image,
+.gedit-search-slider entry { color: currentcolor;}
+
+/* Tweaks */
+.tweak-categories { background-image: image(@gtk_sidebar_color);}
+stack viewport .tweak list	{ border: 1px solid @gtk_borders; border-radius: 0px;}
+.tweak-group-startup	{ border: 1px solid @gtk_borders; border-radius: 0px;}
+
+/* Geary */
+.geary-conversation-list-box{ background-color: @gtk_base_color;}
+.geary-folder-frame{ background-color: @gtk_sidebar_color;}
+
+/* Photos */
+overlay grid.horizontal > revealer > scrolledwindow.frame:dir(ltr) { border-style: none none none solid; background-color: @gtk_sidebar_color;}
+
+/* System Monitor */
+window#gnome-system-monitor.background.csd > box.vertical > stack { background-color: @gtk_base_color;}
+
+/* Software */
+button.featured-button-left.osd,button.featured-button-right.osd{
+	background-color: alpha(black,0.5);
+	box-shadow: inset 0 0 0 2px;
+	color: white;
+	min-width: 26px;
+	min-height: 32px;
+	border: none;
+	}
+
+/* Terminal */
+terminal-window.background.csd,
+terminal-window.background.csd.maximized {  border-radius: 0 0 0 0;}
+
+window.background.csd > box.vertical > box.horizontal > frame > border {  border-width: 0 1px 0 0;}
+
+window.background.csd > box.vertical > box.horizontal > stack > widget > notebook.frame {  border-width: 0;}
+
+/* Music */
+treeview.view .songs-list-old:selected,treeview.view .songs-list-old:hover:selected,treeview.view .songs-list-old:focus { background-image: image(alpha(@gtk_fg_color,0.15));}
+
+/********
+ * Mate *
+ ********/
+
+.mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
+#PanelApplet-window-menu-applet-button
+{ background-color: transparent; color: @panel_fg; box-shadow: none;}
+ 
+.mate-panel-menu-bar { background-color: alpha(@panel_bg,0.8);	font-weight: 500;}
+
+.mate-panel-menu-bar:not(.popup) { color: @panel_fg;}
+
+PanelToplevel.horizontal > grid > button { min-width: 24px;}
+
+PanelToplevel.vertical > grid > button { min-height: 24px;}
+
+PanelSeparator {color: @gtk_borders;}
+
+na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
+
+.mate-panel-menu-bar.horizontal menubar > menuitem { padding: 0 8px;}
+
+.mate-panel-menu-bar.vertical menubar > menuitem { padding: 8px 0;}
+
+.caja-side-pane notebook{ background-color: transparent;}
+
+.caja-navigation-window .view,.caja-side-pane notebook,.pluma-window scrolledwindow,.pluma-window statusbar frame > border { border-style: none;}
+
+.caja-navigation-window paned .vertical.caja-side-pane notebook .frame { border: none;}
+.caja-navigation-window paned .vertical.caja-side-pane stack{border-top: 1px solid @gtk_borders;}
+
+.caja-notebook { border-top: 1px solid @gtk_borders;}
+
+/*********
+ * Xfce4 *
+ *********/
+
+.xfce4-panel.panel {
+	background-color: @panel_bg;
+	text-shadow: none;
+	-gtk-icon-shadow: none;
+	font-weight: normal;
+	color: @panel_fg;
+}
+
+.xfce4-panel.panel button:not(.flat) { margin: 2px;}
+
+#pulseaudio-button menu .linked button{margin: 0;}
+
+/* default state */
+XfdesktopIconView.view {
+	background: transparent;
+	color: white;
+	border-radius:	5.0px; } 
+	
+XfdesktopIconView.view .label { background: transparent; text-shadow: 1px 1px black;}
+
+/* active (selected) state */
+XfdesktopIconView.view:active , XfdesktopIconView.view .label:active{background: @gtk_selected_bg_color;}
+
+.thunar toolbar{ border-bottom: 1px solid @gtk_borders; border-top: 1px solid @gtk_borders;}
+
+/**********
+ * Budgie *
+ **********/
+
+.budgie-settings-window buttonbox.inline-toolbar { border-width: 0 0 1px 0; background-color: @gtk_sidebar_color; padding: 6px;}
+
+.budgie-container {background-color: transparent;}
+
+/* Budgie Panel */
+.budgie-panel label, .budgie-panel image{color: @panel_fg;}
+
+.budgie-panel{background-color: alpha(@panel_bg,0.8);	transition: all 600ms ease-out; }
+
+.budgie-panel.transparent {background-color: transparent; text-shadow: none; -gtk-icon-shadow: none; }
+
+.bottom .budgie-panel.transparent{background-image: linear-gradient(to bottom, transparent, alpha(@panel_bg,0.5));}
+.top .budgie-panel.transparent{background-image: linear-gradient(to top, transparent, alpha(@panel_bg,0.5));}
+.left .budgie-panel.transparent{background-image: linear-gradient(to left, transparent, alpha(@panel_bg,0.5));}
+.right .budgie-panel.transparent{background-image: linear-gradient(to right, transparent, alpha(@panel_bg,0.5));}
+
+.bottom .budgie-panel{box-shadow: 0 -1px @gtk_transparent_borders;}
+.top .budgie-panel{box-shadow: 0 1px @gtk_transparent_borders;}
+.left .budgie-panel{box-shadow: 1px 0 @gtk_transparent_borders;}
+.right .budgie-panel{box-shadow: -1px 0 @gtk_transparent_borders;}
+
+.bottom .budgie-panel.transparent,
+.top .budgie-panel.transparent,
+.left .budgie-panel.transparent,
+.right .budgie-panel.transparent
+,
+.bottom .dock-mode,
+.top .dock-mode,
+.left .dock-mode,
+.right .dock-mode
+
+{box-shadow:none;}
+
+.budgie-panel separator {border-color: @gtk_transparent_borders;}
+
+.budgie-panel .alert {color: @error_color;}
+
+.budgie-panel image{padding: 0 8px;}
+.budgie-panel .end-region image,
+.budgie-panel button.budgie-menu-launcher image{padding:0;}
+.budgie-panel label{padding: 0 4px;font-weight: bold;}
+
+.budgie-panel .end-region{
+	margin: 4px;
+	border-radius: 5.0px;
+	box-shadow: none;
+	background-color: alpha(@panel_fg,0.2);
+	}
+
+.budgie-panel button.flat{background: none; box-shadow: none; padding: 0; margin: 0;}
+	
+button.flat.launcher image{-gtk-icon-shadow: 0 1px 2px @gtk_shadow;}
+
+.dock-mode{
+	margin: 4px;
+	border-radius:	5.0px;
+	border: 1px solid @gtk_transparent_borders;
+}
+
+.budgie-panel button:not(.launcher):not(.flat){ color: @panel_fg; margin: 2px;}
+
+.budgie-panel button.launcher.flat,
+.budgie-panel button.budgie-menu-launcher
+{
+	background: none;
+	border: none;
+	border-radius: 0;
+	color: @panel_fg;
+	background-clip: border-box;
+}
+
+/* Budgie Popover */
+
+.budgie-popover modelbutton,
+.budgie-popover list .menuitem,
+.budgie-popover .container,
+.budgie-popover.user-menu .container  {padding: 6px;}
+
+.budgie-popover border {border: none;}
+
+.budgie-popover.sound-popover .container,
+.budgie-popover row {padding: 0;}
+
+.budgie-popover row:hover,
+.budgie-popover button.flat:hover,
+.budgie-menu .categories button.flat:checked,
+.budgie-popover row.activatable:selected,
+.budgie-popover .sidebar .frame row.activatable:hover,
+.budgie-popover .sidebar .frame row.activatable:selected {box-shadow: none;}
+
+.budgie-popover .sidebar,
+.budgie-popover .sidebar row{ border: none; padding: 6px 0;}
+
+.budgie-menu .categories button.flat,
+.budgie-popover .sidebar .frame row.activatable{padding: 8px 0; margin: 2px 4px; border: none;}
+
+.budgie-popover separator{ margin: 6px;}
+
+.budgie-popover.budgie-menu entry.search {font-size: 120%; margin: 6px;}
+
+.budgie-menu .sidebar .frame{background-color: transparent; border-right: 1px solid @gtk_transparent_borders;}
+
+.budgie-popover row.activatable,
+.budgie-popover scrolledwindow list,
+.budgie-popover .sidebar .frame,
+.budgie-popover button.flat {animation: none; transition: none; background-color: transparent; background-image: none;}
+
+.budgie-menu .container{padding: 3px;}
+
+/* Raven */
+
+.raven{
+	background-color: @panel_bg;
+	box-shadow: 0 2px 4px @gtk_menu_shadow,0 0 0 1px @gtk_transparent_borders;
+	color: @panel_fg;
+	border-radius: 5.0px;
+	margin: 6px;
+}
+
+.raven stack .frame,
+.raven-background  stackswitcher.linked{ padding: 8px}
+.raven .raven-header.top stackswitcher.linked{ padding-top: 8px}
+
+.raven-header{font-weight: bold;}
+
+.drop-shadow,
+.raven-notifications-view  list box.vertical row,
+.raven .raven-background
+{ color: @panel_fg;}
+
+.raven .raven-header.top stackswitcher.linked button,
+.raven .raven-header.top stackswitcher.linked button:checked{ font-weight: bold;}
+
+frame.raven-frame > border {border: none;}
+
+.raven .raven-background{ border-radius: 5.0px;}
+widget.raven-background{ border: 1px solid @gtk_transparent_borders;}
+
+.raven button.flat{}
+
+calendar.raven-calendar {border-radius: 0px; border-color: transparent; background-color: transparent; border-style: solid;}
+
+calendar.raven-calendar :selected {color: @panel_bg; background-color: @panel_fg;}
+
+.raven-mpris {background-color: alpha(@panel_fg,0.6); color: @panel_bg; margin: 0px; border-radius: 0 0 5.0px 5.0px;} 
+.raven-mpris button{ color: @panel_bg;}
+
+.raven .powerstrip{box-shadow: inset 0 1px @gtk_transparent_borders;}
+.raven .powerstrip button{padding: 8px;}
+.raven > box {margin-bottom: -12px;}
+
+.drop-shadow flowbox flowboxchild:selected{background-color: alpha(currentcolor,0.2);}
+
+.drop-shadow,.raven-notifications-view  list box.vertical row
+{
+	border-radius:	5.0px;
+	box-shadow: 0 0 0 1px @gtk_transparent_borders;
+	border: none;
+}
+
+.drop-shadow{margin: 5px 9px; padding: 4px; }
+
+/* this fix the space on notifications */
+.raven-notifications-group { margin: 2px;}
+.raven-notifications-group list{ margin: 0 0 0 -4px;}
+.raven-notifications-view  list box.vertical row{margin: 4px 0;}
+.raven list box.vertical row button.flat{ margin: 4px; }
+.raven-notifications-group-header button{  margin: 4px 0;}
+
+/* this removes the "useless" icon on notifications header */
+.raven-notifications-view .raven-header{margin: 0 4px 0 -24px;}
+.raven-notifications-view .raven-header  image{ color: transparent;}
+.raven-notifications-view .raven-header button image{ color: currentcolor;}
+
+.raven-notifications-view .raven-background,
+.raven-notifications-view .raven-background list,
+window box.vertical scrolledwindow .frame .raven-background stack list
+{ background-color: transparent; background-image: none; border: none; box-shadow: none; }
+
+.raven-notifications-view  row.activatable:selected,
+.raven-notifications-view  row.activatable:hover { background-image: none; color: inherit;}
+
+/* Budgie Dialogs */
+
+.budgie-notification-window, .budgie-osd-window, .budgie-switcher-window { background-color: transparent;}
+
+.budgie-notification .notification-title, .budgie-switcher .notification-title,.budgie-osd .budgie-osd-text,.budgie-session-dialog label:not(:last-child),
+.budgie-session-dialog .dialog-title { font-size: 120%;}
+
+.budgie-session-dialog, .budgie-polkit-dialog, .budgie-run-dialog {
+	border-radius:	5.0px;
+	box-shadow: none;
+}
+
+.budgie-session-dialog, .budgie-polkit-dialog{-gtk-icon-style: regular;}
+
+.budgie-polkit-dialog .message { color: @insensitive_fg_color;}
+
+.budgie-polkit-dialog .failure { color: @error_color;}
+
+.budgie-run-dialog entry.search {
+	font-size: 120%;
+	padding: 8px 12px;
+	border-image: none;
+	box-shadow: none;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+/********
+ * Nemo *
+ ********/
+ 
+.places-treeview {
+  -NemoPlacesTreeView-disk-full-bg-color: mix(@gtk_bg_color,@gtk_fg_color,0.3);
+  -NemoPlacesTreeView-disk-full-fg-color: @gtk_fg_color;
+  -NemoPlacesTreeView-disk-full-bar-width: 2px;
+  -NemoPlacesTreeView-disk-full-bar-radius: 0;
+  -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+  -NemoPlacesTreeView-disk-full-max-length: 80px;
+}
+
+.nemo-window .nemo-places-sidebar.frame {border-width: 0;}
+.nemo-window .primary-toolbar button{margin-top: 4px; margin-bottom: 4px;}
+.nemo-window .nemo-window-pane widget.entry {  border: 1px solid @gtk_selected_bg_color;}
+.view.places-treeview{ padding: 4px 0;}
+
+/************
+ * Pantheon *
+ ************/
+
+/*this is for Pantheon popovers*/
+popover button.menuitem{
+	background-color: transparent;
+	background-image: none;
+	box-shadow: none;
+	border: none;
+	margin: 0 ;
+	border-radius: 0;
+	padding: 6px 15px;
+	}
+
+popover grid menuitem,
+popover grid .menuitem{padding: 4px 12px;}
+
+radiobutton.color-button radio{ border: 1px solid @gtk_transparent_borders;}
+
+.linked.horizontal.format-bar{background-image: image(@gtk_titlebar_bg_color);}
+.linked.horizontal.format-bar:backdrop{background-image: image(@gtk_titlebar_bg_backdrop_color);}
+
+.storage-bar .fill-block{padding: 6px; background-color:  alpha(@gtk_fg_color,0.3); box-shadow: inset 0 0 0 1px @gtk_transparent_borders;}
+.storage-bar .fill-block.empty-block{background-color: alpha(@gtk_fg_color,0.15);}
+.storage-bar .fill-block.app{background-color: @LIME_500;}
+.storage-bar .fill-block.audio{background-color: @ORANGE_500;}
+.storage-bar .fill-block.files{background-color: @BLUEBERRY_500;}
+.storage-bar .fill-block.photo{background-color: @GRAPE_500;}
+.storage-bar .fill-block.video{background-color: @STRAWBERRY_500;}
+
+.dynamic-notebook .view:not(treeview):selected{background-color: alpha(@gtk_fg_color,0.1); border-radius: 5.0px;}
+
+.horizontal.search-bar{border-bottom: 1px solid @gtk_borders;}
+
+popover .circular:not(button).accent{color: @gtk_selected_bg_color;}
+popover .circular:not(button).accent:focus,
+popover .circular:not(button):not(.accent):focus{background-color: @gtk_selected_bg_color; color: @gtk_selected_fg_color;}
+popover .circular:not(button) image{  color: @colorAccent;}
+
+/* this fix playmymusic separation titlebar buttons */
+.background.csd .mode_button_split.toggle { margin-left: -4px;}
+
+/* this fix fondo app inline toolbar button */
+.horizontal.inline-toolbar.transition{ padding: 0; border-width: 1px 0 0 0; background-color: transparent;}
+.inline-toolbar.transition .flat.btn_round{ border: none; background-color: transparent;}
+.bottom-toolbar{ border: 1px solid @gtk_borders; border-width: 1px 0 0 0;}
+
+/* this fix terminal transparent notebook background */
+.terminal-window .dynamic-notebook{ background-color: @gtk_bg_color;}
+
+/***********
+ * Firefox *
+ ***********/
+
+window.background:not(.csd) > window > menu,
+window.background:not(.csd) > menu > menu {  border: none; }
+
+/****************
+ * Libre-Office *
+ ****************/
+
+
+/***************
+ * Chrome(ium) *
+ ***************/
+ 
+button.chromium{border-color: @gtk_borders;}
+
+.view:not(treeview).chromium{ background-color: @gtk_base_color; background-image: none;}
