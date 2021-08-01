@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="14"
-   height="14"
-   viewBox="0 0 14 14"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
    version="1.1"
    id="svg4"
    sodipodi:docname="radio-mixed-symbolic.svg"
@@ -22,7 +22,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,25 +37,26 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="995"
+     inkscape:window-height="994"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="29.5"
-     inkscape:cx="1.779661"
-     inkscape:cy="7.6949153"
+     inkscape:cx="9.2881356"
+     inkscape:cy="7.7118644"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4"
      inkscape:document-rotation="0"
-     inkscape:pagecheckerboard="0" />
+     inkscape:pagecheckerboard="0"
+     width="16px" />
   <rect
-     style="fill:#000000;stroke-width:1.08863"
+     style="fill:#000000;stroke-width:1.21713"
      id="rect1061"
-     width="8"
+     width="10"
      height="4"
      x="3"
-     y="5"
+     y="6"
      rx="2"
      ry="2" />
 </svg>
