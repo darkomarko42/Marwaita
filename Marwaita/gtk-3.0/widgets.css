@@ -1202,6 +1202,9 @@ menu separator,
 .menu separator,
 popover.menu.background separator { margin: 4px 0; background-color: @gtk_transparent_borders;}
 
+menu menuitem:disabled,
+.menu menuitem:disabled{color: @insensitive_fg_color;}
+
 /* Popovers */
 
 popover grid modelbutton,
