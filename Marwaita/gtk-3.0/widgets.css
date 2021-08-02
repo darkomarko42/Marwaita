@@ -1337,6 +1337,31 @@ infobar.error > label, infobar.error, infobar.error button {color: white;}
 
 infobar label:disabled{color: alpha(currentcolor,0.5);}
 
+.needs-attention > label{
+ animation: needs_attention 150ms ease-in;
+ background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@textColorPrimary), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent));
+ background-size: 6px 6px, 6px 6px;
+ background-repeat: no-repeat; background-position: right 3px, right 4px;
+}
+
+.nemo-window .floating-bar, .nautilus-window .floating-bar {
+	padding: 2px;
+	margin: 6px;
+	background-color: black;
+	color: white;
+	border-radius:	5.0px;
+}
+
+ .floating-bar button {
+	border: none;
+	border-radius: 9999px;
+	min-height: 0;
+	min-width: 0;
+	padding: 0;
+	margin-right: 6px;
+	-gtk-icon-shadow: none;
+}
+
 /*******
  * Osd *
  *******/
