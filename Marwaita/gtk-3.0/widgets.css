@@ -505,6 +505,10 @@ spinbutton.vertical:disabled,
 	border-color: @gtk_transparent_borders;
 }
 
+.titlebar .linked button:not(.suggested-action):not(.destructive-action):disabled,
+.titlebar button:not(.suggested-action):not(.destructive-action).text-button:disabled
+{background-color: transparent; box-shadow: none;}
+
 /* this fix backdrop ssd text titlebar */
 .titlebar.default-decoration:backdrop,
 .titlebar.default-decoration button.titlebutton:backdrop,
