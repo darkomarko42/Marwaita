@@ -1,4 +1,1 @@
-/* this is for alternative titlebars and panels */
-
-.titlebar entry:focus,.titlebar button.suggested-action{border-color: currentcolor;}
-.titlebar entry selection{background-color: @gtk_selected_fg_color; color: @gtk_selected_bg_color;}
+../../Marwaita Alternative/gtk-3.0/alternative.css
