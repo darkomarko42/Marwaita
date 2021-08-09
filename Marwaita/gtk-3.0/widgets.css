@@ -909,7 +909,12 @@ notebook > header.top {border-width: 0 0 1px 0 ;}
 notebook > header.bottom {border-width: 1px 0 0 0;}
 notebook > header.left {border-width: 0 1px 0 0;}
 notebook > header.right {border-width: 0 0 0 1px;}
- 
+
+notebook > header.top > tabs > tab,
+notebook > header.bottom > tabs > tab{border: 1px solid@gtk_transparent_borders; border-width: 0px 1px 0px 0px;}
+notebook > header.left > tabs > tab,
+notebook > header.right > tabs > tab{border: 1px solid@gtk_transparent_borders; border-width: 0px 0px 1px 0px;}
+
 /* Hdy Tab */
 tabbox tab{ border: 1px solid @borders; border-width:  0 1px 1px 1px; }
 tabbox tab:checked{ background-color: @tab_base_color;}
