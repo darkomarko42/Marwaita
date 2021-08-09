@@ -2,6 +2,8 @@
 
 window.aboutdialog image.large-icons { -gtk-icon-size: 128px; }
 
+check,radio { -gtk-icon-size: 14px; }
+
 frame,
 .frame
 {border: 1px solid @gtk_borders;}

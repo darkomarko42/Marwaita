@@ -32,8 +32,8 @@
 @define-color error_color #E64545;
 @define-color success_color #36B34B;
 
-@define-color gtk_titlebar_bg_color mix(@gtk_selected_bg_color,black,0.2);
-@define-color gtk_titlebar_bg_backdrop_color mix(@gtk_titlebar_bg_color,black,0.2);
+@define-color gtk_titlebar_bg_color #282828;
+@define-color gtk_titlebar_bg_backdrop_color #333;
 
 @define-color gtk_titlebar_fg_color @gtk_selected_fg_color;
 @define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);
@@ -157,14 +157,3 @@
 @define-color BLACK_700 #1a1a1a;
 @define-color BLACK_900 #000;
 
-button.suggested-action,
-progressbar progress,
-scale highlight,
-switch:checked,
-check:checked,
-radio:checked,
-check:indeterminate,
-radio:indeterminate,
-.color-button check,
-.color-button radio
-{ background-clip: border-box;}

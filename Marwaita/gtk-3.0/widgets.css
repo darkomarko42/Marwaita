@@ -98,13 +98,13 @@ popover.background > contents > list,
  
 spinbutton:not(.vertical),
 entry,
-check,
+/*check,
 radio,
 switch,
-switch slider,
+switch slider,*/
 progressbar trough,
-progressbar progress,
-scale highlight,
+/*progressbar progress,
+scale highlight,*/
 scale trough,
 levelbar trough,
 menu,
@@ -121,7 +121,7 @@ editablelabel > stack > text
 .budgie-panel button:not(.launcher):not(.flat),
 .xfce4-panel.panel button:not(.flat),
 .workspace-add-button
-{background-color: shade(@panel_bg,1.3);}
+{background-color: shade(@panel_bg,1.2);}
 
 /* Sizes */
 
@@ -210,7 +210,9 @@ toolbar.vertical,
 .nemo-window grid paned .sidebar,
 .raven-frame,
 .budgie-popover border,
-.budgie-popover frame
+.budgie-popover frame,
+.app-notification border,
+.app-notification.frame border
 { border-style: none;}
 
 separator{background-color: @gtk_borders; min-width: 1px; min-height: 1px; }
@@ -359,11 +361,13 @@ spinbutton.vertical entry
 
 /* Action Button */
 
+button.suggested-action, .titlebar button.suggested-action{background-clip: border-box;}
+
 button.suggested-action,button.destructive-action{font-weight: bold;}
 
-button.suggested-action{background-color: @gtk_selected_bg_color; color: @gtk_selected_fg_color; }
+button.suggested-action{background-color: @gtk_selected_bg_color; color: @gtk_selected_fg_color; border-color: transparent; }
 
-button.suggested-action:disabled{background-color: alpha(@gtk_selected_bg_color,0.3); color: @gtk_fg_color; }
+button.suggested-action:disabled{background-color: alpha(@gtk_selected_bg_color,0.3); color: alpha(currentcolor,0.5); }
 
 button.destructive-action{color: mix(@gtk_fg_color,@error_color,0.8);}
 
@@ -720,11 +724,18 @@ check:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/checkbox-mixed-
 radio:checked { -gtk-icon-source: -gtk-recolor(url("assets/radio-symbolic.svg"));}
 radio:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/radio-mixed-symbolic.svg"));}
 
+check,radio { background-clip: padding-box; border: 1px solid @gtk_transparent_borders;}
+
+check:checked,
+check:indeterminate,
+radio:checked,
+radio:indeterminate { background-clip: border-box; border-color: transparent;}
+
 /* Sizes of check and radio */
 check,
 radio,
 treeview.view check:selected,
-treeview.view radio:selected{min-height: 16px;	min-width: 16px;}
+treeview.view radio:selected{min-height: 14px;	min-width: 14px;}
 
 window	flowbox grid overlay check,
 .view.content-view.check:not(list),
@@ -829,34 +840,34 @@ switch:disabled image,
 switch,
 switch slider{border-radius: 9999px;}
 
-switch{background-color: alpha(currentcolor,0.1);}
+switch{background-color: alpha(currentcolor,0.4);}
 
 switch slider {
 	margin: 4px;
 	background-color: @gtk_selected_fg_color;
-	min-height: 13px;
-	min-width: 13px;
+	min-height: 14px;
+	min-width: 14px;
 	border:  none;
-	box-shadow: 0 0 0 1px @gtk_transparent_borders;
+	box-shadow: none;
 }
 
 switch:disabled,
 switch slider:disabled,
-switch slider:checked:disabled { background-color:  alpha(currentcolor,0.05);}
+switch slider:checked:disabled { background-color:  alpha(currentcolor,0.2);}
 
 switch:checked:disabled,
-scale highlight:disabled{ background-color: mix(@gtk_bg_color,@gtk_selected_bg_color,0.5);}
+scale highlight:disabled,
+scale > highlight:disabled{ background-color: mix(@gtk_bg_color,@gtk_selected_bg_color,0.5);}
 
 /* Scale slider */
 
-scale highlight{margin: -1px;}
+scale trough{padding: 2px;}
 
- 
-scale slider{ background-color: transparent; box-shadow: none; padding: 8px; margin: -8px; border-radius: 9999px;}
+scale slider{ background-color: transparent; padding: 8px; margin: -8px; box-shadow: none; border-radius: 9999px;}
 
 scale:hover slider,
 scale.marks-after slider,
-scale.marks-before slider {background-color: @gtk_selected_fg_color; box-shadow: 0 0 0 1px @gtk_transparent_borders;}
+scale.marks-before slider{background-color: @gtk_selected_fg_color; box-shadow: 0 0 0 1px @gtk_transparent_borders; }
 
 /* Scrollbars */
 
@@ -878,6 +889,8 @@ scrollbar slider {
 /****************
  * Progressbars *
  ****************/
+
+progressbar trough{padding: 2px;}
 
 treeview.view.progressbar {box-shadow: inset 0 0 0 9999px alpha(currentcolor,0.4); }
 treeview.view.trough {box-shadow: inset 0 0 0 1px alpha(currentcolor,0.4);}
@@ -1232,7 +1245,7 @@ menuitem.button.flat,
 modelbutton.flat {
 	transition: none;
 	min-width: 120px;
-	padding: 4px 15px;
+	padding: 6px 15px;
 	outline-offset: -2px;
 	border: none;
 	outline-color: transparent;
@@ -1382,7 +1395,8 @@ infobar label:disabled{color: alpha(currentcolor,0.5);}
 .osd entry:not(.vertical),
 .app-notification button,
 .gedit-search-slider button,
-.gedit-search-slider entry{ background-color: alpha(currentcolor,0.2); color: currentcolor;}
+.gedit-search-slider entry
+{ background-color: alpha(currentcolor,0.2); color: currentcolor;}
 
 /* OSD button */
 
@@ -1972,7 +1986,7 @@ popover menuitem{padding: 4px 12px;}
 {background-color: @LIME_500;}
 
 .color-button.blue check, .color-button.blue radio, .color-button.blueberry check, .color-button.blueberry radio
-{background-color: @BLUEBERRY_500 }
+{background-color: @BLUEBERRY_500; }
 
 .color-button.purple check, .color-button.purple radio, .color-button.grape check, .color-button.grape radio
 {background-color: @GRAPE_500;}
@@ -2033,8 +2047,8 @@ popover menuitem{padding: 4px 12px;}
 }
 
 .raven stack .frame,
-.raven-background  stackswitcher.linked{ padding: 8px}
-.raven .raven-header.top stackswitcher.linked{ padding-top: 8px}
+.raven-background  stackswitcher.linked{ padding: 8px;}
+.raven .raven-header.top stackswitcher.linked{ padding-top: 8px;}
 
 .raven-header{font-weight: bold;}
 
@@ -2148,7 +2162,8 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 
 {box-shadow:none;}
 
-.budgie-panel separator {background-color: currentcolor;}
+.budgie-panel separator,
+.raven scale highlight {background-color: currentcolor; color: inherit;}
 
 .budgie-panel .alert {color: @error_color;}
 
@@ -2274,8 +2289,6 @@ PanelToplevel.horizontal > grid > button { min-width: 24px;}
 PanelToplevel.vertical > grid > button { min-height: 24px;}
 
 PanelSeparator {color: @gtk_borders;}
-
-na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 
 .mate-panel-menu-bar.horizontal menubar > menuitem { padding: 0 8px;}
 

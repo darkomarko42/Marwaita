@@ -157,14 +157,3 @@
 @define-color BLACK_700 #1a1a1a;
 @define-color BLACK_900 #000;
 
-button.suggested-action,
-progressbar progress,
-scale highlight,
-switch:checked,
-check:checked,
-radio:checked,
-check:indeterminate,
-radio:indeterminate,
-.color-button check,
-.color-button radio
-{ background-clip: padding-box;}

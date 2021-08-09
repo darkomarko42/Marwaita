@@ -32,8 +32,8 @@
 @define-color error_color #E64545;
 @define-color success_color #36B34B;
 
-@define-color gtk_titlebar_bg_color #282828;
-@define-color gtk_titlebar_bg_backdrop_color #333;
+@define-color gtk_titlebar_bg_color mix(@gtk_selected_bg_color,black,0.2);
+@define-color gtk_titlebar_bg_backdrop_color mix(@gtk_titlebar_bg_color,black,0.2);
 
 @define-color gtk_titlebar_fg_color @gtk_fg_color;
 @define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.1);
