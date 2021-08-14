@@ -26,6 +26,13 @@ button.circular{ -gtk-outline-radius: 9999px;}
 
 *:disabled {-gtk-icon-effect: dim;}
 
+.needs-attention > label{
+ animation: needs_attention 150ms ease-in;
+ background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@textColorPrimary), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.5, to(transparent), to(transparent));
+ background-size: 6px 6px, 6px 6px;
+ background-repeat: no-repeat; background-position: right 3px, right 4px;
+}
+
 /* Entries */
 
 entry image.left {

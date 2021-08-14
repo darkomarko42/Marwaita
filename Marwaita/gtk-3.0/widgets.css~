@@ -68,8 +68,7 @@ scrolledwindow.view list,
 .source-list,
 .sidebar .view,
 assistant .sidebar,
-.unified grid paned .sidebar.vertical,
- window.unified.csd .sidebar headerbar.titlebar.flat
+.unified grid paned .sidebar.vertical
 {background-color: @gtk_sidebar_color;}
 
 /* fix widgets background */
@@ -121,26 +120,17 @@ radio:hover,
 scale slider:hover,
 switch:hover{ box-shadow: 0 0 0 2px alpha(@gtk_selected_bg_color,0.5);}
 
-.drop-shadow,
-.raven .raven-background,
-.raven-notifications-view  list box.vertical row
-{background-color: shade(@panel_bg,1.3);}
+.drop-shadow
+{background-color: shade(@panel_bg,1.2);}
 
 .raven button:not(.flat),
 .drop-shadow button:not(.flat),
 .budgie-panel button:not(.launcher):not(.flat),
 .xfce4-panel.panel button:not(.flat),
-.workspace-add-button
+.workspace-add-button,
+.raven .raven-background,
+.raven-notifications-view  list box.vertical row
 {background-color: alpha(white,0.15);}
-
-.budgie-panel separator,
-.raven scale highlight,
-.titlebar scale highlight,
-.titlebar progressbar progress,
-infobar scale highlight,
-infobar progressbar progress,
-.drop-shadow scale highlight,
-.drop-shadow progressbar progress {background-color: currentcolor; color: inherit;}
 
 /* Sizes */
 
@@ -162,8 +152,7 @@ button,
 spinbutton:not(.vertical),
 entry,
 notebook tab,
-scale
-{ padding: 5px;}
+scale{ padding: 5px;}
 
 spinbutton:not(.vertical){padding: 0;}
 
@@ -457,9 +446,7 @@ treeview.view button:hover,
 spinbutton.vertical button:hover,
 .toolbar button:hover,
 calendar header button:hover,
-.osd button.flat:hover,
-.sidebar actionbar.inline-toolbar button:hover,
-actionbar.flat button:hover
+.osd button.flat:hover
 {background-image: image(alpha(currentcolor,0.1)); box-shadow: none;}
 
 /* Checked State */
@@ -487,8 +474,6 @@ spinbutton.vertical button:active,
 calendar header button:active,
 .osd button:active,
 .osd button.flat:active,
-.sidebar actionbar.inline-toolbar button:active,
-actionbar.flat button:active,
 
 button:checked,
 .inline-toolbar button.flat:checked,
@@ -512,9 +497,7 @@ spinbutton.vertical button:checked,
 .toolbar button:checked,
 calendar header button:checked,
 .osd button:checked,
-.osd button.flat:checked,
-.sidebar actionbar.inline-toolbar button:checked,
-actionbar.flat button:checked
+.osd button.flat:checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none;}
 
 /* Disabled State */
@@ -935,7 +918,7 @@ levelbar block{margin: 2px;}
  * Notebooks *
  *************/
  
-notebook header{ border: 1px solid @gtk_borders; background-color: mix(@tab_base_color,black,0.1);}
+notebook header{ border: 1px solid @gtk_borders;}
 
 notebook > header.top {border-width: 0 0 1px 0 ;}
 notebook > header.bottom {border-width: 1px 0 0 0;}
@@ -1356,6 +1339,7 @@ dialog actionbar{ border-radius: 0 0 5.0px 5.0px;}
 .inline-toolbar{
 	padding: 4px;
 	background-color: @gtk_sidebar_color;
+	border: solid @gtk_borders;
 	border-width: 0 1px 1px;
 }
 
@@ -1371,22 +1355,6 @@ searchbar > revealer > box, .location-bar, .search-bar {
 	background-color: @gtk_bg_color;
 	box-shadow: none;
 	}
-
-.inline-toolbar, actionbar.flat,
-.bottom-toolbar.flat,
-tab .bottom-toolbar.tab-close-button,
-tab .bottom-toolbar.tab-indicator,
-.sidebar .inline-toolbar button.bottom-toolbar,
-.sidebar .emoji-picker stack box > box.horizontal button.bottom-toolbar,
-.emoji-picker stack .sidebar box > box.horizontal button.bottom-toolbar, .emoji-picker stack box > box.horizontal
-{background-image: linear-gradient(to bottom, @gtk_transparent_borders 2%, transparent 0%);}
-
-actionbar.inline-toolbar,
-actionbar.flat,
-.inline-toolbar.transition{ padding: 0;}
-
-.sidebar actionbar.inline-toolbar button,
-actionbar.flat button{ border-radius: 0; border: none; background-color: transparent;}
 
 /************
  * Infobars *
@@ -2027,8 +1995,6 @@ popover grid .menuitem,
 popover .menuitem,
 popover menuitem{padding: 4px 12px;}
  
-.color-button check,.color-button radio{border-color: @gtk_transparent_borders; background-clip: border-box;}
-
 .color-button.red check, .color-button.red radio, .color-button.strawberry check, .color-button.strawberry radio
 {background-color: @STRAWBERRY_300;}
 
@@ -2059,15 +2025,7 @@ popover menuitem{padding: 4px 12px;}
 .color-button.slate check, .color-button.slate radio
 {background-color: @SLATE_300;}
 
-.color-button.auto radio {
-	color: white;
-	background-image: linear-gradient(to right, @STRAWBERRY_300 25%, @ORANGE_300 25%, @ORANGE_300 50%, @LIME_500 50%, @LIME_500 75%, @BLUEBERRY_500 75%);
-}
-
-radiobutton.image-button{ background-color: transparent; border: 1px solid transparent; padding: 4px; border-radius: 5.0px;}
-radiobutton.image-button:checked{ background-color: alpha(@gtk_selected_bg_color,0.2); border-color: @gtk_selected_bg_color; }
-
-.dynamic-notebook .view:not(treeview):selected{background-color: alpha(@gtk_selected_bg_color,0.2); border-radius: 5.0px;}
+.dynamic-notebook .view:not(treeview):selected{background-color: alpha(@gtk_fg_color,0.1); border-radius: 5.0px;}
 
 .storage-bar .fill-block{padding: 6px; background-color:  alpha(@gtk_fg_color,0.3); box-shadow: inset 0 0 0 1px @gtk_transparent_borders;}
 .storage-bar .fill-block.empty-block{background-color: alpha(@gtk_fg_color,0.15);}
@@ -2080,45 +2038,20 @@ radiobutton.image-button:checked{ background-color: alpha(@gtk_selected_bg_color
 /* this fix playmymusic separation titlebar button */
 .background.csd .mode_button_split.toggle { margin-left: -4px;}
 
-/* this is for "fondo" app */
-button.btn_round.flat,
-button.btn_round.flat:hover,
-button.btn_round.flat:active,
-button.btn_round.flat:checked,
-button.btn_round.flat:disabled
-{
-	background-clip: border-box;
-	background-color: transparent;
-	color: currentcolor;
-	border-color: transparent;
-	box-shadow: none;
-	background-image: none;
-}
-
 /* this is the new notification */
 
 window.notification .draw-area,
 .card {
 	background-color: @gtk_base_color;
-	border-radius: 5.0px;
+	border-radius: 5.0px;;
 	box-shadow: 0 0 0 1px @gtk_transparent_borders, 0 2px 4px @gtk_shadow; }
 	
 window.notification .draw-area image {color: @gtk_fg_color; }
 window.notification .draw-area label.title { font-weight: 700; }
 window.notification .draw-area .urgent label.title { color: @error_color; }
 
-.card.horizontal.rounded{ background-color: alpha(@gtk_selected_bg_color,0.2);}
-
-.card.horizontal.hotcorner-display.rounded{
-	background-image:
-	radial-gradient(circle, alpha(@gtk_selected_bg_color,0.5) 70%, transparent 1%),
-	radial-gradient(circle, alpha(@gtk_selected_bg_color,0.5) 70%, transparent 1%),
-	radial-gradient(circle, alpha(@gtk_selected_bg_color,0.5) 70%, transparent 1%),
-	radial-gradient(circle, alpha(@gtk_selected_bg_color,0.5) 70%, transparent 1%);
-	}
-
 .avatar,
-avatar { border: 1px solid @gtk_transparent_borders; border-radius: 9999px; box-shadow: 0 1px 2px @gtk_menu_shadow; background-clip: border-box;}
+avatar { border: 1px solid @gtk_transparent_borders; border-radius: 5.0px; box-shadow: 0 1px 2px @gtk_menu_shadow; background-clip: border-box;}
 
 avatar.color1 {	background-color: #64baff;	color: #002e99; }
 avatar.color2 {	background-color: #8cd5ff;	color: #0d52bf; }
@@ -2139,7 +2072,7 @@ avatar.image { background: none; }
 .badge {
 	background-image: none;
 	background-color: @error_color;
-	border: none;
+	border: 1px solid @gtk_transparent_borders;
 	border-radius: 9999px;
 	box-shadow: none;
 	color: white;
@@ -2148,7 +2081,7 @@ avatar.image { background: none; }
 	min-width: 1.8333333343rem;
 	text-shadow: 0 1px 1px alpha(black,0.2); }
 
-.accent{color: @gtk_selected_bg_color;}
+
 
 /********
  * Nemo *
@@ -2163,7 +2096,7 @@ avatar.image { background: none; }
  * Budgie *
  **********/
 
-.budgie-settings-window buttonbox.inline-toolbar { border-bottom: 1px solid @gtk_borders; background-image: none; background-color: @gtk_sidebar_color; padding: 6px;}
+.budgie-settings-window buttonbox.inline-toolbar { border-width: 0 0 1px 0; background-color: @gtk_sidebar_color; padding: 6px;}
 
 /* Raven */
 
@@ -2293,7 +2226,11 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 .top .dock-mode,
 .left .dock-mode,
 .right .dock-mode
+
 {box-shadow:none;}
+
+.budgie-panel separator,
+.raven scale highlight {background-color: currentcolor; color: inherit;}
 
 .budgie-panel .alert {color: @error_color;}
 
