@@ -1385,8 +1385,8 @@ actionbar.inline-toolbar,
 actionbar.flat,
 .inline-toolbar.transition{ padding: 0;}
 
-.sidebar actionbar.inline-toolbar button,
-actionbar.flat button{ border-radius: 0; border: none; background-color: transparent;}
+.sidebar actionbar.inline-toolbar button:not(.suggested-action):not(.destructive-action),
+actionbar.flat button:not(.suggested-action):not(.destructive-action){ border-radius: 0; border: none; background-color: transparent;}
 
 /************
  * Infobars *
