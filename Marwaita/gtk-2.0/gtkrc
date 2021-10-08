@@ -51,9 +51,9 @@ style "default"
 	bg[PRELIGHT]    = @bg_color
 	base[PRELIGHT]  = @bg_color
 	bg[ACTIVE]      = mix(0.2,@fg_color,@bg_color)
-	base[ACTIVE]    = mix(0.3,@selected_bg_color,@base_color)
+	base[ACTIVE]    = mix(0.1,@fg_color,@base_color)
 	bg[SELECTED]    = @selected_bg_color
-	base[SELECTED]  = mix(0.3,@selected_bg_color,@base_color)
+	base[SELECTED]  = mix(0.1,@fg_color,@base_color)
 	bg[INSENSITIVE] = @bg_color
 	base[INSENSITIVE] = @bg_color
 	
@@ -92,8 +92,8 @@ style "button"
 
 	engine "murrine" {roundness = 3}
 
-	bg[NORMAL] = @base_color
-	bg[PRELIGHT] = mix(0.1, @fg_color,@base_color)
+	bg[NORMAL] =  @base_color
+	bg[PRELIGHT] = mix(0.15, @fg_color,@base_color)
 	bg[ACTIVE] = mix(0.2, @fg_color,@base_color)
 }
 
@@ -120,7 +120,7 @@ style "scale"
 	GtkScale       ::slider-length = 14
 	GtkScale		    ::trough-side-details = 1
 	
-	engine "murrine" {roundness = 9999}
+	engine "murrine" {roundness = 9999 border_colors = {@selected_bg_color, @selected_bg_color}}
 	
 	bg[NORMAL] = @selected_fg_color
 	bg[PRELIGHT] = @selected_fg_color

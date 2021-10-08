@@ -15,7 +15,7 @@
 	outline-style: dashed;
 	outline-offset: -3px;
 	outline-width: 1px;
-	-gtk-outline-radius: 5.0px;
+	-gtk-outline-radius: 3.0px;
 }
 
 frame > border,
@@ -89,14 +89,19 @@ toolbar { -GtkWidget-window-dragging: false;}
 popover.background
 { border: 1px solid @gtk_transparent_borders; 	box-shadow: 0 1px 2px @gtk_menu_shadow; }
 
+menu,
+.menu,
+popover.background
+{background-color: @gtk_bg_color;}
+
 /* Tooltips */
 
-tooltip.background { background-color: @gtk_bg_color; background-clip: padding-box; }
+tooltip.background { background-color: alpha(black,0.9); background-clip: padding-box; }
 
-tooltip.background.csd:first-child, tooltip.background.csd:last-child{border-radius: 5.0px;}
+tooltip.background.csd:first-child, tooltip.background.csd:last-child{border-radius: 6.0px;}
 tooltip.background label { padding: 0px;}
-tooltip.background.csd decoration { padding: 0; }
-tooltip * { background-color: transparent;	color: @gtk_fg_color;}
+tooltip.background.csd decoration { padding: 0; box-shadow: 0 0 0 1px alpha(white,0.2); }
+tooltip * { background-color: transparent;	color: white;}
 
 /* Scale Marks */
 scale value {
@@ -179,9 +184,9 @@ na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 
 /* Windows Decorations */
 
-decoration{ box-shadow: 0 6px 12px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; margin: 6px;}
+decoration{ box-shadow: 0 2px 6px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; margin: 6px;}
 
-decoration:backdrop{ box-shadow: 0 6px 12px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
+decoration:backdrop{ box-shadow: 0 2px 6px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
 
 dialog decoration,
 messagedialog decoration{ box-shadow: 0 2px 4px @gtk_shadow,0 0 0 1px @gtk_transparent_borders;}
@@ -189,7 +194,7 @@ messagedialog decoration{ box-shadow: 0 2px 4px @gtk_shadow,0 0 0 1px @gtk_trans
 dialog decoration:backdrop,
 messagedialog decoration:backdrop{ box-shadow: 0 2px 4px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
 
-.csd.popup decoration {box-shadow: 0 1px 2px @gtk_menu_shadow; border-radius: 5.0px; }
+.csd.popup decoration {box-shadow: 0 1px 2px @gtk_menu_shadow; border-radius: 6.0px; }
 
 .ssd decoration{box-shadow: 0 0 0 1px @gtk_transparent_borders;}
 

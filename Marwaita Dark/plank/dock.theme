@@ -15,7 +15,7 @@ FillStartColor=40;;40;;40;;255
 #The ending color (RGBA) of the fill gradient.
 FillEndColor=20;;20;;20;;255
 #The color (RGBA) of the inner stroke.
-InnerStrokeColor=120;;120;;120;;255
+InnerStrokeColor=150;;150;;150;;255
 
 [PlankDockTheme]
 #The padding on the left/right dock edges, in tenths of a percent of IconSize.

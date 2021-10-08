@@ -5,7 +5,7 @@
    version="1.1"
    id="svg25"
    sodipodi:docname="add-workspace.svg"
-   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -33,13 +33,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1918"
-     inkscape:window-height="997"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
      id="namedview27"
      showgrid="false"
-     inkscape:zoom="14.75"
-     inkscape:cx="-29.932203"
-     inkscape:cy="17.694915"
+     inkscape:zoom="7.375"
+     inkscape:cx="-42.711864"
+     inkscape:cy="7.3220339"
      inkscape:current-layer="svg25"
      inkscape:document-rotation="0"
      inkscape:window-x="0"
@@ -89,6 +89,6 @@
   </defs>
   <path
      id="rect838"
-     style="fill:#000000;stroke-width:0.834017;opacity:1"
+     style="fill:#000000;stroke-width:0.834017;opacity:1;fill-opacity:1"
      d="M 14 0 L 14 14 L 0 14 L 0 18 L 14 18 L 14 32 L 18 32 L 18 18 L 32 18 L 32 14 L 18 14 L 18 0 L 14 0 z " />
 </svg>
