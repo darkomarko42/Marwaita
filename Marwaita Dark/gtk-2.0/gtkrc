@@ -1,4 +1,4 @@
-gtk_color_scheme = "fg_color:#fff\nbg_color:#333\nbase_color:#5e5e5e\ntext_color:#fff\nselected_bg_color:#3b93ff\nselected_fg_color:#000\ntooltip_bg_color:#333\ntooltip_fg_color:#fff\nborder_color:#151515"
+gtk_color_scheme = "fg_color:#fff\nbg_color:#333\nbase_color:#5e5e5e\ntext_color:#fff\nselected_bg_color:#2386ff\nselected_fg_color:#000\ntooltip_bg_color:#333\ntooltip_fg_color:#fff\nborder_color:#151515"
 
 style "default"
 {

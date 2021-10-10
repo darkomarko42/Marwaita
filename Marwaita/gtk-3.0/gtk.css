@@ -2,7 +2,7 @@
 @import url("../general/gtk-colors.css");
 @import url("gtk-version.css");
 @import url("../general/widgets.css");
-@import url("../general/alternative.css");
+@import url("../general/titlebar.css");
 
 @define-color gtk_fg_color black;
 @define-color gtk_text_color @gtk_fg_color;
@@ -10,7 +10,6 @@
 @define-color gtk_base_color #fff;
 
 @define-color gtk_button_color @gtk_base_color;
-@define-color gtk_alt_button_color @gtk_button_color;
 @define-color gtk_widget_color alpha(currentcolor,0.1);
 
 @define-color gtk_shadow alpha(black,0.5);
@@ -27,8 +26,4 @@
 
 @define-color gtk_highlight alpha(white,0.8);
 
-@define-color gtk_titlebar_bg_color mix(@gtk_bg_color,black,0.1);
-@define-color gtk_titlebar_bg_backdrop_color mix(@gtk_titlebar_bg_color,black,0.1);
-
-@define-color gtk_titlebar_fg_color @gtk_fg_color;
 @define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);

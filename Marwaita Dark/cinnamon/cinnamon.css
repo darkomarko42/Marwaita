@@ -115,7 +115,7 @@ StEntry,
 .menu-favorites-box,
 #notification,
 .menu #notification
-{background-color: #5e5e5e;}
+{background-color: #4c4c4c;}
 
 .menu,
 .popup-combo-menu,
@@ -215,7 +215,8 @@ StEntry,
 {box-shadow: 0 0 0 1px rgba(0,0/**/,0, 0.2);}
 
 StEntry,
-StButton
+StButton,
+#Tooltip
 {border-radius: 3px;}
 
 .menu{margin: 8px;}
@@ -229,7 +230,6 @@ StButton
 .menu-favorites-button,
 .menu-favorites-box,
 .switcher-list,
-#Tooltip,
 .menu-category-button-selected,
 .menu-application-button-selected,
 .window-caption,

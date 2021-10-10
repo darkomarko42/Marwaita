@@ -187,6 +187,8 @@ button,
 .titlebar windowcontrols button,
 .titlebar .linked button:not(.suggested-action):not(.destructive-action),
 .titlebar button:not(.suggested-action):not(.destructive-action).text-button,
+headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
+headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button,
 menu,
 tabbox tab:checked,
 notebook tab:checked,
@@ -477,7 +479,10 @@ spinbutton.vertical entry
 .titlebar .linked button:not(.suggested-action):not(.destructive-action),
 .titlebar button:not(.suggested-action):not(.destructive-action).text-button,
 .titlebar spinbutton:not(.vertical),
-.titlebar entry{background-color: @gtk_alt_button_color;}
+.titlebar entry,
+headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
+headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button
+{background-color: @gtk_titlebar_button_color;}
 	
 .titlebar button.titlebutton,
 .titlebar windowcontrols button{}
@@ -505,7 +510,7 @@ button.suggested-action{color: @gtk_selected_fg_color; background-color: @gtk_se
 button.destructive-action{color: white; background-color: @error_color;}
 
 button.suggested-action:disabled,
-button.destructive-action:disabled{ background-color: alpha(black,0.35); border-color: transparent; text-shadow: none; -gtk-icon-shadow: none;}
+button.destructive-action:disabled{ background-color: mix(@gtk_bg_color,@gtk_fg_color,0.3); color: white; border-color: transparent; text-shadow: none; -gtk-icon-shadow: none;}
 
 /* Flat Button */
 
@@ -778,7 +783,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 /* this fix the lack of border on linked widgets */
 
 .contacts-postal-entry:focus:not(:last-child),
-.linked.vertical > spinbutton:not(.vertical):focus {}
+.linked.vertical > spinbutton:not(.vertical):focus { box-shadow:inset 0 0 0 1px @gtk_selected_bg_color, inset 0 -2px @gtk_selected_bg_color;}
 
 .linked:not(.vertical) > spinbutton:focus:not(.vertical) + spinbutton:not(.vertical),
 .linked:not(.vertical) > spinbutton:focus:not(.vertical) + button,
@@ -787,7 +792,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked:not(.vertical) > entry:focus + button,
 .linked:not(.vertical) > entry:focus + combobox > box > button.combo,
 .linked:not(.vertical) > entry:focus + spinbutton:not(.vertical),
-.linked:not(.vertical) > entry:focus + entry{}
+.linked:not(.vertical) > entry:focus + entry { border-left-color: @gtk_selected_bg_color; }
 
 .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + spinbutton:not(.vertical),
 .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + button,
@@ -796,7 +801,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked:not(.vertical) > entry:focus.error + button,
 .linked:not(.vertical) > entry:focus.error + combobox > box > button.combo,
 .linked:not(.vertical) > entry:focus.error + spinbutton:not(.vertical),
-.linked:not(.vertical) > entry:focus.error + entry{}
+.linked:not(.vertical) > entry:focus.error + entry { border-left-color: @error_color; }
 
 .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + spinbutton:not(.vertical),
 .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + button,
@@ -805,7 +810,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked:not(.vertical) > entry:drop(active) + button,
 .linked:not(.vertical) > entry:drop(active) + combobox > box > button.combo,
 .linked:not(.vertical) > entry:drop(active) + spinbutton:not(.vertical),
-.linked:not(.vertical) > entry:drop(active) + entry{}
+.linked:not(.vertical) > entry:drop(active) + entry { border-left-color: @success_color; }
 
 .linked.vertical > spinbutton:not(:disabled):not(.vertical) + entry:not(:disabled),
 .linked.vertical > spinbutton:not(:disabled):not(.vertical) + spinbutton:not(:disabled):not(.vertical),
@@ -818,7 +823,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked.vertical > spinbutton:disabled:not(.vertical) + spinbutton:disabled:not(.vertical),
 .linked.vertical > spinbutton:disabled:not(.vertical) + entry:disabled,
 .linked.vertical > entry:disabled + spinbutton:disabled:not(.vertical),
-.linked.vertical > entry:disabled + entry:disabled{}
+.linked.vertical > entry:disabled + entry:disabled { border-top-color: @gtk_transparent_borders; }
 
 .linked.vertical > spinbutton:not(.vertical) + spinbutton:focus:not(:only-child):not(.vertical),
 .linked.vertical > spinbutton:not(.vertical) + entry:focus:not(:only-child),
@@ -831,7 +836,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked.vertical > entry:focus:not(:only-child) + spinbutton:not(.vertical),
 .linked.vertical > entry:focus:not(:only-child) + entry,
 .linked.vertical > entry:focus:not(:only-child) + button,
-.linked.vertical > entry:focus:not(:only-child) + combobox > box > button.combo{}
+.linked.vertical > entry:focus:not(:only-child) + combobox > box > button.combo { border-top-color: @gtk_selected_bg_color; }
 
 .linked.vertical > spinbutton:not(.vertical) + spinbutton:focus.error:not(:only-child):not(.vertical),
 .linked.vertical > spinbutton:not(.vertical) + entry:focus.error:not(:only-child),
@@ -844,7 +849,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked.vertical > entry:focus.error:not(:only-child) + spinbutton:not(.vertical),
 .linked.vertical > entry:focus.error:not(:only-child) + entry,
 .linked.vertical > entry:focus.error:not(:only-child) + button,
-.linked.vertical > entry:focus.error:not(:only-child) + combobox > box > button.combo{}
+.linked.vertical > entry:focus.error:not(:only-child) + combobox > box > button.combo { border-top-color: @error_color; }
 
 .linked.vertical > spinbutton:not(.vertical) + spinbutton:drop(active):not(:only-child):not(.vertical),
 .linked.vertical > spinbutton:not(.vertical) + entry:drop(active):not(:only-child),
@@ -857,7 +862,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked.vertical > entry:drop(active):not(:only-child) + spinbutton:not(.vertical),
 .linked.vertical > entry:drop(active):not(:only-child) + entry,
 .linked.vertical > entry:drop(active):not(:only-child) + button,
-.linked.vertical > entry:drop(active):not(:only-child) + combobox > box > button.combo{}
+.linked.vertical > entry:drop(active):not(:only-child) + combobox > box > button.combo { border-top-color: @success_color; }
 
 /* Check and Radio */
 
@@ -1337,7 +1342,9 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 /* this is for ssd titlebars */
-.ssd .default-decoration ,.default-decoration.titlebar:not(headerbar),.csd .default-decoration.titlebar:not(headerbar){}
+.ssd .default-decoration ,
+.default-decoration.titlebar:not(headerbar),
+.csd .default-decoration.titlebar:not(headerbar){border-bottom: none;}
  
 /* this fix headerbar widgets */
 
@@ -1355,6 +1362,8 @@ headerbar.titlebar headerbar:not(.titlebar) { background: none; }
 /*********
  * Menus *
  *********/
+ 
+menubar.chromium  {background-color: @gtk_bg_color; color:@gtk_fg_color;}
 
 .context-menu { font: initial; }
 
@@ -1861,7 +1870,11 @@ menu,
 
 .background.maximized,
 .background.solid-csd,
-.unfolded stack scrolledwindow .frame list {  border-radius: 0;}
+.unfolded stack scrolledwindow .frame list,
+headerbar.toolbar:first-child,
+headerbar.toolbar:last-child,
+window headerbar.toolbar:first-child,
+window headerbar.toolbar:last-child { border-radius: 0;}
 
 /**************
  * Highlights *

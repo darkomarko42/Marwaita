@@ -115,7 +115,7 @@ StEntry,
 .menu-favorites-box,
 #notification,
 .menu #notification
-{background-color: #3b93ff;}
+{background-color: #2386ff;}
 
 .menu,
 .popup-combo-menu,
@@ -129,7 +129,7 @@ StEntry,
 .info-osd,
 .osd-window,
 .window-list-preview,
-.grouped-window-list-badge{background-color: #0f6ee3;}
+.grouped-window-list-badge{background-color: #0d63cd;}
 
 .menu-selected-app-box { border-top: 1px solid rgba(255,255,255, 0.1); padding: 8px; text-align: right;}
 
@@ -215,7 +215,8 @@ StEntry,
 {box-shadow: 0 0 0 1px rgba(0,0/**/,0, 0.2);}
 
 StEntry,
-StButton
+StButton,
+#Tooltip
 {border-radius: 3px;}
 
 .menu{margin: 8px;}
@@ -229,7 +230,6 @@ StButton
 .menu-favorites-button,
 .menu-favorites-box,
 .switcher-list,
-#Tooltip,
 .menu-category-button-selected,
 .menu-application-button-selected,
 .window-caption,
