@@ -1279,7 +1279,7 @@ combobox popover listview > row,
 headerbar,
 .titlebar:not(headerbar) {
 	background-clip: border-box;
-	min-height: 28px;
+	min-height: 38px;
 	padding: 0 4px;
 	color: @gtk_titlebar_fg_color;
 	background-color: @gtk_titlebar_bg_color;
