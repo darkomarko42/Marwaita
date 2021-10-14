@@ -133,10 +133,12 @@ menu,
 editablelabel > stack > text
 { border-width: 1px; border-style: solid; }
 
+scale:hover slider,
+scale.marks-after slider:hover,
+scale.marks-before slider:hover,
 check:hover,
 radio:hover,
-scale slider:hover,
-switch:hover{}
+switch:hover{box-shadow: 0 0 0 2px alpha(@gtk_selected_bg_color,0.5);}
 
 .drop-shadow,
 .raven .raven-background,
@@ -1047,14 +1049,14 @@ scale > highlight:disabled{ background-color: mix(@gtk_bg_color,@gtk_selected_bg
 
 scale trough{padding: 2px;}
 
-scale slider{ background-color: transparent; box-shadow: none; border-radius: 9999px;}
+scale slider{ background-color: transparent; box-shadow: none; border-radius: 9999px; border-width: 3px; border-style: solid; border-color: transparent;}
 
 scale.horizontal slider,
-scale.vertical slider{ padding: 8px; margin: -8px;}
+scale.vertical slider{ padding: 6px; margin: -8px;}
 
 scale:hover slider,
 scale.marks-after slider,
-scale.marks-before slider{background-color: @gtk_selected_fg_color; box-shadow: inset 0 0 0 3px @gtk_selected_bg_color, 0 1px @gtk_button_shadow; }
+scale.marks-before slider{background-color: @gtk_selected_fg_color; border-color: @gtk_selected_bg_color; }
 
 /* Scrollbars */
 
@@ -1876,9 +1878,9 @@ headerbar.toolbar:last-child,
 window headerbar.toolbar:first-child,
 window headerbar.toolbar:last-child { border-radius: 0;}
 
-/**************
- * Highlights *
- **************/
+/**********
+ * Accent *
+ **********/
  
 .view:not(treeview):selected,
 .view selection,

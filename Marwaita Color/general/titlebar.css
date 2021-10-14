@@ -1,7 +1,7 @@
 /* this is for alternative titlebars and panels */
 
 @define-color gtk_titlebar_bg_color mix(@gtk_selected_bg_color,black,0.1);
-@define-color gtk_titlebar_bg_backdrop_color mix(@gtk_titlebar_bg_color,black,0.1);
+@define-color gtk_titlebar_bg_backdrop_color mix(@gtk_titlebar_bg_color,black,0.07);
 @define-color gtk_titlebar_fg_color @gtk_selected_fg_color;
 @define-color gtk_titlebar_button_color mix(@gtk_titlebar_bg_color,white,0.2);
 

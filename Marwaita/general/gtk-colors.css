@@ -56,8 +56,8 @@
 @define-color metacity_theme @gtk_titlebar_bg_color;
 @define-color metacity_theme_unfocused @gtk_titlebar_bg_backdrop_color;
 
-@define-color B_metacity mix(@gtk_titlebar_bg_color,black,0.3);
-@define-color D_B_metacity mix(@gtk_bg_color,black,0.3);
+@define-color B_metacity mix(@gtk_titlebar_bg_color,black,0.2);
+@define-color D_B_metacity mix(@gtk_bg_color,black,0.2);
 
 @define-color wm_title @gtk_titlebar_fg_color;
 @define-color wm_unfocused_title alpha(@gtk_titlebar_fg_color,0.5);
