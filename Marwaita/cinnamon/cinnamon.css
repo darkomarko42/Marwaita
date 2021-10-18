@@ -389,3 +389,6 @@ StScrollBar StButton{border-radius: 9999px; border-color: transparent; backgroun
     border: 0px solid rgba(0,0,0, 0.2);
     border-bottom-width: 1px;
 }
+
+/* this is for user applet */
+.user-label { color: black;}
