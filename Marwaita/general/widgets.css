@@ -1695,13 +1695,13 @@ messagedialog button,
 .budgie-session-dialog .linked.horizontal > button:first-child,
 .budgie-polkit-dialog .linked.horizontal > button:first-child,*/
 window.dialog.message.csd .dialog-action-area button:first-child
-{ border-radius: 3.0px 0  0 3.0px; border-width: 1px 0 1px 1px;}
+,
 
 /*messagedialog .linked button:last-child,
 .budgie-session-dialog .linked.horizontal > button:last-child,
 .budgie-polkit-dialog .linked.horizontal > button:last-child,*/
 window.dialog.message.csd .dialog-action-area button:last-child
-{ border-radius: 0 3.0px 3.0px 0;}
+{ border-radius: 3.0px;}
 
 messagedialog .linked button:only-child{}
 
