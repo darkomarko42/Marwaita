@@ -102,6 +102,7 @@ tooltip.background.csd:first-child,
 tooltip.background.csd:last-child,
 tooltip.background.csd decoration
 {border-radius: 3.0px;}
+
 tooltip.background label { padding: 0px;}
 tooltip.background.csd decoration { padding: 0; box-shadow: 0 0 0 1px alpha(white,0.2); }
 tooltip * { background-color: transparent;	color: white;}
