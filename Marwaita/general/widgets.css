@@ -413,7 +413,10 @@ entry.warning selection, entry.warning selection:focus {
 	color: white;
 }
 
-entry.error,.gedit-search-slider entry.error{color: @error_color;}
+entry.error,.gedit-search-slider entry.error{
+	color: @error_color;
+	border-color: @error_color;
+	box-shadow: inset 0 0 0 1px @error_color;}
 
 entry.error selection,
 entry.error selection:focus,
