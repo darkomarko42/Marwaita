@@ -4,10 +4,12 @@
 /**********
  * Colors *
  **********/
+ 
+@define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);
 
-@define-color warning_color #ff9800;
-@define-color error_color #D94141;
-@define-color success_color #00a300;
+@define-color warning_color #f6d32d;
+@define-color error_color #e01b24;
+@define-color success_color #33d17a;
 
 @define-color panel_bg shade(@gtk_titlebar_bg_color,0.95);
 @define-color panel_fg @gtk_titlebar_fg_color;
@@ -56,8 +58,10 @@
 @define-color metacity_theme @gtk_titlebar_bg_color;
 @define-color metacity_theme_unfocused @gtk_titlebar_bg_backdrop_color;
 
-@define-color B_metacity mix(@gtk_titlebar_bg_color,black,0.2);
-@define-color D_B_metacity mix(@gtk_bg_color,black,0.2);
+@define-color B_metacity mix(@gtk_titlebar_bg_color,@gtk_transparent_borders,0.25);
+@define-color D_B_metacity mix(@gtk_bg_color,@gtk_transparent_borders,0.25);
+
+@define-color H_metacity @gtk_titlebar_highlight;
 
 @define-color wm_title @gtk_titlebar_fg_color;
 @define-color wm_unfocused_title alpha(@gtk_titlebar_fg_color,0.5);

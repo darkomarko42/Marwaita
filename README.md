@@ -1,5 +1,5 @@
-# Marwaita
-GTK theme for Budgie desktop
+# Linea
+GTK theme for Cinnamon desktop
 
 ## Requirments
 
@@ -7,4 +7,3 @@ GTK theme for Budgie desktop
 
 ### GTK2 engines requirment
 - GTK2 Murrine engine.
-- GTK2 Hcengine engine.
