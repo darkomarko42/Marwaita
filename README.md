@@ -1,4 +1,4 @@
-# Linea
+# Marwaita
 GTK theme for Cinnamon desktop
 
 ## Requirments
