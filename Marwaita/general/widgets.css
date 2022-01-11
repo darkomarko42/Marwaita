@@ -523,9 +523,6 @@ headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-b
 .titlebar.windowhandle,
 .titlebar.default-decoration {} 
 
-.titlebar button.titlebutton,
-windowcontrols button{}
-
 .titlebar .right,
 .titlebar .left,
 .titlebar.chromium,
@@ -1331,8 +1328,6 @@ headerbar,
 headerbar:backdrop,
 .titlebar:not(headerbar):backdrop {background-color: @gtk_titlebar_bg_backdrop_color;}
 
-.csd headerbar.default-decoration{}
-
 window.background.csd > headerbar.titlebar > box.horizontal > headerbar:first-child:not(:last-child),
 window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:last-child),
 window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child:not(:last-child),
@@ -1396,7 +1391,9 @@ window.csd > .titlebar:not(headerbar):backdrop {
 /* this is for ssd titlebars */
 .ssd .default-decoration ,
 .default-decoration.titlebar:not(headerbar),
-.csd .default-decoration.titlebar:not(headerbar){border-bottom: none;}
+.csd .default-decoration.titlebar:not(headerbar),
+.csd headerbar.default-decoration
+{border-bottom: none;}
  
 /* this fix headerbar widgets */
 
