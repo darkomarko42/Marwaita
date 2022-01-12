@@ -1454,6 +1454,9 @@ popover grid modelbutton,
 popover.menu.background > contents modelbutton
 {border-radius: 4.0px; }
 
+menu menuitem.chromium,
+.menu menuitem.chromium{border-radius: 0;}
+
 .csd menu,
 .csd .menu,
 popover.menu.background > contents,
