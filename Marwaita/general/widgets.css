@@ -55,7 +55,9 @@ treeview.view radio:selected,
 check.view:not(treeview):not(:checked):selected,
 radio.view:not(treeview):not(:checked):selected,
 dialog filechooser .sidebar .frame,
-popover scrolledwindow.frame viewport.frame list
+popover scrolledwindow.frame viewport.frame list,
+list.content > row,
+list.content > row.expander row.header
 {background-color: @gtk_base_color;}
 
 /* sidebars color background */
@@ -86,12 +88,15 @@ dropdown popover list,
 combobox popover list,
 popover.menu.background > contents .view,
 popover.background > contents > list,
-.unified grid paned .sidebar.vertical list
+.unified grid paned .sidebar.vertical list,
+list.content, list.content list
 {background-color: transparent;}
 
 /* Drag and Drop */
 *:drop(active):focus,
 *:drop(active) { box-shadow: inset 0 0 0 1px @warning_color;}
+
+dnd{color: @gtk_fg_color;}
 
 treeview.view{ color: @gtk_fg_color;}
 
@@ -224,10 +229,7 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button,
 tabbox tab:checked,
 notebook tab:checked,
-.nautilus-window .titlebar .path-bar-box,
-scale:hover slider,
-scale.marks-after slider,
-scale.marks-before slider
+.nautilus-window .titlebar .path-bar-box
 {border-color: @gtk_transparent_borders; box-shadow: 0 1px @gtk_button_shadow;}
 
 spinbutton:not(.vertical),
@@ -250,7 +252,6 @@ button:checked,
 .inline-toolbar button.flat:checked,
 .inline-toolbar button:checked,
 button.flat:checked,
-viewswitcher button:checked,
 spinbutton:not(.vertical) button:checked,
 .budgie-panel button.launcher.flat:checked,
 tabbox tab button:checked,
@@ -326,6 +327,8 @@ levelbar trough,
 levelbar block
 {border-radius: 4.0px;}
 
+flowbox flowboxchild { padding: 3px; }
+
 /***************
  * Separators  *
  ***************/
@@ -364,7 +367,8 @@ toolbar.vertical,
 .budgie-popover border,
 .budgie-popover frame,
 .app-notification border,
-.app-notification.frame border
+.app-notification.frame border,
+clamp list.content
 { border-style: none;}
 
 separator{background-color: @gtk_borders; min-width: 1px; min-height: 1px; }
@@ -569,7 +573,8 @@ calendar header button:disabled,
 .osd button:disabled,
 .app-notification button.flat,
 .app-notification button.flat:disabled,
-.app-notification button:disabled
+.app-notification button:disabled,
+tab .tab-close-button
 {
 	background-clip: border-box;
 	background-color: transparent;
@@ -599,12 +604,8 @@ headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-b
 
 button.flat:hover,
 .titlebar button:not(.suggested-action):not(.destructive-action):hover,
-viewswitcher button:hover,
 spinbutton:not(.vertical) button:hover,
-notebook tab:not(:checked):hover,
 .budgie-panel button.launcher.flat:hover,
-tabbox tab button:hover,
-tabbox tab:not(:checked):hover,
 notebook > header > tabs > arrow:hover,
 .dynamic-notebook.inline-toolbar button.flat:hover,
 treeview.view button:hover,
@@ -613,7 +614,8 @@ spinbutton.vertical button:hover,
 calendar header button:hover,
 .osd button.flat:hover,
 .sidebar actionbar.inline-toolbar button:hover,
-actionbar.flat button:hover
+actionbar.flat button:hover,
+tab .tab-close-button:hover
 {background-image: image(alpha(currentcolor,0.1)); box-shadow: none;}
 
 /* Checked State */
@@ -625,12 +627,8 @@ button:active,
 .inline-toolbar button.flat:active,
 .inline-toolbar button:active,
 button.flat:active,
-viewswitcher button:active,
 spinbutton:not(.vertical) button:active,
-notebook tab:not(:checked):active,
 .budgie-panel button.launcher.flat:active,
-tabbox tab button:active,
-tabbox tab:not(:checked):active,
 notebook > header > tabs > arrow:active,
 .dynamic-notebook.inline-toolbar button.flat:active,
 treeview.view button:active,
@@ -643,6 +641,7 @@ calendar header button:active,
 actionbar.flat button:active,
 headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
 headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:active,
+tab .tab-close-button:active,
 
 button:checked,
 .titlebar button:not(.suggested-action):not(.destructive-action):checked,
@@ -651,7 +650,6 @@ button:checked,
 .inline-toolbar button.flat:checked,
 .inline-toolbar button:checked,
 button.flat:checked,
-viewswitcher button:checked,
 spinbutton:not(.vertical) button:checked,
 .budgie-panel button.launcher.flat:checked,
 notebook > header > tabs > arrow:checked,
@@ -665,7 +663,8 @@ calendar header button:checked,
 .sidebar actionbar.inline-toolbar button:checked,
 actionbar.flat button:checked,
 headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:checked
+headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:checked,
+tab .tab-close-button:checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none;}
 
 /* Disabled State */
@@ -761,6 +760,14 @@ viewswitcher button
 
 viewswitcherbar actionbar,
 actionbar viewswitcher button box{ padding: 0;}
+
+.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):hover,
+viewswitcher button:not(.suggested-action):not(.destructive-action):hover{background-image: none; box-shadow: inset 0 -2px alpha(currentcolor,0.3);}
+
+.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):active,
+.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):checked,
+viewswitcher button:not(.suggested-action):not(.destructive-action):active,
+viewswitcher button:not(.suggested-action):not(.destructive-action):checked{background-image: none; box-shadow: inset 0 -2px currentcolor;}
 
 /* Treeview Button */
 
@@ -994,6 +1001,10 @@ button:disabled:visited,
 button.circular,
 .circular{ border-radius: 9999px; }
 
+button.text-button.circular { min-width: 32px; min-height: 32px; padding: 0; }
+
+button.circular label{padding: 4px;}
+
 :link:hover label,
 :visited:hover label{ text-decoration: underline ;}
 
@@ -1088,14 +1099,22 @@ scale > highlight:disabled{ background-color: mix(@gtk_bg_color,@gtk_selected_bg
 
 scale trough{padding: 0px;}
 
-scale slider{ background-color: transparent; box-shadow: none; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: transparent;}
+scale slider{ background-color: transparent; box-shadow: none; border-radius: 9999px; border-width: 0px; border-style: none; border-color: transparent;}
 
 scale.horizontal slider,
 scale.vertical slider{ padding: 8px; margin: -8px;}
 
 scale:hover slider,
 scale.marks-after slider,
-scale.marks-before slider{background-color: @gtk_selected_fg_color; border-color: @gtk_selected_bg_color; }
+scale.marks-before slider{background-color: @gtk_selected_bg_color; }
+
+scale.color slider
+{
+	background-color: transparent;
+	border: 4px solid white;
+	box-shadow: 0 0 0 1px alpha(black,0.25), inset 0 0 0 1px alpha(black,0.25);
+	padding: 2px;
+}
 
 /* Scrollbars */
 
@@ -1139,10 +1158,15 @@ notebook > header.bottom {border-width: 1px 0 0 0;}
 notebook > header.left {border-width: 0 1px 0 0;}
 notebook > header.right {border-width: 0 0 0 1px;}
 
-notebook > header.top > tabs > tab:checked,tabbox tab:checked{box-shadow: inset 0 -2px @gtk_selected_bg_color;}
-notebook > header.bottom > tabs > tab:checked{box-shadow: inset 0 2px @gtk_selected_bg_color;}
-notebook > header.left > tabs > tab:checked{box-shadow: inset -2px 0 @gtk_selected_bg_color;}
-notebook > header.right > tabs > tab:checked{box-shadow: inset 2px 0 @gtk_selected_bg_color;}
+notebook > header.top > tabs > tab:hover:not(:checked),tabbox tab:hover:not(:checked){box-shadow: inset 0 -2px alpha(currentcolor,0.3);}
+notebook > header.bottom > tabs > tab:hover:not(:checked){box-shadow: inset 0 2px alpha(currentcolor,0.3);}
+notebook > header.left > tabs > tab:hover:not(:checked){box-shadow: inset -2px 0 alpha(currentcolor,0.3);}
+notebook > header.right > tabs > tab:hover:not(:checked){box-shadow: inset 2px 0 alpha(currentcolor,0.3);}
+
+notebook > header.top > tabs > tab:checked,tabbox tab:checked{box-shadow: inset 0 -2px currentcolor;}
+notebook > header.bottom > tabs > tab:checked{box-shadow: inset 0 2px currentcolor;}
+notebook > header.left > tabs > tab:checked{box-shadow: inset -2px 0 currentcolor;}
+notebook > header.right > tabs > tab:checked{box-shadow: inset 2px 0 currentcolor;}
 
 notebook > header.top > tabs > tab:last-child,
 notebook > header.bottom > tabs > tab:last-child{}
@@ -1309,6 +1333,33 @@ combobox popover listview > row,
 .rich-list > row
 {padding: 4px;}
 
+/* this is for new list type */
+
+list.content > row,
+list.content > row list > row { border-color: @gtk_borders; border-style: solid; }
+
+list.content > row:not(:last-child) { border-width: 1px 1px 0px 1px; }
+
+list.content > row:last-child,
+list.content > row.checked-expander-row-previous-sibling,
+list.content > row.expander:checked { border-width: 1px; }
+
+list.content > row:first-child,
+list.content > row.expander:first-child row.header,
+list.content > row.expander:checked,
+list.content > row.expander:checked row.header,
+list.content > row.expander:checked + row,
+list.content > row.expander:checked + row.expander row.header { border-top-left-radius: 4.0px; border-top-right-radius: 4.0px; }
+
+list.content > row:last-child,
+list.content > row.checked-expander-row-previous-sibling,
+list.content > row.expander:checked,
+list.content > row.expander:not(:checked):last-child row.header,
+list.content > row.expander.checked-expander-row-previous-sibling:not(:checked) row.header,
+list.content > row.expander.empty:checked row.header,
+list.content > row.expander list.nested > row:last-child
+{ border-bottom-left-radius: 4.0px; border-bottom-right-radius: 4.0px;}
+
 /**************
  * Headerbars *
  **************/
@@ -1430,11 +1481,6 @@ menubar:backdrop,
 .menubar:backdrop,
 window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal:backdrop{background-color: @gtk_titlebar_bg_backdrop_color;}
 
-menu menuitem,
-.menu menuitem,
-menu menuitem:hover,
-.menu menuitem:hover,
-menuitem.button.flat:hover,
 popover button.menuitem:hover,
 popover .menuitem:hover,
 popover menuitem:hover,
@@ -1446,21 +1492,27 @@ modelbutton.flat:hover,
 .budgie-popover row.activatable:selected:hover,
 .budgie-popover .sidebar .frame row.activatable:hover,
 .budgie-popover .sidebar .frame row.activatable:selected,
-.budgie-popover list .menuitem:hover,
+.budgie-popover list .menuitem:hover
+{border-radius: 4.0px; }
+
+menu menuitem.chromium,
+.menu menuitem.chromium,
+menu menuitem,
+.menu menuitem,
+menu menuitem:hover,
+.menu menuitem:hover,
+menuitem.button.flat:hover,
 dropdown popover listview > row:selected,
 combobox popover listview > row:selected,
 popover.menu.background > contents .view :selected,
 popover grid modelbutton,
 popover.menu.background > contents modelbutton
-{border-radius: 4.0px; }
-
-menu menuitem.chromium,
-.menu menuitem.chromium{border-radius: 0;}
+{border-radius: 0;}
 
 .csd menu,
 .csd .menu,
 popover.menu.background > contents,
-popover.background.menu > contents { padding: 6px; }
+popover.background.menu > contents { padding: 6px 0px; }
 
 popover.background > contents{padding: 4px;}
 popover.menu box.inline-buttons { padding: 0 8px; }
@@ -1518,7 +1570,7 @@ modelbutton.flat {
 	outline-color: transparent;
 }
 
-popover.combo list > row { padding: 0px 8px 0px 8px; min-height: 35px; }
+popover.combo list > row { padding: 0px 8px 0px 8px; min-height: 30px; }
 
 /* Emoji */
  
@@ -1809,6 +1861,8 @@ filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .s
 .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) label,
 .nautilus-window placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled) .sidebar-icon {  color: mix(@warning_color,@gtk_fg_color,0.3);}
 
+filechooser .search-bar{ padding: 0 6px;}
+
 /*******************
  * Rounded Corners *
  *******************/
@@ -2035,7 +2089,8 @@ row.activatable:hover:selected,
 .navigation-sidebar > row:selected,
 listview row:selected,
 .nemo-window.background:not(.csd):not(.solid-csd) .frame treeview.view:selected:focus,
-.nemo-window.background:not(.csd):not(.solid-csd) .frame treeview.view:selected
+.nemo-window.background:not(.csd):not(.solid-csd) .frame treeview.view:selected,
+popover.combo list > row:hover
 {color: @gtk_fg_color; background-image: image(alpha(@gtk_fg_color,0.1));}
 
 /* Inverted Accent */

@@ -1,9 +1,18 @@
 *{color: black; icon-size: 16px; selection-background-color: rgba(0,0,0, 0.15); selected-color: black;}
 
 #panel,
-.menu-application-button:highlighted { font-weight: bold;}
+.menu-application-button:highlighted,
+.calendar-events-date-label,
+.calendar-today-day-label,
+.calendar-today-date-label,
+.calendar-today,
+.calendar-events-date-label,
+.calendar-event-time-present
+{ font-weight: bold;}
 
-.calendar-day-heading{color: rgba(0,0,0, 0.5); padding-top: 16px;}
+.calendar-day-heading,
+.calendar-today-home-button *
+{color: rgba(0,0,0, 0.5);}
 
 .popup-subtitle-menu-item,
 .calendar-other-month-day,
@@ -42,7 +51,8 @@ StScrollBar StButton{padding: 3px;}
 .menu-application-button,
 .menu-application-button-selected,
 .menu-category-button-greyed,
-#Tooltip {padding: 6px;}
+#Tooltip,
+.calendar-events-main-box {padding: 6px;}
 
 StEntry,
 .menu-favorites-box,
@@ -71,7 +81,8 @@ StButton.notification-applet-padding,
 .menu-application-button-label:ltr,
 .menu-application-button-label:rtl,
 .menu-category-button-label:ltr,
-.menu-category-button-label:rtl{ padding: 0 6px;}
+.menu-category-button-label:rtl
+{ padding: 0 6px;}
 
 .menu-search-box:ltr,
 .menu-categories-box{ padding-left: 16px;}
@@ -87,9 +98,11 @@ StButton.notification-applet-padding,
 .run-dialog-entry{ width: 20em;}
 .run-dialog{padding: 0px 16px; padding-top: 8px;}
 
-.popup-separator-menu-item { -margin-horizontal: 1.5em;	height: 1px;}
+.popup-separator-menu-item,
+.calendar-events-main-box .separator { -margin-horizontal: 1.5em;	height: 1px;}
 
-.switcher-list .thumbnail { width: 260px;}
+.switcher-list .thumbnail,
+.calendar-event-summary { width: 260px;}
 
 .workspace-thumbnails {spacing: 14px;}
 
@@ -98,7 +111,10 @@ StButton.notification-applet-padding,
 .sound-player StBoxLayout,
 .popup-menu-item {  spacing: 1em;}
 
-.popup-menu-content { padding: 6px;}
+.popup-menu-content { padding: 6px 0px;}
+.calendar-today-home-button,
+.calendar-today-home-button-enabled,
+.calendar-event-button { padding: 6px;}
 
 .modal-dialog-button-box { spacing: 21px; padding-top: 21px;}
 
@@ -107,11 +123,20 @@ StButton.notification-applet-padding,
 
 .osd-window .level {height: 8px;}
 
-.menu{margin: 8px;}
+.menu,
+.calendar-event-row-content{margin: 8px;}
 
 .sound-player-overlay { padding: 12px;}
 
 .menu-selected-app-box { padding: 8px; text-align: right;}
+
+.calendar-events-no-events-button{padding: 32px;}
+
+.calendar-day-heading{padding-top: 16px;}
+
+.calendar-event-color-strip { width: 4px;}
+
+.calendar-event-button{margin: 4px 0px;}
 
 /* Background */
 
@@ -120,16 +145,16 @@ StButton.notification-applet-padding,
 .grouped-window-list-thumbnail-menu StButton,
 .calendar StButton,
 .sound-player StButton:small,
-StButton.notification-applet-padding,
-StButton.notification-applet-padding:hover,
-StButton.notification-applet-padding:active,
-StButton.notification-applet-padding:checked,
 .sound-player-overlay StButton,
 StButton.popup-menu-item,
 .window-list-preview .window-close,
 .window-list-preview .window-close:hover,
 .window-list-preview .window-close:active,
-.window-list-preview .window-close:checked{background-color: transparent; border-color: transparent; box-shadow: none;}
+.window-list-preview .window-close:checked,
+.calendar-events-no-events-button,
+.menu StButton,
+.menu StButton:hover.notification-applet-padding
+{background-color: transparent; border-color: transparent; box-shadow: none;}
 
 #panel,
 .sound-player-overlay{background-color: rgba(238,238,238, 0.8);}
@@ -137,8 +162,7 @@ StButton.popup-menu-item,
 StEntry,
 .menu-favorites-box,
 #notification,
-.menu #notification
-,
+.menu #notification,
 StButton,
 #notification .notification-button
 {background-color: #fff;}
@@ -195,7 +219,9 @@ StButton:checked,
 .sound-player StButton:small:hover,
 .sound-player-overlay StButton:hover,
 .calendar-change-month-back:hover,
-.calendar-change-month-forward:hover
+.calendar-change-month-forward:hover,
+.calendar-event-button:hover,
+.menu StButton:hover
 { background-color: rgba(0,0,0, 0.1); box-shadow: none;}
 
 .window-list-item-box:focus,
@@ -211,7 +237,8 @@ StButton:checked,
 { background-color: rgba(0,0,0, 0.15); box-shadow: none;}
 
 .window-list-item-box,
-.grouped-window-list-item-box:active{ background-color: rgba(0,0/**/,0, 0.01);}
+.grouped-window-list-item-box:active,
+.calendar-event-button { background-color: rgba(0,0/**/,0, 0.01);}
 
 .panel-bottom .window-list-item-box:focus,
 .panel-bottom .grouped-window-list-item-box:active{ box-shadow: inset 0 -2px black;}
@@ -277,7 +304,8 @@ StEntry,
 .panel-right
 {border-color: rgba(0,0/**/,0, 0.3);}
 
-.popup-separator-menu-item{background-color: rgba(0,0/**/,0, 0.3);}
+.popup-separator-menu-item,
+.calendar-events-main-box .separator{background-color: rgba(0,0/**/,0, 0.3);}
 
 /* Border Radius */
 
@@ -300,9 +328,12 @@ StButton,
 #LookingGlassDialog,
 .info-osd,
 .osd-window,
+.calendar-event-button
+{border-radius: 4px;}
+
 .popup-sub-menu,
 .popup-menu-item
-{border-radius: 4px;}
+{border-radius: 0px;}
 
 StScrollBar StButton{border-radius: 9999px; border-color: transparent; background-clip: border-box;}
 
@@ -337,7 +368,11 @@ StScrollBar StButton{border-radius: 9999px; border-color: transparent; backgroun
 StScrollBar StButton,
 StScrollBar StButton:hover,
 StScrollBar StButton:active,
-StScrollBar StButton:checked
+StScrollBar StButton:checked,
+.menu StScrollBar StButton,
+.menu StScrollBar StButton:hover,
+.menu StScrollBar StButton:active,
+.menu StScrollBar StButton:checked
 {background-color: black; box-shadow: none;}
 
 /* Images */
@@ -356,6 +391,13 @@ StScrollBar StButton:checked
 .calendar-change-month-forward:rtl{background-image: url("../general/calendar-arrow-left.svg");}
 .calendar-change-month-back:rtl,
 .calendar-change-month-forward {background-image: url("../general/calendar-arrow-right.svg");}
+
+.calendar-day-event-dot {
+	margin: 2px;
+	border-radius: 9999px;
+	width: 6px;
+	height: 6px;
+}
 
 .ripple-box {
 	width: 104px;

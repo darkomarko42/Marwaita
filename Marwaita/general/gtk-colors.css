@@ -7,8 +7,8 @@
  
 @define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);
 
-@define-color warning_color #f6d32d;
-@define-color error_color #e01b24;
+@define-color warning_color #ffa326;
+@define-color error_color #E33232;
 @define-color success_color #33d17a;
 
 @define-color panel_bg shade(@gtk_titlebar_bg_color,0.95);
