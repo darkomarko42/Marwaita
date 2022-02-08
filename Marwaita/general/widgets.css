@@ -2074,7 +2074,7 @@ menubar > item:selected,
 dropdown popover listview > row:selected,
 combobox popover listview > row:selected,
 popover.menu.background > contents .view :selected
-,
+{color: currentcolor; background-image: image(alpha(currentcolor,0.1));}
 
 /* List and Row */
 treeview.view:selected,
