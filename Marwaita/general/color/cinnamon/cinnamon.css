@@ -157,7 +157,7 @@ StButton.popup-menu-item,
 {background-color: transparent; border-color: transparent; box-shadow: none;}
 
 #panel,
-.sound-player-overlay{background-color: rgba(15,110,227, 0.8);}
+.sound-player-overlay{background-color: rgba(12,88,182, 0.8);}
 
 StEntry,
 .menu-favorites-box,
@@ -165,7 +165,7 @@ StEntry,
 .menu #notification,
 StButton,
 #notification .notification-button
-{background-color: #2386ff;}
+{background-color: #1c6bcc;}
 
 .menu,
 .popup-combo-menu,
@@ -185,7 +185,7 @@ StButton,
 .window-close,
 .window-close:hover,
 .window-close:active,
-.window-close:checked{background-color: #0f6ee3;}
+.window-close:checked{background-color: #0c58b6;}
 
 .popup-sub-menu{ background-color: rgba(255,255,255, 0.1);}
 
@@ -302,10 +302,10 @@ StEntry,
 .panel-top,
 .panel-left,
 .panel-right
-{border-color: rgba(0,0/**/,0, 0.7);}
+{border-color: rgba(0,0/**/,0, 0.5);}
 
 .popup-separator-menu-item,
-.calendar-events-main-box .separator{background-color: rgba(0,0/**/,0, 0.7);}
+.calendar-events-main-box .separator{background-color: rgba(0,0/**/,0, 0.5);}
 
 /* Border Radius */
 
@@ -329,7 +329,7 @@ StButton,
 .info-osd,
 .osd-window,
 .calendar-event-button
-{border-radius: 4px;}
+{border-radius: 6px;}
 
 .popup-sub-menu,
 .popup-menu-item

@@ -309,16 +309,14 @@ StEntry,
 .window-caption,
 .dash-label,
 .switcher-list StButton,
-.overview-icon
-{ border-radius: 4px;}
-
+.overview-icon,
 .modal-dialog,
 .dash-background,
 .osd-window,
 .app-folder-dialog,
 .switcher-list,
 .search-section-content
-{border-radius: 4px;}
+{border-radius: 6px;}
 
 .window-close,
 .search-entry,
@@ -328,8 +326,8 @@ StScrollBar StButton
 
 .calendar .calendar-day-base{ width: 32px; height: 32px; border-radius: 18px; border: 1px solid transparent;}
 
-.message-media-control:last-child:ltr { border-radius: 0 3px 3px 0; }
-.message-media-control:last-child:rtl { border-radius: 3px 0 0 3px; }
+.message-media-control:last-child:ltr { border-radius: 0 6px 6px 0; }
+.message-media-control:last-child:rtl { border-radius: 6px 0 0 6px; }
 
 /* Popovers */
 .popup-menu-boxpointer,

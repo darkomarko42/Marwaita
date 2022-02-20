@@ -9,8 +9,6 @@
 @define-color gtk_bg_color shade(@gtk_base_color,0.7);
 @define-color gtk_base_color #444;
 
-@define-color gtk_button_color @gtk_base_color;
-
 @define-color gtk_shadow alpha(black,0.3);
 @define-color gtk_button_shadow alpha(@gtk_shadow,0.2);
 @define-color gtk_menu_shadow alpha(@gtk_shadow,0.5);

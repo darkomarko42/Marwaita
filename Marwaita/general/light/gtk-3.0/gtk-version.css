@@ -15,7 +15,7 @@
 	outline-style: dashed;
 	outline-offset: -3px;
 	outline-width: 1px;
-	-gtk-outline-radius: 4.0px;
+	-gtk-outline-radius: 6.0px;
 }
 
 frame > border,
@@ -97,11 +97,6 @@ popover.background
 /* Tooltips */
 
 tooltip.background { background-color: alpha(black,0.9); background-clip: padding-box; }
-
-tooltip.background.csd:first-child,
-tooltip.background.csd:last-child,
-tooltip.background.csd decoration
-{border-radius: 4.0px;}
 
 tooltip.background label { padding: 0px;}
 tooltip.background.csd decoration { padding: 0; box-shadow: 0 0 0 1px alpha(white,0.2); }
@@ -191,14 +186,4 @@ na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 decoration{ box-shadow: 0 2px 6px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; margin: 6px;}
 
 decoration:backdrop{ box-shadow: 0 2px 6px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
-
-dialog decoration,
-messagedialog decoration{ box-shadow: 0 2px 4px @gtk_shadow,0 0 0 1px @gtk_transparent_borders;}
-
-dialog decoration:backdrop,
-messagedialog decoration:backdrop{ box-shadow: 0 2px 4px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
-
-.csd.popup decoration {box-shadow: 0 1px 2px @gtk_menu_shadow; border-radius: 4.0px; }
-
-.ssd decoration{box-shadow: 0 0 0 1px @gtk_transparent_borders;}
 

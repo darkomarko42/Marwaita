@@ -7,6 +7,8 @@
  
 @define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);
 
+@define-color gtk_button_color @gtk_base_color;
+
 @define-color warning_color #ffa326;
 @define-color error_color #E33232;
 @define-color success_color #33d17a;
@@ -47,12 +49,12 @@
 @define-color theme_unfocused_selected_bg_color @gtk_selected_bg_color;
 @define-color theme_unfocused_selected_fg_color @gtk_selected_fg_color;
 
-@define-color placeholder_text_color #A8A8A8;
+@define-color placeholder_text_color mix(currentcolor,@gtk_bg_color,0.5);
 @define-color link_color @gtk_selected_bg_color;
 
 @define-color budgie_tasklist_indicator_color @panel_fg;
-@define-color budgie_tasklist_indicator_color_active @gtk_selected_bg_color;
-@define-color budgie_tasklist_indicator_color_active_window @panel_fg;
+@define-color budgie_tasklist_indicator_color_active @panel_fg;
+@define-color budgie_tasklist_indicator_color_active_window @gtk_selected_bg_color;
 @define-color budgie_tasklist_indicator_color_attention @error_color;
 
 @define-color metacity_theme @gtk_titlebar_bg_color;

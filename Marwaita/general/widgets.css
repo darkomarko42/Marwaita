@@ -71,7 +71,8 @@ scrolledwindow.view list,
 .sidebar .view,
 assistant .sidebar,
 .unified grid paned .sidebar.vertical,
- window.unified.csd .sidebar headerbar.titlebar.flat
+ window.unified.csd .sidebar headerbar.titlebar.flat,
+ list.navigation-sidebar
 {background-color: @gtk_sidebar_color;}
 
 /* fix widgets background */
@@ -96,8 +97,7 @@ list.content, list.content list
 *:drop(active):focus,
 *:drop(active) { box-shadow: inset 0 0 0 1px @warning_color;}
 
-dnd{color: @gtk_fg_color;}
-
+dnd,
 treeview.view{ color: @gtk_fg_color;}
 
 /*********
@@ -115,11 +115,6 @@ button,
 .inline-toolbar button.flat,
 .inline-toolbar button,
 toolbar .flat button,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action),
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button,
-.nautilus-window .titlebar .path-bar-box,
 messagedialog .linked:not(.vertical) > button:dir(ltr):not(:last-child),
 messagedialog .linked:not(.vertical) > button:dir(ltr):not(:first-child),
 window.dialog.message .dialog-action-area button,
@@ -132,51 +127,25 @@ switch slider/*,
 progressbar progress,
 scale highlight,
 levelbar block,
-tabbox tab,
-notebook tab,*/
+*/
 scale trough,
 levelbar trough,
 menu,
 .menu,
-editablelabel > stack > text
+editablelabel > stack > text,
+.titlebar .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical),
+.titlebar .linked:not(.vertical) > entry:dir(ltr):not(:last-child),
+.titlebar .linked:not(.vertical) > button:dir(ltr):not(:last-child),
+.titlebar .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical),
+.titlebar .linked:not(.vertical) > entry:dir(ltr):not(:first-child),
+.titlebar .linked:not(.vertical) > button:dir(ltr):not(:first-child),
+headerbar.toolbar .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical),
+headerbar.toolbar .linked:not(.vertical) > entry:dir(ltr):not(:last-child),
+headerbar.toolbar .linked:not(.vertical) > button:dir(ltr):not(:last-child),
+headerbar.toolbar .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical),
+headerbar.toolbar .linked:not(.vertical) > entry:dir(ltr):not(:first-child),
+headerbar.toolbar .linked:not(.vertical) > button:dir(ltr):not(:first-child)
 { border-width: 1px; border-style: solid; }
-
-scale:hover slider,
-scale.marks-after slider:hover,
-scale.marks-before slider:hover,
-check:hover,
-radio:hover,
-switch:hover{}
-
-.drop-shadow,
-.raven .raven-background,
-.raven-notifications-view  list box.vertical row
-{background-color: shade(@panel_bg,1.3);}
-
-.raven button:not(.flat),
-.drop-shadow button:not(.flat),
-.budgie-panel button:not(.launcher):not(.flat),
-.xfce4-panel.panel button:not(.flat),
-.workspace-add-button
-{background-color: alpha(white,0.15);}
-
-.budgie-panel separator,
-.raven scale highlight,
-.titlebar scale highlight,
-.titlebar progressbar progress,
-.titlebar scale:hover slider,
-.titlebar scale.marks-after slider,
-.titlebar scale.marks-before slider,
-infobar scale highlight,
-infobar progressbar progress,
-infobar scale:hover slider,
-infobar scale.marks-after slider,
-infobar scale.marks-before slider,
-.drop-shadow scale highlight,
-.drop-shadow progressbar progress,
-.drop-shadow scale:hover slider,
-.drop-shadow scale.marks-after slider,
-.drop-shadow scale.marks-before slider {background-color: currentcolor; color: inherit; border: none;}
 
 check:checked,
 check:indeterminate,
@@ -220,16 +189,7 @@ levelbar block
 button,
 .inline-toolbar button.flat,
 .inline-toolbar button,
-toolbar .flat button,
-.titlebar button.titlebutton,
-.titlebar windowcontrols button,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action),
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button,
-tabbox tab:checked,
-notebook tab:checked,
-.nautilus-window .titlebar .path-bar-box
+toolbar .flat button
 {border-color: @gtk_transparent_borders; box-shadow: 0 1px @gtk_button_shadow;}
 
 spinbutton:not(.vertical),
@@ -245,32 +205,6 @@ iconview.content-view.check:not(list),
 .view radio:not(:checked):selected ,
 check.view:not(treeview):not(:checked):selected,
 radio.view:not(treeview):not(:checked):selected
-,
-button:checked,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action):checked,
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button:checked,
-.inline-toolbar button.flat:checked,
-.inline-toolbar button:checked,
-button.flat:checked,
-spinbutton:not(.vertical) button:checked,
-.budgie-panel button.launcher.flat:checked,
-tabbox tab button:checked,
-notebook > header > tabs > arrow:checked,
-.dynamic-notebook.inline-toolbar button.flat:checked,
-treeview.view button:checked,
-spinbutton.vertical button:checked,
-.toolbar button:checked,
-calendar header button:checked,
-.osd button:checked,
-.osd button.flat:checked,
-.sidebar actionbar.inline-toolbar button:checked,
-actionbar.flat button:checked,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:checked,
-.titlebar button.titlebutton:active,
-.titlebar windowcontrols button:active,
-.titlebar button.titlebutton:checked,
-.titlebar windowcontrols button:checked
 { border-color: @gtk_transparent_borders;}
 
 /* Sizes */
@@ -324,8 +258,20 @@ progressbar trough,
 scale highlight,
 scale trough,
 levelbar trough,
-levelbar block
-{border-radius: 4.0px;}
+levelbar block,
+.titlebar .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical),
+.titlebar .linked:not(.vertical) > entry:dir(ltr):not(:last-child),
+.titlebar .linked:not(.vertical) > button:dir(ltr):not(:last-child),
+.titlebar .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical),
+.titlebar .linked:not(.vertical) > entry:dir(ltr):not(:first-child),
+.titlebar .linked:not(.vertical) > button:dir(ltr):not(:first-child),
+headerbar.toolbar .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical),
+headerbar.toolbar .linked:not(.vertical) > entry:dir(ltr):not(:last-child),
+headerbar.toolbar .linked:not(.vertical) > button:dir(ltr):not(:last-child),
+headerbar.toolbar .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical),
+headerbar.toolbar .linked:not(.vertical) > entry:dir(ltr):not(:first-child),
+headerbar.toolbar .linked:not(.vertical) > button:dir(ltr):not(:first-child)
+{border-radius: 6.0px;}
 
 flowbox flowboxchild { padding: 3px; }
 
@@ -368,7 +314,7 @@ toolbar.vertical,
 .budgie-popover frame,
 .app-notification border,
 .app-notification.frame border,
-clamp list.content
+list.content
 { border-style: none;}
 
 separator{background-color: @gtk_borders; min-width: 1px; min-height: 1px; }
@@ -426,7 +372,8 @@ entry image {color: currentcolor;}
 spinbutton:not(.vertical):focus,
 entry:focus,
 .gedit-search-slider entry:focus,
-spinbutton.vertical:focus {
+spinbutton.vertical:focus,
+.titlebar entry:focus {
 	border-color: @gtk_selected_bg_color;
 	box-shadow: inset 0 0 0 1px @gtk_selected_bg_color;
 }
@@ -479,7 +426,52 @@ entry progress {
 
 infobar entry{font-weight: normal;}
 
-.titlebar entry{color: inherit; }
+.titlebar entry{color: inherit; background-clip: border-box; }
+
+/**************
+ * Contextual *
+ **************/
+
+list button:not(.suggested-action):not(.destructive-action):not(.flat),
+#pulseaudio-button menu .linked button:not(.suggested-action):not(.destructive-action):not(.flat),
+infobar button:not(.suggested-action):not(.destructive-action):not(.flat),
+.titlebar button:not(.suggested-action):not(.destructive-action).text-button:disabled
+{background-color: transparent; }
+
+.titlebar button:not(.suggested-action):not(.destructive-action).text-button,
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):last-child,
+.titlebar entry
+{background-color: alpha(currentcolor,0.15); box-shadow: none; border-color: transparent;}
+
+.drop-shadow,
+.raven .raven-background,
+.raven-notifications-view  list box.vertical row
+{background-color: shade(@panel_bg,1.3);}
+
+.raven button:not(.flat),
+.drop-shadow button:not(.flat),
+.budgie-panel button:not(.launcher):not(.flat),
+.xfce4-panel.panel button:not(.flat),
+.workspace-add-button
+{background-color: alpha(white,0.15);}
+
+.budgie-panel separator,
+.raven scale highlight,
+.titlebar scale highlight,
+.titlebar progressbar progress,
+.titlebar scale:hover slider,
+.titlebar scale.marks-after slider,
+.titlebar scale.marks-before slider,
+infobar scale highlight,
+infobar progressbar progress,
+infobar scale:hover slider,
+infobar scale.marks-after slider,
+infobar scale.marks-before slider,
+.drop-shadow scale highlight,
+.drop-shadow progressbar progress,
+.drop-shadow scale:hover slider,
+.drop-shadow scale.marks-after slider,
+.drop-shadow scale.marks-before slider {background-color: currentcolor; color: inherit; border: none;}
 
 /***********
  * Buttons *
@@ -488,13 +480,9 @@ spinbutton:not(.vertical),
 spinbutton.vertical,
 entry,
 button,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action),
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button,
 .inline-toolbar button.flat,
 .inline-toolbar button,
-toolbar .flat button,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button
+toolbar .flat button
 { background-clip: padding-box;}
 
 button,
@@ -512,14 +500,6 @@ spinbutton.vertical entry
 {background-color: transparent; border: none; box-shadow: none; background-image: none;}
 
 /* TitleButton */
-
-.titlebar .linked button:not(.suggested-action):not(.destructive-action),
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button,
-.titlebar spinbutton:not(.vertical),
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action),
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button,
-.titlebar entry
-{background-color: @gtk_titlebar_button_color;}
 	
 .titlebar button.titlebutton,
 .titlebar windowcontrols button{}
@@ -533,7 +513,7 @@ headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-b
 .horizontal .end,
 .horizontal .start{}
 
-.titlebar stackswitcher button.text-button{}
+.titlebar stackswitcher button.text-button{ font-weight: bold;}
 
 /* Action Button */
 
@@ -553,9 +533,7 @@ button.destructive-action:disabled{
 	}
 
 /* Flat Button */
-
 .titlebar button:not(.suggested-action):not(.destructive-action),
-
 button.flat,
 button.flat:disabled,
 .titlebar button.titlebutton,
@@ -574,7 +552,10 @@ calendar header button:disabled,
 .app-notification button.flat,
 .app-notification button.flat:disabled,
 .app-notification button:disabled,
-tab .tab-close-button
+tab .tab-close-button,
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button,
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:disabled,
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action)
 {
 	background-clip: border-box;
 	background-color: transparent;
@@ -584,26 +565,14 @@ tab .tab-close-button
 	background-image: none;
 }
 
-/* Contextual Button*/
-
-list button:not(.suggested-action):not(.destructive-action):not(.flat),
-#pulseaudio-button menu .linked button:not(.suggested-action):not(.destructive-action):not(.flat),
-infobar button:not(.suggested-action):not(.destructive-action):not(.flat)
-{background-color: transparent; }
-
 /* Hover State */
 
 button:hover,
 .inline-toolbar button.flat:hover,
-.inline-toolbar button:hover,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action):hover,
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button:hover,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):hover,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:hover
+.inline-toolbar button:hover
 {background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3),0 1px @gtk_button_shadow;}
 
 button.flat:hover,
-.titlebar button:not(.suggested-action):not(.destructive-action):hover,
 spinbutton:not(.vertical) button:hover,
 .budgie-panel button.launcher.flat:hover,
 notebook > header > tabs > arrow:hover,
@@ -615,15 +584,17 @@ calendar header button:hover,
 .osd button.flat:hover,
 .sidebar actionbar.inline-toolbar button:hover,
 actionbar.flat button:hover,
-tab .tab-close-button:hover
+tab .tab-close-button:hover,
+.titlebar button:not(.suggested-action):not(.destructive-action):hover,
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:hover,
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):hover,
+button.suggested-action:hover,
+button.destructive-action:hover
 {background-image: image(alpha(currentcolor,0.1)); box-shadow: none;}
 
 /* Checked State */
 
 button:active,
-.titlebar button:not(.suggested-action):not(.destructive-action):active,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action):active,
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button:active,
 .inline-toolbar button.flat:active,
 .inline-toolbar button:active,
 button.flat:active,
@@ -639,14 +610,14 @@ calendar header button:active,
 .osd button.flat:active,
 .sidebar actionbar.inline-toolbar button:active,
 actionbar.flat button:active,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:active,
 tab .tab-close-button:active,
+.titlebar button:not(.suggested-action):not(.destructive-action):active,
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:active,
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):active,
+button.suggested-action:active,
+button.destructive-action:active,
 
 button:checked,
-.titlebar button:not(.suggested-action):not(.destructive-action):checked,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action):checked,
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button:checked,
 .inline-toolbar button.flat:checked,
 .inline-toolbar button:checked,
 button.flat:checked,
@@ -662,9 +633,12 @@ calendar header button:checked,
 .osd button.flat:checked,
 .sidebar actionbar.inline-toolbar button:checked,
 actionbar.flat button:checked,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:checked,
-tab .tab-close-button:checked
+tab .tab-close-button:checked,
+.titlebar button:not(.suggested-action):not(.destructive-action):checked,
+.titlebar stackswitcher button:not(.suggested-action):not(.destructive-action).text-button:checked,
+.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):checked,
+button.suggested-action:checked,
+button.destructive-action:checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none;}
 
 /* Disabled State */
@@ -679,11 +653,7 @@ radio:checked:disabled,
 check:indeterminate:disabled,
 radio:indeterminate:disabled,
 .inline-toolbar button.flat:disabled,
-.inline-toolbar button:disabled,
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):disabled,
-headerbar.toolbar  button:not(.suggested-action):not(.destructive-action).text-button:disabled,
-.titlebar .linked button:not(.suggested-action):not(.destructive-action):disabled,
-.titlebar button:not(.suggested-action):not(.destructive-action).text-button:disabled
+.inline-toolbar button:disabled
 {
 	background-color: transparent;
 	background-image: none;
@@ -743,15 +713,12 @@ textview text:disabled
 
 /* Viewswitchers */
 
-headerbar viewswitcher stack { margin: -2px 0;}/* this fix the big headerbar with viewswitcher */
-
-headerbar viewswitcher button{ margin: 0;}
-
 viewswitcher button box{ padding: 0 12px;}
+headerbar viewswitcher stack { margin: -2px 0px;}/* this fix the big headerbar with viewswitcher */
+headerbar viewswitcher button{ margin: 0px;}
 
 viewswitcher button
 {
-	border-radius: 0;
 	margin: 0;
 	font-weight: bold;
 	font-size: 85%;
@@ -761,13 +728,16 @@ viewswitcher button
 viewswitcherbar actionbar,
 actionbar viewswitcher button box{ padding: 0;}
 
-.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):hover,
-viewswitcher button:not(.suggested-action):not(.destructive-action):hover{background-image: none; box-shadow: inset 0 -2px alpha(currentcolor,0.3);}
+/* this make viewswitcher look like other headerbar buttons */
+.titlebar viewswitcher{ margin: 4px 0px;}
+.titlebar viewswitcher button.radio.vertical .narrow image{ color: transparent; margin: -9999px;}
+.titlebar viewswitcher button.radio.vertical .narrow label{ margin-bottom: 4px;}
 
-.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):active,
-.titlebar viewswitcher button:not(.suggested-action):not(.destructive-action):checked,
-viewswitcher button:not(.suggested-action):not(.destructive-action):active,
-viewswitcher button:not(.suggested-action):not(.destructive-action):checked{background-image: none; box-shadow: inset 0 -2px currentcolor;}
+/* ActionBar Viewswitcher */
+actionbar viewswitcher button {border-radius: 0px;}
+actionbar viewswitcher button:not(.suggested-action):not(.destructive-action):hover{background-image: none; box-shadow: inset 0 2px alpha(currentcolor,0.3);}
+actionbar viewswitcher button:not(.suggested-action):not(.destructive-action):active,
+actionbar viewswitcher button:not(.suggested-action):not(.destructive-action):checked{background-image: none; box-shadow: inset 0 2px currentcolor;}
 
 /* Treeview Button */
 
@@ -797,26 +767,24 @@ toolbar.inline-toolbar:not(actionbar) toolbutton > button.flat
 
 .inline-toolbar:not(actionbar) button:first-child,
 toolbar.inline-toolbar:not(actionbar) toolbutton:first-child > button.flat
-{ border-top-left-radius: 4.0px; border-bottom-left-radius: 4.0px; }
+{ border-top-left-radius: 6.0px; border-bottom-left-radius: 6.0px; }
 
 .inline-toolbar:not(actionbar) button:last-child,
 toolbar.inline-toolbar:not(actionbar) toolbutton:last-child > button.flat
-{ border-right-style: solid; border-top-right-radius: 4.0px; border-bottom-right-radius: 4.0px;}
+{ border-right-style: solid; border-top-right-radius: 6.0px; border-bottom-right-radius: 6.0px;}
 
 .inline-toolbar:not(actionbar) button:only-child,
 toolbar.inline-toolbar:not(actionbar) toolbutton:only-child > button.flat
-{ border-style: solid; border-radius: 4.0px; }
+{ border-style: solid; border-radius: 6.0px; }
 
 /* Linked Horizontal */
 
 /* First Child*/
-.linked:not(.vertical) > filechooserbutton > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > filechooserbutton > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(ltr):not(:last-child) > box > button.combo, dropdown.linked button:nth-child(2):dir(rtl), combobox.linked button:nth-child(2):dir(rtl), .linked:not(.vertical) > menubutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > filechooserbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > menubutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > dropdown:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > colorbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > fontbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > filechooserbutton:dir(ltr):not(:last-child) > button, spinbutton.vertical.linked:not(.vertical) > text:dir(rtl):not(:first-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:first-child):not(.vertical), .linked:not(.vertical) > entry:dir(rtl):not(:first-child), .linked:not(.vertical) > button:dir(rtl):not(:first-child), spinbutton.vertical.linked:not(.vertical) > text:dir(ltr):not(:last-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical), .linked:not(.vertical) > entry:dir(ltr):not(:last-child), .linked:not(.vertical) > button:dir(ltr):not(:last-child),
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):not(:last-child)
+.linked:not(.vertical) > filechooserbutton > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:first-child) > box > button.combo, .linked:not(.vertical) > filechooserbutton > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(ltr):not(:last-child) > box > button.combo, dropdown.linked button:nth-child(2):dir(rtl), combobox.linked button:nth-child(2):dir(rtl), .linked:not(.vertical) > menubutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > filechooserbutton:dir(rtl):not(:first-child) > button, .linked:not(.vertical) > menubutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > dropdown:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > colorbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > fontbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > filechooserbutton:dir(ltr):not(:last-child) > button, spinbutton.vertical.linked:not(.vertical) > text:dir(rtl):not(:first-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:first-child):not(.vertical), .linked:not(.vertical) > entry:dir(rtl):not(:first-child), .linked:not(.vertical) > button:dir(rtl):not(:first-child), spinbutton.vertical.linked:not(.vertical) > text:dir(ltr):not(:last-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical), .linked:not(.vertical) > entry:dir(ltr):not(:last-child), .linked:not(.vertical) > button:dir(ltr):not(:last-child)
 { border-top-right-radius: 0; border-bottom-right-radius: 0; border-right-style: none;}
 
 /* Last Child */
-.linked:not(.vertical) > filechooserbutton > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > filechooserbutton > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(ltr):not(:first-child) > box > button.combo, dropdown.linked button:nth-child(2):dir(ltr), combobox.linked button:nth-child(2):dir(ltr), .linked:not(.vertical) > menubutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > filechooserbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > menubutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > dropdown:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > colorbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > fontbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > filechooserbutton:dir(ltr):not(:first-child) > button, spinbutton.vertical.linked:not(.vertical) > text:dir(rtl):not(:last-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:last-child):not(.vertical), .linked:not(.vertical) > entry:dir(rtl):not(:last-child), .linked:not(.vertical) > button:dir(rtl):not(:last-child), spinbutton.vertical.linked:not(.vertical) > text:dir(ltr):not(:first-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical), .linked:not(.vertical) > entry:dir(ltr):not(:first-child), .linked:not(.vertical) > button:dir(ltr):not(:first-child),
-headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action):not(:first-child)
+.linked:not(.vertical) > filechooserbutton > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:last-child) > box > button.combo, .linked:not(.vertical) > filechooserbutton > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > appchooserbutton > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(ltr):not(:first-child) > box > button.combo, dropdown.linked button:nth-child(2):dir(ltr), combobox.linked button:nth-child(2):dir(ltr), .linked:not(.vertical) > menubutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > filechooserbutton:dir(rtl):not(:last-child) > button, .linked:not(.vertical) > menubutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > dropdown:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > colorbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > fontbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > filechooserbutton:dir(ltr):not(:first-child) > button, spinbutton.vertical.linked:not(.vertical) > text:dir(rtl):not(:last-child), .linked:not(.vertical) > spinbutton:dir(rtl):not(:last-child):not(.vertical), .linked:not(.vertical) > entry:dir(rtl):not(:last-child), .linked:not(.vertical) > button:dir(rtl):not(:last-child), spinbutton.vertical.linked:not(.vertical) > text:dir(ltr):not(:first-child), .linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical), .linked:not(.vertical) > entry:dir(ltr):not(:first-child), .linked:not(.vertical) > button:dir(ltr):not(:first-child)
 { border-top-left-radius: 0; border-bottom-left-radius: 0; }
 
 /* Linked Vertical */
@@ -912,6 +880,85 @@ headerbar.toolbar .linked button:not(.suggested-action):not(.destructive-action)
 .linked.vertical > entry:drop(active):not(:only-child) + entry,
 .linked.vertical > entry:drop(active):not(:only-child) + button,
 .linked.vertical > entry:drop(active):not(:only-child) + combobox > box > button.combo { border-top-color: @success_color; }
+
+.titlebar .linked:not(.vertical) > spinbutton:focus:not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > spinbutton:focus:not(.vertical) + button,
+.titlebar .linked:not(.vertical) > spinbutton:focus:not(.vertical) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > spinbutton:focus:not(.vertical) + entry,
+.titlebar .linked:not(.vertical) > entry:focus + button,
+.titlebar .linked:not(.vertical) > entry:focus + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > entry:focus + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > entry:focus + entry,
+
+.titlebar .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + button,
+.titlebar .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > spinbutton:focus.error:not(.vertical) + entry,
+.titlebar .linked:not(.vertical) > entry:focus.error + button,
+.titlebar .linked:not(.vertical) > entry:focus.error + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > entry:focus.error + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > entry:focus.error + entry,
+
+.titlebar .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + button,
+.titlebar .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > spinbutton:drop(active):not(.vertical) + entry,
+.titlebar .linked:not(.vertical) > entry:drop(active) + button,
+.titlebar .linked:not(.vertical) > entry:drop(active) + combobox > box > button.combo,
+.titlebar .linked:not(.vertical) > entry:drop(active) + spinbutton:not(.vertical),
+.titlebar .linked:not(.vertical) > entry:drop(active) + entry,
+
+.titlebar .linked.vertical > spinbutton:not(:disabled):not(.vertical) + entry:not(:disabled),
+.titlebar .linked.vertical > spinbutton:not(:disabled):not(.vertical) + spinbutton:not(:disabled):not(.vertical),
+.titlebar .linked.vertical > entry:not(:disabled) + entry:not(:disabled),
+.titlebar .linked.vertical > entry:not(:disabled) + spinbutton:not(:disabled):not(.vertical),
+.titlebar .linked.vertical > spinbutton:not(:disabled):not(.vertical) + entry:not(:disabled):backdrop,
+.titlebar .linked.vertical > spinbutton:not(:disabled):not(.vertical) + spinbutton:not(:disabled):backdrop:not(.vertical),
+.titlebar .linked.vertical > entry:not(:disabled) + entry:not(:disabled):backdrop,
+.titlebar .linked.vertical > entry:not(:disabled) + spinbutton:not(:disabled):backdrop:not(.vertical),
+.titlebar .linked.vertical > spinbutton:disabled:not(.vertical) + spinbutton:disabled:not(.vertical),
+.titlebar .linked.vertical > spinbutton:disabled:not(.vertical) + entry:disabled,
+.titlebar .linked.vertical > entry:disabled + spinbutton:disabled:not(.vertical),
+.titlebar .linked.vertical > entry:disabled + entry:disabled,
+
+.titlebar .linked.vertical > spinbutton:not(.vertical) + spinbutton:focus:not(:only-child):not(.vertical),
+.titlebar .linked.vertical > spinbutton:not(.vertical) + entry:focus:not(:only-child),
+.titlebar .linked.vertical > entry + spinbutton:focus:not(:only-child):not(.vertical),
+.titlebar .linked.vertical > entry + entry:focus:not(:only-child),
+.titlebar .linked.vertical > spinbutton:focus:not(:only-child):not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > spinbutton:focus:not(:only-child):not(.vertical) + entry,
+.titlebar .linked.vertical > spinbutton:focus:not(:only-child):not(.vertical) + button,
+.titlebar .linked.vertical > spinbutton:focus:not(:only-child):not(.vertical) + combobox > box > button.combo,
+.titlebar .linked.vertical > entry:focus:not(:only-child) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > entry:focus:not(:only-child) + entry,
+.titlebar .linked.vertical > entry:focus:not(:only-child) + button,
+.titlebar .linked.vertical > entry:focus:not(:only-child) + combobox > box > button.combo,
+
+.titlebar .linked.vertical > spinbutton:not(.vertical) + spinbutton:focus.error:not(:only-child):not(.vertical),
+.titlebar .linked.vertical > spinbutton:not(.vertical) + entry:focus.error:not(:only-child),
+.titlebar .linked.vertical > entry + spinbutton:focus.error:not(:only-child):not(.vertical),
+.titlebar .linked.vertical > entry + entry:focus.error:not(:only-child),
+.titlebar .linked.vertical > spinbutton:focus.error:not(:only-child):not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > spinbutton:focus.error:not(:only-child):not(.vertical) + entry,
+.titlebar .linked.vertical > spinbutton:focus.error:not(:only-child):not(.vertical) + button,
+.titlebar .linked.vertical > spinbutton:focus.error:not(:only-child):not(.vertical) + combobox > box > button.combo,
+.titlebar .linked.vertical > entry:focus.error:not(:only-child) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > entry:focus.error:not(:only-child) + entry,
+.titlebar .linked.vertical > entry:focus.error:not(:only-child) + button,
+.titlebar .linked.vertical > entry:focus.error:not(:only-child) + combobox > box > button.combo,
+
+.titlebar .linked.vertical > spinbutton:not(.vertical) + spinbutton:drop(active):not(:only-child):not(.vertical),
+.titlebar .linked.vertical > spinbutton:not(.vertical) + entry:drop(active):not(:only-child),
+.titlebar .linked.vertical > entry + spinbutton:drop(active):not(:only-child):not(.vertical),
+.titlebar .linked.vertical > entry + entry:drop(active):not(:only-child),
+.titlebar .linked.vertical > spinbutton:drop(active):not(:only-child):not(.vertical) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > spinbutton:drop(active):not(:only-child):not(.vertical) + entry,
+.titlebar .linked.vertical > spinbutton:drop(active):not(:only-child):not(.vertical) + button,
+.titlebar .linked.vertical > spinbutton:drop(active):not(:only-child):not(.vertical) + combobox > box > button.combo,
+.titlebar .linked.vertical > entry:drop(active):not(:only-child) + spinbutton:not(.vertical),
+.titlebar .linked.vertical > entry:drop(active):not(:only-child) + entry,
+.titlebar .linked.vertical > entry:drop(active):not(:only-child) + button,
+.titlebar .linked.vertical > entry:drop(active):not(:only-child) + combobox > box > button.combo{border-color: transparent;}
 
 /* Check and Radio */
 
@@ -1268,6 +1315,8 @@ list .h4{padding-left: 6px;}
  
 .background.csd.org-gnome-Calendar{background-color: @gtk_base_color; }
 
+.titlebar .sources-button box.vertical .subtitle.horizontal{ margin-top: 2px;}
+
 calendar {
 	color: currentcolor;
 	border: 1px solid @gtk_borders;
@@ -1312,10 +1361,11 @@ calendar header button{padding: 2px;}
  * Lists *
  *********/
 
-placessidebar row{padding: 8px;}
+list row{ padding: 4px;}
 
 row label {padding: 0 12px;}
 
+placessidebar row,
 stacksidebar row,
 .navigation-sidebar > row,
 .sidebar list row {padding: 8px;}
@@ -1349,7 +1399,7 @@ list.content > row.expander:first-child row.header,
 list.content > row.expander:checked,
 list.content > row.expander:checked row.header,
 list.content > row.expander:checked + row,
-list.content > row.expander:checked + row.expander row.header { border-top-left-radius: 4.0px; border-top-right-radius: 4.0px; }
+list.content > row.expander:checked + row.expander row.header { border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
 
 list.content > row:last-child,
 list.content > row.checked-expander-row-previous-sibling,
@@ -1358,7 +1408,7 @@ list.content > row.expander:not(:checked):last-child row.header,
 list.content > row.expander.checked-expander-row-previous-sibling:not(:checked) row.header,
 list.content > row.expander.empty:checked row.header,
 list.content > row.expander list.nested > row:last-child
-{ border-bottom-left-radius: 4.0px; border-bottom-right-radius: 4.0px;}
+{ border-bottom-left-radius: 6.0px; border-bottom-right-radius: 6.0px;}
 
 /**************
  * Headerbars *
@@ -1411,7 +1461,7 @@ headerbar .subtitle,
 dialog.background .titlebar:backdrop,
 dialog.background .titlebar,
 messagedialog.background .titlebar:backdrop,
-messagedialog.background .titlebar { border-top-left-radius: 4.0px; border-top-right-radius: 4.0px; }
+messagedialog.background .titlebar { border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
 
 window.tiled headerbar,window.tiled headerbar:first-child,window.tiled headerbar:last-child,window.tiled headerbar:only-child,window.tiled headerbar:backdrop,window.tiled headerbar:backdrop:first-child,window.tiled headerbar:backdrop:last-child,window.tiled headerbar:backdrop:only-child,window.tiled-top headerbar,window.tiled-top headerbar:first-child,window.tiled-top headerbar:last-child,window.tiled-top headerbar:only-child,window.tiled-top headerbar:backdrop,window.tiled-top headerbar:backdrop:first-child,window.tiled-top headerbar:backdrop:last-child,window.tiled-top headerbar:backdrop:only-child,window.tiled-right headerbar,window.tiled-right headerbar:first-child,window.tiled-right headerbar:last-child,window.tiled-right headerbar:only-child,window.tiled-right headerbar:backdrop,window.tiled-right headerbar:backdrop:first-child,window.tiled-right headerbar:backdrop:last-child,window.tiled-right headerbar:backdrop:only-child,window.tiled-bottom headerbar,window.tiled-bottom headerbar:first-child,window.tiled-bottom headerbar:last-child,window.tiled-bottom headerbar:only-child,window.tiled-bottom headerbar:backdrop,window.tiled-bottom headerbar:backdrop:first-child,window.tiled-bottom headerbar:backdrop:last-child,window.tiled-bottom headerbar:backdrop:only-child,window.tiled-left headerbar,window.tiled-left headerbar:first-child,window.tiled-left headerbar:last-child,window.tiled-left headerbar:only-child,window.tiled-left headerbar:backdrop,window.tiled-left headerbar:backdrop:first-child,window.tiled-left headerbar:backdrop:last-child,window.tiled-left headerbar:backdrop:only-child,window.maximized headerbar,window.maximized headerbar:first-child,window.maximized headerbar:last-child,window.maximized headerbar:only-child,window.maximized headerbar:backdrop,window.maximized headerbar:backdrop:first-child,window.maximized headerbar:backdrop:last-child,window.maximized headerbar:backdrop:only-child,window.fullscreen headerbar,window.fullscreen headerbar:first-child,window.fullscreen headerbar:last-child,window.fullscreen headerbar:only-child,window.fullscreen headerbar:backdrop,window.fullscreen headerbar:backdrop:first-child,window.fullscreen headerbar:backdrop:last-child,window.fullscreen headerbar:backdrop:only-child,window.solid-csd headerbar,window.solid-csd headerbar:first-child,window.solid-csd headerbar:last-child,window.solid-csd headerbar:only-child,window.solid-csd headerbar:backdrop,window.solid-csd headerbar:backdrop:first-child,window.solid-csd headerbar:backdrop:last-child,window.solid-csd headerbar:backdrop:only-child,.background.tiled .titlebar:backdrop,.background.tiled .titlebar,.background.tiled-top .titlebar:backdrop,.background.tiled-top .titlebar,.background.tiled-right .titlebar:backdrop,.background.tiled-right .titlebar,.background.tiled-bottom .titlebar:backdrop,.background.tiled-bottom .titlebar,.background.tiled-left .titlebar:backdrop,.background.tiled-left .titlebar,.background.maximized .titlebar:backdrop,.background.maximized .titlebar,.background.solid-csd .titlebar:backdrop,.background.solid-csd .titlebar
 { border-top-left-radius: 0; border-top-right-radius: 0; }
@@ -1419,15 +1469,15 @@ window.tiled headerbar,window.tiled headerbar:first-child,window.tiled headerbar
 window separator:first-child + headerbar:backdrop,
 window separator:first-child + headerbar,
 window headerbar:first-child:backdrop,
-window headerbar:first-child { border-top-left-radius: 4.0px; }
+window headerbar:first-child { border-top-left-radius: 6.0px; }
 
 window headerbar:last-child:backdrop,
-window headerbar:last-child { border-top-right-radius: 4.0px; }
+window headerbar:last-child { border-top-right-radius: 6.0px; }
 
 window stack headerbar:first-child:backdrop,
 window stack headerbar:first-child,
 window stack headerbar:last-child:backdrop,
-window stack headerbar:last-child { border-top-left-radius: 4.0px; border-top-right-radius: 4.0px; }
+window stack headerbar:last-child { border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
 
 /* this fix the double headerbar */
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop,
@@ -1459,6 +1509,18 @@ headerbar switch { margin-top: 4px; margin-bottom: 4px; }
 /* this fix the bad rounded corners */
 headerbar.titlebar headerbar:not(.titlebar) { background: none; }
 
+/* decorations */
+
+dialog decoration,
+messagedialog decoration{ box-shadow: 0 2px 4px @gtk_shadow,0 0 0 1px @gtk_transparent_borders;}
+
+dialog decoration:backdrop,
+messagedialog decoration:backdrop{ box-shadow: 0 2px 4px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
+
+.csd.popup decoration {box-shadow: 0 1px 2px @gtk_menu_shadow; }
+
+.ssd decoration{box-shadow: 0 0 0 1px @gtk_transparent_borders;}
+
 /*********
  * Menus *
  *********/
@@ -1471,7 +1533,7 @@ menubar.chromium  {background-color: @gtk_bg_color; color:@gtk_fg_color;}
 
 accelerator { color: alpha(currentColor,0.5); }
 
-.background.popup { background-color: transparent;	border-radius: 4.0px;}
+.background.popup { background-color: transparent;	border-radius: 6.0px;}
 
 menubar,
 .menubar,
@@ -1493,7 +1555,7 @@ modelbutton.flat:hover,
 .budgie-popover .sidebar .frame row.activatable:hover,
 .budgie-popover .sidebar .frame row.activatable:selected,
 .budgie-popover list .menuitem:hover
-{border-radius: 4.0px; }
+{border-radius: 6.0px; }
 
 menu menuitem.chromium,
 .menu menuitem.chromium,
@@ -1510,7 +1572,8 @@ popover.menu.background > contents modelbutton
 {border-radius: 0;}
 
 .csd menu,
-.csd .menu,
+.csd .menu
+{ padding: 6px 1px; }
 popover.menu.background > contents,
 popover.background.menu > contents { padding: 6px 0px; }
 
@@ -1558,7 +1621,7 @@ popover.background,
 popover.background > arrow,
 popover.background > contents,
 .budgie-popover
-{border-radius: 4.0px;}
+{border-radius: 6.0px;}
 
 menuitem.button.flat,
 modelbutton.flat {
@@ -1631,7 +1694,7 @@ actionbar {
 	background-color: @gtk_sidebar_color;
 }
 
-dialog actionbar{ border-radius: 0 0 4.0px 4.0px;}
+dialog actionbar{ border-radius: 0 0 6.0px 6.0px;}
 
 .inline-toolbar{
 	padding: 4px;
@@ -1702,7 +1765,7 @@ infobar label:disabled{color: alpha(currentcolor,0.5);}
 	margin: 6px;
 	background-color: black;
 	color: white;
-	border-radius:	4.0px;
+	border-radius:	6.0px;
 }
 
  .floating-bar button {
@@ -1726,7 +1789,7 @@ infobar label:disabled{color: alpha(currentcolor,0.5);}
 .gedit-search-slider{ background-color: alpha(black,0.8); color: white; border: none;}
 
 .app-notification,
-.gedit-search-slider{border-radius: 0 0 4.0px 4.0px; padding: 8px;}
+.gedit-search-slider{border-radius: 0 0 6.0px 6.0px; padding: 8px;}
 
 .osd button,
 .osd spinbutton:not(.vertical),
@@ -1817,7 +1880,7 @@ window.dialog.message .dialog-action-area
 messagedialog .linked:not(.vertical) > button:dir(ltr):not(:last-child),
 messagedialog .linked:not(.vertical) > button:dir(ltr):not(:first-child),
 window.dialog.message .dialog-action-area button
-{ margin: 0 4px; border-radius: 4.0px;}
+{ margin: 0 4px; border-radius: 6.0px;}
 
 messagedialog button,
 .budgie-session-dialog button,
@@ -1833,7 +1896,7 @@ window.dialog.message.csd .dialog-action-area button:first-child
 .budgie-session-dialog .linked.horizontal > button:last-child,
 .budgie-polkit-dialog .linked.horizontal > button:last-child,*/
 window.dialog.message.csd .dialog-action-area button:last-child
-{ border-radius: 4.0px;}
+{ border-radius: 6.0px;}
 
 messagedialog .linked button:only-child{}
 
@@ -1874,7 +1937,7 @@ terminal-window.background.csd decoration,
 .rounded .titlebar,
 .background.csd.org-gnome-Todo decoration,
 .background.csd.org-gnome-Builder decoration
-{border-radius: 4.0px 4.0px 0 0;}
+{border-radius: 6.0px 6.0px 0 0;}
 
 .background.csd,
 .background.csd revealer > actionbar,
@@ -1919,7 +1982,7 @@ window#gnome-system-monitor.background.csd > box.vertical > stack,
 messagedialog .dialog-action-box,
 messagedialog .dialog-action-area,
 window.dialog.message .dialog-action-area
-{ border-radius: 0 0 4.0px 4.0px;}
+{ border-radius: 0 0 6.0px 6.0px;}
 
 .nautilus-window .sidebar .frame,
 window.background.csd > box.vertical > box.horizontal > frame > scrolledwindow > viewport.frame list,
@@ -1957,7 +2020,7 @@ window.background.csd > box.vertical > paned.horizontal > scrolledwindow,
 .background.csd paned .source-list:not(:selected),
 .sidebar .inline-toolbar,
 assistant .sidebar
-{ border-bottom-left-radius: 4.0px;}
+{ border-bottom-left-radius: 6.0px;}
 
 window.background.csd > box.vertical > box.horizontal > stack > widget > notebook.frame > stack,
 .view.cs-category-view,
@@ -1983,7 +2046,7 @@ window box grid stack grid actionbar,
 window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame
-{ border-bottom-right-radius: 4.0px;}
+{ border-bottom-right-radius: 6.0px;}
 
 /* new rounded apps */
 .rounded decoration,
@@ -2002,7 +2065,13 @@ messagedialog decoration,
 .background.csd decoration,
 menu,
 .menu,
-.background.popup { border-radius: 4.0px;}
+.background.popup,
+tooltip,
+.csd.popup decoration,
+tooltip.background.csd:first-child,
+tooltip.background.csd:last-child,
+tooltip.background.csd decoration
+{ border-radius: 6.0px;}
 
 .background.maximized,
 .background.solid-csd,
@@ -2297,12 +2366,8 @@ spinner:checked:disabled { opacity: 0.5; }
 
 /* Nautilus */
 
-.nautilus-window .titlebar .path-bar-box{ border-radius: 4.0px; background-color: transparent; background-clip: padding-box;}
-.nautilus-window .titlebar .path-bar-box button.text-button{margin: 0; border-top: none; border-bottom: none; }
-
-.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):last-child{ border-radius: 0;}
-.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):first-child{ border-left: none;}
-.nautilus-window .titlebar .path-bar-box .linked button:not(.suggested-action):not(.destructive-action):only-child{ border-radius: 4.0px 0 0 4.0px;}
+.nautilus-window .titlebar .path-bar-box{ border-radius: 6.0px; background-color: transparent; background-clip: padding-box;}
+.nautilus-window .titlebar .path-bar-box button.text-button{margin: 0; }
 
 .nautilus-window .titlebar .path-bar-box button.text-button image,.nautilus-window .titlebar .path-bar-box button.text-button label{ color: @gtk_titlebar_fg_color;}
 .nautilus-window .titlebar .path-bar-box button.text-button:backdrop image,.nautilus-window .titlebar .path-bar-box button.text-button:backdrop label{ color: alpha(@gtk_titlebar_fg_color,0.5);}
@@ -2370,10 +2435,10 @@ popover menuitem{padding: 4px 12px;}
 	background-image: linear-gradient(to right, @STRAWBERRY_300 25%, @ORANGE_300 25%, @ORANGE_300 50%, @LIME_500 50%, @LIME_500 75%, @BLUEBERRY_500 75%);
 }
 
-radiobutton.image-button{ background-color: transparent; border: 1px solid transparent; padding: 4px; border-radius: 4.0px;}
+radiobutton.image-button{ background-color: transparent; border: 1px solid transparent; padding: 4px; border-radius: 6.0px;}
 radiobutton.image-button:checked{ background-color: alpha(@gtk_selected_bg_color,0.2); border-color: @gtk_selected_bg_color; }
 
-.dynamic-notebook .view:not(treeview):selected{background-color: alpha(@gtk_selected_bg_color,0.2); border-radius: 4.0px;}
+.dynamic-notebook .view:not(treeview):selected{background-color: alpha(@gtk_selected_bg_color,0.2); border-radius: 6.0px;}
 
 .storage-bar .fill-block{padding: 6px; background-color:  alpha(@gtk_fg_color,0.3); box-shadow: inset 0 0 0 1px @gtk_transparent_borders;}
 .storage-bar .fill-block.empty-block{background-color: alpha(@gtk_fg_color,0.15);}
@@ -2406,7 +2471,7 @@ button.btn_round.flat:disabled
 window.notification .draw-area,
 .card {
 	background-color: @gtk_base_color;
-	border-radius: 4.0px;
+	border-radius: 6.0px;
 	box-shadow: 0 0 0 1px @gtk_transparent_borders, 0 2px 4px @gtk_shadow; }
 	
 window.notification .draw-area image {color: @gtk_fg_color; }
@@ -2505,16 +2570,16 @@ avatar.image { background: none; }
 
 frame.raven-frame > border {border: none;}
 
-.raven .raven-background{ border-radius: 4.0px;}
+.raven .raven-background{ border-radius: 6.0px;}
 widget.raven-background{ border: 1px solid @gtk_transparent_borders;}
 
 .raven button.flat{}
 
 calendar.raven-calendar {border-radius: 0px; border-color: transparent; background-color: transparent; border-style: solid;}
 
-calendar.raven-calendar :selected {color: @panel_bg; background-color: @panel_fg; border-radius: 4.0px;}
+calendar.raven-calendar :selected {color: @panel_bg; background-color: @panel_fg; border-radius: 6.0px;}
 
-.raven-mpris {background-color: alpha(@panel_fg,0.6); color: @panel_bg; margin: 0px; border-radius: 0 0 4.0px 4.0px;} 
+.raven-mpris {background-color: alpha(@panel_fg,0.6); color: @panel_bg; margin: 0px; border-radius: 0 0 6.0px 6.0px;} 
 .raven-mpris button{ color: @panel_bg;}
 
 .raven .powerstrip{box-shadow: inset 0 1px @gtk_transparent_borders;}
@@ -2526,7 +2591,7 @@ calendar.raven-calendar :selected {color: @panel_bg; background-color: @panel_fg
 .drop-shadow,
 .raven-notifications-view  list box.vertical row
 {
-	border-radius:	4.0px;
+	border-radius:	6.0px;
 	box-shadow: 0 0 0 1px @gtk_transparent_borders;
 	border: none;
 }
@@ -2560,7 +2625,7 @@ window box.vertical scrolledwindow .frame .raven-background stack list
 .budgie-session-dialog .dialog-title { font-size: 120%;}
 
 .budgie-run-dialog {
-	border-radius:	4.0px;
+	border-radius:	6.0px;
 	box-shadow: none;
 }
 
@@ -2630,7 +2695,7 @@ button.flat.launcher image,
 
 .dock-mode{
 	margin: 4px;
-	border-radius:	4.0px;
+	border-radius:	6.0px;
 	border: 1px solid @gtk_transparent_borders;
 }
 
@@ -2707,7 +2772,7 @@ button.flat.launcher image,
 XfdesktopIconView.view {
 	background: transparent;
 	color: white;
-	border-radius:	4.0px; } 
+	border-radius:	6.0px; } 
 	
 XfdesktopIconView.view .label { background: transparent; text-shadow: 1px 1px black;}
 

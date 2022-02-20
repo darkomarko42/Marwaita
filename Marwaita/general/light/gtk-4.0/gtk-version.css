@@ -8,9 +8,9 @@ frame,
 .frame
 {border: 1px solid @gtk_borders;}
 
-/* Headerbars */
+window.background.csd{ border-radius: 6.0px;}
 
-window.background.csd{border-radius: 4.0px;}
+/* Headerbars */
 
 windowcontrols { border-spacing: 6px; }
 
@@ -63,7 +63,7 @@ popover.menu.background > contents .linked button:last-child{ margin-right: 4px;
 
 /* Tooltips */
 
-tooltip { padding: 4px; border-radius: 4.0px; box-shadow: none; }
+tooltip { padding: 4px; box-shadow: none; }
 tooltip.background { background-color: alpha(black,0.9); background-clip: padding-box; border: 1px solid alpha(white,0.2); color: white; }
 tooltip > box { border-spacing: 6px; }
 
@@ -102,6 +102,10 @@ entry.warning:focus-within { outline-color: @warning_color; outline-width: 2px; 
 spinbutton.vertical > text.warning > selection,
 spinbutton.warning:not(.vertical) > selection,
 entry.warning > selection { background-color: @warning_color; color: white; }
+
+spinbutton.vertical > text progress > trough > progress,
+spinbutton:not(.vertical) progress > trough > progress,
+entry progress > trough > progress { background-color: transparent; background-image: none; border-radius: 0; border-width: 0 0 2px; border-color: @gtk_selected_bg_color; border-style: solid; box-shadow: none; }
 
 /* Overshoot */
 
@@ -200,14 +204,3 @@ scale.vertical.fine-tune > marks indicator { min-height: 3px; }
 window.csd{ box-shadow: 0 2px 6px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; margin: 6px;}
 
 window.csd:backdrop{ box-shadow: 0 2px 6px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
-
-dialog decoration,
-messagedialog decoration{ box-shadow: 0 2px 4px @gtk_shadow,0 0 0 1px @gtk_transparent_borders;}
-
-dialog decoration:backdrop,
-messagedialog decoration:backdrop{ box-shadow: 0 2px 4px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
-
-.csd.popup decoration {box-shadow: 0 1px 2px @gtk_menu_shadow; border-radius: 4.0px; }
-
-.ssd decoration{box-shadow: 0 0 0 1px @gtk_transparent_borders;}
-

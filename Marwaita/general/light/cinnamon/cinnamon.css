@@ -302,10 +302,10 @@ StEntry,
 .panel-top,
 .panel-left,
 .panel-right
-{border-color: rgba(0,0/**/,0, 0.3);}
+{border-color: rgba(0,0/**/,0, 0.2);}
 
 .popup-separator-menu-item,
-.calendar-events-main-box .separator{background-color: rgba(0,0/**/,0, 0.3);}
+.calendar-events-main-box .separator{background-color: rgba(0,0/**/,0, 0.2);}
 
 /* Border Radius */
 
@@ -329,7 +329,7 @@ StButton,
 .info-osd,
 .osd-window,
 .calendar-event-button
-{border-radius: 4px;}
+{border-radius: 6px;}
 
 .popup-sub-menu,
 .popup-menu-item
