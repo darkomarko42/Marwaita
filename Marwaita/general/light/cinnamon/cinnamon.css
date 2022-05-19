@@ -237,7 +237,8 @@ StButton:checked,
 .sound-player StButton:small:active,
 .sound-player-overlay StButton:active,
 .calendar-change-month-back:active,
-.calendar-change-month-forward:active
+.calendar-change-month-forward:active,
+.switcher-list .item-box:selected
 { background-color: rgba(0,0,0, 0.15); box-shadow: none;}
 
 .window-list-item-box,
