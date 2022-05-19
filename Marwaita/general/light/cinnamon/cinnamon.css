@@ -11,7 +11,8 @@
 { font-weight: bold;}
 
 .calendar-day-heading,
-.calendar-today-home-button *
+.calendar-today-home-button *,
+.overview-empty-placeholder *
 {color: rgba(0,0,0, 0.5);}
 
 .popup-subtitle-menu-item,
@@ -71,7 +72,8 @@ StButton.notification-applet-padding,
 .info-osd,
 .osd-window,
 .window-list-preview,
-.sound-player StButton
+.sound-player StButton,
+.overview-empty-placeholder
 {padding: 8px;}
 
 .popup-menu-item{padding: 6px 20px;}
@@ -185,7 +187,9 @@ StButton,
 .window-close,
 .window-close:hover,
 .window-close:active,
-.window-close:checked{background-color: #f0f0f0;}
+.window-close:checked,
+.overview-empty-placeholder
+{background-color: #f0f0f0;}
 
 .popup-sub-menu{ background-color: rgba(0,0,0, 0.1);}
 
@@ -256,6 +260,8 @@ StButton:checked,
 
 .panel-dummy{ background-color: rgba(0,0,0, 0.5);}
 
+.expo-background{background-color: #252525;}
+
 /* Borders */
 
 .menu,
@@ -273,7 +279,8 @@ StEntry,
 .window-list-preview,
 .workspace-close-button,
 .window-close,
-#notification .notification-button
+#notification .notification-button,
+.overview-empty-placeholder
 {border: 1px solid;}
 
 .panel-bottom,
@@ -301,7 +308,8 @@ StEntry,
 .panel-bottom,
 .panel-top,
 .panel-left,
-.panel-right
+.panel-right,
+.overview-empty-placeholder
 {border-color: rgba(0,0/**/,0, 0.2);}
 
 .popup-separator-menu-item,
@@ -328,7 +336,8 @@ StButton,
 #LookingGlassDialog,
 .info-osd,
 .osd-window,
-.calendar-event-button
+.calendar-event-button,
+.overview-empty-placeholder
 {border-radius: 6px;}
 
 .popup-sub-menu,

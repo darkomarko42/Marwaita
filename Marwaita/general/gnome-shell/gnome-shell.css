@@ -42,7 +42,15 @@
 .switcher-arrow,
 .popup-menu .button,
 .popup-menu StEntry,
-.window-close
+.window-close,
+.search-entry,
+.dash-label,
+#panel,
+#panel.solid,
+#panel:overview,
+#panel.solid:overview,
+.panel-button,
+.keyboard-key
 {color: white;}
 
 .calendar .calendar-other-month-day,
@@ -68,16 +76,6 @@ StEntry StLabel.hint-text,
 
 .calendar .calendar-day-with-events {text-decoration: underline;}
 
-.search-entry,
-.dash-label,
-#panel,
-#panel.solid,
-#panel:overview,
-#panel.solid:overview,
-.panel-button,
-.keyboard-key
-{color: white;}
-
 .search-entry StLabel.hint-text
 {color: rgba(255,255,255, 0.5);}
 
@@ -98,13 +96,15 @@ StEntry StLabel.hint-text,
 .panel-button .clock,
 .panel-button,
 .keyboard-key.default-key,
-.keyboard-key.default-key:hover
+.keyboard-key.default-key:hover,
+.popup-menu-content
 {background-color: transparent; box-shadow: none; border-color: transparent;}
 
 #overviewGroup,
 .app-folder-dialog,
 #keyboard,
 .modal-dialog,
+.dash-background
 { background-color: #2d2d2d; }
 
 .modal-dialog StButton,
@@ -120,14 +120,12 @@ StEntry StLabel.hint-text,
 .nm-dialog-scroll-view,
 .modal-dialog StEntry,
 .popup-menu .button,
-.popup-menu StEntry,
-.popup-sub-menu
-{background-color: #444; box-shadow: none;}
+.popup-menu StEntry
+{background-color: #444; box-shadow: inset 0 0 0 1px transparent;}
 
 .osd-window,
 .switcher-list,
 .dash-label,
-.dash-background,
 .window-close
 {background-color: rgba(0,0,0, 0.8);}
 
@@ -158,10 +156,13 @@ StEntry StLabel.hint-text,
 .switcher-list .item-box:outlined
 {background-color: rgba(255,255,255, 0.0); box-shadow: none;}
 
-.popup-menu-item.selected,
+.popup-menu-item:selected,
 .popup-menu-item:checked,
-.popup-menu-item:active
-{background-color: rgba(255,255,255, 0.1); box-shadow: none;}
+.popup-menu-item:active,
+.popup-menu-item:focus,
+.popup-menu-item:hover,
+.popup-sub-menu
+{background-color: rgba(255,255,255, 0.1) !important; box-shadow: none;}
 
 .calendar .pager-button:active,
 .datemenu-today-button:active,
@@ -237,7 +238,8 @@ StEntry StLabel.hint-text,
 
 /* Borders */
 .panel-button,
-.keyboard-key
+.keyboard-key,
+.dash-label
 {border: none;}
 
 .notification-banner StButton,
@@ -247,12 +249,19 @@ StEntry StLabel.hint-text,
 .osd-window,
 .switcher-list,
 .popup-menu .button,
-.dash-label,
 .dash-background,
 .app-folder-dialog,
 .app-folder-dialog StEntry,
 .tile-preview,
-.popup-menu StEntry
+.popup-menu StEntry,
+.nm-dialog-scroll-view,
+.calendar,
+.events-button,
+.world-clocks-button,
+.weather-button,
+.message,
+.message-list .button,
+.notification-banner StButton
 {border: 1px solid;}
 
 .datemenu-calendar-column,
@@ -272,10 +281,10 @@ StEntry StLabel.hint-text,
 .switcher-list,
 .popup-menu .button,
 .popup-menu StEntry,
-.dash-label,
 .dash-background,
 .app-folder-dialog,
-.tile-preview
+.tile-preview,
+.notification-banner StButton
 {border-color: rgba(0,0,0, 0.7);}
 
 .popup-separator-menu-item .popup-separator-menu-item-separator
@@ -284,23 +293,30 @@ StEntry StLabel.hint-text,
 .window-close{border: 2px solid rgba(255,/**/255,255, 1.0)}
 
 /* Sizes */
-.notification-banner StButton{margin: 8px;}
+.notification-banner {padding: 8px;}
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {margin: 6px 0px;}
 
 .modal-dialog,
-#LookingGlassDialog .notebook-tab StButton
-{padding: 8px;}
+.modal-dialog StButton,
+#LookingGlassDialog .notebook-tab StButton,
+.notification-banner StButton
+{padding: 6px;}
 
 StButton.modal-dialog-linked-button {margin: 0 8px;}
+
+.nm-dialog-scroll-view { padding: 0px; }
 
 /* Radius */
 
  #panel .panel-corner{-panel-corner-opacity: 0;}
 
-.message-media-control,
 .panel-button,
-#keyboard
+#keyboard,
+.popup-menu-item,
+.popup-sub-menu,
+.nm-dialog-item:selected,
+.nm-dialog-scroll-view
 {border-radius: 0;}
 
 StButton,
@@ -315,27 +331,33 @@ StEntry,
 .osd-window,
 .app-folder-dialog,
 .switcher-list,
-.search-section-content
-{border-radius: 6px;}
+.search-section-content,
+.message-media-control,
+.notification-banner StButton
+{border-radius: 6px !important;}
 
 .window-close,
 .search-entry,
 .app-folder-dialog .folder-name-container .edit-folder-button,
 StScrollBar StButton
-{border-radius: 9999px;}
+{border-radius: 9999px !important;}
 
 .calendar .calendar-day-base{ width: 32px; height: 32px; border-radius: 18px; border: 1px solid transparent;}
-
-.message-media-control:last-child:ltr { border-radius: 0 6px 6px 0; }
-.message-media-control:last-child:rtl { border-radius: 6px 0 0 6px; }
 
 /* Popovers */
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
+	-arrow-rise: 12px;/* this and... */
+	-arrow-base: 16px;/* ...this are the tail of the popover */
 	-arrow-border-radius: 6px;
+	-arrow-border-width: 1px;
 	-arrow-background-color: #2d2d2d;
 	-arrow-border-color: rgba(0,0,0, 0.7);
 }
+
+.popup-menu-content,.candidate-popup-content {padding: 6px 0px; border: none;}
+
+.popup-menu-item{padding: 4px 12px; }
 
 /* Slider */
 .slider{-barlevel-height: 7px;}
