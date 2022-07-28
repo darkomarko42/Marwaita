@@ -1827,7 +1827,11 @@ menu{ border-color: @gtk_transparent_borders;}
 
 menubar.chromium  {background-color: @gtk_bg_color; color:@gtk_fg_color;}
 
-.context-menu { font: initial; }
+.context-menu,
+popover,
+menu,
+.menu
+{ font: initial; }
 
 accelerator { color: alpha(currentColor,0.5); }
 
@@ -2202,7 +2206,7 @@ window.dialog.message.csd .dialog-action-area button:last-child
 
 messagedialog .linked button:only-child{}
 
-window.dialog.message.csd .dialog-action-area button { border-radius: 0; }
+window.dialog.message.csd .dialog-action-area button { }
 
 /* File Chooser */
  
