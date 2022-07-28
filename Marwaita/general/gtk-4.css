@@ -16,6 +16,8 @@ frame,
 
 window.background.csd{ border-radius: 6.0px;}
 
+.dialog box .dialog-action-area{border-spacing: 8px;}
+
 /* Headerbars */
 
 headerbar{min-height: 0px; margin: 0px;}
@@ -308,6 +310,10 @@ preferencespage > scrolledwindow > viewport > clamp { margin: 0 12px; }
 window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list,
 window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > box > preferencesgroup,
 preferencespage > scrolledwindow > viewport > clamp > list, preferencespage > scrolledwindow > viewport > clamp > box > preferencesgroup { margin-top: 24px; }
+
+clamp > box row {padding: 8px;}
+
+clamp > box  popover row { padding: 4px 8px;}
 
 /***********************
  * Windows Decorations *

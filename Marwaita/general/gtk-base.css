@@ -236,7 +236,9 @@ headerbar .subtitle,
 .budgie-switcher .notification-body,
 row.expander:not(:checked) image.expander-row-arrow,
 row.expander:checked image.expander-row-arrow:not(:disabled),
-placeholder {opacity: 0.5;}
+placeholder,
+.subtitle
+{opacity: 0.5;}
 
 row image.sidebar-icon { opacity: 1; }
 
