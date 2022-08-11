@@ -85,12 +85,12 @@ entry image.right {
 
 /* Scrollbars */
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider { min-width: 4px; min-height: 4px; margin: 4px; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {}
 
 scrollbar slider {
-	margin: 4px;
-	min-width: 8px;
-	min-height: 8px;
+	margin: 3px;
+	min-width: 6px;
+	min-height: 6px;
 	box-shadow: none;
 	background-image: none;
 }
