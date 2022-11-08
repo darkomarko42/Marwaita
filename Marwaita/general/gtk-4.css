@@ -2,7 +2,7 @@
 
 check,
 radio,
-.normal-icons { -gtk-icon-size: 16px; }
+.normal-icons { -gtk-icon-size: 14px; }
 .large-icons { -gtk-icon-size: 32px; }
 
 statuspage.compact > scrolledwindow > viewport > box > clamp > box > .icon { -gtk-icon-size: 96px; }
@@ -12,11 +12,17 @@ statuspage > scrolledwindow > viewport > box > clamp > box > .icon { -gtk-icon-s
 
 frame,
 .frame
-{border: 1px solid @gtk_borders;}
+{border: 1px solid @gtk_border;}
 
 window.background.csd{ border-radius: 6.0px;}
 
 .dialog box .dialog-action-area{border-spacing: 8px;}
+
+actionbar > revealer > box
+actionbar > revealer > box > box.start,
+actionbar > revealer > box > box.end { border-spacing: 6px; }
+
+clamp > grid.small .card.display-container{ box-shadow: 0 1px @gtk_border;} /* this is for gnome calculator */
 
 /* Headerbars */
 
@@ -54,7 +60,7 @@ window.dialog.message box.dialog-vbox.vertical { border-spacing: 10px; }
 	border-spacing: 4px;
 	padding: 4px;
 	border-style: solid;
-	border-color: @gtk_borders;
+	border-color: @gtk_border;
 	border-radius: 0;
 	border-width: 1px 0 1px 0;
 }
@@ -65,28 +71,35 @@ shortcuts-section { margin: 24px; }
 
 infobar > revealer > box { padding: 8px; border-spacing: 10px; background-color: transparent; color: inherit; }
 
+searchbar > revealer > box,
+.location-bar,
+.search-bar{	padding-bottom: 10px;	}
+
 /* Menus */
 
 popover.background{ background-color: transparent; border: none;}
 
 popover.background > arrow,
 popover.background > contents
-{ border: 1px solid @gtk_transparent_borders; box-shadow: 0 1px 2px @gtk_menu_shadow; }
+{ border: none; box-shadow: 0 1px 2px @gtk_menu_shadow; }
 
 popover.background > arrow,
 popover.background > contents
-{background-color: @gtk_base_color;}
+{background-color: @gtk_base_color; border: 1px solid @gtk_transparent_border;}
 
 popover.menu > contents > stack > box,
-popover.menu > contents > scrolledwindow > viewport > stack > box { padding: 0px; }
+popover.menu > contents > scrolledwindow > viewport > stack > box { }
+
+button.emoji-section:hover,
+button.emoji-section:checked {box-shadow: 0 2px;}
 
 /* Tooltips */
 
-tooltip { padding: 4px; box-shadow: none; }
-tooltip.background { background-color: alpha(black,0.9); background-clip: padding-box; border: 1px solid alpha(white,0.2); color: white; }
+tooltip { padding: 8px; box-shadow: none; }
+tooltip.background { background-color: alpha(black,0.8); background-clip: padding-box; border: none; color: white; }
 tooltip > box { border-spacing: 6px; }
 
-/* Entry */
+/* Entries */
 
 entry{ padding: 0px; min-height: 0px;}
 text{ padding: 6px; min-height: 0px;}
@@ -157,9 +170,9 @@ entry progress > trough > progress
 
 /* Scrollbar */
 
-scrollbar > range > trough { margin: 3px; }
+scrollbar > range > trough { margin: 0px; }
 
-scrollbar > range > trough > slider { min-width: 6px; min-height: 6px; margin: 0px; border: none; }
+scrollbar > range > trough > slider { min-width: 8px; min-height: 8px; margin: 0px; border: none; }
 
 scrollbar.overlay-indicator.hovering > range > trough,
 scrollbar.overlay-indicator > range > trough > slider,
@@ -183,7 +196,7 @@ scrolledwindow > overshoot.right { background-image: radial-gradient(farthest-si
 .sidebar:not(separator).left:not(placessidebar),
 .sidebar:not(separator).left:dir(rtl):not(placessidebar)
 {
-	border-right: 1px solid @gtk_borders;
+	border-right: 1px solid @gtk_border;
 	border-left-style: none;
 	min-width: 0;
 }
@@ -191,15 +204,15 @@ scrolledwindow > overshoot.right { background-image: radial-gradient(farthest-si
 .sidebar:not(separator):dir(rtl):not(placessidebar),
 .sidebar:not(separator).right:not(placessidebar)
 {
-	border-left: 1px solid @gtk_borders;
+	border-left: 1px solid @gtk_border;
 	border-right-style: none;
 	min-width: 0;
 }
 
-columnview.column-separators > listview > row > cell { border-right: 1px solid @gtk_borders; }
+columnview.column-separators > listview > row > cell { border-right: 1px solid @gtk_border; }
 
-paned.horizontal > separator:dir(ltr) { box-shadow: inset 1px 0 @gtk_borders; }
-paned.horizontal > separator:dir(rtl) {box-shadow: inset -1px 0 @gtk_borders; }
+paned.horizontal > separator:dir(ltr) { box-shadow: inset 1px 0 @gtk_border; }
+paned.horizontal > separator:dir(rtl) {box-shadow: inset -1px 0 @gtk_border; }
 
 filechooser paned.horizontal > separator:dir(ltr),
 filechooser paned.horizontal > separator:dir(rtl){box-shadow: none;}
@@ -319,9 +332,9 @@ clamp > box  popover row { padding: 4px 8px;}
  * Windows Decorations *
  ***********************/
 
-window.csd{ box-shadow: 0 2px 6px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; outline: none;}
+window.csd{ box-shadow: 0px 4px 6px @gtk_shadow, 0px 0px 0px 1px @gtk_transparent_border; outline: none;}
 
-window.csd:backdrop{ box-shadow: 0 2px 6px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
+window.csd:backdrop{ box-shadow: 0px 4px 6px alpha(@gtk_shadow,0.5), 0px 0px 0px 1px @gtk_transparent_border;}
 
 window.csd.maximized,
 window.csd.fullscreen { border-radius: 0px; outline: none; box-shadow: none; transition: none; }

@@ -20,7 +20,7 @@
 
 frame > border,
 .frame
-{border: 1px solid @gtk_borders;}
+{border: 1px solid @gtk_border;}
 
 button.circular{ -gtk-outline-radius: 9999px;}
 
@@ -88,9 +88,9 @@ entry image.right {
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {}
 
 scrollbar slider {
-	margin: 3px;
-	min-width: 6px;
-	min-height: 6px;
+	margin: 0px;
+	min-width: 8px;
+	min-height: 8px;
 	box-shadow: none;
 	background-image: none;
 }
@@ -114,7 +114,7 @@ stacksidebar.sidebar.left:dir(rtl) list,
 .sidebar.left:not(placessidebar),
 .sidebar.left:dir(rtl):not(placessidebar)
 {
-	border-right: 1px solid @gtk_borders;
+	border-right: 1px solid @gtk_border;
 	border-left-style: none;
 	min-width: 0;
 }
@@ -124,7 +124,7 @@ stacksidebar.sidebar.right list,
 .sidebar:dir(rtl),
 .sidebar.right
 {
-	border-left: 1px solid @gtk_borders;
+	border-left: 1px solid @gtk_border;
 	border-right-style: none;
 	min-width: 0;
 }
@@ -137,19 +137,22 @@ menubar,
 toolbar { -GtkWidget-window-dragging: false;}
 
 popover.background
-{ border: 1px solid @gtk_transparent_borders; 	box-shadow: 0 1px 2px @gtk_menu_shadow; }
+{ border: 1px solid @gtk_transparent_border; box-shadow: 0 1px 2px @gtk_menu_shadow; }
 
 menu,
 .menu,
 popover.background
 {background-color: @gtk_base_color;}
 
+button.emoji-section:hover,
+button.emoji-section:checked {box-shadow: inset 0 -2px;}
+
 /* Tooltips */
 
-tooltip.background { background-color: alpha(black,0.9); background-clip: padding-box; }
+tooltip.background { background-color: alpha(black,0.8); background-clip: border-box; }
 
 tooltip.background label { padding: 0px;}
-tooltip.background.csd decoration { padding: 0; box-shadow: 0 0 0 1px alpha(white,0.2); }
+tooltip.background.csd decoration { padding: 0; box-shadow: none; }
 tooltip * { background-color: transparent;	color: white;}
 
 /* Scale Marks */
@@ -233,8 +236,8 @@ na-tray-applet {-NaTrayApplet-icon-padding: 4px; -NaTrayApplet-icon-size: 16;}
 
 /* Windows Decorations */
 
-decoration:not(.default-decoration){ box-shadow: 0 2px 6px @gtk_shadow,0 0 0 1px @gtk_transparent_borders; margin: 6px;}
+decoration:not(.default-decoration){ box-shadow: 0px 4px 6px @gtk_shadow, 0px 0px 0px 1px @gtk_transparent_border; margin: 6px;}
 
-decoration:not(.default-decoration):backdrop{ box-shadow: 0 2px 6px alpha(@gtk_shadow,0.5),0 0 0 1px @gtk_transparent_borders;}
+decoration:not(.default-decoration):backdrop{ box-shadow: 0px 4px 6px alpha(@gtk_shadow,0.5), 0px 0px 0px 1px @gtk_transparent_border;}
 
 

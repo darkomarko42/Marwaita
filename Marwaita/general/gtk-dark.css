@@ -3,21 +3,21 @@
 @import url("gtk-version.css");
 @import url("titlebar-dark.css");
 
-@define-color gtk_fg_color white;
+@define-color gtk_fg_color mix(white,@gtk_bg_color,0.2);
 @define-color gtk_text_color @gtk_fg_color;
-@define-color gtk_bg_color shade(@gtk_base_color,0.7);
-@define-color gtk_base_color #444;
+@define-color gtk_bg_color #333;
+@define-color gtk_base_color mix(@gtk_bg_color,white,0.1);
 
-@define-color gtk_shadow alpha(black,0.3);
+@define-color gtk_shadow alpha(black,0.7);
 @define-color gtk_button_shadow alpha(@gtk_shadow,0.2);
 @define-color gtk_menu_shadow alpha(@gtk_shadow,0.5);
 
 @define-color text_shadow_color alpha(@panel_bg,0.5);
 
-@define-color gtk_borders mix(@gtk_bg_color,black,0.5);
-@define-color gtk_transparent_borders alpha(black,0.5);
+@define-color gtk_border mix(@gtk_bg_color,black,0.5);
+@define-color gtk_transparent_border alpha(black,0.5);
 
-@define-color gtk_selected_bg_color shade(#0f6ee3,1.2);
+@define-color gtk_selected_bg_color mix(#0f6ee3,white,0.3);
 @define-color gtk_selected_fg_color black;
 
 @define-color gtk_highlight alpha(white,0.1);
