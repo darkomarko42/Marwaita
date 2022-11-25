@@ -3,72 +3,20 @@
 @import url("gtk-version.css");
 @import url("titlebar.css");
 
-@define-color gtk_fg_color mix(black,@gtk_bg_color,0.2);
-@define-color gtk_text_color @gtk_fg_color;
-@define-color gtk_bg_color #eee;
-@define-color gtk_base_color #fff;
+@define-color window_bg_color #eee;
+@define-color window_fg_color mix(black,@window_bg_color,0.2);
 
-@define-color gtk_shadow alpha(black,0.5);
-@define-color gtk_button_shadow alpha(@gtk_shadow,0.1);
-@define-color gtk_menu_shadow alpha(@gtk_shadow,0.3);
+@define-color altbar_bg_color mix(@window_bg_color,black,0.05);
 
-@define-color text_shadow_color alpha(@panel_bg,0.5);
+@define-color view_bg_color mix(@window_bg_color,white,0.5);
+@define-color view_fg_color @window_fg_color;
 
-@define-color gtk_border mix(@gtk_bg_color,black,0.15);
-@define-color gtk_transparent_border alpha(black,0.15);
+@define-color accent_bg_color @accent_color;
+@define-color accent_fg_color white;
 
-@define-color gtk_selected_bg_color #0f6ee3;
-@define-color gtk_selected_fg_color white;
+@define-color borders mix(black,@window_bg_color,0.8);
+@define-color transparent_borders alpha(black,0.2);
 
-@define-color gtk_highlight alpha(white,0.3);
-@define-color gtk_titlebar_highlight alpha(white,0.5);
-
-@define-color gtk_sidebar_color mix(@gtk_bg_color,black,0.05);
-
-@define-color accent_bg_color @gtk_selected_bg_color;
-@define-color accent_fg_color @gtk_selected_fg_color;
-@define-color accent_color mix(@gtk_selected_bg_color,black,0.2);
-@define-color window_bg_color @gtk_bg_color;
-@define-color window_fg_color @gtk_fg_color;
-@define-color view_bg_color @gtk_base_color;
-@define-color view_fg_color @gtk_fg_color;
-@define-color headerbar_bg_color @gtk_titlebar_bg_color;
-@define-color headerbar_fg_color @gtk_titlebar_fg_color;
-@define-color headerbar_backdrop_color @gtk_titlebar_bg_backdrop_color;
-@define-color headerbar_shade_color @gtk_titlebar_bg_color;
-@define-color card_bg_color @gtk_base_color;
-@define-color card_fg_color @gtk_fg_color;
-@define-color card_shade_color @gtk_base_color;
-
-check,
-radio,
-treeview.view.content-view.check:not(list),
-iconview.content-view.check:not(list),
-.content-view:not(list) check,
-.view check:not(:checked):selected,
-.view radio:not(:checked):selected,
-check.view:not(treeview):not(:checked):selected,
-radio.view:not(treeview):not(:checked):selected,
-progressbar trough
-{background-clip: padding-box;}
-check:checked,
-check:indeterminate,
-radio:checked,
-radio:indeterminate,
-treeview.view check:checked,
-treeview.view check:indeterminate,
-treeview.view radio:checked,
-treeview.view radio:indeterminate,
-treeview.view.content-view.check:not(list):checked,
-iconview.content-view.check:not(list):checked,
-.content-view:not(list) check:checked,
-switch,
-progressbar progress,
-levelbar block,
-scale highlight,
-button.suggested-action,
-button.destructive-action,
-.color-button check,
-.color-button radio
-{background-clip: border-box;}
-
+@define-color shadow alpha(black,0.5);
+@define-color button_shadow alpha(black,0.1);
+@define-color menu_shadow alpha(black,0.1);

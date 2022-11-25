@@ -277,7 +277,7 @@
 <!-- maximize -->
 
 <draw_ops name="maximize_focused">
-  <image filename="maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="C_title_unfocused"/>
+  <image filename="maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="C_title_focused"/>
 </draw_ops>
 
 <draw_ops name="maximize_focused_prelight">

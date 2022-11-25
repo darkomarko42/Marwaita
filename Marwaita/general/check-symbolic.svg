@@ -2,15 +2,15 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   sodipodi:docname="checkbox-symbolic.svg"
+   sodipodi:docname="check-symbolic.svg"
    inkscape:export-filename="/home/jimmac/Projects/gtk/gtk/theme/Adwaita/assets/check@2-symbolic.symbolic.png"
    inkscape:export-xdpi="192"
    inkscape:export-ydpi="192"
-   height="16"
+   height="14"
    id="svg7384"
    version="1.1"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
-   width="16"
+   width="14"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -36,8 +36,8 @@
      bordercolor="#666666"
      borderopacity="1"
      inkscape:current-layer="svg7384"
-     inkscape:cx="3.9995729"
-     inkscape:cy="11.91033"
+     inkscape:cx="4.0437671"
+     inkscape:cy="11.932427"
      gridtolerance="10"
      inkscape:guide-bbox="true"
      guidetolerance="10"
@@ -58,7 +58,7 @@
      inkscape:snap-nodes="false"
      inkscape:snap-others="false"
      inkscape:snap-to-guides="true"
-     inkscape:window-height="993"
+     inkscape:window-height="994"
      inkscape:window-maximized="1"
      inkscape:window-width="1920"
      inkscape:window-x="0"
@@ -102,5 +102,5 @@
      inkscape:radius="-0.72739995"
      inkscape:original="M 412.95508 341.5 L 406.90234 346.46094 L 404.19727 343.92773 L 402 346.03906 L 406.76172 350.5 L 415 343.74414 L 412.95508 341.5 z "
      d="m 412.88281,342.5 -5.51953,4.52344 a 0.72747269,0.72747269 0 0 1 -0.95898,-0.0312 l -2.20118,-2.0625 -1.14648,1.10156 3.73633,3.50195 7.1543,-5.86523 z"
-     transform="matrix(1.1018646,0,0,1.4218279,-442.11384,-483.97606)" />
+     transform="matrix(1.1018646,0,0,1.4218279,-443.11384,-484.97606)" />
 </svg>
