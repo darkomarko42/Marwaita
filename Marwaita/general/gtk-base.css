@@ -757,7 +757,7 @@ headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):disa
 .org-gnome-Builder tabbar button:not(.flat):disabled,
 .toolbar .linked button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):disabled
 {
-	color: @insensitive_fg_color;
+	color: alpha(currentcolor,0.5);
 	background-color: transparent;
 	text-shadow: none;
 	-gtk-icon-shadow: none;
@@ -775,7 +775,7 @@ headerbar .linked button:not(.titlebutton):not(.suggested-action):not(.destructi
 .titlebar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action):disabled:checked,
 .inline-toolbar toolbutton > button:disabled:checked,
 headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):disabled:checked{
-	color: @insensitive_fg_color;
+	color: alpha(currentcolor,0.5);
 	background-image: image(alpha(currentcolor,0.2));
 	box-shadow: none;
 	}
