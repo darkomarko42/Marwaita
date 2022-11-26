@@ -160,7 +160,6 @@ combo arrow { padding: 6px 10px; }
 /* Background */
 
 .view,
-iconview,
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child),
 .nautilus-window notebook > stack:not(:only-child) searchbar,

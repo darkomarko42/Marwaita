@@ -801,3 +801,45 @@ terminal-window notebook scrollbar slider { margin: 0; }
 
 .budgie-session-dialog, .budgie-polkit-dialog{-gtk-icon-style: regular;}
 
+/* Unity */
+
+UnityDecoration .top {
+	min-height: 26px;
+	border: solid alpha(black,0.2);
+	border-width: 1px 1px 0px 1px;
+	padding: 1px 6px 1px 6px;
+	box-shadow: none;
+	background-color: transparent;
+	background-clip: border-box;
+    background-image: image(@headerbar_bg_color);
+	color: @headerbar_fg_color;
+	text-shadow: none;
+	border-top-left-radius: 6.0px;
+	border-top-right-radius: 6.0px;
+}
+
+UnityDecoration .top:backdrop {
+	background-image: image(@headerbar_backdrop_color);
+	color: mix(@headerbar_fg_color,@headerbar_bg_color,0.5);
+}
+
+UnityDecoration {
+/* Border properties (top, right, bottom, left) */
+	-UnityDecoration-extents: 28px 0px 0px 0px; /* the size of the decorations  */
+	}
+
+UnityPanelWidget,
+.unity-panel {
+	background-color: black;
+    background-image: none;
+    border: none;
+    color: white;
+    text-shadow: none;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar { background: none; }
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover { background: alpha(white,0.1); }
+
