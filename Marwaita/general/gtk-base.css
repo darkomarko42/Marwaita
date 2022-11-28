@@ -1349,7 +1349,7 @@ menubar,
 .menubar { color: @headerbar_fg_color; border-radius: 0px; background-color: @headerbar_bg_color; }
 
 menubar:backdrop,
-.menubar:backdrop { background-color: @headerbar_backdrop_color; }
+.menubar:backdrop { background-color: @headerbar_backdrop_color; color: alpha(currentcolor,0.5); }
 
 menubar > menuitem:disabled, .menubar > menuitem:disabled { color: @insensitive_fg_color; box-shadow: none; }
 
@@ -2826,7 +2826,7 @@ widget.raven-background{ border: 1px solid @transparent_borders;}
 
 .raven button.flat{}
 
-calendar.raven-calendar {border-radius: 0px; border-color: transparent; background-color: transparent; border-style: solid;}
+calendar.raven-calendar { color: inherit; border-radius: 0px; border-color: transparent; background-color: transparent; border-style: solid;}
 
 calendar.raven-calendar :selected {color: @panel_bg_color; background-color: @panel_fg_color; border-radius: 6.0px;}
 
@@ -2906,7 +2906,9 @@ button.flat.launcher,
 .budgie-panel button.toggle:not(.image-button) { padding: 0px; }
 
 .budgie-panel label,
-.budgie-panel image{color: @panel_fg_color;}
+.budgie-panel image,
+.budgie-panel separator
+{color: @panel_fg_color;}
 
 .budgie-panel{background-color: alpha(@panel_bg_color,0.9);	transition: all 600ms ease-out; text-shadow: none; -gtk-icon-shadow: none; }
 
