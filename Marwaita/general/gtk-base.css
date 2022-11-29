@@ -1398,7 +1398,7 @@ window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal 
 
 menubar:backdrop,
 .menubar:backdrop
-window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal:backdrop{ background-color: @headerbar_backdrop_color; color: alpha(currentcolor,0.5); }
+window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal:backdrop{ background-color: @headerbar_backdrop_color; color: mix(@headerbar_fg_color,@headerbar_bg_color,0.5); }
 
 menubar > menuitem:disabled, .menubar > menuitem:disabled { color: @insensitive_fg_color; box-shadow: none; }
 
