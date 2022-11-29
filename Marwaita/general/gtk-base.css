@@ -464,7 +464,6 @@ treeview entry.flat:focus, treeview entry:focus { border-color: @accent_bg_color
 
 :not(:backdrop) .entry-tag.button:active { background-color: @accent_bg_color; color: alpha(@accent_fg_color,0.7); }
 
- 
 /* Button */
 
 button,
@@ -488,7 +487,7 @@ notebook > header > tabs > arrow,
 	}
 
 headerbar entry,
-.titlebar entry{ background-color: @titlebar_button_bg_color; 	background-clip: padding-box; }
+.titlebar entry{ background-color: @titlebar_button_bg_color; }
 
 .org-gnome-Calendar .titlebar .text-button,
 .nautilus-window .linked entry ~ .image-button:not(:hover):not(:checked):not(:active):not(.model),
@@ -1306,13 +1305,7 @@ headerbar > .stack-switcher.linked > button:not(:only-child):last-child,
 .titlebar > .stack-switcher.linked > button:not(:only-child):last-child
 { border-right-color: @transparent_borders; }
 
-headerbar entry image, .titlebar entry image { color: mix(@window_fg_color,@view_bg_color,0.2); }
-
-headerbar entry image:hover, .titlebar entry image:hover { color: @headerbar_fg_color; }
-
-headerbar entry image:active, .titlebar entry image:active { color: @accent_bg_color; }
-
-headerbar entry image:backdrop, .titlebar entry image:backdrop { color: mix(@insensitive_fg_color,@window_bg_color,0.2); }
+headerbar entry image, .titlebar entry image { color: currentcolor; }
 
 headerbar entry.error, .titlebar entry.error { color: @error_bg_color; border-color: @error_bg_color; }
 
