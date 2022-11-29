@@ -876,7 +876,7 @@ infobar button:not(.flat){background-color: alpha(currentcolor,0.1); border: non
 /* Action Button */
 
 button.suggested-action,
-button.destructive-action{background-clip: border-box;}
+button.destructive-action{background-clip: border-box; font-weight: bold; }
 
 button.suggested-action{
 	color: @accent_fg_color;
