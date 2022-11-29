@@ -60,33 +60,14 @@ spinbutton:not(.vertical) image.right, entry image.right { margin-left: 6px; }
 
 /* Button */
 
-notebook > header > tabs > arrow.image-button, button.image-button { min-width: 24px; padding-left: 4px; padding-right: 4px; }
-
-notebook > header > tabs > arrow.text-button, button.text-button { padding-left: 10px; padding-right: 10px; }
-
-notebook > header > tabs > arrow.text-button.image-button, button.text-button.image-button { padding-left: 4px; padding-right: 4px; }
-
-notebook > header > tabs > arrow.text-button.image-button label, button.text-button.image-button label { padding-left: 4px; padding-right: 4px; }
-
-button.osd { min-width: 32px; min-height: 32px; }
-
-button.osd.image-button { min-width: 34px; }
+.titlebar button box,
+toolbar button box{margin: -4px;}
 
 .stack-switcher > button { outline-offset: -3px; }
-
-.stack-switcher > button > label { padding-left: 6px; padding-right: 6px; }
-
-.stack-switcher > button > image { padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px; }
-
-.stack-switcher > button.text-button { padding-left: 10px; padding-right: 10px; }
-
-.stack-switcher > button.image-button { padding-left: 2px; padding-right: 2px; }
 
 .primary-toolbar button { -gtk-icon-shadow: none; }
 
 button.circular label { padding: 0; }
-
-modelbutton.flat, .menuitem.button.flat { min-height: 32px; padding-left: 5px; padding-right: 5px; }
 
 modelbutton.flat arrow.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
 
@@ -105,8 +86,6 @@ spinbutton.vertical button { min-height: 32px; min-width: 32px; padding: 0; }
 treeview spinbutton:not(.vertical) { min-height: 0; }
 
 treeview spinbutton:not(.vertical) entry { min-height: 0; padding: 1px 2px; }
-
-combobox arrow { min-height: 16px; min-width: 16px; }
 
 .entry-tag { padding: 5px; margin-top: 2px; margin-bottom: 2px; }
 
@@ -138,9 +117,9 @@ toolbar:not(.inline-toolbar):not(.osd) > *:not(.toggle):not(.popup) > * { margin
 
 .windowhandle, .windowhandle * { -GtkWidget-window-dragging: true; }
 
-.ssd .titlebar.default-decoration button.titlebutton { min-height: 24px; min-width: 24px; margin: 6px 0px 6px 0px; }
+.ssd .titlebar.default-decoration button.titlebutton { min-height: 24px; min-width: 24px; margin: 4px 0px 4px 0px; }
 
-.titlebar:not(headerbar), headerbar { padding: 0 6px; }
+.titlebar:not(headerbar), headerbar { padding: 0 4px; }
 
 .titlebar:not(headerbar) .title, headerbar .title { padding-left: 12px; padding-right: 12px; font-weight: bold; }
 
@@ -149,8 +128,6 @@ toolbar:not(.inline-toolbar):not(.osd) > *:not(.toggle):not(.popup) > * { margin
 .solid-csd .titlebar:dir(rtl):not(headerbar), .solid-csd .titlebar:dir(ltr):not(headerbar), .solid-csd headerbar:backdrop:dir(rtl), .solid-csd headerbar:backdrop:dir(ltr), .solid-csd headerbar:dir(rtl), .solid-csd headerbar:dir(ltr) { margin-left: -1px; margin-right: -1px; margin-top: -1px; }
 
 headerbar > box {margin: -1px 0px;}
-
-headerbar entry, headerbar spinbutton, headerbar separator:not(.sidebar), headerbar button { margin-top: 6px; margin-bottom: 6px; }
 
 headerbar entry, .titlebar entry { min-height: 32px; }
 
@@ -222,9 +199,6 @@ window.tiled headerbar, window.tiled headerbar:first-child, window.tiled headerb
 * { -GtkTreeView-horizontal-separator: 4; -GtkTreeView-grid-line-width: 1; -GtkTreeView-grid-line-pattern: ''; -GtkTreeView-tree-line-width: 1; -GtkTreeView-tree-line-pattern: ''; -GtkTreeView-expander-size: 16; }
 
 treeview.view.separator { min-height: 2px; }
-
-treeview.view button.dnd:active, treeview.view button.dnd:selected, treeview.view button.dnd:hover, treeview.view button.dnd, treeview.view header.button.dnd:active, treeview.view header.button.dnd:selected, treeview.view header.button.dnd:hover, treeview.view header.button.dnd,
-treeview.view header button, treeview.view header button:hover, treeview.view header button:active { padding: 0 6px; }
 
 treeview.view:not(:backdrop):not(:selected):hover { }
 
@@ -423,7 +397,10 @@ list row { padding: 2px; }
 
 row.expander list.nested {border-top: 1px solid @transparent_borders;}
 
-scrolledwindow list row { border-radius: 6px; }
+.package-box { border-radius: 6.0px; }
+
+scrolledwindow list row,
+popover scrolledwindow list row{border-radius: 0px}
 
 row label {padding: 0 12px;}
 
@@ -541,10 +518,6 @@ popover.emoji-picker .emoji { padding: 6px; }
 
 button.toggle:not(.image-button) { padding-left: 8px; padding-right: 8px; }
 
-scrolledwindow list:not(.content) { padding: 6px 0; }
-
-scrolledwindow list row { margin: 0 6px; }
-
 scrolledwindow list separator.horizontal { margin: 6px; }
 
 .preferences scrolledwindow > .frame > clamp.large, .preferences scrolledwindow > .frame > clamp.medium, .preferences scrolledwindow > .frame > clamp.small { padding-bottom: 30px; }
@@ -553,35 +526,11 @@ popover.background modelbutton.flat { padding-left: 16px; padding-right: 16px; }
 
 popover.menu > stack { margin: -6px; }
 
-window.csd.unified scrollbar trough { margin: 7px; }
-
-window.csd.unified scrollbar trough > slider { min-width: 8px; min-height: 8px; margin: -6px; }
-
-window.csd.unified scrollbar.horizontal trough { margin-top: 6px; margin-bottom: 6px; }
-
-window.csd.unified scrollbar.vertical trough { margin-left: 6px; margin-right: 6px; }
-
-window.csd.unified scrollbar.overlay-indicator.horizontal trough > slider { min-width: 40px; }
-
-window.csd.unified scrollbar.overlay-indicator.horizontal.hovering trough > slider { min-height: 8px; }
-
-window.csd.unified scrollbar.overlay-indicator.horizontal:not(.hovering) trough { margin-top: 3px; margin-bottom: 3px; }
-
-window.csd.unified scrollbar.overlay-indicator.vertical trough > slider { min-height: 40px; }
-
-window.csd.unified scrollbar.overlay-indicator.vertical.hovering trough > slider { min-width: 8px; }
-
-window.csd.unified scrollbar.overlay-indicator.vertical:not(.hovering) trough { margin-left: 3px; margin-right: 3px; }
-
-window.csd.unified scrollbar.horizontal trough > slider { min-width: 40px; }
-
-window.csd.unified scrollbar.vertical trough > slider { min-height: 40px; }
-
 popover.combo{ padding: 0px; }
 
-popover.combo list { min-width: 200px; margin-top: 6px; margin-bottom: 6px; }
+popover.combo list { min-width: 200px; }
 
-popover.combo list > row { padding: 0px 8px 0px 8px; min-height: 50px; }
+popover.combo list > row { padding: 0px 8px 0px 8px; min-height: 40px; }
 
 row.expander { padding: 0px; }
 
@@ -593,11 +542,13 @@ popover.combo scrollbar.vertical { padding-top: 2px; padding-bottom: 2px; }
 
 list.content > row { margin: 0; }
 
-headerbar viewswitcher {padding: 6px 0px;}
+/* View Switcher */
+
+headerbar viewswitcher {padding: 4px 0px;}
 
 viewswitcher, viewswitcher button { margin: 0; padding: 0; }
 
-viewswitcher button > stack > box.narrow { padding-top: 7px; padding-bottom: 5px; }
+viewswitcher button > stack > box.narrow { padding-top: 4px; padding-bottom: 4px; }
 
 viewswitcher button > stack > box.narrow image, viewswitcher button > stack > box.narrow label { padding-left: 8px; padding-right: 8px; }
 
@@ -606,12 +557,10 @@ headerbar viewswitcher button.radio.vertical .narrow label{ margin-top: -6.5px;}
 
 viewswitcher button > stack > box.wide { padding: 8px 12px; }
 
-viewswitcher button > stack > box.wide image:dir(ltr) { padding-left: 7px; }
-
-viewswitcher button > stack > box.wide image:dir(rtl) { padding-right: 7px; }
-
+viewswitcher button > stack > box.wide image:dir(rtl),
 viewswitcher button > stack > box.wide label:dir(ltr) { padding-right: 7px; }
 
+viewswitcher button > stack > box.wide image:dir(ltr),
 viewswitcher button > stack > box.wide label:dir(rtl) { padding-left: 7px; }
 
 viewswitcherbar actionbar > revealer > box { padding: 0; }

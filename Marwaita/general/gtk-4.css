@@ -57,43 +57,17 @@ colorswatch { outline: 0 solid transparent; outline-offset: 6px;  }
 
 colorswatch:focus:focus-visible { outline-color: @accent_bg_color; outline-width: 4px; outline-offset: -2px; }
 
-colorswatch.top { border-top-left-radius: 6.5px; border-top-right-radius: 6.5px; }
-
-colorswatch.top > overlay { border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
-
-colorswatch.bottom { border-bottom-left-radius: 6.5px; border-bottom-right-radius: 6.5px; }
-
-colorswatch.bottom > overlay { border-bottom-left-radius: 6.0px; border-bottom-right-radius: 6.0px; }
-
-colorswatch.left, colorswatch:first-child:not(.top) { border-top-left-radius: 6.5px; border-bottom-left-radius: 6.5px; }
-
-colorswatch.left > overlay, colorswatch:first-child:not(.top) > overlay { border-top-left-radius: 6.0px; border-bottom-left-radius: 6.0px; }
-
-colorswatch.right, colorswatch:last-child:not(.bottom) { border-top-right-radius: 6.5px; border-bottom-right-radius: 6.5px; }
-
-colorswatch.right > overlay, colorswatch:last-child:not(.bottom) > overlay { border-top-right-radius: 6.0px; border-bottom-right-radius: 6.0px; }
-
 colorswatch.dark > overlay { color: white; }
 
-colorswatch.light > overlay { color: rgba(0, 0, 0, 0.75); box-shadow: inset 0 0 0 1px alpha(@view_fg_color,0.1); }
+colorswatch.light > overlay { color: rgba(0, 0, 0, 0.75); }
 
 colorswatch:drop(active).light > overlay { box-shadow: inset 0 0 0 2px @accent_bg_color; }
 
 colorswatch:drop(active).dark > overlay { box-shadow: inset 0 0 0 2px @accent_bg_color; }
 
-colorswatch#add-color-button > overlay { border-radius: 6.0px 0 0 6px; }
-
-colorswatch#add-color-button:only-child > overlay { border-radius: 6.0px; }
-
-colorswatch#editor-color-sample { border-radius: 6.0px; }
-
-colorswatch#editor-color-sample > overlay { border-radius: 6.5px; }
-
 plane { outline: 0 solid transparent; outline-offset: 6px;  }
 
 plane:focus:focus-visible { outline-color: @accent_bg_color; outline-width: 2px; outline-offset: 2px; }
-
-colorchooser .popover.osd { border-radius: 6.0px; }
 
 .dialog-action-area { margin: 6px; border-spacing: 6px; }
 
@@ -240,16 +214,6 @@ notebook > header > tabs > arrow:focus:focus-visible, colorswatch#add-color-butt
 
 .osd notebook > header > tabs > arrow:focus:focus-visible, .osd colorswatch#add-color-button > overlay:focus:focus-visible, .osd button:focus:focus-visible { outline-color: rgba(255, 255, 255, 0.5); }
 
-notebook > header > tabs > arrow:disabled label, colorswatch#add-color-button > overlay:disabled label, button:disabled label { filter: none; }
-
-notebook > header > tabs > arrow.image-button, colorswatch#add-color-button > overlay.image-button, button.image-button { min-width: 24px; padding-left: 5px; padding-right: 5px; }
-
-notebook > header > tabs > arrow.text-button, colorswatch#add-color-button > overlay.text-button, button.text-button { padding-left: 17px; padding-right: 17px; }
-
-notebook > header > tabs > arrow.text-button.image-button, colorswatch#add-color-button > overlay.text-button.image-button, notebook > header > tabs > arrow.image-text-button, colorswatch#add-color-button > overlay.image-text-button, button.text-button.image-button, button.image-text-button { padding-left: 9px; padding-right: 9px; }
-
-notebook > header > tabs > arrow.text-button.image-button > box > label, colorswatch#add-color-button > overlay.text-button.image-button > box > label, notebook > header > tabs > arrow.text-button.image-button > box > box > label, colorswatch#add-color-button > overlay.text-button.image-button > box > box > label, notebook > header > tabs > arrow.image-text-button > box > label, colorswatch#add-color-button > overlay.image-text-button > box > label, notebook > header > tabs > arrow.image-text-button > box > box > label, colorswatch#add-color-button > overlay.image-text-button > box > box > label, button.text-button.image-button > box > label, button.text-button.image-button > box > box > label, button.image-text-button > box > label, button.image-text-button > box > box > label { padding-left: 2px; padding-right: 2px; }
-
 notebook > header > tabs > arrow.arrow-button, colorswatch#add-color-button > overlay.arrow-button, button.arrow-button { padding-left: 9px; padding-right: 9px; }
 
 notebook > header > tabs > arrow.text-button.image-button > box,
@@ -315,10 +279,6 @@ button.card:checked.has-open-popup { background-image: image(alpha(currentColor,
 button.card:drop(active) { color: @accent_bg_color; box-shadow: inset 0 0 0 1px @accent_bg_color; }
 
 button.color { padding: 5px; }
-
-button.color > colorswatch:only-child { border-radius: 2.5px; }
-
-button.color > colorswatch:only-child > overlay { border-radius: 2px; }
 
 button.color > colorswatch:only-child:disabled { filter: none; }
 
@@ -419,12 +379,9 @@ filechooser { box-shadow: 0 1px @borders; }
 
 .nautilus-window headerbar  .linked button:not(:only-child){ border-right-style: solid;}
 
-headerbar {	margin-left: -1px;	margin-right: -1px; }
-
-headerbar > windowhandle > box { padding: 0 7px 0px 7px; }
-
 headerbar > windowhandle > box, headerbar > windowhandle > box > box.start, headerbar > windowhandle > box > box.end { border-spacing: 6px; }
 
+headerbar > windowhandle > box,
 headerbar.default-decoration > windowhandle > box { padding: 0 4px 0px 4px; }
 
 headerbar.default-decoration windowcontrols > .icon { margin: 7px; }
@@ -440,8 +397,6 @@ headerbar.flat > windowhandle > box { padding-bottom: 0; }
 /* GtkWindowControls * */
 windowcontrols { border-spacing: 6px; }
 
-windowcontrols > button { min-width: 24px; padding: 4px; margin: 0; box-shadow: none; }
-
 windowcontrols > .icon { margin: 9px; }
 
 /* AdwWindowTitle * */
@@ -451,7 +406,7 @@ headerbar .subtitle, windowtitle .subtitle { font-size: smaller; padding-left: 1
 
 window.devel headerbar > windowhandle { background-image: cross-fade(5% -gtk-recolor(url("../general/devel-symbolic.svg")), image(transparent)); background-repeat: repeat-x; }
 
-/* ViewSwitcher */
+/* View Switcher */
 
 actionbar viewswitcher.narrow button { margin: 0; padding: 8px;}
 
@@ -695,6 +650,8 @@ row.expander:checked image.expander-row-arrow { -gtk-icon-transform: rotate(0tur
 popover.background > arrow,
 popover.background > contents { background-clip: padding-box; border: 1px solid @transparent_borders; box-shadow: 0 1px 2px @menu_shadow; }
 
+popover.menu{ border: none; }
+
 popover.menu box.inline-buttons { padding: 0 12px; }
 
 popover.menu box.inline-buttons button.image-button.model { min-height: 32px; min-width: 32px; padding: 0; border: none; outline: none; transition: none; }
@@ -730,8 +687,6 @@ popover.menu check.left, popover.menu radio.left, popover.menu arrow.left { marg
 
 popover.menu check.right, popover.menu radio.right, popover.menu arrow.right { margin-left: 6px; margin-right: -2px; }
 
-popover.menu modelbutton { min-height: 32px; min-width: 40px; padding: 0 12px; border-radius: 6.0px; }
-
 popover.menu modelbutton arrow { background: none; min-width: 16px; min-height: 16px; }
 
 popover.menu modelbutton arrow.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
@@ -750,7 +705,7 @@ popover.menu list > row > box, popover.menu listview > row > box { border-spacin
 
 popover.menu contents > list, popover.menu contents > listview, popover.menu scrolledwindow > viewport > list, popover.menu scrolledwindow > listview { padding: 6px 0; }
 
-popover.menu contents > list > row, popover.menu contents > listview > row, popover.menu scrolledwindow > viewport > list > row, popover.menu scrolledwindow > listview > row { margin: 0 6px; padding: 9px 12px; min-height: 0; }
+popover.menu contents > list > row, popover.menu contents > listview > row, popover.menu scrolledwindow > viewport > list > row, popover.menu scrolledwindow > listview > row { margin: 0 6px; }
 
 menubar { padding: 0px; }
 
@@ -1178,15 +1133,37 @@ actionbar > revealer > box.osd button:not(.raised):not(.suggested-action):not(.d
 
 actionbar > revealer > box menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) { color: inherit; background-color: transparent; }
 
-actionbar > revealer > box splitbutton > separator.vertical, searchbar > revealer > box splitbutton > separator.vertical, .toolbar splitbutton > separator.vertical, headerbar splitbutton > separator.vertical { margin-top: 6px; margin-bottom: 6px; }
-
-actionbar > revealer > box entry, searchbar > revealer > box entry, .toolbar entry, headerbar entry, actionbar > revealer > box spinbutton, searchbar > revealer > box spinbutton, .toolbar spinbutton, headerbar spinbutton, actionbar > revealer > box splitbutton, searchbar > revealer > box splitbutton, .toolbar splitbutton, headerbar splitbutton, actionbar > revealer > box separator:not(.sidebar), searchbar > revealer > box separator:not(.sidebar), .toolbar separator:not(.sidebar), headerbar separator:not(.sidebar), actionbar > revealer > box button, searchbar > revealer > box button, .toolbar button, headerbar button, actionbar > revealer > box menubutton, searchbar > revealer > box menubutton, .toolbar menubutton, headerbar menubutton, actionbar > revealer > box scalebutton, searchbar > revealer > box scalebutton, .toolbar scalebutton, headerbar scalebutton { margin-top: 6px; margin-bottom: 6px; }
-
-actionbar > revealer > box menubutton > button, searchbar > revealer > box menubutton > button, .toolbar menubutton > button, headerbar menubutton > button, actionbar > revealer > box splitbutton > button, searchbar > revealer > box splitbutton > button, .toolbar splitbutton > button, headerbar splitbutton > button, actionbar > revealer > box splitbutton > menubutton, searchbar > revealer > box splitbutton > menubutton, .toolbar splitbutton > menubutton, headerbar splitbutton > menubutton, actionbar > revealer > box scalebutton > button, searchbar > revealer > box scalebutton > button, .toolbar scalebutton > button, headerbar scalebutton > button { margin-top: 0px; margin-bottom: 0px; }
-
+actionbar > revealer > box menubutton > button, searchbar > revealer > box menubutton > button, .toolbar menubutton > button, headerbar menubutton > button, actionbar > revealer > box splitbutton > button, searchbar > revealer > box splitbutton > button, .toolbar splitbutton > button, headerbar splitbutton > button, actionbar > revealer > box splitbutton > menubutton, searchbar > revealer > box splitbutton > menubutton, .toolbar splitbutton > menubutton, headerbar splitbutton > menubutton, actionbar > revealer > box scalebutton > button, searchbar > revealer > box scalebutton > button, .toolbar scalebutton > button, headerbar scalebutton > button,
 actionbar > revealer > box popover entry, searchbar > revealer > box popover entry, .toolbar popover entry, headerbar popover entry, actionbar > revealer > box popover spinbutton, searchbar > revealer > box popover spinbutton, .toolbar popover spinbutton, headerbar popover spinbutton, actionbar > revealer > box popover splitbutton, searchbar > revealer > box popover splitbutton, .toolbar popover splitbutton, headerbar popover splitbutton, actionbar > revealer > box popover separator:not(.sidebar), searchbar > revealer > box popover separator:not(.sidebar), .toolbar popover separator:not(.sidebar), headerbar popover separator:not(.sidebar), actionbar > revealer > box popover button, searchbar > revealer > box popover button, .toolbar popover button, headerbar popover button, actionbar > revealer > box popover menubutton, searchbar > revealer > box popover menubutton, .toolbar popover menubutton, headerbar popover menubutton, actionbar > revealer > box popover scalebutton, searchbar > revealer > box popover scalebutton, .toolbar popover scalebutton, headerbar popover scalebutton, actionbar > revealer > box popover switch, searchbar > revealer > box popover switch, .toolbar popover switch, headerbar popover switch { margin-top: 0; margin-bottom: 0; }
 
-actionbar > revealer > box popover.menu separator:not(.sidebar), searchbar > revealer > box popover.menu separator:not(.sidebar), .toolbar popover.menu separator:not(.sidebar), headerbar popover.menu separator:not(.sidebar) { margin-top: 6px; margin-bottom: 6px; }
+actionbar > revealer > box splitbutton > separator.vertical,
+searchbar > revealer > box splitbutton > separator.vertical,
+.toolbar splitbutton > separator.vertical,
+actionbar > revealer > box entry,
+searchbar > revealer > box entry,
+.toolbar entry, headerbar entry,
+actionbar > revealer > box spinbutton,
+searchbar > revealer > box spinbutton,
+.toolbar spinbutton,
+actionbar > revealer > box splitbutton,
+searchbar > revealer > box splitbutton,
+.toolbar splitbutton,
+actionbar > revealer > box separator:not(.sidebar),
+searchbar > revealer > box separator:not(.sidebar),
+.toolbar separator:not(.sidebar),
+actionbar > revealer > box button,
+searchbar > revealer > box button,
+.toolbar button, headerbar button,
+actionbar > revealer > box menubutton,
+searchbar > revealer > box menubutton,
+.toolbar menubutton,
+actionbar > revealer > box scalebutton,
+searchbar > revealer > box scalebutton,
+.toolbar scalebutton,
+actionbar > revealer > box popover.menu separator:not(.sidebar),
+searchbar > revealer > box popover.menu separator:not(.sidebar),
+.toolbar popover.menu separator:not(.sidebar)
+{ margin-top: 4px; margin-bottom: 4px; }
 
 .toolbar { padding: 0 6px; border-spacing: 6px; border-top: 1px solid @borders; }
 
@@ -1268,7 +1245,7 @@ columnview.view.progressbar, columnview.view.progressbar:selected, treeview.view
 
 columnview.view.trough, treeview.view.trough { background-color: alpha(currentColor,0.1); }
 
-columnview.view > header > button, treeview.view > header > button { padding-top: 3px; padding-bottom: 3px; border-radius: 0; box-shadow: none; line-height: 100%; }
+columnview.view > header > button, treeview.view > header > button { border-radius: 0; box-shadow: none; line-height: 100%; }
 
 columnview.view > header > button sort-indicator, treeview.view > header > button sort-indicator { min-height: 16px; min-width: 16px; }
 
