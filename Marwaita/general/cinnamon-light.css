@@ -138,7 +138,9 @@ StButton.notification-applet-padding,
 
 .menu,
 .calendar-event-row-content,
-.grouped-window-list-thumbnail-menu
+.grouped-window-list-thumbnail-menu,
+#Tooltip,
+.window-caption
 {margin: 8px;}
 
 .sound-player-overlay { padding: 12px;}
@@ -181,12 +183,6 @@ StButton:checked.radiobutton
 .sound-player-overlay
 {background-color: rgba(255,255,255, 0.8);}
 
-StEntry,
-.menu-favorites-box,
-StButton,
-#notification .notification-button
-{ background-color: rgba(0,0,0, 0.1); box-shadow: none;}
-
 .menu,
 .popup-combo-menu,
 .modal-dialog,
@@ -203,13 +199,18 @@ StButton,
 .workspace-close-button:checked,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu,
-#notification
+#notification,
+#Tooltip,
+.window-caption
 {background-color: #fff;}
 
+StEntry,
+.menu-favorites-box,
+StButton,
+#notification .notification-button,
 .popup-sub-menu,
-StButton:hover,
-#notification .notification-button:hover,
 .popup-menu-item:active,
+.popup-submenu-menu-item:open,
 .menu-favorites-button:hover,
 .menu-category-button-selected,
 .menu-application-button-selected,
@@ -226,14 +227,17 @@ StButton:hover,
 .menu StButton:hover,
 .grouped-window-list-thumbnail-menu .item-box:selected,
 .menu #notification,
-.window-close,
-.window-close:hover,
 .applet-box:hover,
 .grouped-window-list-item-box:hover,
 .grouped-window-list-item-box:active:hover,
 .window-list-item-box:hover,
-.window-list-item-box:active:hover,
-.popup-submenu-menu-item:open
+.window-list-item-box:active:hover
+{ background-color: rgba(0,0,0, 0.1); box-shadow: none;}
+
+StButton:hover,
+#notification .notification-button:hover,
+.window-close,
+.window-close:hover
 { background-color: rgba(0,0,0, 0.15); box-shadow: none;}
 
 StButton:active,
@@ -301,13 +305,13 @@ StEntry,
 .info-osd,
 .osd-window,
 .window-list-preview,
-.workspace-close-button,
-.window-close,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu,
 .modal-dialog,
 .menu,
-#notification
+#notification,
+#Tooltip,
+.window-caption
 {border: 1px solid;}
 
 .menu-selected-app-box,
@@ -327,15 +331,15 @@ StEntry,
 .info-osd,
 .osd-window,
 .window-list-preview,
-.workspace-close-button,
-.window-close,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu,
 .panel-bottom,
 .panel-top,
 .panel-left,
 .panel-right,
-#notification
+#notification,
+#Tooltip,
+.window-caption
 {border-color: rgba(0,0,0, 0.2);}
 
 .popup-separator-menu-item,
@@ -512,13 +516,4 @@ StScrollBar StButton:checked,
 .user-label { color: #303030;}
 
 .user-icon{border: 2px solid #303030;}
-
-/* Tooltip */
-
-#Tooltip,
-.window-caption
-{background-color: rgba(0,0/**/,0, 0.8); border: none;}
-
-* #Tooltip,
-.window-caption *{color: white;}
 

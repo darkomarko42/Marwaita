@@ -314,6 +314,13 @@ treeview.view:selected.chromium,treeview.view:selected:focus.chromium,selection,
 
 label:disabled selection, label:disabled:selected, .selection-mode button.titlebutton:disabled, .titlebar entry selection:disabled, .view:disabled:selected, .nautilus-window notebook:disabled:selected, .nautilus-window notebook > stack:disabled:selected:not(:only-child), .nautilus-window notebook > stack:not(:only-child) searchbar:disabled:selected, textview text:disabled:selected:focus, .view text:disabled:selected, textview text:disabled:selected, .view text selection:disabled, textview text selection:disabled:focus, textview text selection:disabled, iconview:disabled:selected:focus, iconview:disabled:selected, iconview text selection:disabled:focus, iconview text selection:disabled, flowbox flowboxchild:disabled:selected, entry selection:disabled, modelbutton.flat:disabled:selected, .menuitem.button.flat:disabled:selected, spinbutton:not(.vertical) selection:disabled, treeview.view:disabled:selected, calendar:disabled:selected { color: mix(@accent_fg_color,@accent_bg_color,0.5); }
 
+.nemo-window.background:not(.csd):not(.solid-csd) .frame treeview.view:selected:focus,
+.nemo-window.background:not(.csd):not(.solid-csd) .frame treeview.view:selected,
+.thunar treeview.view:selected,
+.thunar treeview.view:selected:hover,
+.thunar treeview.view:selected:focus
+{color: @window_fg_color; background-image: image(alpha(@window_fg_color,0.1)); background-color: inherit;}
+
 .budgie-panel separator,
 .raven scale highlight,
 .titlebar scale highlight,
@@ -875,29 +882,17 @@ infobar button:not(.flat){background-color: alpha(currentcolor,0.1); border: non
 /* Action Button */
 
 button.suggested-action,
-button.destructive-action{background-clip: border-box; font-weight: bold; }
+button.destructive-action{background-clip: border-box; font-weight: bold; border-color: transparent; }
 
 button.suggested-action{
 	color: @accent_fg_color;
-	outline-color: alpha(white,0.3);
 	background-color: @accent_bg_color;
-	border-color: transparent;
-	}
 
-button.suggested-action:disabled,
-button.destructive-action:disabled{
-	color: @insensitive_fg_color;
-	background-color: mix(currentColor,@window_bg_color,0.5);
 	}
-
-button.suggested-action:disabled:active,
-button.suggested-action:disabled:checked { color: alpha(currentcolor,0.5); background-color: alpha(@accent_bg_color,0.5); box-shadow: none; }
 
 button.destructive-action {
 	color: white;
-	outline-color: alpha(white,0.3);
 	background-color: @destructive_bg_color;
-	border-color: transparent;
 	}
 	
 button.suggested-action:hover,
@@ -907,6 +902,15 @@ button.suggested-action:active,
 button.destructive-action:active,
 button.suggested-action:checked,
 button.destructive-action:checked{background-image: image(alpha(black,0.15)); box-shadow: none;}
+
+button.suggested-action:disabled,
+button.destructive-action:disabled{
+	color: @insensitive_fg_color;
+	background-color: mix(currentColor,@window_bg_color,0.5);
+	}
+
+button.suggested-action:disabled:active,
+button.suggested-action:disabled:checked { color: alpha(currentcolor,0.5); background-color: alpha(@accent_bg_color,0.5); box-shadow: none; }
 
 button.destructive-action:disabled:active,
 button.destructive-action:disabled:checked { color: alpha(currentcolor,0.5); background-color: alpha(@destructive_bg_color,0.5); box-shadow: none; }
@@ -920,7 +924,14 @@ button.font > box > box > label { font-weight: bold; }
 button.circular,
 .circular.popup button { border-radius: 9999px; }
 
-stacksidebar row.needs-attention > label, .stack-switcher > button.needs-attention > label, .stack-switcher > button.needs-attention > image { animation: needs_attention 150ms ease-in; background-image: radial-gradient(farthest-side, @accent_color 96%, transparent); background-size: 6px 6px; background-repeat: no-repeat; background-position: right 3px; }
+stacksidebar row.needs-attention > label,
+.stack-switcher > button.needs-attention > label,
+.stack-switcher > button.needs-attention > image {
+    animation: needs_attention 150ms ease-in;
+    background-image: radial-gradient(farthest-side, @accent_color 96%, transparent);
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    background-position: right 3px; }
 
 stacksidebar row.needs-attention > label:dir(rtl), .stack-switcher > button.needs-attention > label:dir(rtl), .stack-switcher > button.needs-attention > image:dir(rtl) { background-position: left 3px; }
 
@@ -1510,7 +1521,7 @@ notebook > header.left > tabs > arrow.down, notebook > header.right > tabs > arr
 
 notebook > header.left > tabs > arrow.up, notebook > header.right > tabs > arrow.up { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
 
-notebook > header > tabs > arrow { border-radius: 6.0px; }
+notebook > header > tabs > arrow { border-radius: 0px; }
 
 notebook > header tab button.flat { border-radius: 100%; }
 
