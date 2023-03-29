@@ -2086,7 +2086,7 @@ infobar:not(.info):not(.warning):not(.error):not(.question)
 infobar.info,
 infobar.warning,
 infobar.question,
-infobar.error{background-color: @window_bg_color; box-shadow: inset 4px 0px currentcolor; padding: 0px 4px;}
+infobar.error{background-color: mix(@window_bg_color,currentcolor,0.15); box-shadow: inset 4px 0px currentcolor; padding: 0px 4px;}
 
 infobar.info > label, infobar.info, infobar.info button {color: @success_bg_color;}
 infobar.warning > label, infobar.warning, infobar.warning button {color: @warning_bg_color;}
