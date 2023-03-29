@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="26" viewBox="0 0 48 26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #979797;
+      }
+
+      .cls-2 {
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="2" y="2" width="22" height="22" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#fff"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect id="Dikdörtgen_1" data-name="Dikdörtgen 1" class="cls-1" width="48" height="26" rx="13" ry="13"/>
+  <circle id="Elips_2" data-name="Elips 2" class="cls-2" cx="13" cy="13" r="11"/>
+</svg>

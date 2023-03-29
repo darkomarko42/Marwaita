@@ -20,3 +20,19 @@
 @define-color shadow alpha(black,0.5);
 @define-color button_shadow alpha(black,0.1);
 @define-color menu_shadow alpha(black,0.1);
+
+@define-color destructive_bg_color @red_2;
+@define-color destructive_fg_color white;
+@define-color destructive_color @destructive_bg_color;
+
+@define-color success_bg_color @green_5;
+@define-color success_fg_color white;
+@define-color success_color @success_bg_color;
+
+@define-color warning_bg_color @orange_3;
+@define-color warning_fg_color black;
+@define-color warning_color @warning_bg_color;
+
+@define-color error_bg_color @destructive_bg_color;
+@define-color error_fg_color @destructive_fg_color;
+@define-color error_color @destructive_bg_color;

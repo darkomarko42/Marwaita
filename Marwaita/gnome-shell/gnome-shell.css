@@ -1,0 +1,94 @@
+.calendar .calendar-today,
+.calendar .calendar-today:hover,
+.calendar .calendar-today:focus,
+.calendar .calendar-today:active,
+.calendar .calendar-today:selected,
+.calendar .calendar-today:active:hover,
+.calendar .calendar-today:active:focus,
+.calendar .calendar-today:selected:hover,
+.calendar .calendar-today:selected:focus,
+.quick-toggle-menu .header .icon.active,
+.quick-toggle:checked,
+.quick-toggle:checked:focus,
+.quick-toggle:checked:hover,
+.quick-toggle:checked:focus,
+.quick-toggle:checked:active
+{ background-color: rgba(15,110,227, 1.0) !important; box-shadow: none; }
+
+.quick-toggle:checked:insensitive { background-color: rgba(15,110,227, 0.5); }
+
+.calendar .calendar-day-base{ box-shadow: none; }
+
+.quick-slider .slider-bin:focus:hover,
+.quick-slider .slider-bin:focus:active,
+.quick-slider .slider-bin:focus,
+#LookingGlassDialog > #Toolbar .lg-toolbar-button:focus:hover,
+.app-folder-dialog .folder-name-container .edit-folder-button:focus:hover,
+.button:focus:hover,
+#LookingGlassDialog > #Toolbar .lg-toolbar-button:focus:active,
+.app-folder-dialog .folder-name-container .edit-folder-button:focus:active,
+.button:focus:active,
+.login-dialog .modal-dialog-button:default:focus,
+.modal-dialog .modal-dialog-linked-button:focus,
+.hotplug-notification-item:focus,
+.notification-banner .notification-button:focus,
+.modal-dialog .modal-dialog-linked-button:focus:active,
+.hotplug-notification-item:focus:active,
+.notification-banner .notification-button:focus:active
+{ box-shadow: inset 0 0 0 2px rgba(15,110,227, 0.5) !important; }
+
+.slider { -barlevel-active-background-color: rgba(15,110,227, 1.0); }
+
+.quick-toggle:checked:hover, .quick-toggle:checked:focus { background-color: rgba(15,110,227, 1.0); box-shadow: inset 0 0 0 9999px rgba(255,255,255, 0.1); }
+
+StEntry { selection-background-color: rgba(15,110,227, 1.0); }
+
+StEntry:focus { border-color: rgba(15,110,227, 1.0);}
+
+.modal-dialog .modal-dialog-linked-button,
+.hotplug-notification-item,
+.notification-banner .notification-button,
+.modal-dialog .modal-dialog-linked-button:focus,
+.hotplug-notification-item:focus,
+.notification-banner .notification-button:focus,
+.calendar .calendar-day-base:hover,
+.calendar .calendar-day-base:focus
+{ background-color: rgba(255,255,255, 0.1); }
+
+.modal-dialog .modal-dialog-linked-button:focus:hover,
+.hotplug-notification-item:focus:hover,
+.notification-banner .notification-button:focus:hover,
+.modal-dialog .modal-dialog-linked-button:hover,
+.hotplug-notification-item:hover,
+.notification-banner .notification-button:hover,
+.calendar .calendar-day-base:active:focus,
+.calendar .calendar-day-base:selected:focus{background-color: rgba(255,255,255, 0.15);}
+
+.modal-dialog .modal-dialog-linked-button:active,
+.hotplug-notification-item:active,
+.notification-banner .notification-button:active,
+.modal-dialog .modal-dialog-linked-button:checked,
+.hotplug-notification-item:checked,
+.notification-banner .notification-button:checked,
+.modal-dialog .modal-dialog-linked-button:checked:hover,
+.hotplug-notification-item:checked:hover,
+.notification-banner .notification-button:checked:hover,
+.modal-dialog .modal-dialog-linked-button:checked:active,
+.hotplug-notification-item:checked:active,
+.notification-banner .notification-button:checked:active,
+.calendar .calendar-day-base:active,
+.calendar .calendar-day-base:selected
+{background-color: rgba(255,255,255, 0.2);}
+
+.modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive { background-color: rgba(255,255,255, 0.05); }
+
+.check-box StBin { background-image: url("../general/checkbox-off.svg"); }
+
+.check-box:focus StBin,
+.check-box:checked StBin
+.check-box:focus:checked StBin
+{ background-image: url("../general/checkbox-on.svg"); }
+
+/* Switches */
+.toggle-switch { background-image: url("../general/toggle-off.svg"); }
+  .toggle-switch:checked { background-image: url("../general/toggle-on.svg"); }

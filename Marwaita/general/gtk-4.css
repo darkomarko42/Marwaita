@@ -418,7 +418,7 @@ headerbar viewswitcher button.toggle > stack > box.narrow > stack > label { padd
 
 headerbar viewswitcher button.toggle > stack > box.narrow image{ color: transparent; -gtk-icon-size: 0px; margin-bottom: -9999px;}
 
-headerbar viewswitcher button.toggle > stack > box.wide { padding: 2px 12px; border-spacing: 6px; }
+headerbar viewswitcher button.toggle > stack > box.wide { padding: 0px 12px; border-spacing: 6px; }
 
 /*AdwViewSwitcherBar * */
 viewswitcherbar actionbar > revealer > box { padding: 0; }
@@ -726,7 +726,7 @@ popover > contents > list, popover > contents > .view, popover > contents > tool
 .osd popover > arrow, .osd popover > contents, popover.touch-selection > arrow, popover.touch-selection > contents, popover.magnifier > arrow, popover.magnifier > contents { border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: none; }
 
 /******************** GtkMessageDialog * */
-window.dialog.message .titlebar { min-height: 20px; background: none; border-style: none; border-top-left-radius: 7px; border-top-right-radius: 7px; }
+window.dialog.message .titlebar { min-height: 20px; background: none; border-style: none; border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
 
 window.dialog.message box.dialog-vbox.vertical { margin-top: 6px; border-spacing: 24px; }
 
@@ -1321,7 +1321,7 @@ gridview > child.activatable:selected:hover { background-color: alpha(currentCol
 gridview > child.activatable:selected:active { background-color: alpha(currentColor,0.19); }
 
 /* AdwIndicatorBin */
-indicatorbin > indicator, indicatorbin > mask { min-width: 6px; min-height: 6px; border-radius: 100px; }
+indicatorbin > indicator, indicatorbin > mask { min-width: 4px; min-height: 4px; border-radius: 100px; }
 
 indicatorbin > indicator { margin: 1px; background: alpha(currentColor,0.4); }
 

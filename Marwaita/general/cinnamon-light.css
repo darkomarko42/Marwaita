@@ -8,7 +8,8 @@
 .calendar-today,
 .calendar-events-date-label,
 .calendar-event-time-present,
-.grouped-window-list-thumbnail-menu .item-box
+.grouped-window-list-thumbnail-menu .item-box,
+#Tooltip
 { font-weight: bold;}
 
 .calendar-day-heading,

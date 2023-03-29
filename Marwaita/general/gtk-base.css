@@ -51,22 +51,6 @@
 @define-color headerbar_border_color @transparent_borders;
 @define-color headerbar_shade_color mix(@headerbar_bg_color,@transparent_borders,0.2);
 
-@define-color destructive_bg_color @red_3;
-@define-color destructive_fg_color white;
-@define-color destructive_color @red_4;
-
-@define-color success_bg_color @green_4;
-@define-color success_fg_color white;
-@define-color success_color @green_5;
-
-@define-color warning_bg_color @yellow_5;
-@define-color warning_fg_color rgba(0, 0, 0, 0.8);
-@define-color warning_color #ae7b03;
-
-@define-color error_bg_color @red_3;
-@define-color error_fg_color white;
-@define-color error_color @red_4;
-
 @define-color card_bg_color @view_bg_color;
 @define-color card_fg_color @window_fg_color;
 @define-color card_shade_color rgba(0, 0, 0, 0.07);
@@ -155,7 +139,7 @@ combobox arrow,
 notebook > header tab
 { min-height: 16px; min-width: 16px; }
 
-.titlebar:not(headerbar), headerbar { min-height: 42px; }
+.titlebar:not(headerbar), headerbar { min-height: 40px; }
 
 headerbar splitbutton > separator.vertical,
 headerbar spinbutton,
@@ -176,8 +160,9 @@ modelbutton.flat,
 popover.menu contents > list > row,
 popover.menu contents > listview > row,
 popover.menu scrolledwindow > viewport > list > row,
-popover.menu scrolledwindow > listview > row
-{ min-height: 28px; padding-left: 6px; padding-right: 6px; }
+popover.menu scrolledwindow > listview > row,
+menu menuitem, .menu menuitem, .context-menu menuitem
+{ min-height: 30px; min-width: 64px; padding: 0px 8px; }
 
 .osd{ padding: 6px; }
 
@@ -513,7 +498,8 @@ headerbar viewswitcher button.radio:not(.suggested-action):not(.destructive-acti
 .titlebar viewswitcher button.radio:not(.suggested-action):not(.destructive-action),
 headerbar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action),
 .titlebar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action),
-headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive)
+headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive),
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action)
 {
 	transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	background-clip: padding-box;
@@ -543,7 +529,8 @@ headerbar .linked button:not(.titlebutton):not(.suggested-action):not(.destructi
 .titlebar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action):hover,
 .inline-toolbar toolbutton > button:hover,
 headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):hover,
-.toolbar .linked button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):hover
+.toolbar .linked button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):hover,
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):hover
 {
 	outline-color: alpha(@window_fg_color,0.3);
 	background-image: none;
@@ -639,7 +626,8 @@ toast button:not(.flat):hover,
 .budgie-panel button.launcher.flat:hover,
 .budgie-session-dialog .linked button:not(.suggested-action):not(.destructive-action):hover,
 .budgie-polkit-dialog .linked button:not(.suggested-action):not(.destructive-action):hover,
-messagedialog.background .dialog-vbox.vertical buttonbox.linked button:hover
+messagedialog.background .dialog-vbox.vertical buttonbox.linked button:hover,
+.nautilus-list-view columnview header button:hover
 {
 	outline-color: alpha(@window_fg_color,0.3);
 	background-image: image(alpha(currentcolor,0.1));
@@ -772,7 +760,11 @@ toast button:not(.flat):checked,
 .budgie-session-dialog .linked button:not(.suggested-action):not(.destructive-action):checked,
 .budgie-polkit-dialog .linked button:not(.suggested-action):not(.destructive-action):checked,
 messagedialog.background .dialog-vbox.vertical buttonbox.linked button:active,
-messagedialog.background .dialog-vbox.vertical buttonbox.linked button:checked
+messagedialog.background .dialog-vbox.vertical buttonbox.linked button:checked,
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):active,
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):checked,
+.nautilus-list-view columnview header button:active,
+.nautilus-list-view columnview header button:checked
 {
 	outline-color: alpha(@window_fg_color,0.3);
 	background-image: image(alpha(currentcolor,0.15));
@@ -808,7 +800,8 @@ headerbar .linked button:not(.titlebutton):not(.suggested-action):not(.destructi
 .inline-toolbar toolbutton > button:disabled,
 headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):disabled,
 .org-gnome-Builder tabbar button:not(.flat):disabled,
-.toolbar .linked button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):disabled
+.toolbar .linked button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):disabled,
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):disabled
 {
 	color: alpha(currentcolor,0.5);
 	background-color: transparent;
@@ -827,7 +820,9 @@ actionbar viewswitcher button:disabled:checked,
 headerbar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action):disabled:checked,
 .titlebar .linked button:not(.titlebutton):not(.suggested-action):not(.destructive-action):disabled:checked,
 .inline-toolbar toolbutton > button:disabled:checked,
-headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):disabled:checked{
+headerbar viewswitcher button.flat:not(.suggested-action):not(.destructive):disabled:checked,
+.titlebar viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):disabled:checked
+{
 	color: alpha(currentcolor,0.5);
 	background-image: image(alpha(currentcolor,0.2));
 	box-shadow: none;
@@ -1389,7 +1384,8 @@ treeview.view acceleditor > label { background-color: @accent_bg_color; }
 
 treeview.view header button,
 treeview.view header button:hover,
-treeview.view header button:active {
+treeview.view header button:active,
+.nautilus-list-view columnview header button {
     padding: 6px;
     border-style: none solid solid none;
     border-color: @borders;
@@ -1397,9 +1393,11 @@ treeview.view header button:active {
     text-shadow: none;
 }
 
-treeview.view header button:disabled { border-color: @borders; background-image: none; }
+treeview.view header button:disabled,
+.nautilus-list-view columnview header button:disabled { border-color: @borders; background-image: none; }
 
-treeview.view header button:last-child { border-right-style: none; }
+treeview.view header button:last-child,
+.nautilus-list-view columnview header button:last-child { border-right-style: none; }
 
 /* Menus */
 
@@ -1623,10 +1621,20 @@ check, radio { border: 2px solid; -gtk-icon-source: none; }
 
 check, radio { background-clip: padding-box; border-color: currentcolor; box-shadow: none; color: @window_fg_color; }
 
-check:disabled, radio:disabled { box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); }
+check:disabled, radio:disabled,
+popover.background check:disabled,
+popover.background radio:disabled,
+popover.background check:checked:disabled,
+popover.background radio:checked:disabled,
+menu menuitem check:disabled,
+menu menuitem radio:disabled,
+menu menuitem check:checked:disabled,
+menu menuitem radio:checked:disabled,
+menu menuitem check:indeterminate:disabled,
+menu menuitem radio:indeterminate:disabled { box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); }
 
-check:checked, radio:checked,
-check:indeterminate, radio:indeterminate { background-clip: border-box; background-color: @accent_bg_color; border-color: transparent; box-shadow: none; color: @accent_fg_color; }
+check:checked,
+check:indeterminate { background-clip: border-box; background-color: @accent_bg_color; border-color: transparent; box-shadow: none; color: @accent_fg_color; }
 
 check:checked:disabled, radio:checked:disabled,
 check:indeterminate:disabled, radio:indeterminate:disabled { box-shadow: none; background-color: mix(@accent_bg_color,@view_bg_color,0.5); color: mix(@accent_fg_color,@view_bg_color,0.3); }
@@ -1640,9 +1648,91 @@ check:checked { -gtk-icon-source: image(-gtk-recolor(url("../general/check-symbo
 
 check:indeterminate,radio:indeterminate { -gtk-icon-source: image(-gtk-recolor(url("../general/dash-symbolic.svg"))); }
 
-menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem check:checked, menu menuitem check:checked:hover, menu menuitem check:checked:disabled, menu menuitem check:indeterminate, menu menuitem check:indeterminate:hover, menu menuitem check:indeterminate:disabled { border: none; }
+menu menuitem check,
+menu menuitem check:hover,
+menu menuitem check:disabled,
+menu menuitem check:not(:checked),
+menu menuitem check:not(:checked):hover,
+menu menuitem check:checked,
+menu menuitem check:checked:hover,
+menu menuitem check:indeterminate,
+menu menuitem check:indeterminate:hover,
+popover.background check,
+popover.background check:indeterminate,
+popover.background radio,
+popover.background radio:indeterminate,
+menu menuitem radio,
+menu menuitem radio:hover,
+menu menuitem radio:disabled,
+menu menuitem radio:not(:checked),
+menu menuitem radio:not(:checked):hover,
+menu menuitem radio:checked,
+menu menuitem radio:checked:hover,
+menu menuitem radio:indeterminate,
+menu menuitem radio:indeterminate:hover{color: inherit;}
 
-menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem check:not(:checked), menu menuitem check:not(:checked):hover, menu menuitem check:not(:checked):disabled, menu menuitem check:checked, menu menuitem check:checked:hover, menu menuitem check:checked:disabled, menu menuitem check:indeterminate, menu menuitem check:indeterminate:hover, menu menuitem check:indeterminate:disabled, menu menuitem radio, menu menuitem radio:hover, menu menuitem radio:disabled, menu menuitem radio:not(:checked), menu menuitem radio:not(:checked):hover, menu menuitem radio:not(:checked):disabled, menu menuitem radio:checked, menu menuitem radio:checked:hover, menu menuitem radio:checked:disabled, menu menuitem radio:indeterminate, menu menuitem radio:indeterminate:hover, menu menuitem radio:indeterminate:disabled { background-image: none; background-color: transparent; box-shadow: none; -gtk-icon-shadow: none; color: inherit; border-width: 1px; border-color: currentcolor; }
+menu menuitem check,
+menu menuitem check:hover,
+menu menuitem check:disabled,
+menu menuitem check:not(:checked),
+menu menuitem check:not(:checked):hover,
+menu menuitem check:checked,
+menu menuitem check:checked:hover,
+menu menuitem check:indeterminate,
+menu menuitem check:indeterminate:hover,
+popover.background check,
+popover.background check:indeterminate
+{ border-color: transparent; }
+
+menu menuitem radio,
+menu menuitem radio:hover,
+menu menuitem radio:not(:checked),
+menu menuitem radio:not(:checked):hover,
+menu menuitem radio:checked,
+menu menuitem radio:checked:hover,
+menu menuitem radio:indeterminate,
+menu menuitem radio:indeterminate:hover,
+popover.background check:checked:disabled,
+popover.background radio:checked:disabled,
+popover.background check:indeterminate:disabled,
+popover.background radio:indeterminate:disabled,
+menu menuitem check:indeterminate,
+menu menuitem check:indeterminate:hover,
+menu menuitem check:indeterminate:disabled
+{ border-color: currentcolor; }
+
+menu menuitem radio,
+menu menuitem radio:hover,
+menu menuitem radio:disabled,
+menu menuitem radio:not(:checked),
+menu menuitem radio:not(:checked):hover,
+menu menuitem radio:checked,
+menu menuitem radio:checked:hover,
+menu menuitem radio:indeterminate,
+menu menuitem radio:indeterminate:hover,
+menu menuitem check,
+menu menuitem check:hover,
+menu menuitem check:disabled,
+menu menuitem check:not(:checked),
+menu menuitem check:not(:checked):hover,
+menu menuitem check:checked,
+menu menuitem check:checked:hover,
+menu menuitem check:checked:disabled,
+menu menuitem check:indeterminate,
+menu menuitem check:indeterminate:hover,
+menu menuitem check:indeterminate:disabled,
+popover.background check,
+popover.background check:indeterminate,
+popover.background radio,
+popover.background radio:indeterminate,
+menu menuitem radio:not(:checked):disabled,
+menu menuitem radio:checked:disabled,
+menu menuitem radio:indeterminate:disabled,
+popover.background check:checked:disabled,
+popover.background radio:checked:disabled,
+popover.background check:indeterminate:disabled,
+popover.background radio:indeterminate:disabled
+{ background-image: none; background-color: transparent; box-shadow: none; -gtk-icon-shadow: none;}
 
 treeview.view radio:selected:focus, treeview.view radio:selected, radio { border-radius: 100%; }
 
@@ -1996,12 +2086,12 @@ infobar:not(.info):not(.warning):not(.error):not(.question)
 infobar.info,
 infobar.warning,
 infobar.question,
-infobar.error{background-color: @window_bg_color; box-shadow: inset 0 0 0 9999px alpha(currentcolor,0.2);}
+infobar.error{background-color: @window_bg_color; box-shadow: inset 4px 0px currentcolor; padding: 0px 4px;}
 
-infobar.info > label, infobar.info, infobar.info button {color: mix(@success_bg_color,@window_fg_color,0.2);}
-infobar.warning > label, infobar.warning, infobar.warning button {color: mix(@warning_bg_color,@window_fg_color,0.2);}
-infobar.question > label, infobar.question, infobar.question button{color: mix(@accent_bg_color,@window_fg_color,0.2);}
-infobar.error > label, infobar.error, infobar.error button {color: mix(@error_bg_color,@window_fg_color,0.2);}
+infobar.info > label, infobar.info, infobar.info button {color: @success_bg_color;}
+infobar.warning > label, infobar.warning, infobar.warning button {color: @warning_bg_color;}
+infobar.question > label, infobar.question, infobar.question button{color: @accent_bg_color;}
+infobar.error > label, infobar.error, infobar.error button {color: @error_bg_color;}
 
 infobar label:disabled{color: alpha(currentcolor,0.5);}
 
@@ -2480,6 +2570,11 @@ scale.warmth:dir(rtl) trough { background-image: linear-gradient(to left, rgba(2
 
 /* Nautilus */
 
+/* this remove unnecesary padding */
+.nautilus-list-view columnview { margin-left: -24px; margin-right: -24px; }
+
+.nautilus-list-view .view{background-color: @window_base_color; background-image: image(@window_base_color);}
+
 .nautilus-window headerbar .path-bar-box, .nautilus-window .titlebar .path-bar-box { border-radius: 6.0px; border: none; color: @headerbar_fg_color; outline-color: alpha(@headerbar_fg_color,0.3); background-color: mix(currentColor,@headerbar_bg_color,0.9); }
 
 .nautilus-window headerbar .path-bar-box:backdrop, .nautilus-window .titlebar .path-bar-box:backdrop { color: mix(mix(@headerbar_fg_color,@headerbar_backdrop_color,0.5),@headerbar_backdrop_color,0.2); background-color: mix(currentColor,@headerbar_backdrop_color,0.9); text-shadow: none; -gtk-icon-shadow: none; }
@@ -2536,7 +2631,7 @@ scale.warmth:dir(rtl) trough { background-image: linear-gradient(to left, rgba(2
 
 .nautilus-window .nautilus-list-view .view:selected:hover, .nautilus-window .nautilus-list-view iconview:selected:hover { background-color: alpha(currentColor,0.13); }
 
-.nautilus-window .nautilus-list-view .view:hover, .nautilus-window .nautilus-list-view iconview:hover { background-color: alpha(currentColor,0.07); }
+.nautilus-window .nautilus-list-view .view:hover, .nautilus-window .nautilus-list-view iconview:hover { background-color: transparent; }
 
 .floating-bar { background-color: @view_bg_color; border-width: 1px; border-style: solid solid none; border-color: @transparent_borders; border-radius: 6.0px 0 0 0; }
 
