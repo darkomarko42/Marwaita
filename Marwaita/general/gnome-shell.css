@@ -13,9 +13,9 @@
 .quick-toggle:checked:hover,
 .quick-toggle:checked:focus,
 .quick-toggle:checked:active
-{ background-color: rgba(15,110,227 1.0) !important; box-shadow: none; }
+{ background-color: rgba(15,110,227, 1.0) !important; box-shadow: none; }
 
-.quick-toggle:checked:insensitive { background-color: rgba(15,110,227 0.5); }
+.quick-toggle:checked:insensitive { background-color: rgba(15,110,227, 0.5); }
 
 .calendar .calendar-day-base{ box-shadow: none; }
 
@@ -35,15 +35,15 @@
 .modal-dialog .modal-dialog-linked-button:focus:active,
 .hotplug-notification-item:focus:active,
 .notification-banner .notification-button:focus:active
-{ box-shadow: inset 0 0 0 2px rgba(15,110,227 0.5) !important; }
+{ box-shadow: inset 0 0 0 2px rgba(15,110,227, 0.5) !important; }
 
-.slider { -barlevel-active-background-color: rgba(15,110,227 1.0); }
+.slider { -barlevel-active-background-color: rgba(15,110,227, 1.0); }
 
-.quick-toggle:checked:hover, .quick-toggle:checked:focus { background-color: rgba(15,110,227 1.0); box-shadow: inset 0 0 0 9999px rgba(255,255,255, 0.1); }
+.quick-toggle:checked:hover, .quick-toggle:checked:focus { background-color: rgba(15,110,227, 1.0); box-shadow: inset 0 0 0 9999px rgba(255,255,255, 0.1); }
 
-StEntry { selection-background-color: rgba(15,110,227 1.0); }
+StEntry { selection-background-color: rgba(15,110,227, 1.0); }
 
-StEntry:focus { border-color: rgba(15,110,227 1.0);}
+StEntry:focus { border-color: rgba(15,110,227, 1.0);}
 
 .modal-dialog .modal-dialog-linked-button,
 .hotplug-notification-item,
