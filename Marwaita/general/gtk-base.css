@@ -1621,23 +1621,19 @@ check, radio { border: 2px solid; -gtk-icon-source: none; }
 
 check, radio { background-clip: padding-box; border-color: currentcolor; box-shadow: none; color: @window_fg_color; }
 
-check:disabled, radio:disabled,
-popover.background check:disabled,
+radio:disabled,
 popover.background radio:disabled,
-popover.background check:checked:disabled,
 popover.background radio:checked:disabled,
-menu menuitem check:disabled,
 menu menuitem radio:disabled,
-menu menuitem check:checked:disabled,
 menu menuitem radio:checked:disabled,
-menu menuitem check:indeterminate:disabled,
-menu menuitem radio:indeterminate:disabled { box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); }
+menu menuitem radio:indeterminate:disabled,
+radio:checked:disabled { box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); background-color: transparent; }
 
 check:checked,
 check:indeterminate { background-clip: border-box; background-color: @accent_bg_color; border-color: transparent; box-shadow: none; color: @accent_fg_color; }
 
-check:checked:disabled, radio:checked:disabled,
-check:indeterminate:disabled, radio:indeterminate:disabled { box-shadow: none; background-color: mix(@accent_bg_color,@view_bg_color,0.5); color: mix(@accent_fg_color,@view_bg_color,0.3); }
+check:checked:disabled,
+check:indeterminate:disabled{ box-shadow: none; background-color: mix(@accent_bg_color,@view_bg_color,0.5); color: mix(@accent_fg_color,@view_bg_color,0.3); }
 
 check,
 treeview.view check:selected:focus,
