@@ -1622,18 +1622,22 @@ check, radio { border: 2px solid; -gtk-icon-source: none; }
 check, radio { background-clip: padding-box; border-color: currentcolor; box-shadow: none; color: @window_fg_color; }
 
 radio:disabled,
+radio:checked:disabled,
+radio:indeterminate:disabled,
 popover.background radio:disabled,
 popover.background radio:checked:disabled,
 menu menuitem radio:disabled,
 menu menuitem radio:checked:disabled,
 menu menuitem radio:indeterminate:disabled,
-radio:checked:disabled { box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); background-color: transparent; }
+radio:checked:disabled,
+check:checked:disabled,
+check:indeterminate:disabled,
+check:disabled{ box-shadow: none; color: mix(@window_fg_color,@view_bg_color,0.3); background-color: transparent; border-color: currentcolor; }
 
 check:checked,
-check:indeterminate { background-clip: border-box; background-color: @accent_bg_color; border-color: transparent; box-shadow: none; color: @accent_fg_color; }
-
-check:checked:disabled,
-check:indeterminate:disabled{ box-shadow: none; background-color: mix(@accent_bg_color,@view_bg_color,0.5); color: mix(@accent_fg_color,@view_bg_color,0.3); }
+check:indeterminate,
+radio:checked,
+radio:indeterminate { background-clip: border-box; background-color: @accent_bg_color; border-color: transparent; box-shadow: none; color: @accent_fg_color; }
 
 check,
 treeview.view check:selected:focus,
