@@ -1,94 +1,118 @@
-.calendar .calendar-today,
-.calendar .calendar-today:hover,
-.calendar .calendar-today:focus,
-.calendar .calendar-today:active,
-.calendar .calendar-today:selected,
-.calendar .calendar-today:active:hover,
-.calendar .calendar-today:active:focus,
-.calendar .calendar-today:selected:hover,
-.calendar .calendar-today:selected:focus,
-.quick-toggle-menu .header .icon.active,
-.quick-toggle:checked,
-.quick-toggle:checked:focus,
-.quick-toggle:checked:hover,
-.quick-toggle:checked:focus,
-.quick-toggle:checked:active
-{ background-color: rgba(15,110,227, 1.0) !important; box-shadow: none; }
+/* Style */
 
-.quick-toggle:checked:insensitive { background-color: rgba(15,110,227, 0.5); }
+.button.default,.icon-button.default,.calendar .calendar-month-header .default.pager-button,.message .message-header .default.message-expand-button,.message .message-header .default.message-close-button,.default.screenshot-ui-show-pointer-button,.default.login-dialog-button.cancel-button,.default.login-dialog-button.switch-user-button,.default.login-dialog-button.login-dialog-session-list-button,.calendar .calendar-day.calendar-today,.quick-toggle:checked,.quick-menu-toggle .quick-toggle-arrow:checked,.keyboard-brightness-level .button:checked,
+.button.default:focus,.icon-button.default:focus,.calendar .calendar-month-header .default.pager-button:focus,.message .message-header .default.message-expand-button:focus,.message .message-header .default.message-close-button:focus,.default.screenshot-ui-show-pointer-button:focus,.default.login-dialog-button.cancel-button:focus,.default.login-dialog-button.switch-user-button:focus,.default.login-dialog-button.login-dialog-session-list-button:focus,.calendar .calendar-day.calendar-today:focus,.quick-toggle:focus:checked,.quick-menu-toggle .quick-toggle-arrow:focus:checked,.keyboard-brightness-level .button:focus:checked,.candidate-box:selected,.audio-selection-device:active,.osd-monitor-label,.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-check,.quick-toggle-menu .header .icon.active,.keyboard-key.default-key:latched,.emoji-panel .keyboard-key:latched,.login-dialog-auth-list-item:focus,.login-dialog-auth-list-item:selected
+{background-color: rgba(15,110,227,1.0);}
 
-.calendar .calendar-day-base{ box-shadow: none; }
+StEntry,.lg-dialog StEntry,.search-entry,.app-folder-dialog .folder-name-container .folder-name-entry,.login-dialog .login-dialog-prompt-entry,.unlock-dialog .login-dialog-prompt-entry{selection-background-color: rgba(15,110,227,1.0);selected-color:#ffffff;}
 
-.quick-slider .slider-bin:focus:hover,
-.quick-slider .slider-bin:focus:active,
-.quick-slider .slider-bin:focus,
-#LookingGlassDialog > #Toolbar .lg-toolbar-button:focus:hover,
-.app-folder-dialog .folder-name-container .edit-folder-button:focus:hover,
-.button:focus:hover,
-#LookingGlassDialog > #Toolbar .lg-toolbar-button:focus:active,
-.app-folder-dialog .folder-name-container .edit-folder-button:focus:active,
-.button:focus:active,
-.login-dialog .modal-dialog-button:default:focus,
-.modal-dialog .modal-dialog-linked-button:focus,
-.hotplug-notification-item:focus,
-.notification-banner .notification-button:focus,
-.modal-dialog .modal-dialog-linked-button:focus:active,
-.hotplug-notification-item:focus:active,
-.notification-banner .notification-button:focus:active
-{ box-shadow: inset 0 0 0 2px rgba(15,110,227, 0.5) !important; }
+.slider{-barlevel-active-background-color: rgba(15,110,227,1.0);}
 
-.slider { -barlevel-active-background-color: rgba(15,110,227, 1.0); }
+.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-window-border{border-color: rgba(15,110,227,1.0);}
 
-.quick-toggle:checked:hover, .quick-toggle:checked:focus { background-color: rgba(15,110,227, 1.0); box-shadow: inset 0 0 0 9999px rgba(255,255,255, 0.1); }
+.cycler-highlight{border:5px solid rgba(15,110,227,1.0);}
 
-StEntry { selection-background-color: rgba(15,110,227, 1.0); }
+.workspace-thumbnail-indicator{border:3px solid rgba(15,110,227,1.0);}
 
-StEntry:focus { border-color: rgba(15,110,227, 1.0);}
+.pie-timer{-pie-border-color: rgba(15,110,227,1.0);}
 
-.modal-dialog .modal-dialog-linked-button,
-.hotplug-notification-item,
-.notification-banner .notification-button,
-.modal-dialog .modal-dialog-linked-button:focus,
-.hotplug-notification-item:focus,
-.notification-banner .notification-button:focus,
-.calendar .calendar-day-base:hover,
-.calendar .calendar-day-base:focus
-{ background-color: rgba(255,255,255, 0.1); }
+.magnifier-zoom-region{border:2px solid rgba(15,110,227,1.0);}
 
-.modal-dialog .modal-dialog-linked-button:focus:hover,
-.hotplug-notification-item:focus:hover,
-.notification-banner .notification-button:focus:hover,
-.modal-dialog .modal-dialog-linked-button:hover,
-.hotplug-notification-item:hover,
-.notification-banner .notification-button:hover,
-.calendar .calendar-day-base:active:focus,
-.calendar .calendar-day-base:selected:focus{background-color: rgba(255,255,255, 0.15);}
+.select-area-rubberband,.tile-preview
+{border:1px solid rgba(15,110,227,1.0);}
 
-.modal-dialog .modal-dialog-linked-button:active,
-.hotplug-notification-item:active,
-.notification-banner .notification-button:active,
-.modal-dialog .modal-dialog-linked-button:checked,
-.hotplug-notification-item:checked,
-.notification-banner .notification-button:checked,
-.modal-dialog .modal-dialog-linked-button:checked:hover,
-.hotplug-notification-item:checked:hover,
-.notification-banner .notification-button:checked:hover,
-.modal-dialog .modal-dialog-linked-button:checked:active,
-.hotplug-notification-item:checked:active,
-.notification-banner .notification-button:checked:active,
-.calendar .calendar-day-base:active,
-.calendar .calendar-day-base:selected
-{background-color: rgba(255,255,255, 0.2);}
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:logged-in .user-icon{border-color: rgba(15,110,227,1.0);}
 
-.modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive, .notification-banner .notification-button:insensitive { background-color: rgba(255,255,255, 0.05); }
+.button:focus,.icon-button:focus,.calendar .calendar-month-header .pager-button:focus,.message .message-header .message-expand-button:focus,.message .message-header .message-close-button:focus,.screenshot-ui-show-pointer-button:focus,.login-dialog-button.cancel-button:focus,.login-dialog-button.switch-user-button:focus,.login-dialog-button.login-dialog-session-list-button:focus,.button.flat:focus,.icon-button.flat:focus,.calendar .calendar-month-header .pager-button:focus,.message .message-header .flat.message-expand-button:focus,.message .message-header .flat.message-close-button:focus,.flat.screenshot-ui-show-pointer-button:focus,.flat.login-dialog-button.cancel-button:focus,.flat.login-dialog-button.switch-user-button:focus,.flat.login-dialog-button.login-dialog-session-list-button:focus,.calendar .calendar-month-header .calendar-month-label:focus,.calendar .calendar-day:focus,.calendar .calendar-day-heading:focus,.button.default:focus,.icon-button.default:focus,.calendar .calendar-month-header .default.pager-button:focus,.message .message-header .default.message-expand-button:focus,.message .message-header .default.message-close-button:focus,.default.screenshot-ui-show-pointer-button:focus,.default.login-dialog-button.cancel-button:focus,.default.login-dialog-button.switch-user-button:focus,.default.login-dialog-button.login-dialog-session-list-button:focus,.calendar .calendar-day.calendar-today:focus,.quick-toggle:focus:checked,.quick-menu-toggle .quick-toggle-arrow:focus:checked,.keyboard-brightness-level .button:focus:checked,.events-button:focus,.world-clocks-button:focus,.weather-button:focus,.message:focus,.quick-toggle-menu:focus,.lg-extension:focus,.datemenu-today-button:focus,.calendar:focus,StEntry:focus,.notification-button:focus,.modal-dialog .modal-dialog-linked-button:focus,.lg-dialog StEntry:focus,#LookingGlassDialog>#Toolbar .lg-toolbar-button:focus,#LookingGlassDialog .notebook-tab:focus,.screenshot-ui-type-button:focus,.screenshot-ui-show-pointer-button:focus,.search-entry:focus,.app-folder-dialog .folder-name-container .folder-name-entry:focus,.login-dialog .login-dialog-prompt-entry:focus,.login-dialog-button.cancel-button:focus,.login-dialog-button.switch-user-button:focus,.login-dialog-button.login-dialog-session-list-button:focus,.unlock-dialog .button:focus,.unlock-dialog .icon-button:focus,.unlock-dialog .calendar .calendar-month-header .pager-button:focus,.calendar .calendar-month-header .unlock-dialog .pager-button:focus,.unlock-dialog .message .message-header .message-expand-button:focus,.message .message-header .unlock-dialog .message-expand-button:focus,.unlock-dialog .message .message-header .message-close-button:focus,.message .message-header .unlock-dialog .message-close-button:focus,.unlock-dialog .screenshot-ui-show-pointer-button:focus,.unlock-dialog .login-dialog-button.cancel-button:focus,.unlock-dialog .login-dialog-button.switch-user-button:focus,.unlock-dialog .login-dialog-button.login-dialog-session-list-button:focus,.unlock-dialog .login-dialog-prompt-entry:focus,.switcher-list .item-box:focus,.quick-slider .slider-bin:focus,.search-provider-icon:focus,.list-search-result:focus,#dash .dash-item-container .show-apps:focus .overview-icon,#dash .dash-item-container .overview-tile:focus .overview-icon,#dash .dash-item-container .grid-search-result:focus .overview-icon,.overview-tile:focus,.grid-search-result:focus,.app-folder:focus,.app-folder-dialog .overview-tile:focus,.app-folder-dialog .grid-search-result:focus,.keyboard-key:focus,.keyboard-subkeys .keyboard-key:focus,.word-suggestions StButton:focus,.login-dialog-not-listed-button:focus,.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected,.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus
+{box-shadow:inset 0 0 0 2px rgba(15,110,227,0.5)!important;}
 
-.check-box StBin { background-image: url("../general/checkbox-off.svg"); }
+.tile-preview,#unlockDialogNotifications StButton#vhandle:active,#unlockDialogNotifications StButton#hhandle:active{background-color:rgba(15,110,227,0.5)}
 
-.check-box:focus StBin,
-.check-box:checked StBin
-.check-box:focus:checked StBin
-{ background-image: url("../general/checkbox-on.svg"); }
+.popup-sub-menu {background-color: rgba(255,255,255, 0.1); border: none;}
 
-/* Switches */
-.toggle-switch { background-image: url("../general/toggle-off.svg"); }
-  .toggle-switch:checked { background-image: url("../general/toggle-on.svg"); }
+/* Settings */
+
+.message .message-header .message-close-button,.message .message-header .message-expand-button{padding: 4px; border: none;}
+
+.popup-menu-content,
+.candidate-popup-content,
+.popup-menu-item,
+.quick-settings,
+.quick-toggle,
+.quick-menu-toggle,
+.quick-menu-toggle .quick-toggle:ltr:last-child,
+.quick-menu-toggle .quick-toggle:rtl:last-child,
+.quick-toggle-menu,
+.modal-dialog,
+.search-section-content,
+.search-provider-icon,
+.list-search-result,
+.overview-tile,
+.grid-search-result,
+#dash .dash-background,
+.workspace-background,
+.button,
+.icon-button,
+.calendar .calendar-month-header .pager-button,
+.message .message-header .message-expand-button,
+.message .message-header .message-close-button,
+.screenshot-ui-show-pointer-button,
+.login-dialog-button.cancel-button,
+.login-dialog-button.switch-user-button,
+.login-dialog-button.login-dialog-session-list-button,
+#LookingGlassDialog>#Toolbar .lg-toolbar-button,
+#LookingGlassDialog .notebook-tab,
+.screenshot-ui-type-button,
+.unlock-dialog .button,
+.unlock-dialog .icon-button,
+.unlock-dialog .screenshot-ui-show-pointer-button,
+.login-dialog-not-listed-button,
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item,
+.events-button,
+.world-clocks-button,
+.weather-button,
+.message,
+.quick-toggle-menu,
+.lg-extension,
+.datemenu-today-button,
+.calendar,
+.screenshot-ui-panel,
+.notification-banner,
+.notification-button,
+.app-folder-dialog
+{border-radius: 6px; }
+
+.quick-settings-system-item .icon-button,.message .message-header .message-close-button,.message .message-header .message-expand-button{border-radius: 9999px;}
+
+.quick-menu-toggle .quick-toggle:ltr,.quick-menu-toggle .quick-toggle-arrow:rtl{border-radius: 6px 0 0 6px}
+.quick-menu-toggle .quick-toggle:rtl,.quick-menu-toggle .quick-toggle-arrow:ltr{border-radius:0 6px 6px 0}
+
+.notification-button:first-child:ltr,.modal-dialog .modal-dialog-linked-button:first-child:ltr{border-radius:0 0 0 6px}
+.notification-button:last-child:ltr,.modal-dialog .modal-dialog-linked-button:last-child:ltr{border-radius:0 0 6px;}
+.notification-button:first-child:rtl,.modal-dialog .modal-dialog-linked-button:first-child:rtl{border-radius:0 0 6px}
+.notification-button:last-child:rtl,.modal-dialog .modal-dialog-linked-button:last-child:rtl{border-radius:0 0 0 6px;}
+
+.popup-menu-item:checked
+{border-radius:6px 6px 0 0 !important;}
+
+.popup-sub-menu,
+.notification-button:first-child:last-child,
+.modal-dialog .modal-dialog-linked-button:first-child:last-child,
+.popup-sub-menu .popup-menu-section:last-child .popup-menu-item:last-child,
+.popup-sub-menu .popup-menu-item:last-child
+{border-radius:0 0 6px 6px;}
+
+#panel .panel-button .system-status-icon,StEntry StIcon.capslock-warning,StEntry StIcon.peek-password,.icon-button StIcon,.calendar .calendar-month-header .pager-button StIcon,.message .message-header .message-expand-button StIcon,.message .message-header .message-close-button StIcon,.screenshot-ui-show-pointer-button StIcon,.login-dialog-button.cancel-button StIcon,.login-dialog-button.switch-user-button StIcon,.login-dialog-button.login-dialog-session-list-button StIcon,.popup-menu-arrow,.popup-menu-icon,.popup-menu-ornament,.calendar .calendar-month-header .calendar-change-month-back StIcon,.calendar .calendar-month-header .calendar-change-month-forward StIcon,.message .message-header .message-source-icon,#panel .panel-button.screen-recording-indicator StIcon,#panel .panel-button.screen-sharing-indicator StIcon,#panel .panel-button.clock-display .messages-indicator,.quick-toggle .quick-toggle-icon,.quick-toggle-menu .popup-menu-item>StIcon,.background-apps-quick-toggle StIcon,.search-entry .search-entry-icon{icon-size: 16px;}
+
+.events-button,
+.world-clocks-button,
+.weather-button
+{min-width: 0px;/* this fix bad width on gnome shell 46 calendar buttons */}
+
+.check-box StBin{width:16px;height:16px; background-image:url("../general/assets/checkbox-off.svg")}
+.check-box:focus StBin{background-image:url("../general/assets/checkbox-off-focused.svg")}
+.check-box:checked StBin{background-image:url("../general/assets/checkbox.svg")}
+.check-box:focus:checked StBin{background-image:url("../general/assets/checkbox-focused.svg")}
+.toggle-switch{width: 32px; height: 16px; background-image:url("../general/assets/toggle-off.svg")}
+.toggle-switch:checked{background-image:url("../general/assets/toggle-on.svg")}
+

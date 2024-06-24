@@ -5,5 +5,4 @@ GTK theme for Cinnamon desktop
 
 ### GTK+ 3.20 or later
 
-### GTK2 engines requirment
-- GTK2 Murrine engine.
+### GTK+ 4.0 or later

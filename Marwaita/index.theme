@@ -1,12 +1,6 @@
-[Desktop Entry]
-Type=X-GNOME-Metatheme
-Name=Marwaita
-Comment=GTK Theme
-Encoding=UTF-8
-
 [X-GNOME-Metatheme]
+Name=Marwaita
+Type=X-GNOME-Metatheme
+Comment=Marwaita theme
+Encoding=UTF-8
 GtkTheme=Marwaita
-MetacityTheme=Marwaita
-IconTheme=Marwaita-Light
-CursorTheme=Marwaita
-CursorSize=24

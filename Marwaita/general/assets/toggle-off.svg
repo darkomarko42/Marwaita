@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="16"
+   viewBox="0 0 32 16"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="toggle-off.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="12.822917"
+     inkscape:cx="38.017871"
+     inkscape:cy="13.92039"
+     inkscape:window-width="1920"
+     inkscape:window-height="992"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15"
+     inkscape:pageshadow="2"
+     height="24px" />
+  <defs
+     id="defs11">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #979797;
+      }
+
+      .cls-2 {
+        filter: url(#filter);
+      }
+    </style>
+    <filter
+       id="filter"
+       x="2"
+       y="2"
+       width="22"
+       height="22"
+       filterUnits="userSpaceOnUse">
+      <feFlood
+         result="flood"
+         flood-color="#fff"
+         id="feFlood4" />
+      <feComposite
+         result="composite"
+         operator="in"
+         in2="SourceGraphic"
+         id="feComposite6" />
+      <feBlend
+         result="blend"
+         in2="SourceGraphic"
+         id="feBlend8"
+         mode="normal" />
+    </filter>
+  </defs>
+  <rect
+     id="Dikdörtgen_1"
+     data-name="Dikdörtgen 1"
+     class="cls-1"
+     width="32"
+     height="16"
+     rx="8"
+     ry="8"
+     x="0"
+     y="-16"
+     style="fill:#000000;fill-opacity:1;stroke-width:0.640515;opacity:0.7"
+     transform="scale(1,-1)" />
+  <rect
+     style="opacity:1;fill:#ffffff;stroke:none;stroke-width:1.23669"
+     id="rect1350"
+     width="10"
+     height="10"
+     x="-12.5"
+     y="3"
+     rx="5"
+     ry="5"
+     transform="scale(-1,1)" />
+</svg>

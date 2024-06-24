@@ -1,0 +1,17 @@
+entry{min-height: 32px; padding: 0 8px;}
+
+button,
+treeview.view header button,
+circular button,
+combobox arrow
+{ min-height: 16px; min-width: 16px; padding: 8px; }
+
+modelbutton.flat,
+.menuitem.button.flat,
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem,
+menubar > menuitem,
+.menubar > menuitem,
+menubar > item
+{ min-height: 30px; }
