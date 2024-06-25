@@ -1609,7 +1609,9 @@ infobar .close { border-radius: 50%; }
 
 /* Toolbars */
 
-actionbar > revealer > box{border-top: 1px solid @transparent_border;}
+actionbar > revealer > box,
+.toolbar:not(.primary-toolbar)
+{border-top: 1px solid @transparent_border;}
 
 .primary-toolbar toolbar,
 .primary-toolbar:not(.libreoffice-toolbar)
