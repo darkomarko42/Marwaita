@@ -318,7 +318,7 @@ treeexpander { border-spacing: 4px; }
 
 .dialog-action-area { margin: 6px; border-spacing: 6px; }
 
-.search-bar{padding: 6px; border-bottom: 1px solid @transparent_border;}
+.search-bar{padding: 6px;}
 
 /**************** Print dialog * */
 window.print drawing { color: @window_fg_color; background: none; border: none; padding: 2px; }
@@ -342,7 +342,7 @@ window.appchooser .dialog-vbox > box > box:not(.dialog-action-area) { margin: 6p
 window.appchooser .dialog-action-area { margin-top: 0; }
 
 /**************** GtkAssistant * */
-window.assistant .sidebar { padding: 6px; background-color: @sidebar_bg_color; color: @sidebar_fg_color; }
+window.assistant .sidebar { padding: 6px;}
 
 window.assistant .sidebar:not(separator):dir(ltr) { border-right: none; box-shadow: inset -1px 0 @sidebar_shade_color; }
 
@@ -663,10 +663,6 @@ filechooser scrolledwindow + actionbar > revealer > box:backdrop { background-co
 filechooser placesview > actionbar > revealer > box { background: @view_bg_color; color: @view_fg_color; box-shadow: none; padding-top: 6px; }
 
 filechooser placesview > actionbar > revealer > box:backdrop { background: @view_bg_color; transition: none; }
-
-filechooser placessidebar { background-color: @sidebar_bg_color; color: @sidebar_fg_color; }
-
-filechooser placessidebar:backdrop { background-color: @sidebar_backdrop_color; transition: background-color 200ms ease-out; }
 
 filechooser paned.horizontal > separator:dir(ltr) { box-shadow: inset 1px 0 @sidebar_bg_color, inset 1px 0 @sidebar_shade_color; }
 
@@ -1507,23 +1503,28 @@ scale.vertical.fine-tune > marks indicator { min-height: 3px; }
 
 scale.vertical.marks-before { padding-left: 0; }
 
-scale.vertical.marks-before > trough > slider { border-bottom-left-radius: 0; }
-
 scale.vertical.marks-after { padding-right: 0; }
-
-scale.vertical.marks-after > trough > slider { border-top-right-radius: 0; }
 
 /* Scrollbars */
 
-scrollbar > range > trough{background-color: mix(@window_bg_color,@window_fg_color,0.15); margin: 4px; border-radius: 9999px;}
+scrollbar > range > trough{background-color: alpha(@window_fg_color,0.2); margin: 4px; border-radius: 9999px;}
 
-scrollbar > range > trough > slider { min-width: 8px; min-height: 8px; margin: 0px; border: none; border-radius: 9999px; transition: all 200ms linear; background-color: alpha(@window_fg_color,0.5); }
+scrollbar > range > trough > slider { min-width: 8px; min-height: 8px; margin: 0px; border: none; border-radius: 9999px; transition: all 200ms linear; background-color: alpha(@window_fg_color,0.5); border: 1px solid alpha(white,0.5); }
 
 scrollbar > range > trough > slider:active { background-color: @window_fg_color; }
 
 scrollbar > range > trough > slider:disabled { opacity: 0; }
 
-scrollbar.overlay-indicator:not(.hovering) > range > trough > slider { min-width: 4px; min-height: 4px; margin: 0px; }
+scrollbar.overlay-indicator:not(.hovering) > range > trough > slider { min-width: 2px; min-height: 2px; margin: 0px; }
+
+scrollbar.overlay-indicator.vertical > range > trough > slider { min-height: 40px; }
+scrollbar.overlay-indicator.horizontal > range > trough > slider { min-width: 40px; }
+
+scrollbar.overlay-indicator:not(.hovering) > range > trough { background-color: transparent;}
+
+scrollbar.horizontal > range > trough > slider { min-width: 40px; }
+scrollbar.vertical > range > trough > slider { min-height: 40px; }
+
 
 /* Undershoot and overshoot*/
 
@@ -1556,10 +1557,6 @@ window.shortcuts headerbar.titlebar > windowhandle { }
 window.shortcuts searchbar { background: none; }
 
 .sidebar-pane .sidebar,.sidebar-pane .sidebar:backdrop{background-color: transparent;}
-
-.sidebar-pane { background-color: @sidebar_bg_color; color: @sidebar_fg_color; }
-
-.sidebar-pane:backdrop { background-color: @sidebar_backdrop_color; transition: background-color 200ms ease-out; }
 
 .sidebar-pane flap > dimming, .sidebar-pane leaflet > dimming, .sidebar-pane navigation-view > dimming, .sidebar-pane overlay-split-view > dimming { background: @shadow_color; }
 
@@ -1615,15 +1612,15 @@ stacksidebar row > label { padding-left: 6px; padding-right: 6px; }
 stacksidebar row.needs-attention > label { background-size: 6px 6px, 0 0; }
 
 /********************** Navigation Sidebar * */
-.navigation-sidebar { padding: 6px 0; }
+.navigation-sidebar { padding: 4px 0; }
 
 .navigation-sidebar, .navigation-sidebar.view, window.print .navigation-sidebar.dialog-action-box, .navigation-sidebar.view:disabled { background-color: transparent; color: inherit; }
 
 .navigation-sidebar.background, .navigation-sidebar.background:disabled { background-color: @window_bg_color; color: @window_fg_color; }
 
-.navigation-sidebar > separator { margin: 6px; }
+.navigation-sidebar > separator { margin: 2px 6px; }
 
-.navigation-sidebar > row { min-height: 34px; padding: 0 8px; border-radius: 6.0px; margin: 0 6px 2px; }
+.navigation-sidebar > row { min-height: 32px; padding: 0; border-radius: 0px;}
 
 @keyframes spin { to { transform: rotate(1turn); } }
 
@@ -1671,7 +1668,7 @@ actionbar > revealer > box menubutton.suggested-action > button:not(.raised):not
 
 actionbar > revealer > box switch, searchbar > revealer > box switch, .toolbar switch, headerbar switch { margin-top: 4px; margin-bottom: 4px; }
 
-.toolbar { padding: 6px; border-spacing: 6px; }
+.toolbar,.primary-toolbar { padding: 6px; border-spacing: 6px; border-bottom: 1px solid @transparent_border; }
 
 .toolbar.osd { padding: 12px; border-radius: 6.0px; }
 

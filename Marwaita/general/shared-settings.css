@@ -2,6 +2,10 @@
 
 @define-color focus_highlight alpha(currentcolor,0.5);
 
+@define-color sidebar_bg_color mix(@headerbar_bg_color,@window_bg_color,0.5);
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+
 @define-color shadow_color alpha(black,0.3);
 @define-color window_shadow alpha(black,0.5);
 
@@ -33,8 +37,8 @@
 @define-color budgie_tasklist_indicator_color_active_window @accent_bg_color;
 @define-color budgie_tasklist_indicator_color_attention @error_color;
 
-@define-color panel_bg_color @window_bg_color;
-@define-color panel_fg_color @window_fg_color;
+@define-color panel_bg_color @headerbar_bg_color;
+@define-color panel_fg_color @headerbar_fg_color;
 
 @define-color blue_1 #99c1f1;
 @define-color blue_2 #62a0ea;
@@ -202,8 +206,8 @@ toolbarview > .bottom-bar headerbar .linked button:not(.suggested-action):not(.d
 toolbarview > .bottom-bar headerbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 toolbarview > .bottom-bar headerbar entry,
 
-dialog headerbar button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
-dialog .titlebar button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled)
+dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
+dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled)
 
 {
     color: currentcolor;
@@ -323,9 +327,17 @@ headerbar popover button.arrow-button:hover:not(.flat):not(.raised):not(.suggest
 headerbar menubutton.raised > button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 spinbutton.vertical > button.image-button.up:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 spinbutton.vertical > button.image-button.down:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-combobox > .linked:not(.vertical) > button:not(:only-child):hover
+combobox > .linked:not(.vertical) > button:not(:only-child):hover,
+.toolbar .linked button:not(.suggested-action):not(.destructive-action):hover,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):hover,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):hover,
+searchbar > revealer > box .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
+.toolbar .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
+.primary-toolbar .linked button:hover.image-button:not(.suggested-action):not(.destructive-action):not(.opaque)
 {background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3); }
 
+.primary-toolbar button:hover.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
+.toolbar button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .undershoot-top .top-bar headerbar button.arrow-button.text-button:not(.suggested-action):not(.destructive-action):hover,
 .toolbar menubutton.opaque > button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
@@ -335,7 +347,6 @@ combobox > .linked:not(.vertical) > button:not(:only-child):hover
 .toolbar popover button.image-text-button:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar menubutton.raised > button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-.toolbar button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 searchbar > revealer > box popover button.arrow-button:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar popover button.arrow-button:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 searchbar > revealer > box menubutton.raised > button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
@@ -347,8 +358,6 @@ searchbar > revealer > box button.image-button:hover:not(.raised):not(.suggested
 .toolbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 spinbutton > button.image-button.up:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 spinbutton > button.image-button.down:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-searchbar > revealer > box .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-.toolbar .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 searchbar > revealer > box menubutton.raised > button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar menubutton.raised > button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 headerbar popover menubutton:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover,
@@ -827,7 +836,17 @@ toolbar:not(.osd).inline-toolbar button:checked,
 headerbar popover button.flat:not(.titlebutton):not(.suggested-action):not(.destructive-action):not(.text-button):active,
 headerbar popover button.flat:not(.titlebutton):not(.suggested-action):not(.destructive-action):not(.text-button):checked,
 .undershoot-top .top-bar headerbar button.arrow-button.text-button:not(.suggested-action):not(.destructive-action):active,
-.undershoot-top .top-bar headerbar button.arrow-button.text-button:not(.suggested-action):not(.destructive-action):checked
+.undershoot-top .top-bar headerbar button.arrow-button.text-button:not(.suggested-action):not(.destructive-action):checked,
+.toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):active,
+.toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):checked,
+.primary-toolbar button:active.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
+.primary-toolbar button:checked.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
+.primary-toolbar .linked button:active.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
+.primary-toolbar .linked button:checked.image-button:not(.suggested-action):not(.destructive-action):not(.opaque)
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none; }
 
 /* Disabled and Backdrop state */
@@ -1167,7 +1186,14 @@ splitbutton button,
 headerbar popover button.flat:not(.suggested-action):not(.destructive-action),
 .toolbar button:not(.suggested-action):not(.destructive-action),
 .primary-toolbar toolbar button:not(.suggested-action):not(.destructive-action),
-.primary-toolbar:not(.libreoffice-toolbar) button:not(.suggested-action):not(.destructive-action)
+.primary-toolbar:not(.libreoffice-toolbar) button:not(.suggested-action):not(.destructive-action),
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar button:not(#tasklist-button),
+.mate-panel-menu-bar #PanelApplet button,
+.mate-panel-menu-bar #PanelApplet button.flat,
+.mate-panel-menu-bar #PanelApplet button.toggle,
+.mate-panel-menu-bar #PanelApplet #tasklist-button,
+.mate-panel-menu-bar #PanelApplet .wnck-pager
 { background-clip: border-box; background-color: transparent; border-color: transparent; }
 
 /* Linked */
@@ -1195,7 +1221,10 @@ toolbarview > .bottom-bar headerbar .linked button:not(.suggested-action):not(.d
 toolbar:not(.osd) .linked button,
 toolbar:not(.osd).inline-toolbar button,
 .primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action),
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action)
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action),
+dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
+dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
+.linked:not(.vertical) > menubutton > button
 { border-left-color: @transparent_border; border-right-color: @transparent_border; border-right-style: none; border-radius: 0; }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo,
@@ -1221,7 +1250,10 @@ toolbarview > .bottom-bar headerbar .linked button:not(.suggested-action):not(.d
 toolbar:not(.osd) .linked button:first-child,
 toolbar:not(.osd).inline-toolbar button:first-child,
 .primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):first-child,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):first-child
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):first-child,
+dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):first-child,
+dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):first-child,
+.linked:not(.vertical) > menubutton:first-child > button
 { border-top-left-radius: 6.0px; border-bottom-left-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo,
@@ -1247,7 +1279,10 @@ toolbarview > .bottom-bar headerbar .linked button:not(.suggested-action):not(.d
 toolbar:not(.osd) .linked button:last-child,
 toolbar:not(.osd).inline-toolbar button:last-child,
 .primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):last-child,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):last-child
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):last-child,
+dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):last-child,
+dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):last-child,
+.linked:not(.vertical) > menubutton:last-child > button
 { border-right-style: solid; border-top-right-radius: 6.0px; border-bottom-right-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:only-child > box > button.combo,
@@ -1269,7 +1304,9 @@ toolbarview > .bottom-bar headerbar .linked button:not(.suggested-action):not(.d
 toolbar:not(.osd) .linked button:only-child,
 toolbar:not(.osd).inline-toolbar button:only-child,
 .primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):only-child,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):only-child
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):only-child,
+dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):only-child,
+dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):only-child
 { border-style: solid; border-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo:not(button):focus, combobox.linked button:not(button):focus:nth-child(2):dir(rtl), filechooser .path-bar.linked > button:not(button):focus:dir(rtl):last-child, filechooser .path-bar.linked > button:not(button):focus:dir(ltr):first-child, .xfce4-panel.background button menu .linked button:not(button):focus:first-child, .nautilus-window .titlebar :not(.raised) .linked > button:not(button):focus:first-child, headerbar .linked button:not(button):focus:first-child:not(:only-child), .titlebar .linked button:not(button):focus:first-child:not(:only-child), .linked:not(.vertical) > spinbutton:not(button):focus:first-child:not(.vertical), .linked:not(.vertical) > entry:not(button):focus:first-child, .inline-toolbar button:not(button):focus:first-child, .linked > button:not(button):focus:first-child, toolbar:not(.osd).inline-toolbar toolbutton:first-child > button.flat:not(button):focus { border-left-color: @focus_highlight; }
@@ -1426,7 +1463,7 @@ treeview.view radio:disabled:selected:focus
 
 /* Contextual Accent */
 
-.titlebar scale trough,:not(.nemo-window)
+.titlebar scale trough,
 .titlebar progressbar trough,
 headerbar scale trough,
 headerbar progressbar trough,
@@ -1439,7 +1476,10 @@ progressbar.osd trough,
 .osd scale trough,
 scale .osd trough,
 .osd progressbar > trough,
-.osd scale > trough { background-color: alpha(currentcolor,0.2); }
+.osd scale > trough,
+.primary-toolbar scale trough,
+.primary-toolbar progressbar trough
+{ background-color: alpha(currentcolor,0.2); }
 
 .budgie-panel separator,
 .raven scale highlight,
@@ -1476,7 +1516,12 @@ progressbar.osd progress,
 .osd check:checked,
 .osd check:indeterminate,
 .osd radio:checked,
-.osd radio:indeterminate
+.osd radio:indeterminate,
+.primary-toolbar scale highlight,
+.primary-toolbar progressbar progress,
+.primary-toolbar scale.marks-after slider,
+.primary-toolbar scale.marks-before slider,
+.primary-toolbar scale:hover slider
 { background-color: currentcolor; color: currentcolor; border-color: transparent; background-clip: border-box; box-shadow: none;}
 
 /* accent selections and others */
@@ -1520,12 +1565,15 @@ gridview > child:selected,
 
 treeview.view:not(check):not(radio):selected,
 treeview.view:not(check):not(radio):selected:focus
-{background-image: image(alpha(@window_fg_color,0.1)); color: @window_fg_color; background-color: transparent;}
+{background-image: image(alpha(@window_fg_color,0.15)); color: @window_fg_color; background-color: transparent;}
 
 /* accent list and others */
 
+scrolledwindow.frame viewport.frame treeview.view:selected,
+scrolledwindow.frame viewport.frame treeview.view:selected:focus{background-color: @view_bg_color;}
+
 row.activatable:hover
-{background-image: image(alpha(@window_fg_color,0.05)); }
+{background-image: image(alpha(@window_fg_color,0.1)); }
 
 row.activatable:active,
 row.activatable.has-open-popup,
@@ -1534,7 +1582,7 @@ row:selected,
 row.activatable:selected:active,
 row:selected:hover,
 row.activatable:selected:hover
-{ background-image: image(alpha(@window_fg_color,0.1)); }
+{ background-image: image(alpha(@window_fg_color,0.15)); }
 
 /* Sliders */
 
@@ -1549,8 +1597,6 @@ progressbar trough, scale fill, scale trough, levelbar block.empty,scale > troug
 progressbar progress, scale highlight,scale > trough > highlight, progressbar > trough > progress { border-radius: 9999px; background-color: @accent_bg_color; color: @accent_fg_color; }
 
 scale slider,scale > trough > slider  { background-clip: padding-box; min-height: 16px; min-width: 16px; margin: -6px; border: 1px solid transparent; background-color: transparent; box-shadow: none; border-radius: 9999px; }
-
-
 
 /* Switchers */
 
@@ -1609,19 +1655,74 @@ infobar .close { border-radius: 50%; }
 
 /* Toolbars */
 
-actionbar > revealer > box,
-.toolbar:not(.primary-toolbar)
-{border-top: 1px solid @transparent_border;}
+toolbar{
+    border-style: solid;
+    border-width: 0px;
+    border-color: @transparent_border;
+}
 
 .primary-toolbar toolbar,
 .primary-toolbar:not(.libreoffice-toolbar)
-{background-color: @headerbar_bg_color; color: @headerbar_fg_color; border-bottom: 1px solid @transparent_border;}
+{background-color: @headerbar_bg_color; color: @headerbar_fg_color;}
 
 .primary-toolbar toolbar:backdrop,
 .primary-toolbar:not(.libreoffice-toolbar):backdrop
 {background-color: @headerbar_backdrop_color; color: mix(@headerbar_bg_color,@headerbar_fg_color,0.9); }
 
-actionbar{ background-color: @sidebar_bg_color;}
+.primary-toolbar toolbar,
+.primary-toolbar:not(.libreoffice-toolbar),
+.horizontal.primary-toolbar,
+.horizontal.primary-toolbar toolbar
+{border-width: 0 0 1px 0;}
+
+.inline-toolbar,toolbar.vertical:not(.horizontal),
+.primary-toolbar.vertical toolbar,
+.primary-toolbar toolbar.horizontal,
+.horizontal .primary-toolbar,
+.horizontal .primary-toolbar toolbar,
+box > toolbar.horizontal
+{border-top-width: 0;}
+
+toolbar.horizontal{border-top-width: 1px;}
+
+.vertical.top.toolbarzone{border-top: 1px solid @transparent_border;}
+
+/* Sidebars */
+.location-bar,
+scrolledwindow.view list,
+.frame.sidebar .view,
+.nemo-places-sidebar .view,
+.NemoSidebar,
+.sidebar list,
+.budgie-settings-window list.sidebar,
+.source-list,
+.sidebar .view,
+assistant .sidebar,
+.unified grid paned .sidebar.vertical,
+window.unified.csd .sidebar headerbar.titlebar.flat,
+list.navigation-sidebar,
+placessidebar .sidebar,
+.navigation-sidebar,
+.titlebar.tweak-titlebar-left,
+filechooser placessidebar,
+.sidebar-pane,
+window.assistant .sidebar,
+.background.thunar .sidebar treeview.view,
+.geary-folder treeview.view,
+deck leaflet box scrolledwindow treeview.view,
+.budgie-settings-window buttonbox.inline-toolbar,
+.nemo-window treeview.view:not(check):not(radio):selected,
+.nemo-window treeview.view:not(check):not(radio):selected:focus,
+.nemo-window .places-treeview.view treeview.view:not(check):not(radio):selected,
+.background.thunar .sidebar treeview.view:not(check):not(radio):selected,
+.nemo-window .places-treeview.view treeview.view:not(check):not(radio):selected:focus,
+.background.thunar .sidebar treeview.view:not(check):not(radio):selected:focus,
+.geary-folder-frame treeview.view:selected,
+.geary-folder-frame treeview.view:selected:focus,
+.geary-main-window leaflet > leaflet > box:first-child,
+.sidebar treeview.view:selected,
+.sidebar treeview.view:selected:focus
+{ background-color: @sidebar_bg_color; color: @sidebar_fg_color; }
 
 /* Undershoot */
 undershoot.top { box-shadow: none; background: linear-gradient(to bottom, alpha(black,0.08), transparent 5px); }
@@ -1649,10 +1750,14 @@ window.background:not(.solid-csd) > grid.horizontal > grid.horizontal {
   color: @headerbar_fg_color;
   background-image: none;
   background-color: @headerbar_bg_color;
-  box-shadow: inset 0 -1px @transparent_border;
+
 }
 
 window.background:not(.solid-csd) > grid.horizontal > grid.horizontal:backdrop{background-color: @headerbar_backdrop_color;}
+
+/* File chooser */
+filechooser .horizontal paned{border-color: transparent;}
+filechooser paned{border-top: 1px solid @transparent_border;}
 
 /* Animations */
 

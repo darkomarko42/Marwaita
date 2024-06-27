@@ -1,10 +1,6 @@
 @define-color accent_bg_color mix(@accent_color,white,0.5);
 @define-color accent_fg_color black;
 
-@define-color sidebar_bg_color mix(@window_bg_color,black,0.1);
-@define-color sidebar_fg_color @window_fg_color;
-@define-color sidebar_backdrop_color @window_bg_color;
-
 @define-color headerbar_border_color @shade_color;
 @define-color headerbar_shade_color @transparent_border;
 @define-color headerbar_darker_shade_color @shade_color;
