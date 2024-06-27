@@ -1541,7 +1541,9 @@ iconview text selection,
 entry selection,
 spinbutton:not(.vertical) selection,
 selection,
-selection:focus-within
+selection:focus-within,
+iconview.frame.view:selected,
+iconview.frame.view:selected:focus
 {background-color: alpha(@accent_bg_color,0.2); color: @window_fg_color;}
 
 iconview:selected:focus,
