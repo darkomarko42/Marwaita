@@ -16,6 +16,6 @@
 @define-color m_button_hover alpha(@headerbar_fg_color,0.1);
 @define-color m_button_active alpha(@headerbar_fg_color,0.2);
 
-:not(dialog) headerbar button.suggested-action,
-:not(dialog) headerbar switch:checked
+headerbar button.suggested-action,
+headerbar switch:checked
 {background-color: @accent_fg_color; color: @accent_bg_color;}
