@@ -189,19 +189,17 @@ StButton.popup-menu-item,
 .menu StButton,
 .menu StButton:hover,
 .menu StButton:hover.notification-applet-padding,
-StButton:checked.radiobutton,
-.grouped-window-list-thumbnail-menu .item-box:selected
+StButton:checked.radiobutton
 {background-color: transparent; border-color: transparent; box-shadow: none;}
 
-#panel,
 .grouped-window-list-badge,
 .sound-player-overlay
 {background-color: rgba(255,255,255, 0.7);}
 
+#panel,
 #notification,
 .menu #notification,
-.menu
-,/*use base color*/
+.menu,
 
 .popup-combo-menu,
 .modal-dialog,
@@ -213,7 +211,7 @@ StButton:checked.radiobutton,
 .window-list-preview,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu
-{background-color: #f3f6f9; /*use bg color*/}
+{background-color: #f3f6f9; /*use base color*/}
 
 StEntry,
 StButton,
@@ -238,8 +236,6 @@ StButton,
 .applet-box:hover,
 .grouped-window-list-item-box:hover,
 .grouped-window-list-item-box:active:hover,
-.window-list-item-box:hover,
-.window-list-item-box:active:hover,
 .sound-player StButton:small:hover,
 .sound-player-overlay StButton:hover,
 .calendar-change-month-back:hover,
@@ -247,14 +243,18 @@ StButton,
 .panelLeft:dnd,
 .panelCenter:dnd,
 .panelRight:dnd,
-StScrollBar StBin#trough
+StScrollBar StBin#trough,
+.grouped-window-list-thumbnail-menu .item-box:selected,
+.window-list-item-box
 { background-color: rgba(0,0,0, 0.1); box-shadow: none;}
 
 StButton:hover,
 #notification StButton.notification-button:hover,
 #notification StButton.notification-icon-button:hover,
 .popup-menu #notification StButton.notification-button:hover,
-.popup-menu #notification StButton.notification-icon-button:hover
+.popup-menu #notification StButton.notification-icon-button:hover,
+.window-list-item-box:hover,
+.window-list-item-box:active:hover
 {background-color: rgba(0,0,0, 0.15);}
 
 .applet-cornerbar,
@@ -294,19 +294,14 @@ StButton:checked,
 .workspace-close-button:active,
 .workspace-close-button:checked{ box-shadow: inset 0 0 0 9999px rgba(255,/**/255,255, 0.3);}
 
-.window-list-item-box,
 .grouped-window-list-item-box:active { background-color: rgba(0,0/**/,0, 0.01);}
 
-.panel-bottom .window-list-item-box:focus,
 .panel-bottom .grouped-window-list-item-box:active{ box-shadow: inset 0 -3px #303030;}
 
-.panel-top .window-list-item-box:focus,
 .panel-top .grouped-window-list-item-box:active{ box-shadow: inset 0 3px #303030;}
 
-.panel-right .window-list-item-box:focus,
 .panel-right .grouped-window-list-item-box:active{ box-shadow: inset -3px 0 #303030;}
 
-.panel-left .window-list-item-box:focus,
 .panel-left .grouped-window-list-item-box:active{ box-shadow: inset 3px 0 #303030;}
 
 .progress{background-color: rgba(51,185,84,0.5);}
@@ -347,7 +342,8 @@ StEntry,
 #notification StButton.notification-button,
 #notification StButton.notification-icon-button,
 .popup-menu #notification StButton.notification-button,
-.popup-menu #notification StButton.notification-icon-button
+.popup-menu #notification StButton.notification-icon-button,
+.window-list-item-box
 {border: 1px solid;}
 
 .menu-selected-app-box,
@@ -371,7 +367,8 @@ StEntry,
 .panel-bottom,
 .panel-top,
 .panel-left,
-.panel-right
+.panel-right,
+.window-list-item-box
 {border-color: rgba(0,0,0, 0.2);}
 
 .popup-separator-menu-item,
@@ -412,7 +409,8 @@ StButton,
 .osd-window,
 .calendar-event-button,
 .overview-empty-placeholder,
-.grouped-window-list-thumbnail-menu
+.grouped-window-list-thumbnail-menu,
+.window-list-item-box
 {border-radius: 6px;}
 
 StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-color: transparent; background-clip: border-box;}

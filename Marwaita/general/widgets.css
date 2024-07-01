@@ -355,7 +355,9 @@ window.devel headerbar.titlebar:not(.selection-mode):backdrop { background: @hea
 
 treeview.view { border-left-color: @transparent_border; border-top-color: @transparent_border; padding: 2px; }
 
-treeview.view:not(:backdrop):not(:selected):hover{background-image: image(alpha(@window_fg_color,0.05)); }
+treeview.view:not(:backdrop):not(:selected):hover,
+iconview.view:not(:backdrop):not(:selected):hover
+{background-image: image(alpha(@window_fg_color,0.05)); }
 
 * { -GtkTreeView-horizontal-separator: 4; -GtkTreeView-grid-line-width: 1; -GtkTreeView-grid-line-pattern: ''; -GtkTreeView-tree-line-width: 1; -GtkTreeView-tree-line-pattern: ''; -GtkTreeView-expander-size: 16; }
 
@@ -472,16 +474,6 @@ popover.menu > stack { margin: -6px; }
 
 /* Tabs */
 
-notebook > header { padding: 4px; background-clip: border-box; border: @transparent_border; border-width: 0px; background-color: @window_bg_color; box-shadow: none; }
-
-notebook > header.top { box-shadow: inset 0 -1px @transparent_border; }
-
-notebook > header.bottom { box-shadow: inset 0 1px @transparent_border; }
-
-notebook > header.left { box-shadow: inset -1px 0 @transparent_border; }
-
-notebook > header.right { box-shadow: inset 1px 0 @transparent_border; }
-
 notebook > header tabs { margin: 0px; }
 
 notebook > header.top { border-bottom-style: solid; }
@@ -505,11 +497,7 @@ notebook > header.top > tabs > arrow { border-top-style: none; }
 notebook > header.bottom > tabs > arrow { border-bottom-style: none; }
 
 notebook > header.top > tabs > arrow, notebook > header.bottom > tabs > arrow,
-notebook > header.left > tabs > arrow, notebook > header.right > tabs > arrow { padding: 7px; border-radius: 9999px; }
-
-notebook > header.top > tabs > arrow.down, notebook > header.bottom > tabs > arrow.down { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
-
-notebook > header.top > tabs > arrow.up, notebook > header.bottom > tabs > arrow.up { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+notebook > header.left > tabs > arrow, notebook > header.right > tabs > arrow { padding: 7px; }
 
 notebook > header.left > tabs > arrow { border-left-style: none; }
 
@@ -521,22 +509,9 @@ notebook > header.left > tabs > arrow.up, notebook > header.right > tabs > arrow
 
 notebook > header > tabs > arrow { min-height: 16px; min-width: 16px; }
 
-notebook > header tab {	
-	min-height: 0px;
-	min-width: 0px;
-	padding: 8px 16px;
-	outline-offset: -5px;
-	color: @window_fg_color;
-	font-weight: bold;
-	border-radius: 9999px;
-	-gtk-outline-radius: 9999px;
-	border-color: transparent;
-	background-color: transparent;
-	}
+notebook > header tab {	-gtk-outline-radius: 6.0px;	}
 
 notebook > header tab button.flat, notebook > header tab button.flat:backdrop { border-radius: 9999px; }
-
-notebook > stack:not(:only-child) { background-color: @view_bg_color; }
 
 /* Scrollbars */
 
@@ -758,8 +733,6 @@ list row { padding: 2px; outline-color: @focus_highlight; outline-style: solid; 
 
 row:backdrop { transition: 200ms ease-out; }
 
-row.activatable:selected { color: @window_fg_color; }
-
 scrolledwindow list:not(.content) { padding: 0; }
 
 scrolledwindow list row { border-radius: 0px; }
@@ -897,7 +870,7 @@ filechooser #pathbarbox.view{ background-color: transparent; }
 filechooser .dialog-action-box
 { border-top: 1px solid @transparent_border; }
 
-.dialog-vbox.vertical filechooser .search-bar.vertical,filechooser #pathbarbox,.dialog-vbox filechooser 
+filechooser #pathbarbox,.dialog-vbox filechooser 
 { border-bottom: 1px solid @transparent_border; }
 
 filechooserbutton:drop(active) { box-shadow: none; border-color: transparent; }
@@ -911,8 +884,6 @@ stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:no
 paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar { border-style: none; }
 
 .sidebar row { border-radius: 0px; }
-
-.sidebar row:backdrop { color: @sidebar_fg_color; }
 
 stacksidebar row { padding: 10px 4px; }
 
@@ -1319,58 +1290,6 @@ row label.subtitle { font-size: smaller; opacity: 0.55; text-shadow: none; }
 row > box.header { margin-left: 12px; margin-right: 12px; min-height: 50px; }
 
 row > box.header > box.title { margin-top: 8px; margin-bottom: 8px; }
-
-tabbar .box { min-height: 38px; background: @headerbar_bg_color; border-bottom: 1px solid @headerbar_shade_color; }
-
-tabbar .box:backdrop { color: mix(@headerbar_fg_color,@headerbar_backdrop_color,0.3); background-color: @headerbar_backdrop_color; }
-
-tabbar scrolledwindow.pinned undershoot { border: 0 solid mix(black,@window_bg_color,0.76); }
-
-tabbar scrolledwindow.pinned:dir(rtl) undershoot.left { border-left-width: 1px; }
-
-tabbar scrolledwindow.pinned:dir(ltr) undershoot.right { border-right-width: 1px; }
-
-tabbar scrolledwindow.pinned:backdrop undershoot { border-color: @border_color; }
-
-tabbar scrolledwindow.pinned tabbox:dir(ltr) { padding-right: 1px; box-shadow: inset -1px 0 @transparent_border; }
-
-tabbar scrolledwindow.pinned tabbox:dir(rtl) { padding-left: 1px; box-shadow: inset 1px 0 @transparent_border; }
-
-tabbar undershoot { transition: none; }
-
-tabbar undershoot.left { background: linear-gradient(to right, alpha(black, 0.07), alpha(black, 0) 20px); }
-
-tabbar undershoot.right { background: linear-gradient(to left, alpha(black, 0.07), alpha(black, 0) 20px); }
-
-tabbar tab { margin: 4px 3px; border-style: none; border-radius: 6.0px; transition: background-color 150ms ease-in-out; background-image: -gtk-scaled(url("assets/tab-border-light.png"), url("assets/tab-border-light@2.png")); background-position: left; background-repeat: no-repeat; }
-
-tabbar tab:first-child { background-image: none; }
-
-tabbar .start-action, tabbar .end-action { background-color: @headerbar_bg_color; border-color: transparent; border-style: solid; transition: background-color 150ms ease-in-out; }
-
-tabbar .start-action:backdrop, tabbar .end-action:backdrop { border-color: transparent; background-color: @headerbar_backdrop_color; }
-
-tabbar .start-action button, tabbar .end-action button { border: none; border-radius: 0; }
-
-tabbar .start-action:dir(ltr), tabbar .end-action:dir(rtl) { border-right-width: 1px; }
-
-tabbar .start-action:dir(ltr) > *, tabbar .end-action:dir(rtl) > * { margin-right: 1px; }
-
-tabbar .start-action:dir(rtl), tabbar .end-action:dir(ltr) { border-left-width: 1px; }
-
-tabbar .start-action:dir(rtl) > *, tabbar .end-action:dir(ltr) > * { margin-left: 1px; }
-
-.tab-drag-icon tab { min-height: 26px; background-color: mix(currentColor,@window_bg_color,0.923); box-shadow: 0 3px 9px 1px alpha(black, 0.25), 0 0 0 1px alpha(black, 0.23), inset 0 1px alpha(white,0.5); margin: 25px; }
-
-tabbar tab, .tab-drag-icon tab { padding: 6px; }
-
-tabbar tab.needs-attention, .tab-drag-icon tab.needs-attention { background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.8), alpha(@accent_bg_color,0.2) 15%, alpha(@accent_bg_color,0) 15%); }
-
-tabbar tab .tab-close-button, tabbar tab .tab-indicator, .tab-drag-icon tab .tab-close-button, .tab-drag-icon tab .tab-indicator { padding: 0; margin: 0; min-width: 24px; min-height: 24px; border-radius: 99px; border: none; box-shadow: none; -gtk-icon-shadow: none; text-shadow: none; background: none; }
-
-tabbar tab .tab-close-button:hover, tabbar tab .tab-indicator.clickable:hover, .tab-drag-icon tab .tab-close-button:hover, .tab-drag-icon tab .tab-indicator.clickable:hover { background: alpha(@window_fg_color, 0.15); }
-
-tabbar tab .tab-close-button:active, tabbar tab .tab-indicator.clickable:active, .tab-drag-icon tab .tab-close-button:active, .tab-drag-icon tab .tab-indicator.clickable:active { background: alpha(black, 0.2); }
 
 flap > dimming, deck > dimming, leaflet > dimming { background: alpha(black, 0.12); }
 

@@ -835,6 +835,16 @@ levelbar > trough > block.full { background-color: @success_bg_color; }
 
 listview, list { color: @view_fg_color; background-color: @view_bg_color; background-clip: padding-box; border-color: @transparent_border; }
 
+.sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
+  box-shadow: none;
+  border-right: 1px solid @transparent_border;
+}
+
+.sidebar-pane:dir(rtl), .sidebar-pane:dir(rtl) banner > revealer > widget, .sidebar-pane.end:dir(ltr), .sidebar-pane.end:dir(ltr) banner > revealer > widget {
+  box-shadow: none;
+  border-left: 1px solid @transparent_border;
+}
+
 listview > row, list > row { padding: 2px; background-clip: padding-box; }
 
 listview > row.expander, list > row.expander { padding: 0px; }
@@ -1155,111 +1165,25 @@ flap > shadow.down, leaflet > shadow.down, navigation-view > shadow.down, overla
 
 /* Tabs */
 
-tabbar .box { background-color: @headerbar_bg_color; color: @headerbar_fg_color; box-shadow: inset 0 -1px @headerbar_shade_color; padding: 1px; padding-top: 0; }
-
-tabbar .box:backdrop { background-color: @headerbar_backdrop_color; transition: background-color 200ms ease-out; }
-
-tabbar .box:backdrop > scrolledwindow, tabbar .box:backdrop > .start-action, tabbar .box:backdrop > .end-action { filter: opacity(0.5); transition: filter 200ms ease-out; }
-
-tabbar tabbox { padding-bottom: 6px; padding-top: 6px; min-height: 34px; }
-
-tabbar tabbox > tabboxchild { border-radius: 6.0px; }
-
-tabbar tabbox > tabboxchild { outline: 0 solid transparent; outline-offset: 4px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-tabbar tabbox > tabboxchild:focus-within:focus-visible { outline-color: @focus_highlight; outline-width: 2px; outline-offset: -2px; }
-
-tabbar tabbox > separator { margin-top: 3px; margin-bottom: 3px; transition: opacity 150ms ease-in-out; }
-
-tabbar tabbox > separator.hidden { opacity: 1; }
-
-tabbar tabbox > revealer > indicator { min-width: 2px; border-radius: 2px; margin: 3px 6px; background: alpha(@accent_bg_color,0.5); }
-
-tabbar tab { transition: background 150ms ease-in-out; font-weight: bold; }
-
-tabbar tabbox.single-tab tab, tabbar tabbox.single-tab tab:hover, tabbar tabbox.single-tab tab:active { background: none; }
-
-tabbar .start-action, tabbar .end-action { padding: 6px 5px; }
-
-tabbar .start-action:dir(ltr), tabbar .end-action:dir(rtl) { padding-right: 0; }
-
-tabbar .start-action:dir(rtl), tabbar .end-action:dir(ltr) { padding-left: 0; }
-
-toolbarview > .top-bar tabbar .box, toolbarview > .bottom-bar tabbar .box, tabbar.inline .box { background-color: transparent; color: inherit; box-shadow: none; padding-bottom: 0; }
-
-toolbarview > .top-bar tabbar .box:backdrop, toolbarview > .bottom-bar tabbar .box:backdrop, tabbar.inline .box:backdrop { background-color: transparent; transition: none; }
-
-toolbarview > .top-bar tabbar .box:backdrop > scrolledwindow, toolbarview > .bottom-bar tabbar .box:backdrop > scrolledwindow, tabbar.inline .box:backdrop > scrolledwindow, toolbarview > .top-bar tabbar .box:backdrop > .start-action, toolbarview > .bottom-bar tabbar .box:backdrop > .start-action, tabbar.inline .box:backdrop > .start-action, toolbarview > .top-bar tabbar .box:backdrop > .end-action, toolbarview > .bottom-bar tabbar .box:backdrop > .end-action, tabbar.inline .box:backdrop > .end-action { filter: none; transition: none; }
-
-toolbarview > .top-bar .collapse-spacing tabbar tabbox, toolbarview > .bottom-bar .collapse-spacing tabbar tabbox, toolbarview > .top-bar .collapse-spacing tabbar .start-action, toolbarview > .bottom-bar .collapse-spacing tabbar .start-action, toolbarview > .top-bar .collapse-spacing tabbar .end-action, toolbarview > .bottom-bar .collapse-spacing tabbar .end-action { padding-top: 3px; padding-bottom: 3px; }
-
-dnd tab { background-color: @headerbar_bg_color; background-image: image(alpha(currentColor,0.19)); color: @headerbar_fg_color; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 3px 1px rgba(0, 0, 0, 0.07), 0 2px 6px 2px rgba(0, 0, 0, 0.03); margin: 25px; }
-
-tabbar tab, dnd tab { min-height: 26px; padding: 4px; border-radius: 9999px; }
-
-tabbar tab button.image-button, dnd tab button.image-button { padding: 0; margin: 0; min-width: 24px; min-height: 24px; border-radius: 99px; }
-
-tabbar tab indicator, dnd tab indicator { min-height: 2px; border-radius: 2px; background: alpha(@accent_bg_color,0.5); transform: translateY(4px); }
-
-tabgrid > tabgridchild .card { outline: 0 solid transparent; outline-offset: 4px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-tabgrid > tabgridchild:focus:focus-visible .card { outline-color: @focus_highlight; outline-width: 2px; outline-offset: 0; }
-
-tabthumbnail { border-radius: 16px; transition: box-shadow 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-tabthumbnail > box { margin: 6px; }
-
-tabthumbnail:drop(active) { box-shadow: inset 0 0 0 2px alpha(@accent_bg_color,0.4); background-color: alpha(@accent_bg_color,0.1); }
+tabbar tab indicator, dnd tab indicator { transform: translateY(4px); }
 
 tabthumbnail .needs-attention:dir(ltr) { transform: translate(8px, -8px); }
 
 tabthumbnail .needs-attention:dir(rtl) { transform: translate(-8px, -8px); }
 
-tabthumbnail .needs-attention > widget { background: @accent_color; min-width: 12px; min-height: 12px; border-radius: 8px; margin: 3px; box-shadow: 0 1px 2px alpha(@accent_color,0.4); }
-
-tabthumbnail .card { background: none; color: inherit; }
-
-tabthumbnail .card picture { outline: 1px solid rgba(255, 255, 255, 0.07); outline-offset: -1px; border-radius: 6.0px; }
-
-tabthumbnail.pinned .card { background-color: @thumbnail_bg_color; color: @thumbnail_fg_color; }
-
 tabthumbnail .icon-title-box { border-spacing: 6px; }
 
-tabthumbnail .tab-unpin-icon { margin: 6px; min-width: 24px; min-height: 24px; }
-
-tabthumbnail button.circular { margin: 6px; background-color: alpha(@thumbnail_bg_color,0.75); min-width: 24px; min-height: 24px; }
-
-tabthumbnail button.circular:hover { background-color: alpha(mix(@thumbnail_bg_color,currentColor,0.1),0.75); }
-
-tabthumbnail button.circular:active { background-color: alpha(mix(@thumbnail_bg_color,currentColor,0.2),0.75); }
-
-taboverview > .overview .new-tab-button { margin: 18px; }
-
-tabview:drop(active), tabbox:drop(active), tabgrid:drop(active) { box-shadow: none; }
+tabthumbnail .card picture { outline: 1px solid rgba(255, 255, 255, 0.07); outline-offset: -1px; border-radius: 6.0px; }
 
 notebook > header > tabs > tab:checked { outline: 0 solid transparent; outline-offset: 4px; transition: outline-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-width 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), outline-offset 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 notebook:focus:focus-visible > header > tabs > tab:checked { outline-color: @focus_highlight; outline-width: 2px; outline-offset: -2px; }
 
-notebook > header { padding: 4px; border-color: @transparent_border; border-width: 1px; background-clip: padding-box; }
-
-notebook > header.top { border-bottom-style: solid; }
-
-notebook > header.bottom { border-top-style: solid; }
-
-notebook > header.left { border-right-style: solid; }
-
-notebook > header.right { border-left-style: solid; }
-
 notebook > header.top > tabs > arrow { border-top-style: none; }
 
 notebook > header.bottom > tabs > arrow { border-bottom-style: none; }
 
-notebook > header.top > tabs > arrow, notebook > header.bottom > tabs > arrow { margin-left: -5px; margin-right: -5px; padding-left: 4px; padding-right: 4px; }
-
-notebook > header.top > tabs > arrow.down, notebook > header.bottom > tabs > arrow.down { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
-
-notebook > header.top > tabs > arrow.up, notebook > header.bottom > tabs > arrow.up { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+notebook > header.top > tabs > arrow, notebook > header.bottom > tabs > arrow {  padding-left: 4px; padding-right: 4px; }
 
 notebook > header.left > tabs > arrow { border-left-style: none; }
 
@@ -1275,14 +1199,6 @@ notebook > header > tabs > arrow { min-height: 16px; min-width: 16px; border-rad
 
 notebook > header > tabs > arrow:hover:not(:active) { box-shadow: none; }
 
-notebook > header > tabs > tab {
-	min-height: 0px;
-	min-width: 0px;
-	padding: 8px 16px;
-	font-weight: bold;
-	border-radius: 9999px;
-	}
-
 notebook > header > tabs > tab:not(:checked) { outline-color: transparent; }
 
 notebook > header > tabs > tab:disabled { filter: opacity(0.5); }
@@ -1290,8 +1206,6 @@ notebook > header > tabs > tab:disabled { filter: opacity(0.5); }
 notebook > header > tabs > tab:disabled label, notebook > header > tabs > tab:disabled button { filter: none; }
 
 notebook > header > tabs > tab button.flat { border-radius: 9999px;}
-
-notebook > stack:not(:only-child) { background-color: @view_bg_color; }
 
 paned > separator { min-width: 1px; min-height: 1px; background: none; background-size: 1px 1px; }
 
@@ -1574,10 +1488,6 @@ window.shortcuts searchbar { background: none; }
 
 .sidebar-pane banner > revealer > widget:backdrop { background-color: mix(@accent_bg_color,@sidebar_backdrop_color,0.85); }
 
-.sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget { box-shadow: inset -1px 0 @border_color; }
-
-.sidebar-pane:dir(rtl), .sidebar-pane:dir(rtl) banner > revealer > widget, .sidebar-pane.end:dir(ltr), .sidebar-pane.end:dir(ltr) banner > revealer > widget { box-shadow: inset 1px 0 @border_color; }
-
 /* Middle pane in three-pane setups */
 .content-pane .sidebar-pane, .sidebar-pane .content-pane { background-color: @secondary_sidebar_bg_color; color: @secondary_sidebar_fg_color; }
 
@@ -1620,7 +1530,7 @@ stacksidebar row.needs-attention > label { background-size: 6px 6px, 0 0; }
 
 .navigation-sidebar > separator { margin: 2px 6px; }
 
-.navigation-sidebar > row { min-height: 32px; padding: 0; border-radius: 0px;}
+.navigation-sidebar > row { min-height: 32px; padding: 0 16px; border-radius: 0px;}
 
 @keyframes spin { to { transform: rotate(1turn); } }
 
@@ -1666,7 +1576,7 @@ actionbar > revealer > box.osd button:not(.raised):not(.suggested-action):not(.d
 
 actionbar > revealer > box menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.suggested-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.destructive-action > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) { color: inherit; background-color: transparent; }
 
-actionbar > revealer > box switch, searchbar > revealer > box switch, .toolbar switch, headerbar switch { margin-top: 4px; margin-bottom: 4px; }
+actionbar > revealer > box switch, searchbar > revealer > box switch, .toolbar switch { margin-top: 4px; margin-bottom: 4px; }
 
 .toolbar,.primary-toolbar { padding: 6px; border-spacing: 6px; border-bottom: 1px solid @transparent_border; }
 
@@ -1696,18 +1606,13 @@ toolbarview > .top-bar searchbar > revealer > box:backdrop > *, toolbarview > .b
 toolbarview > .top-bar .collapse-spacing searchbar > revealer > box, toolbarview > .bottom-bar .collapse-spacing searchbar > revealer > box, window.appchooser.csd searchbar > revealer > box, window.shortcuts searchbar > revealer > box { padding-top: 3px; padding-bottom: 3px; }
 
 /**************** GtkActionBar * */
-actionbar > revealer > box {box-shadow: inset 0 1px @headerbar_shade_color; padding: 7px 6px 6px 6px; }
+viewswitcherbar > actionbar > revealer > box { padding: 0px;}
+
+actionbar > revealer > box { padding: 6px; border-top: 1px solid @transparent_border; }
 
 actionbar > revealer > box, actionbar > revealer > box > box.start, actionbar > revealer > box > box.end { border-spacing: 6px; }
 
-
-toolbarview > .top-bar actionbar > revealer > box, toolbarview > .bottom-bar actionbar > revealer > box { background-color: transparent; color: inherit; box-shadow: none; padding-top: 6px; }
-
-toolbarview > .top-bar actionbar > revealer > box:backdrop, toolbarview > .bottom-bar actionbar > revealer > box:backdrop { background-color: transparent; transition: none; }
-
-toolbarview > .top-bar actionbar > revealer > box:backdrop > *, toolbarview > .bottom-bar actionbar > revealer > box:backdrop > * { filter: none; transition: none; }
-
-toolbarview > .top-bar .collapse-spacing actionbar > revealer > box, toolbarview > .bottom-bar .collapse-spacing actionbar > revealer > box { padding-top: 3px; padding-bottom: 3px; }
+viewswitcherbar actionbar button{min-height: 48px;}
 
 /************* AdwBanner * */
 banner > revealer > widget { background-color: alpha(currentcolor,0.2); color: mix(@accent_bg_color,@window_fg_color,0.2); padding: 6px; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.4); }
@@ -1772,9 +1677,9 @@ viewswitcher button.toggle > stack > box.wide { padding: 2px 12px; border-spacin
 headerbar viewswitcher {border-spacing: 0px;}
 
 /********************** AdwViewSwitcherBar * */
-viewswitcherbar actionbar > revealer > box { padding-left: 0; padding-right: 0; padding-top: 7px; }
+viewswitcherbar actionbar > revealer > box { padding-left: 0; padding-right: 0; }
 
-toolbarview > .top-bar .collapse-spacing viewswitcherbar actionbar > revealer > box, toolbarview > .bottom-bar .collapse-spacing viewswitcherbar actionbar > revealer > box { padding-top: 6px; }
+toolbarview > .top-bar .collapse-spacing viewswitcherbar actionbar > revealer > box, toolbarview > .bottom-bar .collapse-spacing viewswitcherbar actionbar > revealer > box { }
 
 actionbar viewswitcher button{border-radius: 0px;}
 
