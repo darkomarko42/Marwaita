@@ -181,8 +181,8 @@ messagedialog .dialog-action-area button,
 toolbar:not(.osd).inline-toolbar button,
 toolbar.inline-toolbar button.flat,
 toolbar:not(.osd).inline-toolbar button,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action),
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action),
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action),
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action),
 
 toolbarview > .top-bar headerbar popover menubutton.image-button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button,
 toolbarview > .top-bar headerbar menubutton.raised > button.image-text-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
@@ -333,8 +333,8 @@ combobox > .linked:not(.vertical) > button:not(:only-child):hover,
 searchbar > revealer > box .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .toolbar .linked button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 .primary-toolbar .linked button:hover.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):hover,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):hover,
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):hover,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):hover,
 .toolbar .linked button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque)
 {background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3); }
 
@@ -847,10 +847,10 @@ headerbar popover button.flat:not(.titlebutton):not(.suggested-action):not(.dest
 .primary-toolbar button:checked.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
 .primary-toolbar .linked button:active.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
 .primary-toolbar .linked button:checked.image-button:not(.suggested-action):not(.destructive-action):not(.opaque),
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):checked,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):active,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):checked
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):active,
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):checked,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):active,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none; }
 
 /* Disabled and Backdrop state */
@@ -1056,8 +1056,8 @@ toolbarview > .raised.bottom-bar headerbar entry:backdrop,
 .primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):disabled,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):disabled,
 .toolbar button:not(.suggested-action):not(.destructive-action):disabled,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):disabled,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):disabled
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):disabled,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):disabled
 {background-color: transparent; color: alpha(currentcolor,0.5);}
 
 /* Headerbar buttons */
@@ -1231,8 +1231,8 @@ toolbar:not(.osd).inline-toolbar button,
 dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
 dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled),
 .linked:not(.vertical) > menubutton > button,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action),
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action)
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action),
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action)
 { border-left-color: @transparent_border; border-right-color: @transparent_border; border-right-style: none; border-radius: 0; }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo,
@@ -1262,8 +1262,8 @@ toolbar:not(.osd).inline-toolbar button:first-child,
 dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):first-child,
 dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):first-child,
 .linked:not(.vertical) > menubutton:first-child > button,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):first-child,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):first-child
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):first-child,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):first-child
 { border-top-left-radius: 6.0px; border-bottom-left-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo,
@@ -1293,8 +1293,8 @@ toolbar:not(.osd).inline-toolbar button:last-child,
 dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):last-child,
 dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):last-child,
 .linked:not(.vertical) > menubutton:last-child > button,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):last-child,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):last-child
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):last-child,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):last-child
 { border-right-style: solid; border-top-right-radius: 6.0px; border-bottom-right-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:only-child > box > button.combo,
@@ -1319,8 +1319,8 @@ toolbar:not(.osd).inline-toolbar button:only-child,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):only-child,
 dialog headerbar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):only-child,
 dialog .titlebar .linked button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled):only-child,
-.horizontal .toolbar .linked button:not(.suggested-action):not(.destructive-action):only-child,
-.horizontal toolbar .linked button:not(.suggested-action):not(.destructive-action):only-child
+.horizontal .toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):only-child,
+.horizontal toolbar:not(.osd) .linked button:not(.suggested-action):not(.destructive-action):only-child
 { border-style: solid; border-radius: 6.0px; }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo:not(button):focus, combobox.linked button:not(button):focus:nth-child(2):dir(rtl), filechooser .path-bar.linked > button:not(button):focus:dir(rtl):last-child, filechooser .path-bar.linked > button:not(button):focus:dir(ltr):first-child, .xfce4-panel.background button menu .linked button:not(button):focus:first-child, .nautilus-window .titlebar :not(.raised) .linked > button:not(button):focus:first-child, headerbar .linked button:not(button):focus:first-child:not(:only-child), .titlebar .linked button:not(button):focus:first-child:not(:only-child), .linked:not(.vertical) > spinbutton:not(button):focus:first-child:not(.vertical), .linked:not(.vertical) > entry:not(button):focus:first-child, .inline-toolbar button:not(button):focus:first-child, .linked > button:not(button):focus:first-child, toolbar:not(.osd).inline-toolbar toolbutton:first-child > button.flat:not(button):focus { border-left-color: @focus_highlight; }
