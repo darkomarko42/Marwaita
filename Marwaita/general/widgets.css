@@ -893,8 +893,6 @@ stacksidebar row.needs-attention > label { background-size: 6px 6px, 0 0; }
 
 separator.sidebar,.sidebar separator,separator.sidebar.selection-mode, .selection-mode separator.sidebar { background-color:alpha(currentcolor,0.2); }
 
-row image.sidebar-icon { opacity: 0.7; }
-
 placessidebar > viewport.frame { border-style: none; }
 
 placessidebar row { min-height: 32px; padding: 0px; }
