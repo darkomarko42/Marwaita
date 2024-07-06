@@ -42,8 +42,6 @@ label { caret-color: currentColor; }
 
 label selection { background-color: @accent_bg_color; color: @accent_fg_color; }
 
-label:disabled { color: mix(@window_fg_color,@window_bg_color,0.5); }
-
 button label:disabled { color: inherit; }
 
 label.error { color: @error_bg_color; }
@@ -846,7 +844,7 @@ messagedialog .dialog-action-area{border-radius: 0 0 6.0px 6.0px;}
 messagedialog button,
 messagedialog .linked button,
 .budgie-session-dialog .linked button,
-.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 6.0px; -gtk-outline-radius: 6.0px; }
+.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 6.0px; -gtk-outline-radius: 6.0px; border: 1px solid @transparent_border; }
 
 messagedialog button:only-child,messagedialog .linked button:only-child {margin: 0px 6px;}
 

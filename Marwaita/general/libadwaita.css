@@ -264,7 +264,7 @@ checkbutton.text-button { padding: 4px; }
 
 checkbutton.selection-mode { border-radius: 100px; }
 
-checkbutton.selection-mode check, checkbutton.selection-mode radio { padding: 6px; border-radius: 100px; }
+checkbutton.selection-mode check, checkbutton.selection-mode radio { padding: 2px; border-radius: 100px; }
 
 checkbutton.selection-mode label:dir(ltr) { margin-right: 6px; }
 
@@ -701,7 +701,7 @@ headerbar:backdrop { background-color: @headerbar_backdrop_color; background-ima
 
 headerbar:backdrop > windowhandle { filter: opacity(0.5); transition: filter 200ms ease-out; }
 
-headerbar.default-decoration { border: none; }
+headerbar.default-decoration,.tweak-titlebar-left { border: none; }
 
 headerbar.default-decoration > windowhandle > box { padding: 6px; }
 
@@ -721,7 +721,7 @@ window > headerbar.titlebar.default-decoration > windowhandle > box, window > .t
 
 /* Headerbar flat */
 
-toolbarview > .top-bar headerbar, toolbarview > .bottom-bar headerbar, headerbar.flat, window.shortcuts headerbar.titlebar, window.print headerbar.titlebar, window.pagesetup headerbar.titlebar, window.aboutdialog headerbar.titlebar, window.colorchooser headerbar.titlebar, window.appchooser headerbar.titlebar { background: none; border: none; box-shadow: none; color: inherit; }
+toolbarview > .top-bar headerbar, toolbarview > .bottom-bar headerbar, headerbar.flat,.tweak-titlebar-right,.tweak-titlebar-right:backdrop { background: none; border: none; box-shadow: none; color: inherit; }
 
 toolbarview > .top-bar headerbar > windowhandle > box, toolbarview > .bottom-bar headerbar > windowhandle > box, headerbar.flat > windowhandle > box, window.shortcuts headerbar.titlebar > windowhandle > box, window.print headerbar.titlebar > windowhandle > box, window.pagesetup headerbar.titlebar > windowhandle > box, window.aboutdialog headerbar.titlebar > windowhandle > box, window.colorchooser headerbar.titlebar > windowhandle > box, window.appchooser headerbar.titlebar > windowhandle > box { }
 
@@ -760,8 +760,6 @@ windowtitle { margin-top: -6px; margin-bottom: -6px; min-height: 12px; }
 window.devel headerbar > windowhandle { background-image: cross-fade(5% -gtk-recolor(url("assets/devel-symbolic.svg")), image(transparent)); background-repeat: repeat-x; }
 
 label { caret-color: currentColor; }
-
-label:disabled { filter: opacity(0.5); }
 
 .dim-label, scale > value, progressbar > text, row.expander image.expander-row-arrow, row.property > box.header > box.title > .title, row.expander.property box > list > row > box.header > box.title > .title, row label.subtitle, spinbutton > text > placeholder, entry > text > placeholder, headerbar .subtitle, windowtitle .subtitle, label.separator { opacity: 0.55; }
 
@@ -1040,13 +1038,13 @@ window.dialog.message.csd button:last-child { margin-left: 3px; }
 
 window.messagedialog.save-changes separator {border: none; background: none; }
 
-window.messagedialog .response-area separator {background: none;}
+.response-area separator{background: none;}
 
-window.messagedialog .response-area{ padding: 6px;}
+.response-area{ padding: 6px;}
 
-window.messagedialog .response-area button:first-child{margin-right: 3px;}
-window.messagedialog .response-area button:last-child{margin-left: 3px;}
-window.messagedialog .response-area button:not(:last-child):not(:first-child){margin-right: 3px; margin-left: 3px;}
+.response-area button:first-child{margin-right: 3px;}
+.response-area button:last-child{margin-left: 3px;}
+.response-area button:not(:last-child):not(:first-child){margin-right: 3px; margin-left: 3px;}
 
 window.messagedialog { background-color: @dialog_bg_color; color: @dialog_fg_color; }
 
@@ -1085,7 +1083,7 @@ windowcontrols:not(:only-child):not(.empty).start:dir(rtl), windowcontrols:not(:
 }
 
 /* App Notifications */
-.app-notification { padding: 6px; border-spacing: 10px; border-radius: 0 0 6.0px 6.0px; background-clip: padding-box; }
+.app-notification { padding: 0px; border-spacing: 10px; border-radius: 0 0 6.0px 6.0px; background-clip: padding-box; }
 
 .app-notification border { border: none; }
 
@@ -1286,7 +1284,7 @@ popover.menu list > row, popover.menu listview > row { border-radius: 6.0px; pad
 popover.menu list > row:selected, popover.menu listview > row:selected { background: none; }
 
 popover.menu list > row:active, popover.menu list > row:active:selected.activatable, popover.menu listview > row:active, popover.menu listview > row:active:selected.activatable,
-popover.menu list > row.has-open-popup, popover.menu list > row.has-open-popup:selected.activatable, popover.menu listview > row.has-open-popup, popover.menu listview > row.has-open-popup:selected.activatable,popover.menu listview.view row:hover { background: none; }
+popover.menu list > row.has-open-popup, popover.menu list > row.has-open-popup:selected.activatable, popover.menu listview > row.has-open-popup, popover.menu listview > row.has-open-popup:selected.activatable,popover.menu listview.view row:hover { }
 
 popover.menu list > row > box, popover.menu listview > row > box { border-spacing: 6px; }
 
@@ -1576,7 +1574,7 @@ actionbar > revealer > box menubutton.suggested-action > button:not(.raised):not
 
 actionbar > revealer > box switch, searchbar > revealer > box switch, .toolbar switch { margin-top: 4px; margin-bottom: 4px; }
 
-.toolbar,.primary-toolbar { padding: 6px; border-spacing: 6px; border-bottom: 1px solid @transparent_border; }
+.toolbar,.primary-toolbar { padding: 4px; border-spacing: 6px; border-bottom: 1px solid @transparent_border; }
 
 .toolbar.osd { padding: 12px; border-radius: 6.0px; }
 
@@ -1713,7 +1711,8 @@ indicatorbin.badge.needs-attention > indicator > label { color: @accent_fg_color
 
 /* Nautilus */
 
-.nautilus-window.view,.nautilus-window .view{background-color: @window_bg_color;}
+.nautilus-window.view,.nautilus-window .view{background-color: @view_bg_color;}
+.nautilus-window tabbox{background-color: @window_bg_color; box-shadow: inset 0 -1px @transparent_border;}
 
 #NautilusPathButton{border-color: transparent; transition: none;}
 
