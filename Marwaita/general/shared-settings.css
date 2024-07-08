@@ -232,7 +232,8 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 .titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
 .response-area button.flat:hover,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
-toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover
+toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:hover
 {background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3); }
 
 /* Flat Hover state*/
@@ -371,7 +372,9 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:active,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:active,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:checked,
-toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:checked
+toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:checked,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:active,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none; }
 
 /* Disabled and Backdrop state */
@@ -415,6 +418,7 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 .response-area button.flat:disabled,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:disabled,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:disabled,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:disabled,
 
 notebook > header > tabs > tab:backdrop,
 notebook > header > tabs > arrow:backdrop,
@@ -454,7 +458,8 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 .titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
 .response-area button.flat:backdrop,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
-toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop
+toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:backdrop
 {background-color: transparent; color: alpha(currentcolor,0.5);}
 
 /* Headerbar buttons */
@@ -502,7 +507,8 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 toolbarview > .top-bar:not(.raised) headerbar entry.location-entry,
 toolbarview > .bottom-bar:not(.raised) headerbar entry.location-entry,
 headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
-.titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button
+.titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button
 { color: @headerbar_fg_color; background-color: @button_headerbar_bg_color; border-color: @transparent_border; background-clip: padding-box; }
 
 /* Flat buttons */
