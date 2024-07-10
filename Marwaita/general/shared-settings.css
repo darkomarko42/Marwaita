@@ -190,7 +190,8 @@ toolbarview > .top-bar:not(.raised) headerbar viewswitcher button:not(.suggested
 toolbarview > .bottom-bar:not(.raised) headerbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
-.response-area button.flat
+.response-area button.flat,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button
 
 {
     color: currentcolor;
@@ -233,7 +234,8 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 .response-area button.flat:hover,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:hover
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:hover,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:hover
 {background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3); }
 
 /* Flat Hover state*/
@@ -374,7 +376,13 @@ toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destru
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:checked,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:checked,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:active,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:checked
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:checked,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:active,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:checked,
+.titlebar button:not(.suggested-action):not(.destructive-action):active,
+headerbar button:not(.suggested-action):not(.destructive-action):active,
+.titlebar button:not(.suggested-action):not(.destructive-action):checked,
+headerbar button:not(.suggested-action):not(.destructive-action):checked
 {background-image: image(alpha(currentcolor,0.15)); box-shadow: none; }
 
 /* Disabled and Backdrop state */
@@ -419,6 +427,7 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:disabled,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:disabled,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:disabled,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:disabled,
 
 notebook > header > tabs > tab:backdrop,
 notebook > header > tabs > arrow:backdrop,
@@ -459,7 +468,8 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 .response-area button.flat:backdrop,
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
-.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:backdrop
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:backdrop,
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:backdrop
 {background-color: transparent; color: alpha(currentcolor,0.5);}
 
 /* Headerbar buttons */
@@ -1109,6 +1119,8 @@ infobar label:disabled{color: alpha(currentcolor,0.5);}
 infobar .close { border-radius: 50%; }
 
 /* Toolbars */
+
+toolbar separator{background-color: alpha(currentcolor,0.2);}
 
 toolbar{
     border-style: solid;

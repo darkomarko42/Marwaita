@@ -596,7 +596,7 @@ expander-widget > box > title > expander { opacity: .7; }
 
 expander-widget > box > title:hover > expander, expander-widget > box > title:active > expander { opacity: 1; }
 
-placessidebar .navigation-sidebar > row { padding: 0; }
+placessidebar .navigation-sidebar > row { padding: 2px; }
 
 placessidebar .navigation-sidebar > row > revealer { padding: 0 14px; }
 
@@ -1526,7 +1526,7 @@ stacksidebar row.needs-attention > label { background-size: 6px 6px, 0 0; }
 
 .navigation-sidebar > separator { margin: 2px 6px; }
 
-.navigation-sidebar > row { min-height: 32px; padding: 0 16px; border-radius: 0px;}
+.navigation-sidebar > row { min-height: 32px; padding: 2px 14px; border-radius: 0px;}
 
 @keyframes spin { to { transform: rotate(1turn); } }
 

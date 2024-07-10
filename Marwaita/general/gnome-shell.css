@@ -126,7 +126,7 @@ StScrollBar StButton#vhandle,
 StScrollBar StButton#hhandle,
 .notification-button,
 .modal-dialog .modal-dialog-linked-button
-{background-color: #323437; }
+{background-color: #414346; /*Base background*/ }
 
 .icon-button.flat,
 .window-close
@@ -343,7 +343,8 @@ StEntry:selected,
 .quick-menu-toggle:checked,
 .keyboard-brightness-level .button:checked,
 .quick-menu-toggle .quick-toggle-arrow:checked,
-.calendar .calendar-day.calendar-today
+.calendar .calendar-day.calendar-today,
+.quick-toggle-menu .header .icon.active
 {background-color: rgba(15,110,227, 1);}
 
 .slider {
