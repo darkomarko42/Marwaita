@@ -25,7 +25,7 @@
 @define-color shade_color @border_color;
 @define-color sidebar_shade_color @shade_color;
 
-@define-color button_bg_color @view_bg_color;
+@define-color button_bg_color alpha(currentcolor,0.1);
 
 @define-color destructive_color #e3220f;
 @define-color success_color #2a8941;
@@ -116,9 +116,9 @@ dialog buttonbox.horizontal{ padding: 6px;}
 
 entry,spinbutton:not(.vertical)
 {
-  background-clip: padding-box;
-  color: currentcolor;
-	border: 1px solid @transparent_border;
+    background-clip: border-box;
+    color: currentcolor;
+	border: 1px solid transparent;
 	background-color: @button_bg_color;
 	border-radius: 6.0px;
 }
@@ -127,9 +127,9 @@ spinbutton.vertical entry { border-radius: 0; border-width: 0 1px 0 1px ; }
 
 spinbutton.vertical button { }
 
-spinbutton.vertical button.up { border-color: @transparent_border; border-radius: 6.0px 6.0px 0 0;  }
+spinbutton.vertical button.up { border-radius: 6.0px 6.0px 0 0;  }
 
-spinbutton.vertical button.down { border-color: @transparent_border; border-radius: 0 0 6.0px 6.0px; }
+spinbutton.vertical button.down { border-radius: 0 0 6.0px 6.0px; }
 
 spinbutton.horizontal button{background-clip: padding-box; background-color: alpha(currentcolor,0.1); padding: 0px; min-width: 24px; min-height: 24px; margin: 4px; border: none;}
 
@@ -195,11 +195,11 @@ toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destru
 
 {
     color: currentcolor;
-    background-clip: padding-box;
+    background-clip: border-box;
 	font-weight: bold;	
 	border-radius: 6.0px;	
 	border: 1px solid;
-	border-color: @transparent_border;
+	border-color: transparent;
 	background-color: @button_bg_color;
 	}
 	
@@ -236,7 +236,7 @@ toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:hover,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:hover,
 .nautilus-window headerbar entry.search menubutton.circular.popup popover button:hover
-{background-image: none; box-shadow: inset 0 0 0 1px alpha(currentcolor,0.3); }
+,
 
 /* Flat Hover state*/
 
@@ -428,6 +428,7 @@ toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:disabled,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:disabled,
 .nautilus-window headerbar entry.search menubutton.circular.popup popover button:disabled,
+spinbutton:not(.vertical):disabled,
 
 notebook > header > tabs > tab:backdrop,
 notebook > header > tabs > arrow:backdrop,
@@ -469,8 +470,9 @@ headerbar button:not(.suggested-action):not(.destructive-action):not(.text-butto
 toolbarview > .top-bar:not(.raised) headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
 toolbarview > .bottom-bar:not(.raised) button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button:backdrop,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button:backdrop,
-.nautilus-window headerbar entry.search menubutton.circular.popup popover button:backdrop
-{background-color: transparent; color: alpha(currentcolor,0.5);}
+.nautilus-window headerbar entry.search menubutton.circular.popup popover button:backdrop,
+spinbutton:not(.vertical):backdrop
+{ color: alpha(currentcolor,0.5);}
 
 /* Headerbar buttons */
 
@@ -479,7 +481,7 @@ headerbar button.titlebutton:not(.suggested-action):not(.destructive-action),
 windowcontrols > button:not(.titlebutton):not(.suggested-action):not(.destructive-action):not(.text-button),
 .titlebar windowcontrols > button:not(.titlebutton):not(.suggested-action):not(.destructive-action):not(.text-button),
 headerbar windowcontrols > button:not(.titlebutton):not(.suggested-action):not(.destructive-action):not(.text-button)
-{border-radius: 9999px; background-color: transparent; box-shadow: none; border: 1px solid transparent;}
+{background-color: transparent; box-shadow: none; border: 1px solid transparent;}
 
 headerbar button:hover.titlebutton:not(.suggested-action):not(.destructive-action),
 .titlebar button:hover.titlebutton:not(.suggested-action):not(.destructive-action),
@@ -519,7 +521,7 @@ toolbarview > .bottom-bar:not(.raised) headerbar entry.location-entry,
 headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
 .titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button
-{ color: @headerbar_fg_color; background-color: @button_headerbar_bg_color; border-color: @transparent_border; background-clip: padding-box; }
+{ color: @headerbar_fg_color; background-color: @button_headerbar_bg_color; border-color: transparent; background-clip: border-box; }
 
 /* Flat buttons */
 
@@ -565,7 +567,7 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 .linked .page-menu-zoom-box button.image-button,
 toolbarview > .top-bar:not(.raised) headerbar .linked button:not(.suggested-action):not(.destructive-action),
 toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action)
-{ border-left-color: @transparent_border; border-right-color: @transparent_border; border-right-style: none; border-radius: 0; }
+{ border-left-color: transparent; border-right-color: transparent; border-right-style: none; border-radius: 0; }
 
 .linked:not(.vertical) > menubutton:first-child > button,
 .linked button:first-child,
@@ -619,7 +621,7 @@ toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo:not(button):focus, combobox.linked button:not(button):focus:nth-child(2):dir(ltr), filechooser .path-bar.linked > button:not(button):focus:dir(rtl):first-child, filechooser .path-bar.linked > button:not(button):focus:dir(ltr):last-child, .xfce4-panel.background button menu .linked button:not(button):focus:last-child, .nautilus-window .titlebar :not(.raised) .linked > button:not(button):focus:last-child, headerbar .linked button:not(button):focus:last-child:not(:only-child), .titlebar .linked button:not(button):focus:last-child:not(:only-child), .linked:not(.vertical) > spinbutton:not(button):focus:last-child:not(.vertical), .linked:not(.vertical) > entry:not(button):focus:last-child, .inline-toolbar button:not(button):focus:last-child, .linked > button:not(button):focus:last-child, toolbar:not(.osd).inline-toolbar toolbutton:last-child > button.flat:not(button):focus { border-right-color: @focus_highlight; }
 
-.linked.vertical > combobox > box > button.combo, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button { border-top-color: @transparent_border; border-bottom-color: @transparent_border; border-style: solid solid none solid; border-radius: 0; }
+.linked.vertical > combobox > box > button.combo, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button { border-top-color: transparent; border-bottom-color: transparent; border-style: solid solid none solid; border-radius: 0; }
 
 .linked.vertical > combobox:first-child > box > button.combo, .linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child { border-top-left-radius: 6.0px; border-top-right-radius: 6.0px; }
 
@@ -682,7 +684,7 @@ popover.menu listview > row:hover:selected.activatable,
 .budgie-popover list .menuitem:hover
 { background-color: alpha(currentColor,0.1); background-image: none; }
 
-headerbar popover button:not(.suggested-action):not(.destructive-action){border-color: @transparent_border;}
+headerbar popover button:not(.suggested-action):not(.destructive-action){border-color: transparent;}
 
 /* Tooltips */
 
@@ -724,17 +726,18 @@ notebook > header > tabs > tab {
 	min-width: 0px;
 	padding: 6px 12px;
 	font-weight: bold;
-	border-radius: 0px;
+	border-radius: 9999px;
+    margin: 6px;
     border: 1px solid transparent;
 	}
 
-notebook > header.top { border-bottom-style: solid; padding: 0 4px; }
+notebook > header.top,
 
-notebook > header.bottom { border-top-style: solid; padding: 0 4px; }
+notebook > header.bottom,
 
-notebook > header.left { border-right-style: solid; padding: 4px 0; }
+notebook > header.left,
 
-notebook > header.right { border-left-style: solid; padding: 4px 0; }
+notebook > header.right { }
 
 notebook > header tab:checked,notebook > header > tabs > tab:checked,tabbar tab:selected, tabbar tab:selected + tab{}
 
@@ -742,13 +745,13 @@ notebook > header > tabs > tab:checked,
 tabbar tab:checked,
 tabbar tab:selected,
 tabbar tab:selected + tab
-{background-color: @view_bg_color; border-color: @transparent_border; background-image: none; color: @window_fg_color;}
+{background-color: alpha(@accent_bg_color,0.2); border-color: transparent; background-image: none; color: @window_fg_color;}
 
 notebook:not(.frame) > header.top,
 notebook:not(.frame) > header.bottom,
 notebook:not(.frame) > header.left,
 notebook:not(.frame) > header.right
-{margin:0;}
+{margin: 0;}
 
 notebook > header.top > tabs > tab{border-bottom: none;}
 notebook > header.bottom > tabs > tab{border-top: none;}
@@ -1057,7 +1060,7 @@ treeview.view.trough {border: 1px solid currentcolor; padding: 2px;}
 
 progressbar trough, scale fill, scale trough { padding: 0px;}
 
-progressbar trough, scale fill, scale trough, levelbar block.empty,scale > trough > fill, scale > trough, progressbar > trough,levelbar > trough > block.empty { border-radius: 9999px; background-color: alpha(currentcolor,0.2);}
+progressbar trough, scale fill, scale trough, levelbar block.empty,scale > trough > fill, scale > trough, progressbar > trough,levelbar > trough > block.empty { border-radius: 9999px; background-color: alpha(@accent_bg_color,0.3);}
 
 progressbar progress, scale highlight,scale > trough > highlight, progressbar > trough > progress { border-radius: 9999px; background-color: @accent_bg_color; color: @accent_fg_color; }
 

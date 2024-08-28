@@ -21,13 +21,13 @@
 @define-color error_fg_color white;
 @define-color error_color @destructive_bg_color;
 
-@define-color window_bg_color mix(#f2f2f2,@accent_bg_color,0.05);
-@define-color window_fg_color mix(@accent_bg_color,black,0.8);
+@define-color window_bg_color mix(#f1f1f1,@accent_bg_color,0.07);
+@define-color window_fg_color mix(@accent_bg_color,black,0.6);
 @define-color view_bg_color mix(@window_bg_color,white,0.5);
 @define-color view_fg_color @window_fg_color;
 
-@define-color border_color mix(@window_bg_color,black,0.15);
-@define-color transparent_border alpha(black,0.15);
+@define-color border_color @transparent_border;
+@define-color transparent_border alpha(currentcolor,0.1);
 
 @define-color scrollbar_outline_color white;
 @define-color incognito_bg_color #d7e3f0;

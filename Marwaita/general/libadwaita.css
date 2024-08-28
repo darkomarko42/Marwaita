@@ -1269,7 +1269,7 @@ popover.menu modelbutton arrow { background: none; min-width: 16px; min-height: 
 
 popover.menu modelbutton arrow:hover { background: none; }
 
-popover.menu modelbutton arrow:disabled { filter: opacity(0.5); }
+popover.menu modelbutton arrow:disabled,popover.menu modelbutton:disabled { filter: opacity(0.5); }
 
 popover.menu modelbutton arrow.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
 
@@ -1526,7 +1526,7 @@ stacksidebar row.needs-attention > label { background-size: 6px 6px, 0 0; }
 
 .navigation-sidebar > separator { margin: 2px 6px; }
 
-.navigation-sidebar > row { min-height: 32px; padding: 2px 14px; border-radius: 0px;}
+.navigation-sidebar > row { min-height: 32px; padding: 2px 12px; border-radius: 9999px; margin: 2px 4px;}
 
 @keyframes spin { to { transform: rotate(1turn); } }
 

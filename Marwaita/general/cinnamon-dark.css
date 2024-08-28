@@ -192,11 +192,11 @@ StButton.popup-menu-item,
 StButton:checked.radiobutton
 {background-color: transparent; border-color: transparent; box-shadow: none;}
 
+#panel,
 .grouped-window-list-badge,
 .sound-player-overlay
-{background-color: rgba(0,0,0, 0.7);}
+{background-color: rgba(46,49,53, 0.7);}
 
-#panel,
 #notification,
 .menu #notification,
 .menu,
@@ -211,7 +211,7 @@ StButton:checked.radiobutton
 .window-list-preview,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu
-{background-color: #414346; /*use base color*/}
+{background-color: rgba(46,49,53, 1.0); /*use base color*/}
 
 StEntry,
 StButton,
@@ -317,7 +317,7 @@ StButton:checked,
 
 #notification,
 .menu #notification
-{box-shadow: 0 0 0 1px rgba(255,255,255, 0.2);}
+{box-shadow: 0 0 0 1px rgba(255,255,255, 0.1);}
 
 .expo-background{border: none;}
 
@@ -369,10 +369,10 @@ StEntry,
 .panel-left,
 .panel-right,
 .window-list-item-box
-{border-color: rgba(255,255,255, 0.2);}
+{border-color: rgba(255,255,255, 0.1);}
 
 .popup-separator-menu-item,
-.calendar-events-main-box .separator{background-color: rgba(255,255,255, 0.2);}
+.calendar-events-main-box .separator{background-color: rgba(255,255,255, 0.1);}
 
 #Tooltip,
 .window-caption{border-color: rgba(255,/**/255,255, 0.2);}
@@ -521,7 +521,7 @@ StEntry.expo-workspaces-name-entry {
 .check-box:focus:checked StBin{ background-image: url("../general/assets/dark-checkbox-on.svg"); }
 
 .check-box:checked,.check-box:focus:checked
-{background-color: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0); box-shadow: none; }
+{background-color: rgba(255,255,255,0.0); border-color: rgba(255,255,255,0); box-shadow: none; }
 
 .check-box StLabel {  font-weight: normal; }
 

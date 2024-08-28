@@ -178,6 +178,8 @@ notebook > header > tabs > arrow, button,.inline-toolbar toolbutton > button
     outline-color: @focus_highlight;
     }
 
+notebook > header > tabs > tab{-gtk-outline-radius: 9999px;}
+
 popover.background button.flat:not(:hover):not(:active) { border-color: transparent; background-color: transparent; background-image: none; box-shadow: inset 0 1px rgba(255, 255, 255, 0); text-shadow: none; -gtk-icon-shadow: none; }
 
 notebook > header > tabs > arrow:disabled:active, notebook > header > tabs > arrow:disabled:checked, button:disabled:active, button:disabled:checked,.inline-toolbar toolbutton > button:disabled:active, .inline-toolbar toolbutton > button:disabled:checked 
@@ -587,8 +589,6 @@ row:selected check, row:selected radio { border-color: mix(black,@accent_bg_colo
 
 /* Sliders */
 
-progressbar trough:disabled, scale fill:disabled, scale trough:disabled { background-color: alpha(@window_fg_color,0.1); }
-
 progressbar progress:disabled, scale highlight:disabled { background-color: mix(@accent_bg_color,@view_bg_color,0.5); border-color: transparent; }
 
 scale { min-height: 10px; min-width: 10px; padding: 8px; }
@@ -725,13 +725,13 @@ headerbar .left, .titlebar .left { }
 
 list { color: @view_fg_color; background-color: @view_bg_color; border-color: @card_shade_color; }
 
-list row { padding: 2px; outline-color: @focus_highlight; outline-style: solid; outline-offset: -3px; outline-width: 2px; -gtk-outline-radius: 6.0px; }
+list row { padding: 2px; outline-color: @focus_highlight; outline-style: solid; outline-offset: -3px; outline-width: 2px; -gtk-outline-radius: 9999px; }
 
 row:backdrop { transition: 200ms ease-out; }
 
 scrolledwindow list:not(.content) { padding: 0; }
 
-scrolledwindow list row { border-radius: 0px; }
+scrolledwindow list row { border-radius: 0px; -gtk-outline-radius: 0px; }
 
 scrolledwindow list separator.horizontal,.sidebar separator { margin: 2px 0px; }
 
@@ -842,7 +842,7 @@ messagedialog .dialog-action-area{border-radius: 0 0 6.0px 6.0px;}
 messagedialog button,
 messagedialog .linked button,
 .budgie-session-dialog .linked button,
-.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 6.0px; -gtk-outline-radius: 6.0px; border: 1px solid @transparent_border; }
+.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 6.0px; -gtk-outline-radius: 6.0px; }
 
 messagedialog button:only-child,messagedialog .linked button:only-child {margin: 0px 6px;}
 
@@ -879,7 +879,7 @@ stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:no
 
 paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar { border-style: none; }
 
-.sidebar row { border-radius: 0px; }
+.sidebar row { border-radius: 9999px; margin: 2px 4px; }
 
 stacksidebar row { padding: 10px 4px; }
 
@@ -1796,7 +1796,7 @@ window#whiskermenu-window button { transition: none; }
 
 #dialog-action_area3 { margin: 5px; }
 
-window.background.chromium { background-color: mix(@window_bg_color,@window_fg_color,0.15); }
+window.background.chromium { background-color: @window_bg_color; }
 
 window.background.chromium entry, window.background.chromium > button { border-color: mix(currentColor,@window_bg_color,0.73); background-color: mix(currentColor,@window_bg_color,0.8); }
 
