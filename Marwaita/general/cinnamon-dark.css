@@ -195,7 +195,7 @@ StButton:checked.radiobutton
 #panel,
 .grouped-window-list-badge,
 .sound-player-overlay
-{background-color: rgba(46,49,53, 0.7);}
+{background-color: rgba(51,54,56, 0.8);}
 
 #notification,
 .menu #notification,
@@ -211,7 +211,7 @@ StButton:checked.radiobutton
 .window-list-preview,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu
-{background-color: rgba(46,49,53, 1.0); /*use base color*/}
+{background-color: rgba(51,54,56, 1.0); /*use base color*/}
 
 StEntry,
 StButton,
@@ -411,7 +411,7 @@ StButton,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu,
 .window-list-item-box
-{border-radius: 6px;}
+{border-radius: 8px;}
 
 StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-color: transparent; background-clip: border-box;}
 

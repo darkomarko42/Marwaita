@@ -107,8 +107,20 @@
      y="4"
      rx="12"
      ry="12" />
-  <path
-     id="rect844"
-     style="fill:#ffffff;fill-opacity:1;stroke-width:1.04521;opacity:1;stroke:none;stroke-opacity:1"
-     d="M 10.526316,8 8.0000001,10.526316 13.473684,16 8.0000001,21.473684 10.526316,24 16,18.526316 21.473684,24 24,21.473684 18.526316,16 24,10.526316 21.473684,8 16,13.473684 Z" />
+  <rect
+     style="fill:#ffffff;stroke-width:0.28929"
+     id="rect2"
+     width="2"
+     height="16"
+     x="21.627417"
+     y="-8"
+     transform="rotate(45)" />
+  <rect
+     style="fill:#ffffff;stroke-width:0.28929"
+     id="rect2-3"
+     width="2"
+     height="16"
+     x="-0.99999994"
+     y="-30.627417"
+     transform="rotate(135)" />
 </svg>
