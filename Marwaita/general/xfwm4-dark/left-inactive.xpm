@@ -2,7 +2,7 @@
 static char *left_inactive[] = {
 /* columns rows colors chars-per-pixel */
 "3 24 1 1 ",
-"  c #34393F",
+"  c #333638",
 /* pixels */
 "   ",
 "   ",

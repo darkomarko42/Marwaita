@@ -3,7 +3,7 @@ static char *bottom_right_inactive[] = {
 /* columns rows colors chars-per-pixel */
 "24 24 2 1 ",
 "  c None",
-". c #CCD5E1",
+". c #F7F9FC",
 /* pixels */
 "                     ...",
 "                     ...",
