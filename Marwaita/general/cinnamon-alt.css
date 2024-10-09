@@ -192,13 +192,12 @@ StButton.popup-menu-item,
 StButton:checked.radiobutton
 {background-color: transparent; border-color: transparent; box-shadow: none;}
 
-#panel,
 .grouped-window-list-badge,
 .sound-player-overlay
-{background-color: rgba(23,100,195, 0.8);}
+{background-color: rgba(0,0,0, 0.8);}
 
+#panel,
 #notification,
-.menu #notification,
 .menu,
 
 .popup-combo-menu,
@@ -211,7 +210,9 @@ StButton:checked.radiobutton
 .window-list-preview,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu
-{background-color: rgba(23,100,195, 1.0); /*use base color*/}
+{background-color: #1764c3; /*use base color*/}
+
+.menu #notification,
 
 StEntry,
 StButton,
@@ -261,8 +262,6 @@ StButton:hover,
 .applet-cornerbar-box:hover > .applet-cornerbar,
 .window-list-item-box:focus,
 .window-list-item-box:active:focus,
-.grouped-window-list-item-box:focus,
-.grouped-window-list-item-box:active:focus,
 .calendar-event-button:active,
 .calendar-event-button:checked,
 .applet-box:active,
@@ -296,13 +295,15 @@ StButton:checked,
 
 .grouped-window-list-item-box:active { background-color: rgba(0,0/**/,0, 0.01);}
 
-.panel-bottom .grouped-window-list-item-box:active{ box-shadow: inset 0 -3px #dcdcdc;}
+.panel-bottom .grouped-window-list-item-box:active:focus{ box-shadow: inset 0 -4px rgba(255,255,255, 1);}
+.panel-top .grouped-window-list-item-box:active:focus{ box-shadow: inset 0 4px rgba(255,255,255, 1);}
+.panel-right .grouped-window-list-item-box:active:focus{ box-shadow: inset -4px 0 rgba(255,255,255, 1);}
+.panel-left .grouped-window-list-item-box:active:focus{ box-shadow: inset 4px 0 rgba(255,255,255, 1);}
 
-.panel-top .grouped-window-list-item-box:active{ box-shadow: inset 0 3px #dcdcdc;}
-
-.panel-right .grouped-window-list-item-box:active{ box-shadow: inset -3px 0 #dcdcdc;}
-
-.panel-left .grouped-window-list-item-box:active{ box-shadow: inset 3px 0 #dcdcdc;}
+.panel-bottom .grouped-window-list-item-box:active{ box-shadow: inset 0 -4px rgba(255,255,255, 0.5);}
+.panel-top .grouped-window-list-item-box:active{ box-shadow: inset 0 4px rgba(255,255,255, 0.5);}
+.panel-right .grouped-window-list-item-box:active{ box-shadow: inset -4px 0 rgba(255,255,255, 0.5);}
+.panel-left .grouped-window-list-item-box:active{ box-shadow: inset 4px 0 rgba(255,255,255, 0.5);}
 
 .progress{background-color: rgba(51,185,84,0.5);}
 

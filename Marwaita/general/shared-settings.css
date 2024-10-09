@@ -25,7 +25,7 @@
 @define-color shade_color @border_color;
 @define-color sidebar_shade_color @shade_color;
 
-@define-color button_bg_color alpha(currentcolor,0.1);
+@define-color button_bg_color mix(alpha(currentcolor,0.1),transparent,0.01);/*put it like that else will bug ?¿ */
 
 @define-color destructive_color #e3220f;
 @define-color success_color #2a8941;
