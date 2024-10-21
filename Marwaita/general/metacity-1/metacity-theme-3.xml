@@ -503,25 +503,27 @@
 <!-- button backgrounds -->
 
 <draw_ops name="button_focused">
-</draw_ops>
-
-<draw_ops name="button_focused_prelight">
   <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.1" colorize="C_title_focused"/>
 </draw_ops>
 
-<draw_ops name="button_focused_pressed">
+<draw_ops name="button_focused_prelight">
   <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.15" colorize="C_title_focused"/>
 </draw_ops>
 
+<draw_ops name="button_focused_pressed">
+  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.2" colorize="C_title_focused"/>
+</draw_ops>
+
 <draw_ops name="button_unfocused">
+  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.1" colorize="C_title_focused"/>
 </draw_ops>
 
 <draw_ops name="button_unfocused_prelight">
-  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.0" colorize="C_title_unfocused"/>
+  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.15" colorize="C_title_focused"/>
 </draw_ops>
 
 <draw_ops name="button_unfocused_pressed">
-  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.0" colorize="C_title_unfocused"/>
+  <image filename="button.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.2" colorize="C_title_focused"/>
 </draw_ops>
 
 <!-- frame styles -->
@@ -739,10 +741,10 @@
   <piece position="titlebar" draw_ops="titlebar_unfocused"/>
 </frame_style>
 
-<frame_style name="dialog_focused" geometry="modal" parent="dialog_window_focused">
+<frame_style name="dialog_focused" geometry="nobuttons" parent="dialog_window_focused">
 </frame_style>
 
-<frame_style name="dialog_unfocused" geometry="modal" parent="dialog_window_unfocused">
+<frame_style name="dialog_unfocused" geometry="nobuttons" parent="dialog_window_unfocused">
 </frame_style>
 
 <frame_style name="modal_dialog_focused" geometry="nobuttons" parent="dialog_window_focused">

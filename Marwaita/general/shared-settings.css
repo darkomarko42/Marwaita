@@ -532,7 +532,7 @@ toolbarview > .bottom-bar:not(.raised) headerbar entry.location-entry,
 headerbar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
 .titlebar button:not(.suggested-action):not(.destructive-action):not(.text-button).image-text-button,
 .primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action).image-button
-{ color: @headerbar_fg_color; background-color: @button_headerbar_bg_color; border-color: transparent; background-clip: border-box; }
+{ color: @headerbar_fg_color; background-color: @button_headerbar_bg_color; background-clip: border-box; }
 
 /* Flat buttons */
 
@@ -560,7 +560,7 @@ toolbarview > .bottom-bar button:not(.suggested-action):not(.destructive-action)
 splitbutton.flat button,
 actionbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 calendar button
-{ background-clip: border-box; background-color: transparent; border-color: transparent; }
+{ background-clip: border-box; background-color: transparent;}
 
 /* Linked */
 
@@ -577,8 +577,10 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action),
 .toolbar:not(.primary-toolbar):not(.osd) .linked button:not(.suggested-action):not(.destructive-action),
 .linked .page-menu-zoom-box button.image-button,
 toolbarview > .top-bar:not(.raised) headerbar .linked button:not(.suggested-action):not(.destructive-action),
-toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action)
-{ border-left-color: transparent; border-right-color: transparent; border-right-style: none; border-radius: 0; }
+toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action),
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action),
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action)
+{ border-left-color: @transparent_border; border-right-color: @transparent_border; border-right-style: none; border-radius: 0; }
 
 .linked:not(.vertical) > menubutton:first-child > button,
 .linked button:first-child,
@@ -593,8 +595,10 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):fi
 .toolbar:not(.primary-toolbar):not(.osd) .linked button:not(.suggested-action):not(.destructive-action):first-child,
 .linked .page-menu-zoom-box button.image-button:first-child,
 toolbarview > .top-bar:not(.raised) headerbar .linked button:not(.suggested-action):not(.destructive-action):first-child,
-toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):first-child
-{ border-top-left-radius: 8.0px; border-bottom-left-radius: 8.0px; }
+toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):first-child,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):first-child,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):first-child
+{ border-top-left-radius: 8.0px; border-bottom-left-radius: 8.0px; border-left-color: transparent; }
 
 .linked:not(.vertical) > menubutton:last-child > button,
 .linked button:last-child,
@@ -609,8 +613,10 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):la
 .toolbar:not(.primary-toolbar):not(.osd) .linked button:not(.suggested-action):not(.destructive-action):last-child,
 .linked .page-menu-zoom-box button.image-button:last-child,
 toolbarview > .top-bar:not(.raised) headerbar .linked button:not(.suggested-action):not(.destructive-action):last-child,
-toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):last-child
-{ border-right-style: solid; border-top-right-radius: 8.0px; border-bottom-right-radius: 8.0px; }
+toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):last-child,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):last-child,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):last-child
+{ border-right-style: solid; border-top-right-radius: 8.0px; border-bottom-right-radius: 8.0px; border-right-color: transparent; }
 
 .linked:not(.vertical) > menubutton:only-child > button,
 .linked button:only-child,
@@ -625,16 +631,18 @@ headerbar viewswitcher button:not(.suggested-action):not(.destructive-action):on
 .toolbar:not(.primary-toolbar):not(.osd) .linked button:not(.suggested-action):not(.destructive-action):only-child,
 .linked .page-menu-zoom-box button.image-button:only-child,
 toolbarview > .top-bar:not(.raised) headerbar .linked button:not(.suggested-action):not(.destructive-action):only-child,
-toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):only-child
+toolbarview > .bottom-bar .linked button:not(.suggested-action):not(.destructive-action):only-child,
+.primary-toolbar toolbar .linked button:not(.suggested-action):not(.destructive-action):only-child,
+.primary-toolbar:not(.libreoffice-toolbar) .linked button:not(.suggested-action):not(.destructive-action):only-child
 { border-style: solid; border-radius: 8.0px; }
 
 .linked:not(.vertical) > combobox:first-child > box > button.combo:not(button):focus, combobox.linked button:not(button):focus:nth-child(2):dir(rtl), filechooser .path-bar.linked > button:not(button):focus:dir(rtl):last-child, filechooser .path-bar.linked > button:not(button):focus:dir(ltr):first-child, .xfce4-panel.background button menu .linked button:not(button):focus:first-child, .nautilus-window .titlebar :not(.raised) .linked > button:not(button):focus:first-child, headerbar .linked button:not(button):focus:first-child:not(:only-child), .titlebar .linked button:not(button):focus:first-child:not(:only-child), .linked:not(.vertical) > spinbutton:not(button):focus:first-child:not(.vertical), .linked:not(.vertical) > entry:not(button):focus:first-child, .inline-toolbar button:not(button):focus:first-child, .linked > button:not(button):focus:first-child, toolbar:not(.osd).inline-toolbar toolbutton:first-child > button.flat:not(button):focus { border-left-color: @focus_highlight; }
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo:not(button):focus, combobox.linked button:not(button):focus:nth-child(2):dir(ltr), filechooser .path-bar.linked > button:not(button):focus:dir(rtl):first-child, filechooser .path-bar.linked > button:not(button):focus:dir(ltr):last-child, .xfce4-panel.background button menu .linked button:not(button):focus:last-child, .nautilus-window .titlebar :not(.raised) .linked > button:not(button):focus:last-child, headerbar .linked button:not(button):focus:last-child:not(:only-child), .titlebar .linked button:not(button):focus:last-child:not(:only-child), .linked:not(.vertical) > spinbutton:not(button):focus:last-child:not(.vertical), .linked:not(.vertical) > entry:not(button):focus:last-child, .inline-toolbar button:not(button):focus:last-child, .linked > button:not(button):focus:last-child, toolbar:not(.osd).inline-toolbar toolbutton:last-child > button.flat:not(button):focus { border-right-color: @focus_highlight; }
 
-.linked.vertical > combobox > box > button.combo, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button { border-top-color: transparent; border-bottom-color: transparent; border-style: solid solid none solid; border-radius: 0; }
+.linked.vertical > combobox > box > button.combo, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button { border-color: @transparent_border transparent transparent; border-style: solid solid none solid; border-radius: 0; }
 
-.linked.vertical > combobox:first-child > box > button.combo, .linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child { border-top-left-radius: 8.0px; border-top-right-radius: 8.0px; }
+.linked.vertical > combobox:first-child > box > button.combo, .linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child { border-top-left-radius: 8.0px; border-top-right-radius: 8.0px; border-top-color: transparent; }
 
 .linked.vertical > combobox:last-child > box > button.combo, .linked.vertical > spinbutton:last-child:not(.vertical), .linked.vertical > entry:last-child, .linked.vertical > button:last-child { border-bottom-style: solid; border-bottom-left-radius: 8.0px; border-bottom-right-radius: 8.0px; }
 
@@ -1148,7 +1156,7 @@ toolbar separator{background-color: alpha(currentcolor,0.2);}
 
 button .toolbar{border: none;}
 
-toolbar{
+toolbar,grid.horizontal#TopToolbars{
     border-style: solid;
     border-top-width: 1px;
     border-color: @transparent_border;

@@ -12,7 +12,10 @@
 { font-weight: bold;}
 
 #Tooltip,
-.window-caption StLabel {color: rgba(255,/**/255,255, 1.0)}
+.window-caption StLabel,
+.sound-player-overlay *,
+.grouped-window-list-badge *
+{color: rgba(255,/**/255,255, 1.0)}
 
 .calendar-day-heading,
 .calendar-today-home-button *,
@@ -194,7 +197,7 @@ StButton:checked.radiobutton
 
 .grouped-window-list-badge,
 .sound-player-overlay
-{background-color: rgba(0,0,0, 0.8);}
+{background-color: rgba(0,/**/0,0, 0.65);}
 
 #panel,
 #notification,
@@ -238,7 +241,6 @@ StButton,
 .grouped-window-list-item-box:hover,
 .grouped-window-list-item-box:active:hover,
 .sound-player StButton:small:hover,
-.sound-player-overlay StButton:hover,
 .calendar-change-month-back:hover,
 .calendar-change-month-forward:hover,
 .panelLeft:dnd,
@@ -271,7 +273,6 @@ StButton:checked,
 .workspace-graph .workspace:active,
 .panel-dummy:entered,
 .sound-player StButton:small:active,
-.sound-player-overlay StButton:active,
 .calendar-change-month-back:active,
 .calendar-change-month-forward:active,
 .switcher-list .item-box:selected,
@@ -313,6 +314,9 @@ StButton:checked,
 
 #Tooltip,
 .window-caption {background-color: rgba(0,/**/0,0, 0.8);}
+
+.sound-player-overlay StButton:hover{background-color: rgba(255,/**/255,255, 0.1);}
+.sound-player-overlay StButton:active{background-color: rgba(255,/**/255,255, 0.15);}
 
 /* Borders */
 
@@ -419,7 +423,8 @@ StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-colo
 .grouped-window-list-badge,
 .applet-cornerbar,
 .workspace-close-button,
-.window-close
+.window-close,
+.calendar-day-base
 {border-radius: 9999px;}
 
 .workspace-graph .workspace .windows {
@@ -519,10 +524,10 @@ StEntry.expo-workspaces-name-entry {
 }
 
 .check-box:checked StBin,
-.check-box:focus:checked StBin{ background-image: url("../general/assets/dark-checkbox-on.svg"); }
+.check-box:focus:checked StBin{ background-image: url("../general/assets/checkbox-on.svg"); }
 
 .check-box:checked,.check-box:focus:checked
-{background-color: rgba(255,255,255,0.0); border-color: rgba(255,255,255,0); box-shadow: none; }
+{background-color: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0); box-shadow: none; }
 
 .check-box StLabel {  font-weight: normal; }
 
@@ -536,12 +541,12 @@ StEntry.expo-workspaces-name-entry {
 .radiobutton:focus StBin {
     width: 16px;
     height: 16px;
-    background-image: url("../general/assets/dark-radiobutton-off.svg");
+    background-image: url("../general/assets/radiobutton-off.svg");
     border-radius: 9999px;
 }
 
 .radiobutton:checked StBin,
-.radiobutton:focus:checked StBin { background-image: url("../general/assets/dark-radiobutton-on.svg"); }
+.radiobutton:focus:checked StBin { background-image: url("../general/assets/radiobutton-on.svg"); }
 
 .radiobutton StLabel {
     padding-top: 4px;
