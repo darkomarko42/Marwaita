@@ -1634,9 +1634,9 @@ banner > revealer > widget:backdrop > label, banner > revealer > widget:backdrop
 /****************** AdwToolbarView * */
 toolbarview > .top-bar .collapse-spacing, toolbarview > .bottom-bar .collapse-spacing {  }
 
-toolbarview > .top-bar.raised, toolbarview > .bottom-bar.raised { background-color: @headerbar_bg_color; color: @headerbar_fg_color; }
+toolbarview > .top-bar.raised, toolbarview > .bottom-bar.raised { background-color: @window_bg_color; color: @window_fg_color; }
 
-toolbarview > .top-bar.raised:backdrop, toolbarview > .bottom-bar.raised:backdrop { background-color: @headerbar_backdrop_color; transition: background-color 200ms ease-out; }
+toolbarview > .top-bar.raised:backdrop, toolbarview > .bottom-bar.raised:backdrop { background-color: @window_bg_color; transition: background-color 200ms ease-out; }
 
 toolbarview > .top-bar:backdrop > windowhandle, toolbarview > .bottom-bar:backdrop > windowhandle { filter: opacity(0.5); transition: filter 200ms ease-out; }
 

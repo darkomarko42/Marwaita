@@ -1093,7 +1093,7 @@ treeview.view.trough {border: 1px solid currentcolor; padding: 2px;}
 
 progressbar trough, scale fill, scale trough { padding: 0px;}
 
-progressbar trough, scale fill, scale trough, levelbar block.empty,scale > trough > fill, scale > trough, progressbar > trough,levelbar > trough > block.empty { border-radius: 9999px; background-color: alpha(@accent_bg_color,0.3);}
+progressbar trough, scale fill, scale trough, levelbar block.empty,scale > trough > fill, scale > trough, progressbar > trough,levelbar > trough > block.empty { border-radius: 9999px; background-color: alpha(@window_fg_color,0.2);}
 
 progressbar progress, scale highlight,scale > trough > highlight, progressbar > trough > progress { border-radius: 9999px; background-color: @accent_bg_color; color: @accent_fg_color; }
 

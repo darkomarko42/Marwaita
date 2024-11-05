@@ -1,7 +1,7 @@
 # Oomox GTK Theme (Numix Fork)
 
 gtk-color-scheme =
-"base_color:#f7f9fc\nbg_color:#eff3f9\ntooltip_bg_color:#000\nselected_bg_color:#0f6ee3\nfg_color:#062c5b\ntooltip_fg_color:#fff\nselected_fg_color:#ffffff"
+"base_color:#fdfdfd\nbg_color:#fafafa\ntooltip_bg_color:#000\nselected_bg_color:#0f6ee3\nfg_color:#323232\ntooltip_fg_color:#fff\nselected_fg_color:#ffffff"
 # Default Style
 
 style "murrine-default" {
@@ -245,7 +245,7 @@ style "murrine-overlay-scrollbar" {
 style "murrine-scale" = "murrine-thin" {
 	bg[NORMAL] = @selected_bg_color
 	bg[PRELIGHT] = @selected_bg_color
-	bg[ACTIVE] = mix (0.3, @selected_bg_color, @bg_color)
+	bg[ACTIVE] = mix (0.2, @fg_color, @bg_color)
 	bg[SELECTED] = @selected_bg_color
 	bg[INSENSITIVE] = @bg_color
 
@@ -256,7 +256,7 @@ style "murrine-scale" = "murrine-thin" {
 }
 
 style "murrine-progressbar" = "murrine-thin" {
-	bg[ACTIVE] = mix (0.3, @selected_bg_color, @bg_color)
+	bg[ACTIVE] = mix (0.3, @fg_color, @bg_color)
 
 	fg[PRELIGHT] = @selected_fg_color
 

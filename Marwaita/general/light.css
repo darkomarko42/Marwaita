@@ -21,8 +21,8 @@
 @define-color error_fg_color white;
 @define-color error_color @destructive_bg_color;
 
-@define-color window_bg_color mix(#fafafa,@accent_bg_color,0.05);
-@define-color window_fg_color mix(@accent_bg_color,black,0.6);
+@define-color window_bg_color #fafafa;
+@define-color window_fg_color mix(@window_bg_color,black,0.8);
 @define-color view_bg_color mix(@window_bg_color,white,0.5);
 @define-color view_fg_color @window_fg_color;
 
