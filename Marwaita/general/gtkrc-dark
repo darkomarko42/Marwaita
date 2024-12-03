@@ -1,7 +1,7 @@
 # Oomox GTK Theme (Numix Fork)
 
 gtk-color-scheme =
-"base_color:#2f2f2f\nbg_color:#242424\ntooltip_bg_color:#000\nselected_bg_color:#87b7f1\nfg_color:#d3d3d3\ntooltip_fg_color:#fff\nselected_fg_color:#000"
+"base_color:#3a3a3a\nbg_color:#303030\ntooltip_bg_color:#000\nselected_bg_color:#87b7f1\nfg_color:#d3d3d3\ntooltip_fg_color:#fff\nselected_fg_color:#000"
 # Default Style
 
 style "murrine-default" {
@@ -188,16 +188,16 @@ style "notebook_viewport" {
 # Various Standard Widgets
 
 style "murrine-button"  = "murrine-wider" {
-	bg[NORMAL] = mix (0.1, @fg_color, @bg_color)
-	bg[PRELIGHT] = mix (0.15, @fg_color, @bg_color)
+	bg[NORMAL] = @base_color
+	bg[PRELIGHT] = mix (0.1, @fg_color, @base_color)
 	bg[SELECTED] = @selected_bg_color
 	bg[ACTIVE] = mix (0.2, @fg_color, @bg_color)
-	bg[INSENSITIVE] = mix (0.05, @fg_color, @bg_color)
+	bg[INSENSITIVE] = mix (0.05, @fg_color, @base_color)
     #xthickness = 4
     #ythickness = 4
 
 	engine "murrine" {
-        contrast = 0.0
+		border_shades = { 2.0, 2.0 }
 		roundness = 6
 		gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
 	}
@@ -333,7 +333,7 @@ style "murrine-entry" = "murrine-wider" {
     text[ACTIVE] = @fg_color
     text[INSENSITIVE] = mix (0.5, @base_color, @fg_color)
 
-	base[NORMAL] =  mix (0.1, @fg_color, @bg_color)
+	base[NORMAL] =  @base_color
 	bg[PRELIGHT] = @bg_color
 	bg[SELECTED] = @fg_color
 	bg[ACTIVE] = @bg_color
@@ -341,7 +341,7 @@ style "murrine-entry" = "murrine-wider" {
 
 	engine "murrine" {
 		#border_shades = { 1.15, 1.15 }
-        border_colors = { mix (0.1, @fg_color, @bg_color), mix (0.1, @fg_color, @bg_color) }
+        border_colors = { mix (0.15, @fg_color, @base_color), mix (0.15, @fg_color, @base_color) }
 		roundness = 6
 	}
 }

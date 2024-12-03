@@ -1,9 +1,9 @@
 @define-color headerbar_fg_color white;
-@define-color headerbar_bg_color #2f2f2f;
+@define-color headerbar_bg_color #262626;
 
-@define-color headerbar_backdrop_color #242424;
+@define-color headerbar_backdrop_color #303030;
 
-@define-color button_headerbar_bg_color @button_bg_color;
+@define-color button_headerbar_bg_color alpha(white,0.2);
 
 @define-color metacity_theme @headerbar_bg_color;
 @define-color metacity_theme_unfocused @headerbar_backdrop_color;

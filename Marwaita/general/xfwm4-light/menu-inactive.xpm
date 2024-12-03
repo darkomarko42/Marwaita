@@ -2,7 +2,7 @@
 static char *menu_inactive[] = {
 /* columns rows colors chars-per-pixel */
 "24 24 1 1 ",
-"  c gray98",
+"  c gray94",
 /* pixels */
 "                        ",
 "                        ",

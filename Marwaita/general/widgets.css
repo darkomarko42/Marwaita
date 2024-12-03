@@ -843,7 +843,7 @@ messagedialog .dialog-action-area{border-radius: 0 0 8.0px 8.0px;}
 messagedialog button,
 messagedialog .linked button,
 .budgie-session-dialog .linked button,
-.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 8.0px; -gtk-outline-radius: 8.0px; }
+.budgie-polkit-dialog .linked button { margin: 6px; border-radius: 8.0px; -gtk-outline-radius: 8.0px; border: 1px solid @transparent_border; }
 
 messagedialog button:only-child,messagedialog .linked button:only-child {margin: 0px 6px;}
 

@@ -1,4 +1,4 @@
-*{color: #dcdcdc; icon-size: 16px; selection-background-color: rgba(255,255,255, 0.15); selected-color: #dcdcdc; background-clip: padding-box;}
+*{color: #d3d3d3; icon-size: 16px; selection-background-color: rgba(255,255,255, 0.15); selected-color: #d3d3d3; background-clip: padding-box;}
 
 #panel,
 .menu-application-button:highlighted,
@@ -198,6 +198,44 @@ StButton:checked.radiobutton
 .grouped-window-list-badge,
 .sound-player-overlay
 {background-color: rgba(0,/**/0,0, 0.65);}
+
+/* transparent extension */
+
+#panel.panel-transparent,#panel.panel-transparent-with-shadow
+{background-color: rgba(0,/**/0,0, 0.0); border-color: rgba(0,/**/0,0, 0.0); text-shadow: rgba(0,/**/0,0, 0.5) 1px 1px;}
+#panel.panel-transparent StIcon,#panel.panel-transparent-with-shadow StIcon{icon-shadow: rgba(0,/**/0,0, 0.5) 1px 1px;}
+
+#panel.panel-top.panel-transparent-with-shadow
+{
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,/**/0,0, 0.3);
+    background-gradient-end: transparent;
+}
+
+#panel.panel-bottom.panel-transparent-with-shadow
+{
+    background-gradient-direction: vertical;
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(0,/**/0,0, 0.3);
+}
+
+#panel.panel-left.panel-transparent-with-shadow
+{
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(0,/**/0,0, 0.3);
+    background-gradient-end: transparent;
+}
+
+#panel.panel-right.panel-transparent-with-shadow
+{
+    background-gradient-direction: horizontal;
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(0,/**/0,0, 0.3);
+}
+
+#panel.panel-semi-transparent
+{background-color: rgba(0,/**/0,0, 0.5); border-color: rgba(0,/**/0,0, 0.0);  text-shadow: none;}
+#panel.panel-semi-transparent {icon-shadow: none;}
 
 #panel,
 #notification,
@@ -447,7 +485,7 @@ StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-colo
     height: 1em;
     -slider-height: 6px;
     -slider-background-color: rgba(255,255,255, 0.2);
-    -slider-active-background-color: #dcdcdc;
+    -slider-active-background-color: #d3d3d3;
     -slider-border-width: 1px;
     -slider-handle-radius: 0em;
 }
@@ -461,7 +499,7 @@ StScrollBar StButton:checked,
 .menu StScrollBar StButton:hover,
 .menu StScrollBar StButton:active,
 .menu StScrollBar StButton:checked
-{background-color: #dcdcdc; box-shadow: none;}
+{background-color: #d3d3d3; box-shadow: none;}
 
 /* SVG */
 
@@ -577,7 +615,7 @@ StEntry.expo-workspaces-name-entry {
 }
 
 /* this is for user applet */
-.user-label { color: #dcdcdc;}
+.user-label { color: #d3d3d3;}
 
 .user-icon{border: none;}
 
