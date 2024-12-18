@@ -31,7 +31,9 @@
 .popup-menu-item:insensitive *,
 .popup-inactive-menu-item *,
 .popup-menu-item:insensitive,
-.popup-inactive-menu-item{color: rgba(0,0,0, 0.35);}
+.popup-inactive-menu-item,
+* StButton:insensitive
+{color: rgba(0,0,0, 0.35);}
 
 .menu-category-button-greyed StIcon {opacity: 0.5;}
 
@@ -43,9 +45,44 @@
   padding-bottom: 12px;
 }
 
-.run-dialog-description { padding-top: 12px; text-align: center; }
+.run-dialog-description,.dialog { padding-top: 12px; text-align: center; }
+
+.message-dialog-content .message-dialog-title, .dialog .confirm-dialog-title {
+    font-weight: 800;
+    font-size: 1.364em;
+    padding-bottom: 12px;
+    text-align: center; }
+
+.dialog .dialog-button,
+#notification StButton
+{ font-weight: bold; }
+
+.user-icon { background-size: contain; border-radius: 99px; }
+.user-icon StIcon { padding: 12px; }
+.user-icon.user-avatar { border-radius: 99px; }
+* .user-icon{icon-size: 64px;}
+
+.polkit-dialog-user-layout { text-align: center; font-weight: bold; spacing: 2px; padding: 24px; }
+
+.polkit-dialog-user-combo{padding: 8px;}
 
 /* Size of elements */
+
+.dialog{padding: 18px;}
+
+.dialog .dialog-content-box {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    spacing: 32px;
+    max-width: 28em; }
+.dialog .confirm-dialog-title { text-align: center; }
+
+.dialog-list { spacing: 18px; }
+.dialog-list .dialog-list-title { text-align: center; }
+.dialog-list .dialog-list-scrollview { max-height: 200px; }
+.dialog-list .dialog-list-box { spacing: 1em; }
+.dialog-list .dialog-list-box .dialog-list-item { spacing: 1em; }
+.dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-title { font-weight: bold; }
 
 .calendar-main-box { margin: 0 2em 0 2em; }
 
@@ -96,7 +133,8 @@ StButton.notification-applet-padding,
 .osd-window,
 .window-list-preview,
 .sound-player StButton,
-.overview-empty-placeholder
+.overview-empty-placeholder,
+.dialog .dialog-button
 {padding: 8px;}
 
 .popup-menu-item{padding: 7px 16px;}
@@ -120,7 +158,7 @@ StButton.notification-applet-padding,
 
 .modal-dialog StButton {padding: 8px 64px;}
 
-.run-dialog-entry{ width: 20em;}
+.run-dialog-entry,.prompt-dialog-password-entry{ width: 28em;}
 .run-dialog{padding: 0px 16px; padding-top: 8px;}
 
 .popup-separator-menu-item,
@@ -171,6 +209,35 @@ StButton.notification-applet-padding,
 
 .switcher-list { padding: 16px;}
 
+.media-keys-osd {
+  margin-bottom: 1em;
+  border-radius: 9999px;
+  font-weight: bold;
+  spacing: 12px;
+  padding: 12px 24px; }
+  .media-keys-osd > * {
+    spacing: 12px; }
+  .media-keys-osd StIcon {
+    icon-size: 32px; }
+  .media-keys-osd StLabel:ltr {
+    margin-right: 6px; }
+  .media-keys-osd StLabel:rtl {
+    margin-left: 6px; }
+  .media-keys-osd .level {
+    min-width: 160px;
+    -barlevel-height: 6px;
+    -barlevel-background-color: rgba(0,0,0, 0.1);
+    -barlevel-active-background-color: #303030;
+    -barlevel-amplify-color: #f8e45c;
+    -barlevel-amplify-separator-width: 3px; }
+    .media-keys-osd .level:ltr {
+      margin-right: 6px; }
+    .media-keys-osd .level:rtl {
+      margin-left: 6px; }
+  .media-keys-osd .level-bar {
+    border-radius: 8px;
+    background-color: #303030; }
+
 /* Background */
 
 #notification StButton,
@@ -192,12 +259,20 @@ StButton.popup-menu-item,
 .menu StButton,
 .menu StButton:hover,
 .menu StButton:hover.notification-applet-padding,
-StButton:checked.radiobutton
+StButton:checked.radiobutton,
+.polkit-dialog-user-combo
 {background-color: transparent; border-color: transparent; box-shadow: none;}
 
 .grouped-window-list-badge,
 .sound-player-overlay
 {background-color: rgba(0,/**/0,0, 0.65);}
+
+.dialog .dialog-button:destructive-action
+{background-color: rgba(255,/**/128,128, 0.5);}
+.dialog .dialog-button:destructive-action:hover
+{background-color: rgba(255,/**/128,128, 0.55);}
+.dialog .dialog-button:destructive-action:active
+{background-color: rgba(255,/**/128,128, 0.6);}
 
 /* transparent extension */
 
@@ -250,7 +325,9 @@ StButton:checked.radiobutton
 .osd-window,
 .window-list-preview,
 .overview-empty-placeholder,
-.grouped-window-list-thumbnail-menu
+.grouped-window-list-thumbnail-menu,
+.dialog,
+.media-keys-osd
 {background-color: #fdfdfd; /*use base color*/}
 
 .menu #notification,
@@ -286,7 +363,8 @@ StButton,
 .panelRight:dnd,
 StScrollBar StBin#trough,
 .grouped-window-list-thumbnail-menu .item-box:selected,
-.window-list-item-box
+.window-list-item-box,
+.polkit-dialog-user-combo:hover
 { background-color: rgba(0,0,0, 0.1); box-shadow: none;}
 
 StButton:hover,
@@ -295,7 +373,8 @@ StButton:hover,
 .popup-menu #notification StButton.notification-button:hover,
 .popup-menu #notification StButton.notification-icon-button:hover,
 .window-list-item-box:hover,
-.window-list-item-box:active:hover
+.window-list-item-box:active:hover,
+.polkit-dialog-user-combo:active
 {background-color: rgba(0,0,0, 0.15);}
 
 .applet-cornerbar,
@@ -386,7 +465,9 @@ StEntry,
 #notification StButton.notification-icon-button,
 .popup-menu #notification StButton.notification-button,
 .popup-menu #notification StButton.notification-icon-button,
-.window-list-item-box
+.window-list-item-box,
+.dialog,
+.media-keys-osd
 {border: 1px solid;}
 
 .menu-selected-app-box,
@@ -411,7 +492,9 @@ StEntry,
 .panel-top,
 .panel-left,
 .panel-right,
-.window-list-item-box
+.window-list-item-box,
+.dialog,
+.media-keys-osd
 {border-color: rgba(0,0,0, 0.1);}
 
 .popup-separator-menu-item,
@@ -453,7 +536,8 @@ StButton,
 .calendar-event-button,
 .overview-empty-placeholder,
 .grouped-window-list-thumbnail-menu,
-.window-list-item-box
+.window-list-item-box,
+.dialog
 {border-radius: 8px;}
 
 StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-color: transparent; background-clip: border-box;}
@@ -462,7 +546,8 @@ StScrollBar StButton,StScrollBar StBin#trough{border-radius: 9999px; border-colo
 .applet-cornerbar,
 .workspace-close-button,
 .window-close,
-.calendar-day-base
+.calendar-day-base,
+.sound-player StButton
 {border-radius: 9999px;}
 
 .workspace-graph .workspace .windows {
